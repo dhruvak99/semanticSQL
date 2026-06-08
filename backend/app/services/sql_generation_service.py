@@ -46,7 +46,11 @@ def generate_sql(natural_language_query: str) -> SQLGenerationResult:
             query_type=QueryType.COUNT_BY_DEPARTMENT,
         )
 
-    department_match = re.search(r"show employees from department ([a-zA-Z][a-zA-Z\s_-]*)$", query, re.IGNORECASE)
+    department_match = re.search(
+        r"show employees from (?:department )?([a-zA-Z][a-zA-Z\s_-]*)$",
+        query,
+        re.IGNORECASE,
+    )
     if department_match:
         department = department_match.group(1).strip()
         escaped_department = department.replace("'", "''")

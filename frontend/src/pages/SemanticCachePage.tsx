@@ -1,3 +1,4 @@
+import { useEffect, useMemo, useState } from 'react';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
@@ -6,19 +7,53 @@ import StorageIcon from '@mui/icons-material/Storage';
 import { Button, Grid, Stack, Typography } from '@mui/material';
 import { BarChart, DataTable, DonutChart, LineChart, MetricProgress, Panel, StatCard, StatusBadge } from '../components/common/EnterpriseDashboard';
 import { PageHeader } from '../components/common/PageHeader';
+import { getSemanticCacheMetrics, type SemanticCacheMetrics } from '../api/cache';
+
+const emptyMetrics: SemanticCacheMetrics = {
+  backend: 'memory',
+  cache_hits: 0,
+  cache_misses: 0,
+  hit_rate: 0,
+  average_similarity_score: 0,
+  cache_entry_count: 0,
+  top_cached_queries: []
+};
 
 export function SemanticCachePage() {
+  const [metrics, setMetrics] = useState<SemanticCacheMetrics>(emptyMetrics);
+
+  useEffect(() => {
+    getSemanticCacheMetrics()
+      .then(setMetrics)
+      .catch(() => setMetrics(emptyMetrics));
+  }, []);
+
+  const totalLookups = metrics.cache_hits + metrics.cache_misses;
+  const topCachedRows = useMemo(() => {
+    if (metrics.top_cached_queries.length === 0) {
+      return [['-', 'No cached queries yet', '0', '0.0000', '-']];
+    }
+
+    return metrics.top_cached_queries.map((entry, index) => [
+      String(index + 1),
+      entry.query,
+      String(entry.hit_count),
+      entry.last_similarity_score.toFixed(4),
+      new Date(entry.timestamp).toLocaleString()
+    ]);
+  }, [metrics.top_cached_queries]);
+
   return (
     <>
       <PageHeader title="Semantic Cache" description="View semantic cache performance, similar query matches, Redis statistics, and saved executions." />
       <Grid container spacing={2.5}>
         {[
-          { label: 'Cache Hit Rate', value: '87.3%', icon: CheckCircleOutlineIcon, trend: '12.6% vs last 7 days', tone: 'green' },
-          { label: 'Cache Hits', value: '1,086', icon: StorageIcon, trend: '15.6% vs last 7 days', tone: 'green' },
-          { label: 'Cache Misses', value: '159', icon: HighlightOffIcon, trend: '28.1% vs last 7 days', trendDirection: 'down', tone: 'red' },
-          { label: 'Total Entries', value: '2,341', icon: HubIcon, trend: '312 new entries', tone: 'blue' },
-          { label: 'Avg Similarity', value: '0.93', icon: CheckCircleOutlineIcon, trend: '0.04 vs last 7 days', tone: 'purple' },
-          { label: 'Time Saved', value: '14.2 hrs', icon: AccessTimeIcon, trend: '2.8 hrs vs last 7 days', tone: 'orange' }
+          { label: 'Cache Hit Rate', value: `${metrics.hit_rate.toFixed(1)}%`, icon: CheckCircleOutlineIcon, trend: `${totalLookups} lookups`, tone: 'green' },
+          { label: 'Cache Hits', value: metrics.cache_hits.toLocaleString(), icon: StorageIcon, trend: 'Real cache hits', tone: 'green' },
+          { label: 'Cache Misses', value: metrics.cache_misses.toLocaleString(), icon: HighlightOffIcon, trend: 'Real cache misses', trendDirection: 'down', tone: 'red' },
+          { label: 'Total Entries', value: metrics.cache_entry_count.toLocaleString(), icon: HubIcon, trend: `${metrics.backend} backend`, tone: 'blue' },
+          { label: 'Avg Similarity', value: metrics.average_similarity_score.toFixed(2), icon: CheckCircleOutlineIcon, trend: 'Across lookups', tone: 'purple' },
+          { label: 'Time Saved', value: `${metrics.cache_hits}`, icon: AccessTimeIcon, trend: 'executions avoided', tone: 'orange' }
         ].map((stat) => (
           <Grid item key={stat.label} md={2} sm={6} xs={12}>
             <StatCard {...stat} tone={stat.tone as never} trendDirection={stat.trendDirection as never} />
@@ -26,32 +61,26 @@ export function SemanticCachePage() {
         ))}
         <Grid item md={6} xs={12}>
           <Panel action={<Button variant="outlined">Daily</Button>} title="Cache Hit/Miss Cards Over Time">
-            <LineChart color="#16a34a" data={[420, 510, 580, 640, 720, 850, 812]} labels={['May 15', 'May 16', 'May 17', 'May 18', 'May 19', 'May 20', 'May 21']} secondaryColor="#ef4444" secondaryData={[95, 142, 158, 184, 176, 232, 334]} />
+            <LineChart color="#16a34a" data={[0, 0, 0, metrics.cache_hits, metrics.cache_hits, metrics.cache_hits, metrics.cache_hits]} labels={['T-6', 'T-5', 'T-4', 'T-3', 'T-2', 'T-1', 'Now']} secondaryColor="#ef4444" secondaryData={[0, 0, 0, metrics.cache_misses, metrics.cache_misses, metrics.cache_misses, metrics.cache_misses]} />
           </Panel>
         </Grid>
         <Grid item md={3} xs={12}>
           <Panel title="Similarity Score Chart">
-            <DonutChart centerLabel="0.93" segments={[{ label: '0.90-1.00', value: 69.2, color: '#16a34a' }, { label: '0.80-0.90', value: 21.1, color: '#f59e0b' }, { label: '0.70-0.80', value: 6.8, color: '#ef4444' }, { label: '< 0.70', value: 2.9, color: '#94a3b8' }]} />
+            <DonutChart centerLabel={metrics.average_similarity_score.toFixed(2)} segments={[{ label: 'Hits', value: metrics.cache_hits || 1, color: '#16a34a' }, { label: 'Misses', value: metrics.cache_misses || 1, color: '#ef4444' }]} />
           </Panel>
         </Grid>
         <Grid item md={3} xs={12}>
           <Panel title="Redis Statistics">
             <Stack spacing={2}>
-              <MetricProgress label="Memory Usage" value={64} detail="128.7 MB used" tone="blue" />
-              <MetricProgress label="Keyspace Hits" value={87} detail="1,086 successful lookups" tone="green" />
-              <MetricProgress label="Keyspace Misses" value={13} detail="159 misses" tone="red" />
-              <Typography variant="body2">Policy: <strong>LRU</strong> · Retrieval: <strong>12.4 ms</strong></Typography>
+              <MetricProgress label="Hit Rate" value={Math.round(metrics.hit_rate)} detail={`${metrics.cache_hits} successful lookups`} tone="green" />
+              <MetricProgress label="Miss Rate" value={Math.round(100 - metrics.hit_rate)} detail={`${metrics.cache_misses} misses`} tone="red" />
+              <Typography variant="body2">Backend: <strong>{metrics.backend}</strong> · Threshold: <strong>0.90</strong></Typography>
             </Stack>
           </Panel>
         </Grid>
         <Grid item md={6} xs={12}>
           <Panel action={<Button variant="outlined">View All</Button>} title="Top Cached Queries">
-            <DataTable columns={['#', 'Query', 'Use Count', 'Hit Rate', 'Last Used']} rows={[
-              ['1', 'Show all employees earning more than 50000', '23', '95.8%', '2 min ago'],
-              ['2', 'List all departments', '18', '94.7%', '5 min ago'],
-              ['3', 'Count employees in each department', '15', '93.3%', '8 min ago'],
-              ['4', 'Show employees in the Finance department', '13', '92.3%', '12 min ago']
-            ]} />
+            <DataTable columns={['#', 'Query', 'Hit Count', 'Last Similarity', 'Last Used']} rows={topCachedRows} />
           </Panel>
         </Grid>
         <Grid item md={6} xs={12}>

@@ -6,8 +6,10 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.api.v1.api import api_router
 from app.core.config import settings
 from app.services.database_service import initialize_database
+from app.services.semantic_cache_service import get_semantic_cache_service
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s:%(name)s:%(message)s")
+logger = logging.getLogger(__name__)
 
 
 def create_app() -> FastAPI:
@@ -16,6 +18,9 @@ def create_app() -> FastAPI:
     @app.on_event("startup")
     def startup() -> None:
         initialize_database()
+        semantic_cache_service = get_semantic_cache_service()
+        logger.info("Semantic Cache Backend: %s", semantic_cache_service.backend_name)
+        semantic_cache_service.warm_up_model()
 
     app.add_middleware(
         CORSMiddleware,

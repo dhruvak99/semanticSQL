@@ -15,6 +15,9 @@ class Settings(BaseSettings):
     api_v1_prefix: str = "/api/v1"
     database_url: str | None = None
     redis_url: str = "redis://localhost:6379/0"
+    semantic_cache_similarity_threshold: float = 0.9
+    semantic_cache_model_name: str = "all-MiniLM-L6-v2"
+    llm_model: str = "llama3.1:8b"
     backend_cors_origins: list[str] = [
         "http://localhost:5173",
         "http://127.0.0.1:5173",

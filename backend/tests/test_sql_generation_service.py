@@ -36,6 +36,15 @@ class SQLGenerationServiceTests(unittest.TestCase):
             "SELECT * FROM employees\nWHERE department = 'Finance';",
         )
 
+    def test_filters_employees_by_department_without_department_keyword(self) -> None:
+        result = generate_sql("Show employees from Finance")
+
+        self.assertEqual(result.query_type, QueryType.DEPARTMENT_FILTER)
+        self.assertEqual(
+            result.sql,
+            "SELECT * FROM employees\nWHERE department = 'Finance';",
+        )
+
     def test_creates_employee_table(self) -> None:
         result = generate_sql("Create employee table with id, name, salary")
 

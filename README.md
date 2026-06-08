@@ -43,6 +43,22 @@ DATABASE_URL=mysql+pymysql://user:password@localhost:3306/semanticsql
 
 The query execution layer is read-only. It only executes `SELECT` statements, including `DISTINCT`, `COUNT`, and `GROUP BY` queries. Mutating or destructive statements such as `DROP`, `TRUNCATE`, `DELETE`, `UPDATE`, `ALTER`, `INSERT`, and `CREATE` are blocked by the API execution layer.
 
+## Semantic Cache
+
+SemanticSQL uses `sentence-transformers` with `all-MiniLM-L6-v2` to embed incoming natural-language queries. Cache entries include the original query, embedding, generated SQL, response payload, timestamp, and hit count.
+
+Redis is used when `REDIS_URL` is reachable. If Redis is unavailable, the backend automatically falls back to an in-memory semantic cache for local development.
+
+Optional settings:
+
+```bash
+REDIS_URL=redis://localhost:6379/0
+SEMANTIC_CACHE_SIMILARITY_THRESHOLD=0.9
+SEMANTIC_CACHE_MODEL_NAME=all-MiniLM-L6-v2
+```
+
+The first request may download the embedding model from Hugging Face.
+
 ## Optional MySQL Sample Schema
 
 SQLite setup is automatic. If you switch to MySQL, run these SQL commands to create the required schema and sample employee data:
