@@ -5,7 +5,6 @@ from sqlalchemy import create_engine, text
 
 from app.services import llm_sql_generation_service
 from app.services.llm_sql_generation_service import (
-    SCHEMA_MISMATCH,
     build_prompt,
     extract_schema_context,
     generate_sql,
@@ -76,10 +75,11 @@ class LLMSQLGenerationServiceTests(unittest.TestCase):
             "Show all products",
         )
 
-        self.assertIn("Generate only valid SQLite SQL or return SCHEMA_MISMATCH.", prompt)
-        self.assertIn("Never invent tables.", prompt)
+        self.assertIn("Generate SQLite SQL for the user request.", prompt)
+        self.assertIn("Return SQL only.", prompt)
         self.assertIn("Semantic substitutions are forbidden.", prompt)
-        self.assertIn("SCHEMA_MISMATCH", prompt)
+        self.assertIn("generate a reference to employees.age", prompt)
+        self.assertIn("never replace generated SQL with a placeholder", prompt)
         self.assertIn("products(", prompt)
         self.assertIn("Show all products", prompt)
         self.assertTrue(prompt.endswith("SQL:"))
@@ -133,27 +133,38 @@ class LLMSQLGenerationServiceTests(unittest.TestCase):
         self.assertIn("Show all employees", request_payload["prompt"])
         self.assertIn("employeez -> employees", request_payload["prompt"])
 
-    def test_returns_schema_mismatch_for_semantic_substitutions(self) -> None:
+    def test_calls_ollama_for_unknown_entities_so_validation_can_report_errors(self) -> None:
         for query in ["Show all suppliers", "Show all customers", "Show all warehouses"]:
             with self.subTest(query=query):
+                mock_response = Mock()
+                requested_table = query.removeprefix("Show all ").split()[0]
+                mock_response.json.return_value = {"response": f"SELECT * FROM {requested_table};"}
+                mock_response.raise_for_status.return_value = None
                 with (
                     patch.object(llm_sql_generation_service, "engine", self.engine),
-                    patch("app.services.llm_sql_generation_service.requests.post") as post,
+                    patch("app.services.llm_sql_generation_service.requests.post", return_value=mock_response) as post,
                 ):
                     result = generate_sql(query)
 
-                self.assertEqual(result.sql, SCHEMA_MISMATCH)
-                post.assert_not_called()
+                self.assertEqual(result.sql, f"SELECT * FROM {requested_table};")
+                self.assertIn(query, post.call_args.kwargs["json"]["prompt"])
 
-    def test_returns_schema_mismatch_for_missing_requested_column(self) -> None:
+    def test_calls_ollama_for_missing_requested_column_so_validation_can_report_error(self) -> None:
+        mock_response = Mock()
+        mock_response.json.return_value = {"response": "SELECT blood_group FROM employees;"}
+        mock_response.raise_for_status.return_value = None
         with (
             patch.object(llm_sql_generation_service, "engine", self.engine),
-            patch("app.services.llm_sql_generation_service.requests.post") as post,
+            patch("app.services.llm_sql_generation_service.requests.post", return_value=mock_response) as post,
         ):
             result = generate_sql("Show employee blood group")
 
-        self.assertEqual(result.sql, SCHEMA_MISMATCH)
-        post.assert_not_called()
+        self.assertEqual(result.sql, "SELECT blood_group FROM employees;")
+        self.assertIn("Show employee blood group", post.call_args.kwargs["json"]["prompt"])
+        self.assertIn(
+            "Unresolved requested identifiers to preserve literally: blood",
+            post.call_args.kwargs["json"]["prompt"],
+        )
 
     def test_allows_filter_values_for_existing_table(self) -> None:
         mock_response = Mock()

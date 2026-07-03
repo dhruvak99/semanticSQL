@@ -5,6 +5,7 @@ from sqlalchemy import create_engine, text
 
 from app.services.llm_sql_generation_service import LLMSQLGenerationResult, SCHEMA_MISMATCH
 from app.services.query_pipeline import process_semantic_query
+from app.services.sql_validation_service import SQLValidationResult
 
 
 class FakeCacheResult:
@@ -123,6 +124,10 @@ class QueryPipelineTests(unittest.TestCase):
 
         self.assertEqual(response.generation_mode, "Rule")
         self.assertEqual(response.generated_sql, "SELECT * FROM employees\nWHERE department = 'Finance';")
+        self.assertIsNone(response.corrected_sql)
+        self.assertEqual(response.executed_sql, response.generated_sql)
+        self.assertTrue(response.validation.valid)
+        self.assertEqual(response.validation.errors, [])
         self.assertEqual(response.rows_returned, 1)
         self.assertEqual(response.results[0]["department"], "Finance")
         generate_sql_with_llm_mock.assert_not_called()
@@ -167,6 +172,9 @@ class QueryPipelineTests(unittest.TestCase):
 
         self.assertEqual(response.generation_mode, "LLM")
         self.assertEqual(response.generated_sql, "SELECT AVG(budget) FROM projects;")
+        self.assertIsNone(response.corrected_sql)
+        self.assertEqual(response.executed_sql, "SELECT AVG(budget) FROM projects;")
+        self.assertTrue(response.validation.valid)
         self.assertEqual(response.rows_returned, 1)
         self.assertEqual(response.results, [{"AVG(budget)": 155000.0}])
         self.assertEqual(fake_cache.stored_payloads[0]["response_payload"]["generation_mode"], "LLM")
@@ -206,6 +214,11 @@ class QueryPipelineTests(unittest.TestCase):
         response = process_semantic_query("Show all employeez")
 
         self.assertEqual(response.generation_mode, "LLM")
+        self.assertEqual(response.generated_sql, "SELECT * FROM employeez;")
+        self.assertIsNone(response.corrected_sql)
+        self.assertIsNone(response.executed_sql)
+        self.assertFalse(response.validation.valid)
+        self.assertEqual(response.validation.errors, ["Table 'employeez' does not exist"])
         self.assertEqual(response.validation_status, "invalid")
         self.assertEqual(response.validation_errors, ["Table 'employeez' does not exist"])
         self.assertEqual(response.rows_returned, 0)
@@ -231,6 +244,13 @@ class QueryPipelineTests(unittest.TestCase):
 
         self.assertEqual(response.generation_mode, "LLM")
         self.assertEqual(response.generated_sql, SCHEMA_MISMATCH)
+        self.assertIsNone(response.corrected_sql)
+        self.assertIsNone(response.executed_sql)
+        self.assertFalse(response.validation.valid)
+        self.assertEqual(
+            response.validation.errors,
+            ["Requested table or column does not exist in the current schema."],
+        )
         self.assertEqual(response.validation_status, "invalid")
         self.assertEqual(
             response.validation_errors,
@@ -241,6 +261,40 @@ class QueryPipelineTests(unittest.TestCase):
         execute_query_mock.assert_not_called()
         self.assertEqual(fake_cache.stored_payloads, [])
         self.create_history_record_mock.assert_called_once()
+
+    @patch("app.services.query_pipeline.get_semantic_cache_service")
+    @patch("app.services.query_pipeline.generate_sql_with_llm")
+    @patch("app.services.query_pipeline.execute_query")
+    @patch("app.services.query_pipeline.validate_sql")
+    def test_generated_sql_is_preserved_independently_after_validation_failure(
+        self,
+        validate_sql_mock,
+        execute_query_mock,
+        generate_sql_with_llm_mock,
+        get_cache_mock,
+    ) -> None:
+        get_cache_mock.return_value = FakeSemanticCache()
+        generated_sql = "SELECT age FROM employees;"
+        generate_sql_with_llm_mock.return_value = LLMSQLGenerationResult(sql=generated_sql)
+        validate_sql_mock.return_value = SQLValidationResult(
+            valid=False,
+            errors=["Column 'age' does not exist in table 'employees'"],
+        )
+
+        response = process_semantic_query("Show employee age")
+
+        self.assertEqual(response.generated_sql, generated_sql)
+        self.assertIsNone(response.corrected_sql)
+        self.assertIsNone(response.executed_sql)
+        self.assertEqual(
+            response.validation.model_dump(),
+            {
+                "valid": False,
+                "errors": ["Column 'age' does not exist in table 'employees'"],
+            },
+        )
+        self.assertEqual(response.validation_errors, response.validation.errors)
+        execute_query_mock.assert_not_called()
 
 
 if __name__ == "__main__":

@@ -15,6 +15,12 @@ const initialResponse: QueryProcessResponse = {
   generation_mode: 'Rule',
   generated_sql:
     'SELECT employee_id, name, email, department, salary, joining_date\nFROM employees\nWHERE salary > 50000\nORDER BY salary DESC;',
+  corrected_sql: null,
+  executed_sql: 'SELECT employee_id, name, email, department, salary, joining_date\nFROM employees\nWHERE salary > 50000\nORDER BY salary DESC;',
+  validation: {
+    valid: true,
+    errors: []
+  },
   cache_hit: false,
   similarity_score: 0,
   validation_status: 'valid',
@@ -76,8 +82,8 @@ export function QueryInterfacePage() {
     { label: 'Semantic Cache Check', detail: `${response.cache_hit ? 'Cache hit' : 'Cache miss'} · score ${response.similarity_score.toFixed(2)}`, tone: response.cache_hit ? 'green' : 'orange' },
     { label: 'SQL Generation', detail: `${response.generation_mode} generator completed`, tone: response.generation_mode === 'Rule' ? 'blue' : 'purple' },
     { label: 'SQL Validation', detail: response.validation_errors.length > 0 ? `${response.validation_status} · ${response.validation_errors.length} errors` : response.validation_status, tone: response.validation_status === 'valid' ? 'green' : 'red' },
-    { label: 'SQL Correction', detail: response.validation_status === 'valid' ? 'No correction required' : 'Correction applied', tone: response.validation_status === 'valid' ? 'gray' : 'purple' },
-    { label: 'Execution', detail: `${response.execution_time.toFixed(2)} sec`, tone: 'blue' },
+    { label: 'SQL Correction', detail: response.corrected_sql ? 'Correction applied' : 'No correction applied', tone: response.corrected_sql ? 'purple' : 'gray' },
+    { label: 'Execution', detail: response.executed_sql ? `${response.execution_time.toFixed(2)} sec` : 'Skipped', tone: response.executed_sql ? 'blue' : 'orange' },
     { label: 'Response', detail: `${response.rows_returned} rows`, tone: 'green' }
   ] as const;
 
@@ -160,38 +166,50 @@ export function QueryInterfacePage() {
         </Grid>
         <Grid item md={4} xs={12}>
           <Panel title="Validation Panel">
-            <Stack spacing={1.25}>
-              {['SQL Syntax', 'Table Existence', 'Column Existence', 'Data Type Check', 'Semantic Check'].map((item) => (
-                <Stack direction="row" key={item} sx={{ justifyContent: 'space-between' }}>
-                  <Typography variant="body2">{item}</Typography>
-                  <StatusBadge label={response.validation_status === 'valid' ? 'Valid' : 'Invalid'} tone={response.validation_status === 'valid' ? 'green' : 'red'} />
-                </Stack>
-              ))}
-              {response.validation_errors.length > 0 ? (
+            <Stack spacing={1.5}>
+              <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
+                <Typography fontWeight={700} variant="body2">
+                  {response.validation.valid ? 'Validation Passed' : 'Validation Failed'}
+                </Typography>
+                <StatusBadge label={response.validation.valid ? 'Valid' : 'Invalid'} tone={response.validation.valid ? 'green' : 'red'} />
+              </Stack>
+              {response.validation.errors.length > 0 ? (
                 <Stack spacing={0.75}>
-                  {response.validation_errors.map((validationError) => (
+                  <Typography color="text.secondary" variant="caption">Errors</Typography>
+                  {response.validation.errors.map((validationError) => (
                     <Alert key={validationError} severity="error" variant="outlined">
                       {validationError}
                     </Alert>
                   ))}
                 </Stack>
-              ) : null}
+              ) : (
+                <Alert severity="success" variant="outlined">Validation passed.</Alert>
+              )}
             </Stack>
           </Panel>
         </Grid>
         <Grid item md={4} xs={12}>
           <Panel title="Correction Panel">
-            <DataTable columns={['Stage', 'Outcome', 'Method']} rows={[
-              ['SQL Correction', response.validation_status === 'valid' ? 'No correction required' : 'Corrected generated SQL', 'Mock rules engine'],
-              ['Cache Influence', response.cache_hit ? 'Reused semantic match' : 'Generated fresh SQL', 'Semantic similarity'],
-              ['Generation Path', response.generation_mode === 'Rule' ? 'Rule fast path' : 'LLM fallback', response.generation_mode === 'Rule' ? 'Rules engine' : 'Ollama'],
-              ['Final SQL', response.validation_status === 'valid' ? 'Ready for execution' : 'Needs review', 'Validator']
-            ]} />
+            {response.corrected_sql ? (
+              <Stack spacing={1.25}>
+                <Typography color="text.secondary" variant="caption">Original SQL</Typography>
+                <CodeBlock code={response.generated_sql} />
+                <Typography color="text.secondary" textAlign="center" variant="body2">↓</Typography>
+                <Typography color="text.secondary" variant="caption">Corrected SQL</Typography>
+                <CodeBlock code={response.corrected_sql} />
+              </Stack>
+            ) : (
+              <Alert severity="info" variant="outlined">No SQL correction was applied.</Alert>
+            )}
           </Panel>
         </Grid>
         <Grid item md={4} xs={12}>
-          <Panel title="Execution Plan Viewer">
-            <CodeBlock dark code={`id | select_type | table     | type  | rows | Extra\n1  | SIMPLE      | employees | range | ${response.rows_returned.toString().padEnd(4, ' ')} | Using where; Using filesort`} />
+          <Panel title="Executed SQL">
+            {response.executed_sql ? (
+              <CodeBlock dark code={response.executed_sql} />
+            ) : (
+              <Alert severity="warning" variant="outlined">Execution skipped due to validation failure.</Alert>
+            )}
           </Panel>
         </Grid>
         <Grid item xs={12}>

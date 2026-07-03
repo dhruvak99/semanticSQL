@@ -1,7 +1,8 @@
 import logging
 import time
+from datetime import UTC, datetime
 
-from app.schemas.query import QueryProcessResponse
+from app.schemas.query import QueryProcessResponse, SQLValidationPayload
 from app.services.database_service import DatabaseServiceError, execute_query
 from app.services.llm_sql_generation_service import SCHEMA_MISMATCH, generate_sql as generate_sql_with_llm
 from app.services.query_history_service import create_history_record, normalize_generation_mode
@@ -45,6 +46,9 @@ def process_semantic_query(query: str) -> QueryProcessResponse:
         response = QueryProcessResponse(
             generation_mode=generation_mode,
             generated_sql=str(cached_payload["generated_sql"]),
+            corrected_sql=_optional_string(cached_payload.get("corrected_sql")),
+            executed_sql=_executed_sql_from_payload(cached_payload),
+            validation=_validation_from_payload(cached_payload),
             cache_hit=True,
             similarity_score=cache_result.similarity_score,
             validation_status=str(cached_payload["validation_status"]),
@@ -92,6 +96,9 @@ def process_semantic_query(query: str) -> QueryProcessResponse:
         response = QueryProcessResponse(
             generation_mode=generation_mode,
             generated_sql=generated_sql,
+            corrected_sql=None,
+            executed_sql=None,
+            validation=SQLValidationPayload(valid=False, errors=validation_errors),
             cache_hit=False,
             similarity_score=cache_result.similarity_score,
             validation_status="invalid",
@@ -115,7 +122,13 @@ def process_semantic_query(query: str) -> QueryProcessResponse:
 
     if not validation_result.valid:
         execution_time = round(time.perf_counter() - start_time, 4)
-        logger.info("Validation Errors: %s", validation_result.errors)
+        _log_validation_failure(
+            natural_language_query=query,
+            generated_sql=generated_sql,
+            validation_errors=validation_result.errors,
+            corrected_sql=None,
+            executed_sql=None,
+        )
         logger.info("Timing: database execution skipped due to validation failure")
         logger.info("Execution Time: %.4f sec", execution_time)
         logger.info("Timing: total request %.4f sec", execution_time)
@@ -124,6 +137,9 @@ def process_semantic_query(query: str) -> QueryProcessResponse:
         response = QueryProcessResponse(
             generation_mode=generation_mode,
             generated_sql=generated_sql,
+            corrected_sql=None,
+            executed_sql=None,
+            validation=SQLValidationPayload(valid=False, errors=validation_result.errors),
             cache_hit=False,
             similarity_score=cache_result.similarity_score,
             validation_status=validation_status,
@@ -163,6 +179,9 @@ def process_semantic_query(query: str) -> QueryProcessResponse:
     response = QueryProcessResponse(
         generation_mode=generation_mode,
         generated_sql=generated_sql,
+        corrected_sql=None,
+        executed_sql=generated_sql,
+        validation=SQLValidationPayload(valid=True, errors=validation_result.errors),
         cache_hit=False,
         similarity_score=cache_result.similarity_score,
         validation_status=validation_status,
@@ -195,3 +214,50 @@ def _record_history(query: str, response: QueryProcessResponse) -> None:
 
 def _format_generation_mode(generation_mode: str) -> str:
     return normalize_generation_mode(generation_mode)
+
+
+def _validation_from_payload(payload: dict[str, object]) -> SQLValidationPayload:
+    validation_payload = payload.get("validation")
+    if isinstance(validation_payload, dict):
+        return SQLValidationPayload(
+            valid=bool(validation_payload.get("valid")),
+            errors=list(validation_payload.get("errors", [])),  # type: ignore[arg-type]
+        )
+
+    validation_errors = list(payload.get("validation_errors", []))  # type: ignore[arg-type]
+    return SQLValidationPayload(
+        valid=str(payload.get("validation_status", "")).lower() == "valid",
+        errors=validation_errors,
+    )
+
+
+def _optional_string(value: object) -> str | None:
+    return value if isinstance(value, str) else None
+
+
+def _executed_sql_from_payload(payload: dict[str, object]) -> str | None:
+    executed_sql = _optional_string(payload.get("executed_sql"))
+    if executed_sql is not None:
+        return executed_sql
+    if str(payload.get("validation_status", "")).lower() == "valid":
+        return _optional_string(payload.get("generated_sql"))
+    return None
+
+
+def _log_validation_failure(
+    natural_language_query: str,
+    generated_sql: str,
+    validation_errors: list[str],
+    corrected_sql: str | None,
+    executed_sql: str | None,
+) -> None:
+    logger.info(
+        "Validation failure debug event at %s | Natural Language Query: %s | "
+        "Generated SQL: %s | Validation Errors: %s | Corrected SQL: %s | Executed SQL: %s",
+        datetime.now(UTC).isoformat(),
+        natural_language_query,
+        generated_sql,
+        validation_errors,
+        corrected_sql,
+        executed_sql,
+    )

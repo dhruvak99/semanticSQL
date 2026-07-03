@@ -21,6 +21,7 @@ STOPWORDS = {
     "a",
     "above",
     "all",
+    "along",
     "an",
     "and",
     "are",
@@ -68,6 +69,7 @@ STOPWORDS = {
     "sum",
     "than",
     "the",
+    "their",
     "to",
     "top",
     "total",
@@ -101,12 +103,8 @@ def generate_sql(natural_language_query: str) -> LLMSQLGenerationResult:
 
     grounding_result = _ground_query_to_schema(natural_language_query, schema)
     if not grounding_result.valid:
-        total_generation_time = time.perf_counter() - total_start_time
         logger.info("Timing: LLM schema extraction %.4f sec", schema_extraction_time)
-        logger.info("LLM schema grounding failed: %s", grounding_result.reason)
-        logger.info("Generated LLM SQL: %s", SCHEMA_MISMATCH)
-        logger.info("Timing: LLM SQL generation total %.4f sec", total_generation_time)
-        return LLMSQLGenerationResult(sql=SCHEMA_MISMATCH)
+        logger.info("LLM schema grounding warning: %s", grounding_result.reason)
 
     prompt = build_prompt(
         schema_context,
@@ -163,18 +161,19 @@ def build_prompt(schema_context: str, natural_language_query: str, grounding_con
     resolved_context = f"\nResolved high-confidence schema matches:\n{grounding_context}\n" if grounding_context else ""
     return (
         "You are an expert SQL generation assistant.\n\n"
-        "Generate only valid SQLite SQL or return SCHEMA_MISMATCH.\n\n"
+        "Generate SQLite SQL for the user request.\n\n"
         "Rules:\n\n"
-        "* Return SQL only, or exactly SCHEMA_MISMATCH.\n"
+        "* Return SQL only.\n"
         "* Do not explain.\n"
         "* Do not use markdown.\n"
-        "* Use only tables and columns provided in the schema.\n"
-        "* Never invent tables.\n"
-        "* Never invent columns.\n\n"
+        "* Prefer tables and columns provided in the schema.\n"
+        "* Do not semantically substitute unknown requested entities with unrelated schema objects.\n"
+        "* If the request mentions a table or column that is not in the schema, keep the requested identifier in the SQL so validation can report the exact schema error.\n\n"
+        "* Do not derive unknown requested attributes from other columns. If the user asks for employee age, generate a reference to employees.age and let validation report whether age exists.\n"
+        "* If unresolved identifiers are listed below, use those identifiers literally in the SQL.\n\n"
         "* Minor spelling mistakes are allowed only when there is an obvious high-confidence schema match.\n"
         "* Semantic substitutions are forbidden. Do not map suppliers to products, customers to employees, or warehouses to projects.\n"
-        "* If a requested table, entity, or column is not present in the schema, return exactly SCHEMA_MISMATCH.\n"
-        "* If the request cannot be answered using only the provided schema, return exactly SCHEMA_MISMATCH.\n\n"
+        "* Preserve transparency: never replace generated SQL with a placeholder.\n\n"
         "Schema:\n"
         f"{schema_context}\n\n"
         f"{resolved_context}"
@@ -235,28 +234,21 @@ def _ground_query_to_schema(natural_language_query: str, schema: dict[str, dict[
     column_matches = _find_schema_matches(tokens, _column_terms(schema))
 
     if not table_matches and not column_matches:
+        unresolved_terms = _schema_like_tokens(tokens, table_matches, column_matches, set())
         return _GroundingResult(
             valid=False,
             query=natural_language_query,
-            context="",
+            context=_unresolved_context(unresolved_terms),
             reason="No requested table or column matched the active schema.",
         )
 
     value_tokens = _value_tokens(tokens)
-    unmatched_schema_like_tokens = [
-        token
-        for token in tokens
-        if token not in STOPWORDS
-        and not token.isnumeric()
-        and token not in table_matches
-        and token not in column_matches
-        and token not in value_tokens
-    ]
+    unmatched_schema_like_tokens = _schema_like_tokens(tokens, table_matches, column_matches, value_tokens)
     if unmatched_schema_like_tokens:
         return _GroundingResult(
             valid=False,
             query=natural_language_query,
-            context="",
+            context=_unresolved_context(unmatched_schema_like_tokens),
             reason=f"Unmatched schema terms: {', '.join(unmatched_schema_like_tokens)}",
         )
 
@@ -282,6 +274,29 @@ def _ground_query_to_schema(natural_language_query: str, schema: dict[str, dict[
 
 def _extract_tokens(query: str) -> list[str]:
     return re.findall(r"[a-zA-Z_][a-zA-Z0-9_]*", query)
+
+
+def _schema_like_tokens(
+    tokens: list[str],
+    table_matches: dict[str, str],
+    column_matches: dict[str, str],
+    value_tokens: set[str],
+) -> list[str]:
+    return [
+        token
+        for token in tokens
+        if token not in STOPWORDS
+        and not token.isnumeric()
+        and token not in table_matches
+        and token not in column_matches
+        and token not in value_tokens
+    ]
+
+
+def _unresolved_context(tokens: list[str]) -> str:
+    if not tokens:
+        return ""
+    return "Unresolved requested identifiers to preserve literally: " + ", ".join(tokens)
 
 
 def _find_schema_matches(tokens: list[str], terms: dict[str, str]) -> dict[str, str]:
