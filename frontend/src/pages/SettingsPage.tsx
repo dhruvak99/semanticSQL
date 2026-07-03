@@ -1,107 +1,204 @@
-import BackupIcon from '@mui/icons-material/Backup';
-import CloudDoneIcon from '@mui/icons-material/CloudDone';
-import KeyIcon from '@mui/icons-material/Key';
-import PeopleIcon from '@mui/icons-material/People';
-import SecurityIcon from '@mui/icons-material/Security';
-import StorageIcon from '@mui/icons-material/Storage';
-import { Button, Grid, MenuItem, Stack, Switch, TextField, Typography } from '@mui/material';
-import { DataTable, MetricProgress, Panel, StatCard, StatusBadge } from '../components/common/EnterpriseDashboard';
+import { useEffect, useState } from 'react';
+import DnsOutlinedIcon from '@mui/icons-material/DnsOutlined';
+import MemoryOutlinedIcon from '@mui/icons-material/MemoryOutlined';
+import PsychologyOutlinedIcon from '@mui/icons-material/PsychologyOutlined';
+import TuneOutlinedIcon from '@mui/icons-material/TuneOutlined';
+import {
+  Alert,
+  Button,
+  CircularProgress,
+  Grid,
+  Snackbar,
+  Stack,
+  TextField,
+  Typography
+} from '@mui/material';
+import {
+  getRuntimeSettings,
+  type RuntimeSettings,
+  updateCacheThreshold
+} from '../api/settings';
+import { DataTable, Panel, StatCard, StatusBadge } from '../components/common/EnterpriseDashboard';
 import { PageHeader } from '../components/common/PageHeader';
 
 export function SettingsPage() {
+  const [runtimeSettings, setRuntimeSettings] = useState<RuntimeSettings | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isSavingThreshold, setIsSavingThreshold] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [thresholdInput, setThresholdInput] = useState('');
+  const [notification, setNotification] = useState<{ message: string; severity: 'success' | 'error' } | null>(null);
+
+  async function loadSettings(signal?: AbortSignal) {
+    try {
+      setIsLoading(true);
+      setError(null);
+      const settings = await getRuntimeSettings(signal);
+      setRuntimeSettings(settings);
+      setThresholdInput(settings.similarity_threshold.toFixed(2));
+    } catch (caughtError) {
+      if (!signal?.aborted) {
+        setError(caughtError instanceof Error ? caughtError.message : 'Unable to load runtime configuration.');
+      }
+    } finally {
+      if (!signal?.aborted) {
+        setIsLoading(false);
+      }
+    }
+  }
+
+  useEffect(() => {
+    const abortController = new AbortController();
+    void loadSettings(abortController.signal);
+    return () => abortController.abort();
+  }, []);
+
+  async function handleSaveThreshold() {
+    const threshold = Number(thresholdInput);
+    if (!Number.isFinite(threshold) || threshold < 0 || threshold > 1) {
+      setNotification({ message: 'Similarity threshold must be between 0.00 and 1.00.', severity: 'error' });
+      return;
+    }
+
+    setIsSavingThreshold(true);
+    try {
+      const response = await updateCacheThreshold(threshold);
+      setNotification({ message: response.message, severity: 'success' });
+      await loadSettings();
+    } catch (caughtError) {
+      setNotification({
+        message: caughtError instanceof Error ? caughtError.message : 'Unable to update similarity threshold.',
+        severity: 'error'
+      });
+    } finally {
+      setIsSavingThreshold(false);
+    }
+  }
+
   return (
     <>
-      <PageHeader title="Settings & Administration" description="Manage user settings, database connections, cache behavior, security controls, and system preferences." />
-      <Stack direction="row" spacing={1.5} sx={{ justifyContent: 'flex-end', mb: 2 }}>
-        <Button variant="outlined">System Status</Button>
-        <Button>Save Changes</Button>
-      </Stack>
-      <Grid container spacing={2.5}>
-        {[
-          { label: 'System Status', value: 'Healthy', icon: SecurityIcon, helper: 'All systems operational', tone: 'green' },
-          { label: 'Users', value: '23', icon: PeopleIcon, helper: 'Active users', tone: 'purple' },
-          { label: 'Databases', value: '3', icon: StorageIcon, helper: 'Configured', tone: 'blue' },
-          { label: 'API Keys', value: '7', icon: KeyIcon, helper: 'Active keys', tone: 'orange' },
-          { label: 'Backup Status', value: 'Success', icon: BackupIcon, helper: 'Last backup: 02:30 AM', tone: 'green' },
-          { label: 'License', value: 'Enterprise', icon: CloudDoneIcon, helper: 'Valid until Dec 31, 2024', tone: 'purple' }
-        ].map((stat) => (
-          <Grid item key={stat.label} md={2} sm={6} xs={12}>
-            <StatCard {...stat} tone={stat.tone as never} />
+      <PageHeader
+        title="SemanticSQL Configuration"
+        description="Inspect the runtime configuration and service availability currently used by SemanticSQL."
+      />
+
+      {error ? (
+        <Alert
+          action={<Button color="inherit" onClick={() => void loadSettings()} size="small">Retry</Button>}
+          severity="error"
+          sx={{ mb: 2 }}
+        >
+          {error}
+        </Alert>
+      ) : null}
+
+      {isLoading ? (
+        <Stack spacing={2} sx={{ alignItems: 'center', py: 6 }}>
+          <CircularProgress size={28} />
+          <Typography color="text.secondary" variant="body2">Loading runtime configuration...</Typography>
+        </Stack>
+      ) : runtimeSettings ? (
+        <Grid container spacing={2.5}>
+          {[
+            { label: 'Active LLM Model', value: runtimeSettings.active_llm_model, icon: PsychologyOutlinedIcon, helper: 'Runtime SQL generation model', tone: 'green' },
+            { label: 'Embedding Model', value: runtimeSettings.embedding_model, icon: MemoryOutlinedIcon, helper: 'Semantic cache embeddings', tone: 'purple' },
+            { label: 'Cache Backend', value: runtimeSettings.cache_backend, icon: DnsOutlinedIcon, helper: runtimeSettings.redis_available ? 'Redis connected' : 'Redis unavailable', tone: runtimeSettings.redis_available ? 'blue' : 'orange' },
+            { label: 'Similarity Threshold', value: runtimeSettings.similarity_threshold.toFixed(2), icon: TuneOutlinedIcon, helper: 'Current cache match threshold', tone: 'orange' }
+          ].map((stat) => (
+            <Grid item key={stat.label} md={3} sm={6} xs={12}>
+              <StatCard {...stat} tone={stat.tone as never} />
+            </Grid>
+          ))}
+
+          <Grid item md={6} xs={12}>
+            <Panel title="Infrastructure Configuration">
+              <DataTable
+                columns={['Setting', 'Runtime Value']}
+                rows={[
+                  ['Redis URL', <CodeValue key="redis-url" value={runtimeSettings.redis_url} />],
+                  ['Ollama URL', <CodeValue key="ollama-url" value={runtimeSettings.ollama_url} />],
+                  ['Database Engine', runtimeSettings.database_engine],
+                  ['Database URL', <CodeValue key="database-url" value={runtimeSettings.database_url} />]
+                ]}
+              />
+            </Panel>
           </Grid>
-        ))}
-        <Grid item md={4} xs={12}>
-          <Panel title="User Settings">
-            <DataTable columns={['User', 'Role', 'Status', 'Last Login']} rows={[
-              ['admin@semanticsql.com', 'Administrator', <StatusBadge label="Active" />, 'May 21, 11:23 AM'],
-              ['analyst@semanticsql.com', 'Analyst', <StatusBadge label="Active" />, 'May 21, 10:45 AM'],
-              ['developer@semanticsql.com', 'Developer', <StatusBadge label="Active" />, 'May 21, 09:12 AM'],
-              ['readonly@semanticsql.com', 'Viewer', <StatusBadge label="Inactive" tone="gray" />, 'May 18, 11:02 AM']
-            ]} />
-            <Button sx={{ mt: 2 }} variant="outlined">Add New User</Button>
-          </Panel>
-        </Grid>
-        <Grid item md={4} xs={12}>
-          <Panel title="Database Settings">
-            <DataTable columns={['Connection', 'Type', 'Host', 'Status']} rows={[
-              ['MySQL - Main DB', 'MySQL 8.0', '192.168.1.101:3306', <StatusBadge label="Connected" />],
-              ['Analytics DB', 'MySQL 8.0', '192.168.1.102:3306', <StatusBadge label="Connected" />],
-              ['Reporting DB', 'MySQL 8.0', '192.168.1.103:3306', <StatusBadge label="Connected" />]
-            ]} />
-            <Button sx={{ mt: 2 }} variant="outlined">Add Connection</Button>
-          </Panel>
-        </Grid>
-        <Grid item md={4} xs={12}>
-          <Panel title="Security Settings">
-            <DataTable columns={['Key', 'Preview', 'Permissions', 'Status']} rows={[
-              ['Production Key', 'sk_live_••••••••', 'Full Access', <StatusBadge label="Active" />],
-              ['Development Key', 'sk_dev_••••••••', 'Full Access', <StatusBadge label="Active" />],
-              ['Read Only Key', 'sk_ro_••••••••', 'Read Only', <StatusBadge label="Active" />]
-            ]} />
-            <Button sx={{ mt: 2 }} variant="outlined">Generate New Key</Button>
-          </Panel>
-        </Grid>
-        <Grid item md={3.2} xs={12}>
-          <Panel title="Cache Settings">
-            <Stack spacing={1.5}>
-              <TextField defaultValue="127.0.0.1" label="Redis Host" size="small" />
-              <TextField defaultValue="6379" label="Redis Port" size="small" />
-              <TextField defaultValue="3600" label="Default TTL (seconds)" size="small" />
-              <MetricProgress label="Max Memory" value={64} detail="2 GB allocated" tone="blue" />
-              <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between' }}><Typography variant="body2">Enable Compression</Typography><Switch defaultChecked /></Stack>
-            </Stack>
-          </Panel>
-        </Grid>
-        <Grid item md={3.2} xs={12}>
-          <Panel title="Backup & Restore">
-            <Stack spacing={1.5}>
-              <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between' }}><Typography variant="body2">Automatic Backup</Typography><Switch defaultChecked /></Stack>
-              <TextField defaultValue="Daily" label="Backup Frequency" select size="small"><MenuItem value="Daily">Daily</MenuItem></TextField>
-              <TextField defaultValue="30" label="Retention Period" size="small" />
-              <Button variant="outlined">Run Backup Now</Button>
-              <Button variant="outlined">Restore from Backup</Button>
-            </Stack>
-          </Panel>
-        </Grid>
-        <Grid item md={2.8} xs={12}>
-          <Panel title="Notification Settings">
-            {['System Alerts', 'Error Notifications', 'Query Failures', 'Performance Alerts', 'Daily Reports'].map((label, index) => (
-              <Stack direction="row" key={label} sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
-                <Typography variant="body2">{label}</Typography>
-                <Switch checked={index < 4} size="small" />
+
+          <Grid item md={6} xs={12}>
+            <Panel title="Environment Information">
+              <DataTable
+                columns={['Setting', 'Runtime Value']}
+                rows={[
+                  ['SemanticSQL Version', runtimeSettings.semantic_sql_version],
+                  ['Python Version', runtimeSettings.python_version],
+                  ['Operating System', runtimeSettings.operating_system],
+                  ['Redis Status', <ServiceStatus key="redis-status" available={runtimeSettings.redis_available} />],
+                  ['Ollama Status', <ServiceStatus key="ollama-status" available={runtimeSettings.ollama_available} />]
+                ]}
+              />
+            </Panel>
+          </Grid>
+
+          <Grid item xs={12}>
+            <Panel
+              title="Cache Configuration"
+              subtitle="Changes apply immediately to this backend session and reset on restart."
+            >
+              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5} sx={{ alignItems: { sm: 'flex-end' }, maxWidth: 440 }}>
+                <TextField
+                  fullWidth
+                  inputProps={{ max: 1, min: 0, step: 0.01 }}
+                  label="Similarity Threshold"
+                  onChange={(event) => setThresholdInput(event.target.value)}
+                  size="small"
+                  type="number"
+                  value={thresholdInput}
+                />
+                <Button
+                  disabled={isSavingThreshold || thresholdInput === ''}
+                  onClick={() => void handleSaveThreshold()}
+                  sx={{ whiteSpace: 'nowrap' }}
+                  variant="contained"
+                >
+                  {isSavingThreshold ? <CircularProgress color="inherit" size={18} /> : 'Save Threshold'}
+                </Button>
               </Stack>
-            ))}
-          </Panel>
+            </Panel>
+          </Grid>
         </Grid>
-        <Grid item md={2.8} xs={12}>
-          <Panel title="System Actions">
-            <Stack spacing={1}>
-              {['Clear All Caches', 'Rebuild Embeddings', 'Database Health Check', 'Optimize Database', 'Restart Services'].map((action, index) => (
-                <Button color={index === 4 ? 'error' : 'primary'} key={action} variant="outlined">{action}</Button>
-              ))}
-            </Stack>
-          </Panel>
-        </Grid>
-      </Grid>
+      ) : (
+        <Alert severity="info">No runtime configuration is available.</Alert>
+      )}
+
+      <Snackbar
+        anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+        autoHideDuration={4000}
+        onClose={() => setNotification(null)}
+        open={notification !== null}
+      >
+        {notification ? (
+          <Alert onClose={() => setNotification(null)} severity={notification.severity} variant="filled">
+            {notification.message}
+          </Alert>
+        ) : undefined}
+      </Snackbar>
     </>
+  );
+}
+
+function ServiceStatus({ available }: { available: boolean }) {
+  return <StatusBadge label={available ? 'Connected' : 'Unavailable'} tone={available ? 'green' : 'red'} />;
+}
+
+function CodeValue({ value }: { value: string }) {
+  return (
+    <Typography
+      component="span"
+      fontFamily="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace"
+      sx={{ overflowWrap: 'anywhere' }}
+      variant="body2"
+    >
+      {value}
+    </Typography>
   );
 }

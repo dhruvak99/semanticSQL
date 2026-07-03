@@ -1,74 +1,153 @@
+import { useEffect, useMemo, useState } from 'react';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import QueryStatsIcon from '@mui/icons-material/QueryStats';
 import SpeedIcon from '@mui/icons-material/Speed';
 import StorageIcon from '@mui/icons-material/Storage';
-import TimerIcon from '@mui/icons-material/Timer';
-import { Button, Grid } from '@mui/material';
-import { BarChart, DataTable, DonutChart, Heatmap, LineChart, Panel, StatCard, StatusBadge } from '../components/common/EnterpriseDashboard';
+import WarningAmberIcon from '@mui/icons-material/WarningAmber';
+import { Alert, CircularProgress, Grid, Typography } from '@mui/material';
+import { getQueryAnalytics, type QueryAnalyticsResponse } from '../api/history';
+import { DataTable, DonutChart, LineChart, Panel, StatCard, StatusBadge } from '../components/common/EnterpriseDashboard';
 import { PageHeader } from '../components/common/PageHeader';
 
+const emptyAnalytics: QueryAnalyticsResponse = {
+  total_queries: 0,
+  successful_queries: 0,
+  failed_queries: 0,
+  cache_hits: 0,
+  cache_misses: 0,
+  cache_hit_rate: 0,
+  average_execution_time: 0,
+  rule_generation_count: 0,
+  llm_generation_count: 0,
+  schema_mismatch_count: 0,
+  volume_trend: [],
+  recent_queries: []
+};
+
 export function QueryAnalyticsPage() {
+  const [analytics, setAnalytics] = useState<QueryAnalyticsResponse>(emptyAnalytics);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    async function loadAnalytics() {
+      try {
+        setIsLoading(true);
+        setError(null);
+        setAnalytics(await getQueryAnalytics());
+      } catch (caughtError) {
+        setError(caughtError instanceof Error ? caughtError.message : 'Failed to load query analytics');
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    void loadAnalytics();
+  }, []);
+
+  const hasHistory = analytics.total_queries > 0;
+  const volumeData = analytics.volume_trend.map((point) => point.count);
+  const volumeLabels = analytics.volume_trend.map((point) => formatDateLabel(point.date));
+  const recentRows = useMemo(() => analytics.recent_queries.map((record) => [
+    record.natural_language_query,
+    record.generation_mode,
+    <StatusBadge label={record.validation_status} tone={record.validation_status.toLowerCase() === 'valid' ? 'green' : 'red'} />,
+    <StatusBadge label={record.cache_status} tone={record.cache_status.toLowerCase() === 'hit' ? 'green' : 'red'} />,
+    `${record.execution_time.toFixed(3)} sec`,
+    formatTimestamp(record.created_at)
+  ]), [analytics.recent_queries]);
+
   return (
     <>
-      <PageHeader title="Query Analytics" description="Analyze query performance, volume trends, query types, slow queries, and workload hotspots." />
+      <PageHeader title="Query Analytics" description="Analyze real query outcomes, cache behavior, generation modes, and recent execution history." />
+      {error ? (
+        <Alert severity="error" sx={{ mb: 2 }}>
+          {error}
+        </Alert>
+      ) : null}
       <Grid container spacing={2.5}>
         {[
-          { label: 'Total Queries', value: '1,245', icon: QueryStatsIcon, trend: '18.4% vs last 7 days', tone: 'blue' },
-          { label: 'Avg Execution Time', value: '0.421 sec', icon: SpeedIcon, trend: '23.1% faster', tone: 'blue' },
-          { label: '90th Percentile', value: '1.842 sec', icon: TimerIcon, trend: '19.7% faster', tone: 'purple' },
-          { label: 'Slow Queries', value: '24', icon: ErrorOutlineIcon, trend: '14.3% vs last 7 days', trendDirection: 'down', tone: 'red' },
-          { label: 'Rows Returned', value: '125.8K', icon: StorageIcon, trend: '22.6% vs last 7 days', tone: 'green' },
-          { label: 'Errors', value: '18', icon: ErrorOutlineIcon, trend: '5.9% vs last 7 days', trendDirection: 'down', tone: 'red' }
+          { label: 'Total Queries', value: analytics.total_queries.toLocaleString(), icon: QueryStatsIcon, trend: 'From query history', tone: 'blue' },
+          { label: 'Successful Queries', value: analytics.successful_queries.toLocaleString(), icon: CheckCircleOutlineIcon, trend: 'Validation status: valid', tone: 'green' },
+          { label: 'Failed Queries', value: analytics.failed_queries.toLocaleString(), icon: ErrorOutlineIcon, trend: 'Validation status: invalid', trendDirection: 'down', tone: 'red' },
+          { label: 'Cache Hit Rate', value: `${analytics.cache_hit_rate.toFixed(1)}%`, icon: StorageIcon, trend: `${analytics.cache_hits} hits / ${analytics.cache_misses} misses`, tone: 'purple' },
+          { label: 'Avg Execution Time', value: `${analytics.average_execution_time.toFixed(3)} sec`, icon: SpeedIcon, trend: 'Across history', tone: 'orange' },
+          { label: 'Schema Mismatches', value: analytics.schema_mismatch_count.toLocaleString(), icon: WarningAmberIcon, trend: 'SCHEMA_MISMATCH results', trendDirection: 'down', tone: 'red' }
         ].map((stat) => (
           <Grid item key={stat.label} md={2} sm={6} xs={12}>
             <StatCard {...stat} tone={stat.tone as never} trendDirection={stat.trendDirection as never} />
           </Grid>
         ))}
-        <Grid item md={5} xs={12}>
-          <Panel action={<Button variant="outlined">Daily</Button>} title="Query Volume Trends">
-            <LineChart color="#7c3aed" data={[184, 312, 302, 312, 502, 366, 536]} labels={['May 15', 'May 16', 'May 17', 'May 18', 'May 19', 'May 20', 'May 21']} />
+
+        <Grid item md={3} xs={12}>
+          <Panel title="Success vs Failure">
+            {isLoading ? <CircularProgress size={22} /> : hasHistory ? (
+              <DonutChart centerLabel={analytics.total_queries.toString()} segments={[
+                { label: 'Success', value: percent(analytics.successful_queries, analytics.total_queries), color: '#16a34a' },
+                { label: 'Failure', value: percent(analytics.failed_queries, analytics.total_queries), color: '#ef4444' }
+              ]} />
+            ) : <EmptyState />}
           </Panel>
         </Grid>
-        <Grid item md={3.5} xs={12}>
-          <Panel title="Query Type Distribution">
-            <DonutChart segments={[{ label: 'SELECT', value: 72.1, color: '#2563eb' }, { label: 'INSERT', value: 10.3, color: '#16a34a' }, { label: 'UPDATE', value: 8.7, color: '#f59e0b' }, { label: 'DELETE', value: 5.4, color: '#7c3aed' }, { label: 'DDL', value: 3.5, color: '#94a3b8' }]} />
+        <Grid item md={3} xs={12}>
+          <Panel title="Cache Hit vs Miss">
+            {isLoading ? <CircularProgress size={22} /> : hasHistory ? (
+              <DonutChart centerLabel={analytics.total_queries.toString()} segments={[
+                { label: 'Hit', value: percent(analytics.cache_hits, analytics.total_queries), color: '#2563eb' },
+                { label: 'Miss', value: percent(analytics.cache_misses, analytics.total_queries), color: '#f59e0b' }
+              ]} />
+            ) : <EmptyState />}
           </Panel>
         </Grid>
-        <Grid item md={3.5} xs={12}>
-          <Panel title="Execution Time Distribution">
-            <DonutChart segments={[{ label: '<= 100ms', value: 31.2, color: '#16a34a' }, { label: '100-500ms', value: 41.7, color: '#2563eb' }, { label: '500ms-1s', value: 15.8, color: '#f59e0b' }, { label: '1s-2s', value: 7.6, color: '#7c3aed' }, { label: '> 2s', value: 3.7, color: '#ef4444' }]} />
+        <Grid item md={3} xs={12}>
+          <Panel title="Rule vs LLM Generation">
+            {isLoading ? <CircularProgress size={22} /> : hasHistory ? (
+              <DonutChart centerLabel={analytics.total_queries.toString()} segments={[
+                { label: 'Rule', value: percent(analytics.rule_generation_count, analytics.total_queries), color: '#0891b2' },
+                { label: 'LLM', value: percent(analytics.llm_generation_count, analytics.total_queries), color: '#7c3aed' }
+              ]} />
+            ) : <EmptyState />}
           </Panel>
         </Grid>
-        <Grid item md={3.5} xs={12}>
-          <Panel title="Most Queried Tables">
-            <DataTable columns={['#', 'Table', 'Count', '%']} rows={[['1', 'employees', '523', '28.4%'], ['2', 'departments', '312', '16.9%'], ['3', 'salaries', '198', '10.8%'], ['4', 'projects', '156', '8.5%']]} />
+        <Grid item md={3} xs={12}>
+          <Panel title="Query Volume Over Time">
+            {isLoading ? <CircularProgress size={22} /> : volumeData.length > 0 ? (
+              <LineChart color="#7c3aed" data={volumeData} labels={volumeLabels} />
+            ) : <EmptyState />}
           </Panel>
         </Grid>
-        <Grid item md={4} xs={12}>
-          <Panel title="Average Execution Time by Query Type">
-            <BarChart data={[{ label: 'SELECT', value: 0.432, color: '#7c3aed' }, { label: 'INSERT', value: 0.312, color: '#16a34a' }, { label: 'UPDATE', value: 0.584, color: '#f59e0b' }, { label: 'DELETE', value: 0.671, color: '#7c3aed' }, { label: 'DDL', value: 1.231, color: '#94a3b8' }]} max={1.5} />
-          </Panel>
-        </Grid>
-        <Grid item md={4.5} xs={12}>
-          <Panel title="Slow Query Analysis">
-            <DataTable columns={['#', 'Query Preview', 'Execution Time', 'Count']} rows={[
-              ['1', 'SELECT * FROM employees e JOIN salaries s ...', <StatusBadge label="4.812 sec" tone="red" />, '23'],
-              ['2', 'SELECT d.name, AVG(s.salary) FROM ...', <StatusBadge label="3.245 sec" tone="red" />, '17'],
-              ['3', 'SELECT * FROM projects p LEFT JOIN ...', <StatusBadge label="2.983 sec" tone="orange" />, '15']
-            ]} />
-          </Panel>
-        </Grid>
-        <Grid item md={6} xs={12}>
-          <Panel title="Query Trends (7-Day Moving Average)">
-            <LineChart color="#7c3aed" data={[238, 324, 351, 374, 421, 401, 482]} secondaryColor="#16a34a" secondaryData={[198, 256, 268, 292, 342, 322, 398]} />
-          </Panel>
-        </Grid>
-        <Grid item md={6} xs={12}>
-          <Panel title="Query Heatmap by Hour of Day">
-            <Heatmap columns={['12A', '3A', '6A', '9A', '12P', '3P', '6P', '9P']} rows={['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']} />
+
+        <Grid item xs={12}>
+          <Panel title="Recent Queries">
+            {isLoading ? <CircularProgress size={22} /> : (
+              <DataTable columns={['Natural Language Query', 'Generation Mode', 'Validation Status', 'Cache Status', 'Execution Time', 'Timestamp']} rows={recentRows.length > 0 ? recentRows : [['No query history records yet', '-', '-', '-', '-', '-']]} />
+            )}
           </Panel>
         </Grid>
       </Grid>
     </>
+  );
+}
+
+function percent(value: number, total: number) {
+  return total > 0 ? Number(((value / total) * 100).toFixed(1)) : 0;
+}
+
+function formatDateLabel(value: string) {
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? value : date.toLocaleDateString([], { month: 'short', day: 'numeric' });
+}
+
+function formatTimestamp(value: string) {
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? '-' : date.toLocaleString([], { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+}
+
+function EmptyState() {
+  return (
+    <Typography color="text.secondary" variant="body2">
+      No query history records available yet.
+    </Typography>
   );
 }

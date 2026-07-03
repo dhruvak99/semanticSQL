@@ -9,6 +9,7 @@ from app.schemas.query import (
 from app.services.database_service import DatabaseErrorCode, DatabaseServiceError
 from app.services.llm_sql_generation_service import LLMSQLGenerationError, generate_sql
 from app.services.query_pipeline import process_semantic_query
+from app.services.query_history_service import normalize_generation_mode
 
 router = APIRouter()
 
@@ -48,5 +49,5 @@ def generate_query_with_llm(payload: LLMSQLGenerateRequest) -> LLMSQLGenerateRes
 
     return LLMSQLGenerateResponse(
         generated_sql=generation_result.sql,
-        generation_mode=generation_result.generation_mode,
+        generation_mode=normalize_generation_mode(generation_result.generation_mode),
     )

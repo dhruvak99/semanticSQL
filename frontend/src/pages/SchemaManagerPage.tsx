@@ -1,74 +1,132 @@
-import AccountTreeIcon from '@mui/icons-material/AccountTree';
-import CodeIcon from '@mui/icons-material/Code';
-import HistoryIcon from '@mui/icons-material/History';
-import RestoreIcon from '@mui/icons-material/Restore';
-import SchemaIcon from '@mui/icons-material/Schema';
+import { useEffect, useMemo, useState } from 'react';
+import KeyIcon from '@mui/icons-material/Key';
+import SearchIcon from '@mui/icons-material/Search';
 import TableChartIcon from '@mui/icons-material/TableChart';
-import { Button, Grid, List, ListItemButton, ListItemText, Stack, TextField, Typography } from '@mui/material';
-import { CodeBlock, DataTable, Panel, StatCard, StatusBadge } from '../components/common/EnterpriseDashboard';
+import ViewColumnIcon from '@mui/icons-material/ViewColumn';
+import { Alert, Button, CircularProgress, Grid, InputAdornment, Stack, TextField, Typography } from '@mui/material';
+import { getDatabaseSchema, type DatabaseSchemaResponse, type SchemaTable } from '../api/schema';
+import { DataTable, Panel, StatCard, StatusBadge } from '../components/common/EnterpriseDashboard';
 import { PageHeader } from '../components/common/PageHeader';
 
+const emptySchema: DatabaseSchemaResponse = {
+  table_count: 0,
+  column_count: 0,
+  tables: []
+};
+
 export function SchemaManagerPage() {
+  const [schema, setSchema] = useState<DatabaseSchemaResponse>(emptySchema);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedTableName, setSelectedTableName] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    async function loadSchema() {
+      try {
+        setIsLoading(true);
+        setError(null);
+        const response = await getDatabaseSchema();
+        setSchema(response);
+        setSelectedTableName((current) => current ?? response.tables[0]?.name ?? null);
+      } catch (caughtError) {
+        setError(caughtError instanceof Error ? caughtError.message : 'Failed to load database schema');
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    void loadSchema();
+  }, []);
+
+  const filteredTables = useMemo(() => {
+    const normalizedSearchTerm = searchTerm.trim().toLowerCase();
+    if (!normalizedSearchTerm) {
+      return schema.tables;
+    }
+
+    return schema.tables.filter((table) => table.name.toLowerCase().includes(normalizedSearchTerm));
+  }, [schema.tables, searchTerm]);
+
+  const selectedTable = schema.tables.find((table) => table.name === selectedTableName) ?? filteredTables[0];
+
   return (
     <>
-      <PageHeader title="Schema Manager" description="Manage database objects, DDL history, schema version tracking, changes, and rollback workflows." />
+      <PageHeader title="Schema Manager" description="Browse the active SQLite tables, columns, data types, and primary keys." />
+      {error ? (
+        <Alert severity="error" sx={{ mb: 2 }}>
+          {error}
+        </Alert>
+      ) : null}
       <Grid container spacing={2.5}>
-        {[
-          { label: 'Total Tables', value: '24', icon: TableChartIcon, trend: '2 vs last 30 days', tone: 'blue' },
-          { label: 'Views', value: '12', icon: SchemaIcon, trend: '1 vs last 30 days', tone: 'cyan' },
-          { label: 'Stored Procedures', value: '8', icon: CodeIcon, helper: 'No change', tone: 'orange' },
-          { label: 'Schema Version', value: 'v1.24.0', icon: AccountTreeIcon, helper: 'Current version', tone: 'purple' },
-          { label: 'Last Updated', value: 'May 21', icon: HistoryIcon, helper: '11:24 AM', tone: 'green' }
-        ].map((stat) => (
-          <Grid item key={stat.label} md={2.4} sm={6} xs={12}>
-            <StatCard {...stat} tone={stat.tone as never} />
-          </Grid>
-        ))}
-        <Grid item md={2.4} xs={12}>
-          <Panel title="Database Objects">
-            <TextField fullWidth placeholder="Search objects..." size="small" sx={{ mb: 2 }} />
-            <List dense>
-              {['employees', 'departments', 'salaries', 'projects', 'attendance', 'users'].map((item, index) => (
-                <ListItemButton key={item} selected={index === 0} sx={{ borderRadius: 1 }}>
-                  <ListItemText primary={item} secondary={index === 0 ? 'Tables (24)' : 'Database object'} />
-                </ListItemButton>
-              ))}
-            </List>
+        <Grid item md={3} sm={6} xs={12}>
+          <StatCard icon={TableChartIcon} label="Total Tables" tone="blue" trend="Active SQLite schema" value={schema.table_count.toLocaleString()} />
+        </Grid>
+        <Grid item md={3} sm={6} xs={12}>
+          <StatCard icon={ViewColumnIcon} label="Total Columns" tone="green" trend="Across all tables" value={schema.column_count.toLocaleString()} />
+        </Grid>
+
+        <Grid item xs={12}>
+          <Panel title="Database Tables">
+            <TextField
+              fullWidth
+              InputProps={{ startAdornment: <InputAdornment position="start"><SearchIcon /></InputAdornment> }}
+              onChange={(event) => setSearchTerm(event.target.value)}
+              placeholder="Search tables..."
+              size="small"
+              sx={{ mb: 2, maxWidth: 420 }}
+              value={searchTerm}
+            />
+            {isLoading ? <CircularProgress size={22} /> : filteredTables.length > 0 ? (
+              <DataTable
+                columns={['Table Name', 'Column Count']}
+                rows={filteredTables.map((table) => [
+                  <Button key={table.name} onClick={() => setSelectedTableName(table.name)} sx={{ justifyContent: 'flex-start', px: 0 }} variant="text">
+                    {table.name}
+                  </Button>,
+                  table.column_count
+                ])}
+              />
+            ) : (
+              <EmptyState message={schema.table_count === 0 ? 'No SQLite tables found.' : 'No tables match your search.'} />
+            )}
           </Panel>
         </Grid>
-        <Grid item md={6.2} xs={12}>
-          <Stack spacing={2.5}>
-            <Panel action={<Button variant="outlined">Edit Table</Button>} title="Schema Changes">
-              <Typography fontWeight={800} sx={{ mb: 1 }}>Table: employees</Typography>
-              <DataTable columns={['#', 'Column Name', 'Data Type', 'Nullable', 'Key', 'Default', 'Comment']} rows={[
-                ['1', 'employee_id', 'INT', 'NO', <StatusBadge label="PRI" tone="blue" />, 'NULL', 'Employee ID'],
-                ['2', 'department_id', 'INT', 'YES', <StatusBadge label="MUL" tone="purple" />, 'NULL', 'Department ID'],
-                ['3', 'name', 'VARCHAR(100)', 'NO', '', 'NULL', 'Employee Name'],
-                ['4', 'email', 'VARCHAR(150)', 'YES', <StatusBadge label="UNI" tone="orange" />, 'NULL', 'Email Address'],
-                ['5', 'salary', 'DECIMAL(12,2)', 'YES', '', 'NULL', 'Salary Amount']
-              ]} />
-            </Panel>
-            <Panel title="DDL History">
-              <DataTable columns={['Action', 'Object', 'Type', 'User', 'Time', 'Status']} rows={[
-                ['ALTER TABLE', 'employees', 'TABLE', 'Admin', 'May 21, 11:24 AM', <StatusBadge label="Success" />],
-                ['CREATE VIEW', 'vw_salary_analytics', 'VIEW', 'Admin', 'May 21, 10:15 AM', <StatusBadge label="Success" />],
-                ['DROP INDEX', 'idx_old_salary', 'INDEX', 'Admin', 'May 20, 02:11 PM', <StatusBadge label="Success" />]
-              ]} />
-            </Panel>
-          </Stack>
-        </Grid>
-        <Grid item md={3.4} xs={12}>
-          <Stack spacing={2.5}>
-            <Panel action={<Button startIcon={<CodeIcon />}>Generate DDL</Button>} title="Rollback Panel">
-              <CodeBlock code={`CREATE TABLE employees (\n  employee_id INT NOT NULL AUTO_INCREMENT,\n  department_id INT,\n  name VARCHAR(100) NOT NULL,\n  email VARCHAR(150) UNIQUE,\n  salary DECIMAL(12,2),\n  PRIMARY KEY (employee_id)\n);`} />
-              <Button fullWidth startIcon={<RestoreIcon />} sx={{ mt: 2 }} variant="outlined">Rollback to v1.23.0</Button>
-            </Panel>
-            <Panel title="Version Tracking">
-              <DataTable columns={['Version', 'Time', 'Status']} rows={[['v1.24.0', 'May 21, 11:24 AM', <StatusBadge label="Current" />], ['v1.23.0', 'May 20, 04:32 PM', <StatusBadge label="Stable" tone="blue" />], ['v1.22.0', 'May 19, 11:09 AM', <StatusBadge label="Archived" tone="gray" />]]} />
-            </Panel>
-          </Stack>
+
+        <Grid item xs={12}>
+          <Panel title={selectedTable ? `Table Details: ${selectedTable.name}` : 'Table Details'}>
+            {isLoading ? <CircularProgress size={22} /> : selectedTable ? (
+              <DataTable
+                columns={['Column Name', 'Data Type', 'Primary Key']}
+                rows={columnRows(selectedTable)}
+              />
+            ) : (
+              <EmptyState message="Select a table to inspect its columns." />
+            )}
+          </Panel>
         </Grid>
       </Grid>
     </>
+  );
+}
+
+function columnRows(table: SchemaTable) {
+  return table.columns.map((column) => [
+    column.name,
+    column.type,
+    column.primary_key
+      ? <StatusBadge key={column.name} label="Yes" tone="blue" />
+      : <StatusBadge key={column.name} label="No" tone="gray" />
+  ]);
+}
+
+function EmptyState({ message }: { message: string }) {
+  return (
+    <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
+      <KeyIcon color="disabled" fontSize="small" />
+      <Typography color="text.secondary" variant="body2">
+        {message}
+      </Typography>
+    </Stack>
   );
 }

@@ -96,12 +96,26 @@ class LLMSQLGenerationServiceTests(unittest.TestCase):
             result = generate_sql("Show all products")
 
         self.assertEqual(result.sql, "SELECT * FROM products;")
-        self.assertEqual(result.generation_mode, "llm")
+        self.assertEqual(result.generation_mode, "LLM")
         request_payload = post.call_args.kwargs["json"]
         self.assertEqual(request_payload["model"], "llama3.1:8b")
         self.assertIn("products(", request_payload["prompt"])
         self.assertIn("Show all products", request_payload["prompt"])
         self.assertFalse(request_payload["stream"])
+
+    def test_uses_runtime_active_model_for_sql_generation(self) -> None:
+        mock_response = Mock()
+        mock_response.json.return_value = {"response": "SELECT * FROM products;"}
+        mock_response.raise_for_status.return_value = None
+
+        with (
+            patch.object(llm_sql_generation_service, "engine", self.engine),
+            patch.object(llm_sql_generation_service, "get_active_model", return_value="mistral:latest"),
+            patch("app.services.llm_sql_generation_service.requests.post", return_value=mock_response) as post,
+        ):
+            generate_sql("Show all products")
+
+        self.assertEqual(post.call_args.kwargs["json"]["model"], "mistral:latest")
 
     def test_resolves_minor_table_spelling_mistakes_before_ollama(self) -> None:
         mock_response = Mock()

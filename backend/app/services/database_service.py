@@ -8,7 +8,9 @@ from typing import Any
 from sqlalchemy import text
 from sqlalchemy.exc import OperationalError, ProgrammingError, SQLAlchemyError
 
+from app.db.base import Base
 from app.db.session import engine
+from app.models import QueryHistory
 
 logger = logging.getLogger(__name__)
 
@@ -57,7 +59,9 @@ SAMPLE_EMPLOYEES = [
 
 
 def initialize_database() -> None:
+    _ = QueryHistory
     try:
+        Base.metadata.create_all(bind=engine)
         with engine.begin() as connection:
             connection.execute(
                 text(

@@ -12,7 +12,7 @@ const defaultQuery =
   'Show employees with salary greater than 50000';
 
 const initialResponse: QueryProcessResponse = {
-  generation_mode: 'rule',
+  generation_mode: 'Rule',
   generated_sql:
     'SELECT employee_id, name, email, department, salary, joining_date\nFROM employees\nWHERE salary > 50000\nORDER BY salary DESC;',
   cache_hit: false,
@@ -74,7 +74,7 @@ export function QueryInterfacePage() {
 
   const pipelineSteps = [
     { label: 'Semantic Cache Check', detail: `${response.cache_hit ? 'Cache hit' : 'Cache miss'} · score ${response.similarity_score.toFixed(2)}`, tone: response.cache_hit ? 'green' : 'orange' },
-    { label: 'SQL Generation', detail: `${response.generation_mode === 'rule' ? 'Rule' : 'LLM'} generator completed`, tone: response.generation_mode === 'rule' ? 'blue' : 'purple' },
+    { label: 'SQL Generation', detail: `${response.generation_mode} generator completed`, tone: response.generation_mode === 'Rule' ? 'blue' : 'purple' },
     { label: 'SQL Validation', detail: response.validation_errors.length > 0 ? `${response.validation_status} · ${response.validation_errors.length} errors` : response.validation_status, tone: response.validation_status === 'valid' ? 'green' : 'red' },
     { label: 'SQL Correction', detail: response.validation_status === 'valid' ? 'No correction required' : 'Correction applied', tone: response.validation_status === 'valid' ? 'gray' : 'purple' },
     { label: 'Execution', detail: `${response.execution_time.toFixed(2)} sec`, tone: 'blue' },
@@ -149,12 +149,12 @@ export function QueryInterfacePage() {
               ['Pipeline', 'SemanticSQL Mock v1'],
               ['Execution Time', `${response.execution_time.toFixed(2)} sec`],
               ['Rows Returned', response.rows_returned],
-              ['Generation Mode', <StatusBadge label={response.generation_mode === 'rule' ? 'Rule' : 'LLM'} tone={response.generation_mode === 'rule' ? 'blue' : 'purple'} />],
+              ['Generation Mode', <StatusBadge label={response.generation_mode} tone={response.generation_mode === 'Rule' ? 'blue' : 'purple'} />],
               ['Cache Status', <StatusBadge label={response.cache_hit ? 'Hit' : 'Miss'} tone={response.cache_hit ? 'green' : 'red'} />],
               ['Similarity Score', response.similarity_score.toFixed(4)],
               ['Validation', <StatusBadge label={response.validation_status} tone={response.validation_status === 'valid' ? 'green' : 'red'} />],
               ['Validation Errors Count', response.validation_errors.length],
-              ['Model Used', response.generation_mode === 'rule' ? 'rule-sql-generator' : 'llama3.1:8b']
+              ['Model Used', response.generation_mode === 'Rule' ? 'Rule SQL generator' : 'llama3.1:8b']
             ]} />
           </Panel>
         </Grid>
@@ -184,7 +184,7 @@ export function QueryInterfacePage() {
             <DataTable columns={['Stage', 'Outcome', 'Method']} rows={[
               ['SQL Correction', response.validation_status === 'valid' ? 'No correction required' : 'Corrected generated SQL', 'Mock rules engine'],
               ['Cache Influence', response.cache_hit ? 'Reused semantic match' : 'Generated fresh SQL', 'Semantic similarity'],
-              ['Generation Path', response.generation_mode === 'rule' ? 'Rule fast path' : 'LLM fallback', response.generation_mode === 'rule' ? 'Rules engine' : 'Ollama'],
+              ['Generation Path', response.generation_mode === 'Rule' ? 'Rule fast path' : 'LLM fallback', response.generation_mode === 'Rule' ? 'Rules engine' : 'Ollama'],
               ['Final SQL', response.validation_status === 'valid' ? 'Ready for execution' : 'Needs review', 'Validator']
             ]} />
           </Panel>

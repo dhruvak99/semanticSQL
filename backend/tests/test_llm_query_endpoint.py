@@ -24,7 +24,7 @@ class LLMQueryEndpointTests(unittest.TestCase):
             response.json(),
             {
                 "generated_sql": "SELECT * FROM products;",
-                "generation_mode": "llm",
+                "generation_mode": "LLM",
             },
         )
 

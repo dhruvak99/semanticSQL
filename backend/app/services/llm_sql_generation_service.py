@@ -9,8 +9,8 @@ from requests import RequestException
 from sqlalchemy import inspect
 from sqlalchemy.exc import SQLAlchemyError
 
-from app.core.config import settings
 from app.db.session import engine
+from app.services.model_runtime_state import get_active_model
 
 logger = logging.getLogger(__name__)
 
@@ -88,7 +88,7 @@ class LLMSQLGenerationError(Exception):
 @dataclass(frozen=True)
 class LLMSQLGenerationResult:
     sql: str
-    generation_mode: str = "llm"
+    generation_mode: str = "LLM"
 
 
 def generate_sql(natural_language_query: str) -> LLMSQLGenerationResult:
@@ -189,7 +189,7 @@ def _call_ollama(prompt: str) -> str:
         response = requests.post(
             OLLAMA_GENERATE_URL,
             json={
-                "model": settings.llm_model,
+                "model": get_active_model(),
                 "prompt": prompt,
                 "stream": False,
             },

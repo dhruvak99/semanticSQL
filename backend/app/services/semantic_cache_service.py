@@ -46,6 +46,8 @@ class SemanticCacheService:
     def __init__(self) -> None:
         self._model: SentenceTransformer | None = None
         self._model_lock = Lock()
+        self._threshold = settings.semantic_cache_similarity_threshold
+        self._threshold_lock = Lock()
         self._memory_entries: dict[str, SemanticCacheEntry] = {}
         self._memory_metrics = {
             "hits": 0,
@@ -58,6 +60,25 @@ class SemanticCacheService:
     @property
     def backend_name(self) -> str:
         return "Redis" if self._redis_client else "InMemory"
+
+    @property
+    def redis_available(self) -> bool:
+        if not self._redis_client:
+            return False
+        try:
+            return bool(self._redis_client.ping())
+        except RedisError:
+            return False
+
+    def get_threshold(self) -> float:
+        with self._threshold_lock:
+            return self._threshold
+
+    def set_threshold(self, threshold: float) -> None:
+        if not 0.0 <= threshold <= 1.0:
+            raise ValueError("Similarity threshold must be between 0.0 and 1.0.")
+        with self._threshold_lock:
+            self._threshold = threshold
 
     def warm_up_model(self) -> None:
         start_time = time.perf_counter()
@@ -84,11 +105,12 @@ class SemanticCacheService:
                 best_entry = entry
 
         retrieval_time = round(time.perf_counter() - start_time, 4)
-        hit = best_entry is not None and best_score >= settings.semantic_cache_similarity_threshold
+        hit = best_entry is not None and best_score >= self.get_threshold()
 
         if hit and best_entry is not None:
             best_entry.hit_count += 1
             best_entry.last_similarity_score = round(best_score, 4)
+            best_entry.timestamp = datetime.now(UTC).isoformat()
             self._save_entry(best_entry)
             self._increment_metric("hits")
         else:
@@ -139,6 +161,7 @@ class SemanticCacheService:
 
         return {
             "backend": "redis" if self._redis_client else "memory",
+            "similarity_threshold": self.get_threshold(),
             "cache_hits": hits,
             "cache_misses": misses,
             "hit_rate": round((hits / total) * 100, 2) if total else 0.0,

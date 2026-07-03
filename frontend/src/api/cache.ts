@@ -10,6 +10,7 @@ export type TopCachedQuery = {
 
 export type SemanticCacheMetrics = {
   backend: 'redis' | 'memory';
+  similarity_threshold: number;
   cache_hits: number;
   cache_misses: number;
   hit_rate: number;

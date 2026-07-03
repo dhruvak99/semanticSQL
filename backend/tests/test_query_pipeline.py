@@ -28,6 +28,13 @@ class FakeSemanticCache:
 
 
 class QueryPipelineTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.history_patcher = patch("app.services.query_pipeline.create_history_record")
+        self.create_history_record_mock = self.history_patcher.start()
+
+    def tearDown(self) -> None:
+        self.history_patcher.stop()
+
     @patch("app.services.query_pipeline.get_semantic_cache_service")
     @patch("app.services.query_pipeline.generate_sql_with_llm")
     @patch("app.services.query_pipeline.execute_query")
@@ -54,8 +61,8 @@ class QueryPipelineTests(unittest.TestCase):
         department_response = process_semantic_query("List all departments")
         salary_response = process_semantic_query("Show employees with salary greater than 50000")
 
-        self.assertEqual(department_response.generation_mode, "rule")
-        self.assertEqual(salary_response.generation_mode, "rule")
+        self.assertEqual(department_response.generation_mode, "Rule")
+        self.assertEqual(salary_response.generation_mode, "Rule")
         self.assertNotEqual(
             department_response.generated_sql,
             salary_response.generated_sql,
@@ -79,6 +86,7 @@ class QueryPipelineTests(unittest.TestCase):
         execute_query_mock.assert_any_call("SELECT DISTINCT department FROM employees;")
         execute_query_mock.assert_any_call("SELECT * FROM employees WHERE salary > 50000;")
         generate_sql_with_llm_mock.assert_not_called()
+        self.assertEqual(self.create_history_record_mock.call_count, 2)
 
     @patch("app.services.query_pipeline.get_semantic_cache_service")
     @patch("app.services.query_pipeline.generate_sql_with_llm")
@@ -113,11 +121,12 @@ class QueryPipelineTests(unittest.TestCase):
 
         response = process_semantic_query("Show employees from Finance")
 
-        self.assertEqual(response.generation_mode, "rule")
+        self.assertEqual(response.generation_mode, "Rule")
         self.assertEqual(response.generated_sql, "SELECT * FROM employees\nWHERE department = 'Finance';")
         self.assertEqual(response.rows_returned, 1)
         self.assertEqual(response.results[0]["department"], "Finance")
         generate_sql_with_llm_mock.assert_not_called()
+        self.create_history_record_mock.assert_called_once()
 
     @patch("app.services.query_pipeline.get_semantic_cache_service")
     @patch("app.services.query_pipeline.generate_sql_with_llm")
@@ -156,12 +165,13 @@ class QueryPipelineTests(unittest.TestCase):
 
         response = process_semantic_query("Average project budget")
 
-        self.assertEqual(response.generation_mode, "llm")
+        self.assertEqual(response.generation_mode, "LLM")
         self.assertEqual(response.generated_sql, "SELECT AVG(budget) FROM projects;")
         self.assertEqual(response.rows_returned, 1)
         self.assertEqual(response.results, [{"AVG(budget)": 155000.0}])
-        self.assertEqual(fake_cache.stored_payloads[0]["response_payload"]["generation_mode"], "llm")
+        self.assertEqual(fake_cache.stored_payloads[0]["response_payload"]["generation_mode"], "LLM")
         generate_sql_with_llm_mock.assert_called_once_with("Average project budget")
+        self.create_history_record_mock.assert_called_once()
 
     @patch("app.services.query_pipeline.get_semantic_cache_service")
     @patch("app.services.query_pipeline.generate_sql_with_llm")
@@ -195,13 +205,14 @@ class QueryPipelineTests(unittest.TestCase):
 
         response = process_semantic_query("Show all employeez")
 
-        self.assertEqual(response.generation_mode, "llm")
+        self.assertEqual(response.generation_mode, "LLM")
         self.assertEqual(response.validation_status, "invalid")
         self.assertEqual(response.validation_errors, ["Table 'employeez' does not exist"])
         self.assertEqual(response.rows_returned, 0)
         self.assertEqual(response.results, [])
         execute_query_mock.assert_not_called()
         self.assertEqual(fake_cache.stored_payloads[0]["response_payload"]["validation_errors"], response.validation_errors)
+        self.create_history_record_mock.assert_called_once()
 
     @patch("app.services.query_pipeline.get_semantic_cache_service")
     @patch("app.services.query_pipeline.generate_sql_with_llm")
@@ -218,7 +229,7 @@ class QueryPipelineTests(unittest.TestCase):
 
         response = process_semantic_query("Show all suppliers")
 
-        self.assertEqual(response.generation_mode, "llm")
+        self.assertEqual(response.generation_mode, "LLM")
         self.assertEqual(response.generated_sql, SCHEMA_MISMATCH)
         self.assertEqual(response.validation_status, "invalid")
         self.assertEqual(
@@ -229,6 +240,7 @@ class QueryPipelineTests(unittest.TestCase):
         self.assertEqual(response.results, [])
         execute_query_mock.assert_not_called()
         self.assertEqual(fake_cache.stored_payloads, [])
+        self.create_history_record_mock.assert_called_once()
 
 
 if __name__ == "__main__":

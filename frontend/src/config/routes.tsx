@@ -42,8 +42,8 @@ export const routes: AppRoute[] = [
   { path: '/validation-correction', label: 'Validation & Correction', description: 'SQL validation and correction workflow.', icon: FactCheckIcon, element: ValidationCorrectionPage },
   { path: '/query-history', label: 'Query History', description: 'Past prompts, generated SQL, and outcomes.', icon: HistoryIcon, element: QueryHistoryPage },
   { path: '/schema-manager', label: 'Schema Manager', description: 'Manage schema metadata and relationships.', icon: SchemaIcon, element: SchemaManagerPage },
-  { path: '/research-dashboard', label: 'Research Dashboard', description: 'Model and experiment research workspace.', icon: ScienceIcon, element: ResearchDashboardPage },
-  { path: '/system-monitor', label: 'System Monitor', description: 'Service health and infrastructure signals.', icon: MonitorHeartIcon, element: SystemMonitorPage },
-  { path: '/model-management', label: 'Model Management', description: 'Embedding and language model configuration.', icon: MemoryIcon, element: ModelManagementPage },
-  { path: '/settings', label: 'Settings', description: 'Application and connection preferences.', icon: SettingsIcon, element: SettingsPage }
+  { path: '/research-dashboard', label: 'Research Dashboard', description: 'Query history evaluation and analysis.', icon: ScienceIcon, element: ResearchDashboardPage },
+  { path: '/system-monitor', label: 'System Monitor', description: 'SemanticSQL activity and query outcomes.', icon: MonitorHeartIcon, element: SystemMonitorPage },
+  { path: '/model-management', label: 'Model Management', description: 'Ollama runtime model selection.', icon: MemoryIcon, element: ModelManagementPage },
+  { path: '/settings', label: 'Settings', description: 'Live SemanticSQL runtime configuration.', icon: SettingsIcon, element: SettingsPage }
 ];

@@ -45,6 +45,7 @@ class SemanticCacheServiceTests(unittest.TestCase):
                 "results": [{"department": "Finance"}],
             },
         )
+        stored_timestamp = next(iter(self.cache._memory_entries.values())).timestamp
 
         second_embedding = self.cache.generate_embedding("Show all departments")
         second_search = self.cache.search(second_embedding)
@@ -52,6 +53,7 @@ class SemanticCacheServiceTests(unittest.TestCase):
         self.assertTrue(second_search.hit)
         self.assertEqual(second_search.similarity_score, 1.0)
         self.assertIsNotNone(second_search.entry)
+        self.assertNotEqual(second_search.entry.timestamp, stored_timestamp)
 
     def test_metrics_track_hits_misses_and_entries(self) -> None:
         embedding = self.cache.generate_embedding("List all departments")
@@ -78,6 +80,24 @@ class SemanticCacheServiceTests(unittest.TestCase):
         self.assertEqual(metrics["cache_misses"], 1)
         self.assertEqual(metrics["cache_entry_count"], 1)
         self.assertEqual(metrics["hit_rate"], 50.0)
+        self.assertEqual(metrics["similarity_threshold"], 0.9)
+
+    def test_runtime_threshold_immediately_changes_similarity_matching(self) -> None:
+        self.cache.store(
+            query="Original query",
+            embedding=[1.0, 0.0],
+            generated_sql="SELECT * FROM employees;",
+            response_payload={},
+        )
+
+        similar_embedding = [0.86, 0.510294]
+        self.assertFalse(self.cache.search(similar_embedding).hit)
+
+        self.cache.set_threshold(0.85)
+
+        self.assertEqual(self.cache.get_threshold(), 0.85)
+        self.assertTrue(self.cache.search(similar_embedding).hit)
+        self.assertEqual(self.cache.get_metrics()["similarity_threshold"], 0.85)
 
 
 if __name__ == "__main__":

@@ -1,4 +1,5 @@
 import { apiPost } from './client';
+import { normalizeGenerationMode, type GenerationMode } from '../utils/generationMode';
 
 export type QueryProcessRequest = {
   query: string;
@@ -7,7 +8,7 @@ export type QueryProcessRequest = {
 export type QueryResultRow = Record<string, string | number | boolean | null>;
 
 export type QueryProcessResponse = {
-  generation_mode: 'rule' | 'llm';
+  generation_mode: GenerationMode;
   generated_sql: string;
   cache_hit: boolean;
   similarity_score: number;
@@ -18,6 +19,10 @@ export type QueryProcessResponse = {
   results: QueryResultRow[];
 };
 
-export function processQuery(query: string) {
-  return apiPost<QueryProcessRequest, QueryProcessResponse>('/query/process', { query });
+export async function processQuery(query: string) {
+  const response = await apiPost<QueryProcessRequest, QueryProcessResponse>('/query/process', { query });
+  return {
+    ...response,
+    generation_mode: normalizeGenerationMode(response.generation_mode)
+  };
 }

@@ -4,6 +4,7 @@ import time
 from app.schemas.query import QueryProcessResponse
 from app.services.database_service import DatabaseServiceError, execute_query
 from app.services.llm_sql_generation_service import SCHEMA_MISMATCH, generate_sql as generate_sql_with_llm
+from app.services.query_history_service import create_history_record, normalize_generation_mode
 from app.services.semantic_cache_service import get_semantic_cache_service
 from app.services.sql_generation_service import QueryType, generate_sql as generate_sql_with_rules
 from app.services.sql_validation_service import validate_sql
@@ -29,7 +30,7 @@ def process_semantic_query(query: str) -> QueryProcessResponse:
     if cache_result.hit and cache_result.entry is not None:
         cached_payload = cache_result.entry.response_payload
         execution_time = round(time.perf_counter() - start_time, 4)
-        generation_mode = str(cached_payload.get("generation_mode", "rule"))
+        generation_mode = _format_generation_mode(str(cached_payload.get("generation_mode", "Rule")))
         logger.info("Timing: cache retrieval stage %.4f sec", execution_time)
         logger.info("Timing: SQL generation skipped on cache hit")
         logger.info("Timing: validation skipped on cache hit")
@@ -41,7 +42,7 @@ def process_semantic_query(query: str) -> QueryProcessResponse:
         logger.info("Execution Time: %.4f sec", execution_time)
         logger.info("Timing: total request %.4f sec", execution_time)
         logger.info("Rows Returned: %s", cached_payload["rows_returned"])
-        return QueryProcessResponse(
+        response = QueryProcessResponse(
             generation_mode=generation_mode,
             generated_sql=str(cached_payload["generated_sql"]),
             cache_hit=True,
@@ -52,6 +53,8 @@ def process_semantic_query(query: str) -> QueryProcessResponse:
             rows_returned=int(cached_payload["rows_returned"]),
             results=list(cached_payload["results"]),  # type: ignore[arg-type]
         )
+        _record_history(query, response)
+        return response
 
     rule_generation_start_time = time.perf_counter()
     rule_generation_result = generate_sql_with_rules(query)
@@ -63,12 +66,12 @@ def process_semantic_query(query: str) -> QueryProcessResponse:
         llm_generation_result = generate_sql_with_llm(query)
         llm_generation_time = time.perf_counter() - llm_generation_start_time
         generated_sql = llm_generation_result.sql
-        generation_mode = llm_generation_result.generation_mode
+        generation_mode = _format_generation_mode(llm_generation_result.generation_mode)
         query_type = "llm_generated"
         logger.info("Timing: llm generation %.4f sec", llm_generation_time)
     else:
         generated_sql = rule_generation_result.sql
-        generation_mode = "rule"
+        generation_mode = _format_generation_mode("Rule")
         query_type = rule_generation_result.query_type.value
         logger.info("Timing: llm generation skipped; rule SQL generated")
 
@@ -86,7 +89,7 @@ def process_semantic_query(query: str) -> QueryProcessResponse:
         logger.info("Execution Time: %.4f sec", execution_time)
         logger.info("Timing: total request %.4f sec", execution_time)
         logger.info("Rows Returned: 0")
-        return QueryProcessResponse(
+        response = QueryProcessResponse(
             generation_mode=generation_mode,
             generated_sql=generated_sql,
             cache_hit=False,
@@ -97,6 +100,8 @@ def process_semantic_query(query: str) -> QueryProcessResponse:
             rows_returned=0,
             results=[],
         )
+        _record_history(query, response)
+        return response
 
     validation_start_time = time.perf_counter()
     validation_result = validate_sql(generated_sql)
@@ -133,6 +138,7 @@ def process_semantic_query(query: str) -> QueryProcessResponse:
             generated_sql=generated_sql,
             response_payload=response.model_dump(),
         )
+        _record_history(query, response)
         return response
 
     try:
@@ -171,4 +177,21 @@ def process_semantic_query(query: str) -> QueryProcessResponse:
         generated_sql=generated_sql,
         response_payload=response.model_dump(),
     )
+    _record_history(query, response)
     return response
+
+
+def _record_history(query: str, response: QueryProcessResponse) -> None:
+    create_history_record(
+        natural_language_query=query,
+        generated_sql=response.generated_sql,
+        generation_mode=_format_generation_mode(response.generation_mode),
+        cache_status="Hit" if response.cache_hit else "Miss",
+        validation_status=response.validation_status.capitalize(),
+        execution_time=response.execution_time,
+        rows_returned=response.rows_returned,
+    )
+
+
+def _format_generation_mode(generation_mode: str) -> str:
+    return normalize_generation_mode(generation_mode)
