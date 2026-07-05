@@ -1,0 +1,43 @@
+{
+  "average_complexity_score": 4.05,
+  "average_query_length": 64.93,
+  "average_sql_length": 118.3,
+  "benchmark_version": "1.0.0",
+  "difficulty_distribution": {
+    "easy": 630,
+    "hard": 510,
+    "invalid": 100,
+    "medium": 660
+  },
+  "duplicate_functional_sql": 0,
+  "functional_queries": 300,
+  "invalid_queries": 100,
+  "query_type_distribution": {
+    "AVG": 120,
+    "COUNT": 150,
+    "DISTINCT": 90,
+    "EXISTS": 90,
+    "GROUP_BY": 150,
+    "HAVING": 120,
+    "IN": 90,
+    "INVALID": 100,
+    "JOIN": 180,
+    "LIMIT": 90,
+    "MAX": 90,
+    "MIN": 90,
+    "NESTED": 150,
+    "ORDER_BY": 90,
+    "SELECT": 90,
+    "SUM": 90,
+    "WHERE": 120
+  },
+  "semantic_queries": 1500,
+  "total_queries": 1900,
+  "unique_natural_language_requests": 1900,
+  "unique_sql_templates": 300,
+  "valid_workload_difficulty_percentages": {
+    "easy": 35.0,
+    "hard": 28.33,
+    "medium": 36.67
+  }
+}

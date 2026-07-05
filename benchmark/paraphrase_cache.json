@@ -1,0 +1,2417 @@
+{
+  "1.0.0:F0001:SELECT author_id FROM authors;": [
+    "List author id for authors.",
+    "Display author id for authors.",
+    "Which author id for authors are stored?",
+    "Please show author id for authors.",
+    "Return author id for authors."
+  ],
+  "1.0.0:F0002:SELECT title, author_id FROM books;": [
+    "List author id, title for books.",
+    "Display author id, title for books.",
+    "Which author id, title for books are stored?",
+    "Please show author id, title for books.",
+    "Return author id, title for books."
+  ],
+  "1.0.0:F0003:SELECT location, department_id, department_name FROM departments;": [
+    "List department id, department name, location for departments.",
+    "Display department id, department name, location for departments.",
+    "Which department id, department name, location for departments are stored?",
+    "Please show department id, department name, location for departments.",
+    "Return department id, department name, location for departments."
+  ],
+  "1.0.0:F0004:SELECT hours_per_week FROM employee_projects;": [
+    "List hours per week for employee projects.",
+    "Display hours per week for employee projects.",
+    "Which hours per week for employee projects are stored?",
+    "Please show hours per week for employee projects.",
+    "Return hours per week for employee projects."
+  ],
+  "1.0.0:F0005:SELECT salary, joining_date FROM employees;": [
+    "List joining date, salary for employees.",
+    "Display joining date, salary for employees.",
+    "Which joining date, salary for employees are stored?",
+    "Please show joining date, salary for employees.",
+    "Return joining date, salary for employees."
+  ],
+  "1.0.0:F0006:SELECT price, product_id, product_name FROM products;": [
+    "List price, product id, product name for products.",
+    "Display price, product id, product name for products.",
+    "Which price, product id, product name for products are stored?",
+    "Please show price, product id, product name for products.",
+    "Return price, product id, product name for products."
+  ],
+  "1.0.0:F0007:SELECT project_id FROM projects;": [
+    "List project id for projects.",
+    "Display project id for projects.",
+    "Which project id for projects are stored?",
+    "Please show project id for projects.",
+    "Return project id for projects."
+  ],
+  "1.0.0:F0008:SELECT rows_returned, created_at FROM query_history;": [
+    "List created at, rows returned for query history.",
+    "Display created at, rows returned for query history.",
+    "Which created at, rows returned for query history are stored?",
+    "Please show created at, rows returned for query history.",
+    "Return created at, rows returned for query history."
+  ],
+  "1.0.0:F0009:SELECT id, vendor_name, city FROM vendors;": [
+    "List city, id, vendor name for vendors.",
+    "Display city, id, vendor name for vendors.",
+    "Which city, id, vendor name for vendors are stored?",
+    "Please show city, id, vendor name for vendors.",
+    "Return city, id, vendor name for vendors."
+  ],
+  "1.0.0:F0010:SELECT author_id, price FROM books;": [
+    "List author id, price for books.",
+    "Display author id, price for books.",
+    "Which author id, price for books are stored?",
+    "Please show author id, price for books.",
+    "Return author id, price for books."
+  ],
+  "1.0.0:F0011:SELECT employee_id FROM employee_projects;": [
+    "List employee id for employee projects.",
+    "Display employee id for employee projects.",
+    "Which employee id for employee projects are stored?",
+    "Please show employee id for employee projects.",
+    "Return employee id for employee projects."
+  ],
+  "1.0.0:F0012:SELECT name, email FROM employees;": [
+    "List email, name for employees.",
+    "Display email, name for employees.",
+    "Which email, name for employees are stored?",
+    "Please show email, name for employees.",
+    "Return email, name for employees."
+  ],
+  "1.0.0:F0013:SELECT vendor_name, city, rating FROM vendors;": [
+    "List city, rating, vendor name for vendors.",
+    "Display city, rating, vendor name for vendors.",
+    "Which city, rating, vendor name for vendors are stored?",
+    "Please show city, rating, vendor name for vendors.",
+    "Return city, rating, vendor name for vendors."
+  ],
+  "1.0.0:F0014:SELECT price, book_id FROM books;": [
+    "List book id, price for books.",
+    "Display book id, price for books.",
+    "Which book id, price for books are stored?",
+    "Please show book id, price for books.",
+    "Return book id, price for books."
+  ],
+  "1.0.0:F0015:SELECT project_id FROM employee_projects;": [
+    "List project id for employee projects.",
+    "Display project id for employee projects.",
+    "Which project id for employee projects are stored?",
+    "Please show project id for employee projects.",
+    "Return project id for employee projects."
+  ],
+  "1.0.0:F0016:SELECT author_id FROM authors WHERE author_name IS NOT NULL AND LENGTH(author_name) >= 1;": [
+    "Find author id, author name for authors.",
+    "Show the authors that meet this filter.",
+    "Which authors match the requested condition?",
+    "Please retrieve the filtered authors.",
+    "Return only the matching authors."
+  ],
+  "1.0.0:F0017:SELECT title, author_id FROM books WHERE price >= 1;": [
+    "Find author id, price, title for books.",
+    "Show the books that meet this filter.",
+    "Which books match the requested condition?",
+    "Please retrieve the filtered books.",
+    "Return only the matching books."
+  ],
+  "1.0.0:F0018:SELECT location, department_id, department_name FROM departments WHERE department_name IS NOT NULL AND LENGTH(department_name) >= 3;": [
+    "Find department id, department name, location for departments.",
+    "Show the departments that meet this filter.",
+    "Which departments match the requested condition?",
+    "Please retrieve the filtered departments.",
+    "Return only the matching departments."
+  ],
+  "1.0.0:F0019:SELECT hours_per_week FROM employee_projects WHERE hours_per_week >= 3;": [
+    "Find hours per week for employee projects.",
+    "Show the employee projects that meet this filter.",
+    "Which employee projects match the requested condition?",
+    "Please retrieve the filtered employee projects.",
+    "Return only the matching employee projects."
+  ],
+  "1.0.0:F0020:SELECT salary, joining_date FROM employees WHERE salary >= 4;": [
+    "Find joining date, salary for employees.",
+    "Show the employees that meet this filter.",
+    "Which employees match the requested condition?",
+    "Please retrieve the filtered employees.",
+    "Return only the matching employees."
+  ],
+  "1.0.0:F0021:SELECT price, product_id, product_name FROM products WHERE price >= 5;": [
+    "Find price, product id, product name for products.",
+    "Show the products that meet this filter.",
+    "Which products match the requested condition?",
+    "Please retrieve the filtered products.",
+    "Return only the matching products."
+  ],
+  "1.0.0:F0022:SELECT project_id FROM projects WHERE budget >= 6;": [
+    "Find budget, project id for projects.",
+    "Show the projects that meet this filter.",
+    "Which projects match the requested condition?",
+    "Please retrieve the filtered projects.",
+    "Return only the matching projects."
+  ],
+  "1.0.0:F0023:SELECT rows_returned, created_at FROM query_history WHERE rows_returned >= 7;": [
+    "Find created at, rows returned for query history.",
+    "Show the query history that meet this filter.",
+    "Which query history match the requested condition?",
+    "Please retrieve the filtered query history.",
+    "Return only the matching query history."
+  ],
+  "1.0.0:F0024:SELECT id, vendor_name, city FROM vendors WHERE rating >= 8;": [
+    "Find city, id, rating, vendor name for vendors.",
+    "Show the vendors that meet this filter.",
+    "Which vendors match the requested condition?",
+    "Please retrieve the filtered vendors.",
+    "Return only the matching vendors."
+  ],
+  "1.0.0:F0025:SELECT author_id FROM authors WHERE country IS NOT NULL AND LENGTH(country) >= 10;": [
+    "Find author id, country for authors.",
+    "I need the authors satisfying the condition.",
+    "Can you show authors where country has at least 10 characters.",
+    "Please show authors where country has at least 10 characters.",
+    "I need to show authors where country has at least 10 characters."
+  ],
+  "1.0.0:F0026:SELECT author_id, price FROM books WHERE author_id >= 10;": [
+    "Find author id, price for books.",
+    "I need the books satisfying the condition.",
+    "Can you show books with author id less than 10.",
+    "Please show books with author id less than 10.",
+    "I need to show books with author id less than 10."
+  ],
+  "1.0.0:F0027:SELECT location, department_id, department_name FROM departments WHERE location IS NOT NULL AND LENGTH(location) >= 12;": [
+    "I need the departments satisfying the condition.",
+    "Can you show departments where location has at least 12 characters.",
+    "Please show departments where location has at least 12 characters.",
+    "I need to show departments where location has at least 12 characters.",
+    "Could you show departments where location has at least 12 characters."
+  ],
+  "1.0.0:F0028:SELECT employee_id FROM employee_projects WHERE hours_per_week >= 12;": [
+    "Find employee id, hours per week for employee projects.",
+    "I need the employee projects satisfying the condition.",
+    "Can you show employee projects with hours per week at least 12.",
+    "Please show employee projects with hours per week at least 12.",
+    "I need to show employee projects with hours per week at least 12."
+  ],
+  "1.0.0:F0029:SELECT name, email FROM employees WHERE salary >= 13;": [
+    "Find email, name, salary for employees.",
+    "I need the employees satisfying the condition.",
+    "Can you show employees with salary greater than 13.",
+    "Please show employees with salary greater than 13.",
+    "I need to show employees with salary greater than 13."
+  ],
+  "1.0.0:F0030:SELECT price, product_id, product_name FROM products WHERE price >= 14;": [
+    "I need the products satisfying the condition.",
+    "Can you show products with price above 14.",
+    "Please show products with price above 14.",
+    "I need to show products with price above 14.",
+    "Could you show products with price above 14."
+  ],
+  "1.0.0:F0031:SELECT project_id FROM projects WHERE budget >= 15;": [
+    "I need the projects satisfying the condition.",
+    "Can you show projects with budget below 15.",
+    "Please show projects with budget below 15.",
+    "I need to show projects with budget below 15.",
+    "Could you show projects with budget below 15."
+  ],
+  "1.0.0:F0032:SELECT rows_returned, created_at FROM query_history WHERE execution_time >= 16;": [
+    "Find created at, execution time, rows returned for query history.",
+    "I need the query history satisfying the condition.",
+    "Can you show query history with execution time less than 16.",
+    "Please show query history with execution time less than 16.",
+    "I need to show query history with execution time less than 16."
+  ],
+  "1.0.0:F0033:SELECT vendor_name, city, rating FROM vendors WHERE rating >= 17;": [
+    "Find city, rating, vendor name for vendors.",
+    "I need the vendors satisfying the condition.",
+    "Can you show vendors with rating no lower than 17.",
+    "Please show vendors with rating no lower than 17.",
+    "I need to show vendors with rating no lower than 17."
+  ],
+  "1.0.0:F0034:SELECT author_id FROM authors WHERE author_name IS NOT NULL AND LENGTH(author_name) >= 19;": [
+    "Can you show authors where author name has at least 19 characters.",
+    "Please show authors where author name has at least 19 characters.",
+    "I need to show authors where author name has at least 19 characters.",
+    "Could you show authors where author name has at least 19 characters.",
+    "Return the authors results for this request: show authors where author name has at least 19 characters."
+  ],
+  "1.0.0:F0035:SELECT price, book_id FROM books WHERE price >= 19;": [
+    "Find book id, price for books.",
+    "Can you show books with price greater than 19.",
+    "Please show books with price greater than 19.",
+    "I need to show books with price greater than 19.",
+    "Could you show books with price greater than 19."
+  ],
+  "1.0.0:F0036:SELECT author_id FROM authors ORDER BY author_id ASC LIMIT 5;": [
+    "Sort author id for authors.",
+    "List author id for authors in the requested order.",
+    "Show ordered authors.",
+    "Please display authors sorted as specified.",
+    "Return the ordered authors list."
+  ],
+  "1.0.0:F0037:SELECT title, author_id FROM books ORDER BY title DESC LIMIT 6;": [
+    "Sort author id, title for books.",
+    "List author id, title for books in the requested order.",
+    "Show ordered books.",
+    "Please display books sorted as specified.",
+    "Return the ordered books list."
+  ],
+  "1.0.0:F0038:SELECT location, department_id, department_name FROM departments ORDER BY location ASC LIMIT 7;": [
+    "Sort department id, department name, location for departments.",
+    "List department id, department name, location for departments in the requested order.",
+    "Show ordered departments.",
+    "Please display departments sorted as specified.",
+    "Return the ordered departments list."
+  ],
+  "1.0.0:F0039:SELECT hours_per_week FROM employee_projects ORDER BY hours_per_week DESC LIMIT 8;": [
+    "Sort hours per week for employee projects.",
+    "List hours per week for employee projects in the requested order.",
+    "Show ordered employee projects.",
+    "Please display employee projects sorted as specified.",
+    "Return the ordered employee projects list."
+  ],
+  "1.0.0:F0040:SELECT salary, joining_date FROM employees ORDER BY salary ASC LIMIT 9;": [
+    "Sort joining date, salary for employees.",
+    "List joining date, salary for employees in the requested order.",
+    "Show ordered employees.",
+    "Please display employees sorted as specified.",
+    "Return the ordered employees list."
+  ],
+  "1.0.0:F0041:SELECT price, product_id, product_name FROM products ORDER BY price DESC LIMIT 10;": [
+    "Sort price, product id, product name for products.",
+    "List price, product id, product name for products in the requested order.",
+    "Show ordered products.",
+    "Please display products sorted as specified.",
+    "Return the ordered products list."
+  ],
+  "1.0.0:F0042:SELECT project_id FROM projects ORDER BY project_id ASC LIMIT 11;": [
+    "Sort project id for projects.",
+    "List project id for projects in the requested order.",
+    "Show ordered projects.",
+    "Please display projects sorted as specified.",
+    "Return the ordered projects list."
+  ],
+  "1.0.0:F0043:SELECT rows_returned, created_at FROM query_history ORDER BY rows_returned DESC LIMIT 12;": [
+    "Sort created at, rows returned for query history.",
+    "List created at, rows returned for query history in the requested order.",
+    "Show ordered query history.",
+    "Please display query history sorted as specified.",
+    "Return the ordered query history list."
+  ],
+  "1.0.0:F0044:SELECT id, vendor_name, city FROM vendors ORDER BY id ASC LIMIT 13;": [
+    "Sort city, id, vendor name for vendors.",
+    "List city, id, vendor name for vendors in the requested order.",
+    "Show ordered vendors.",
+    "Please display vendors sorted as specified.",
+    "Return the ordered vendors list."
+  ],
+  "1.0.0:F0045:SELECT author_id FROM authors ORDER BY author_id DESC LIMIT 14;": [
+    "Can you list the first 14 authors ordered by author id descending.",
+    "Please list the first 14 authors ordered by author id descending.",
+    "I need to list the first 14 authors ordered by author id descending.",
+    "Could you list the first 14 authors ordered by author id descending.",
+    "Return the authors results for this request: list the first 14 authors ordered by author id descending."
+  ],
+  "1.0.0:F0046:SELECT author_id, price FROM books ORDER BY author_id ASC LIMIT 15;": [
+    "Sort author id, price for books.",
+    "List author id, price for books in the requested order.",
+    "Can you show 15 books sorted by author id in ascending order.",
+    "Please show 15 books sorted by author id in ascending order.",
+    "I need to show 15 books sorted by author id in ascending order."
+  ],
+  "1.0.0:F0047:SELECT location, department_id, department_name FROM departments ORDER BY location DESC LIMIT 16;": [
+    "Can you return 16 departments ranked by location descending.",
+    "Please return 16 departments ranked by location descending.",
+    "I need to return 16 departments ranked by location descending.",
+    "Could you return 16 departments ranked by location descending.",
+    "Return the departments results for this request: return 16 departments ranked by location descending."
+  ],
+  "1.0.0:F0048:SELECT employee_id FROM employee_projects ORDER BY employee_id ASC LIMIT 17;": [
+    "Sort employee id for employee projects.",
+    "List employee id for employee projects in the requested order.",
+    "Can you list the first 17 employee projects ordered by employee id ascending.",
+    "Please list the first 17 employee projects ordered by employee id ascending.",
+    "I need to list the first 17 employee projects ordered by employee id ascending."
+  ],
+  "1.0.0:F0049:SELECT name, email FROM employees ORDER BY name DESC LIMIT 18;": [
+    "Sort email, name for employees.",
+    "List email, name for employees in the requested order.",
+    "Can you show 18 employees sorted by name in descending order.",
+    "Please show 18 employees sorted by name in descending order.",
+    "I need to show 18 employees sorted by name in descending order."
+  ],
+  "1.0.0:F0050:SELECT price, product_id, product_name FROM products ORDER BY price ASC LIMIT 19;": [
+    "Can you return 19 products ranked by price ascending.",
+    "Please return 19 products ranked by price ascending.",
+    "I need to return 19 products ranked by price ascending.",
+    "Could you return 19 products ranked by price ascending.",
+    "Return the products results for this request: return 19 products ranked by price ascending."
+  ],
+  "1.0.0:F0051:SELECT author_id FROM authors LIMIT 3 OFFSET 0;": [
+    "Show a small page of authors.",
+    "Return the requested slice of authors.",
+    "Give me a limited set of authors.",
+    "Please display this page of authors.",
+    "Fetch the limited authors results."
+  ],
+  "1.0.0:F0052:SELECT title, author_id FROM books LIMIT 4 OFFSET 1;": [
+    "Show a small page of books.",
+    "Return the requested slice of books.",
+    "Give me a limited set of books.",
+    "Please display this page of books.",
+    "Fetch the limited books results."
+  ],
+  "1.0.0:F0053:SELECT location, department_id, department_name FROM departments LIMIT 5 OFFSET 2;": [
+    "Show a small page of departments.",
+    "Return the requested slice of departments.",
+    "Give me a limited set of departments.",
+    "Please display this page of departments.",
+    "Fetch the limited departments results."
+  ],
+  "1.0.0:F0054:SELECT hours_per_week FROM employee_projects LIMIT 6 OFFSET 3;": [
+    "Show a small page of employee projects.",
+    "Return the requested slice of employee projects.",
+    "Give me a limited set of employee projects.",
+    "Please display this page of employee projects.",
+    "Fetch the limited employee projects results."
+  ],
+  "1.0.0:F0055:SELECT salary, joining_date FROM employees LIMIT 7 OFFSET 0;": [
+    "Show a small page of employees.",
+    "Return the requested slice of employees.",
+    "Give me a limited set of employees.",
+    "Please display this page of employees.",
+    "Fetch the limited employees results."
+  ],
+  "1.0.0:F0056:SELECT price, product_id, product_name FROM products LIMIT 3 OFFSET 1;": [
+    "Show a small page of products.",
+    "Return the requested slice of products.",
+    "Give me a limited set of products.",
+    "Please display this page of products.",
+    "Fetch the limited products results."
+  ],
+  "1.0.0:F0057:SELECT project_id FROM projects LIMIT 4 OFFSET 2;": [
+    "Show a small page of projects.",
+    "Return the requested slice of projects.",
+    "Give me a limited set of projects.",
+    "Please display this page of projects.",
+    "Fetch the limited projects results."
+  ],
+  "1.0.0:F0058:SELECT rows_returned, created_at FROM query_history LIMIT 5 OFFSET 3;": [
+    "Show a small page of query history.",
+    "Return the requested slice of query history.",
+    "Give me a limited set of query history.",
+    "Please display this page of query history.",
+    "Fetch the limited query history results."
+  ],
+  "1.0.0:F0059:SELECT id, vendor_name, city FROM vendors LIMIT 6 OFFSET 0;": [
+    "Show a small page of vendors.",
+    "Return the requested slice of vendors.",
+    "Give me a limited set of vendors.",
+    "Please display this page of vendors.",
+    "Fetch the limited vendors results."
+  ],
+  "1.0.0:F0060:SELECT author_id FROM authors LIMIT 7 OFFSET 1;": [
+    "Can you show 7 authors records from this page.",
+    "Please show 7 authors records from this page.",
+    "I need to show 7 authors records from this page.",
+    "Could you show 7 authors records from this page.",
+    "Return the authors results for this request: show 7 authors records from this page."
+  ],
+  "1.0.0:F0061:SELECT author_id, price FROM books LIMIT 3 OFFSET 2;": [
+    "Can you return a page of 3 books.",
+    "Please return a page of 3 books.",
+    "I need to return a page of 3 books.",
+    "Could you return a page of 3 books.",
+    "Return the books results for this request: return a page of 3 books."
+  ],
+  "1.0.0:F0062:SELECT location, department_id, department_name FROM departments LIMIT 4 OFFSET 3;": [
+    "Can you list the next 4 departments records.",
+    "Please list the next 4 departments records.",
+    "I need to list the next 4 departments records.",
+    "Could you list the next 4 departments records.",
+    "Return the departments results for this request: list the next 4 departments records."
+  ],
+  "1.0.0:F0063:SELECT employee_id FROM employee_projects LIMIT 5 OFFSET 0;": [
+    "Can you show 5 employee projects records from this page.",
+    "Please show 5 employee projects records from this page.",
+    "I need to show 5 employee projects records from this page.",
+    "Could you show 5 employee projects records from this page.",
+    "Return the employee projects results for this request: show 5 employee projects records from this page."
+  ],
+  "1.0.0:F0064:SELECT name, email FROM employees LIMIT 6 OFFSET 1;": [
+    "Can you return a page of 6 employees.",
+    "Please return a page of 6 employees.",
+    "I need to return a page of 6 employees.",
+    "Could you return a page of 6 employees.",
+    "Return the employees results for this request: return a page of 6 employees."
+  ],
+  "1.0.0:F0065:SELECT price, product_id, product_name FROM products LIMIT 7 OFFSET 2;": [
+    "Can you list the next 7 products records.",
+    "Please list the next 7 products records.",
+    "I need to list the next 7 products records.",
+    "Could you list the next 7 products records.",
+    "Return the products results for this request: list the next 7 products records."
+  ],
+  "1.0.0:F0066:SELECT DISTINCT author_name FROM authors WHERE author_name IS NOT NULL AND LENGTH(author_name) >= 1 ORDER BY author_name ASC;": [
+    "List the unique author name for authors.",
+    "Show distinct author name for authors.",
+    "Which different author name for authors exist?",
+    "Return every unique author name for authors.",
+    "Please display deduplicated author name for authors."
+  ],
+  "1.0.0:F0067:SELECT DISTINCT title FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 2 ORDER BY title ASC;": [
+    "List the unique title for books.",
+    "Show distinct title for books.",
+    "Which different title for books exist?",
+    "Return every unique title for books.",
+    "Please display deduplicated title for books."
+  ],
+  "1.0.0:F0068:SELECT DISTINCT department_name FROM departments WHERE department_name IS NOT NULL AND LENGTH(department_name) >= 3 ORDER BY department_name ASC;": [
+    "List the unique department name for departments.",
+    "Show distinct department name for departments.",
+    "Which different department name for departments exist?",
+    "Return every unique department name for departments.",
+    "Please display deduplicated department name for departments."
+  ],
+  "1.0.0:F0069:SELECT DISTINCT role FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 4 ORDER BY role ASC;": [
+    "List the unique role for employee projects.",
+    "Show distinct role for employee projects.",
+    "Which different role for employee projects exist?",
+    "Return every unique role for employee projects.",
+    "Please display deduplicated role for employee projects."
+  ],
+  "1.0.0:F0070:SELECT DISTINCT email FROM employees WHERE email IS NOT NULL AND LENGTH(email) >= 5 ORDER BY email ASC;": [
+    "List the unique email for employees.",
+    "Show distinct email for employees.",
+    "Which different email for employees exist?",
+    "Return every unique email for employees.",
+    "Please display deduplicated email for employees."
+  ],
+  "1.0.0:F0071:SELECT DISTINCT product_name FROM products WHERE product_name IS NOT NULL AND LENGTH(product_name) >= 6 ORDER BY product_name ASC;": [
+    "List the unique product name for products.",
+    "Show distinct product name for products.",
+    "Which different product name for products exist?",
+    "Return every unique product name for products.",
+    "Please display deduplicated product name for products."
+  ],
+  "1.0.0:F0072:SELECT DISTINCT project_name FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 7 ORDER BY project_name ASC;": [
+    "List the unique project name for projects.",
+    "Show distinct project name for projects.",
+    "Which different project name for projects exist?",
+    "Return every unique project name for projects.",
+    "Please display deduplicated project name for projects."
+  ],
+  "1.0.0:F0073:SELECT DISTINCT generation_mode FROM query_history WHERE generation_mode IS NOT NULL AND LENGTH(generation_mode) >= 8 ORDER BY generation_mode ASC;": [
+    "List the unique generation mode for query history.",
+    "Show distinct generation mode for query history.",
+    "Which different generation mode for query history exist?",
+    "Return every unique generation mode for query history.",
+    "Please display deduplicated generation mode for query history."
+  ],
+  "1.0.0:F0074:SELECT DISTINCT vendor_name FROM vendors WHERE vendor_name IS NOT NULL AND LENGTH(vendor_name) >= 9 ORDER BY vendor_name ASC;": [
+    "List the unique vendor name for vendors.",
+    "Show distinct vendor name for vendors.",
+    "Which different vendor name for vendors exist?",
+    "Return every unique vendor name for vendors.",
+    "Please display deduplicated vendor name for vendors."
+  ],
+  "1.0.0:F0075:SELECT DISTINCT country FROM authors WHERE country IS NOT NULL AND LENGTH(country) >= 10 ORDER BY country ASC;": [
+    "List the unique country for authors.",
+    "Show distinct country for authors.",
+    "Which different country for authors exist?",
+    "Return every unique country for authors.",
+    "Please display deduplicated country for authors."
+  ],
+  "1.0.0:F0076:SELECT DISTINCT title FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 11 ORDER BY title ASC;": [
+    "Can you show distinct title in books after filtering for title has at least 11 characters.",
+    "Please show distinct title in books after filtering for title has at least 11 characters.",
+    "I need to show distinct title in books after filtering for title has at least 11 characters.",
+    "Could you show distinct title in books after filtering for title has at least 11 characters.",
+    "Return the books results for this request: show distinct title in books after filtering for title has at least 11 characters."
+  ],
+  "1.0.0:F0077:SELECT DISTINCT location FROM departments WHERE location IS NOT NULL AND LENGTH(location) >= 12 ORDER BY location ASC;": [
+    "List the unique location for departments.",
+    "Show distinct location for departments.",
+    "Which different location for departments exist?",
+    "Return every unique location for departments.",
+    "Please display deduplicated location for departments."
+  ],
+  "1.0.0:F0078:SELECT DISTINCT role FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 13 ORDER BY role ASC;": [
+    "Can you list unique role values from employee projects where role has at least 13 characters.",
+    "Please list unique role values from employee projects where role has at least 13 characters.",
+    "I need to list unique role values from employee projects where role has at least 13 characters.",
+    "Could you list unique role values from employee projects where role has at least 13 characters.",
+    "Return the employee projects results for this request: list unique role values from employee projects where role has at least 13 characters."
+  ],
+  "1.0.0:F0079:SELECT DISTINCT email FROM employees WHERE email IS NOT NULL AND LENGTH(email) >= 14 ORDER BY email ASC;": [
+    "Can you show distinct email in employees after filtering for email has at least 14 characters.",
+    "Please show distinct email in employees after filtering for email has at least 14 characters.",
+    "I need to show distinct email in employees after filtering for email has at least 14 characters.",
+    "Could you show distinct email in employees after filtering for email has at least 14 characters.",
+    "Return the employees results for this request: show distinct email in employees after filtering for email has at least 14 characters."
+  ],
+  "1.0.0:F0080:SELECT DISTINCT product_name FROM products WHERE product_name IS NOT NULL AND LENGTH(product_name) >= 15 ORDER BY product_name ASC;": [
+    "Can you which different product name values exist for products with product name has at least 15 characters?",
+    "Please which different product name values exist for products with product name has at least 15 characters?",
+    "I need to which different product name values exist for products with product name has at least 15 characters?",
+    "Could you which different product name values exist for products with product name has at least 15 characters?",
+    "Return the products results for this request: which different product name values exist for products with product name has at least 15 characters?"
+  ],
+  "1.0.0:F0081:SELECT COUNT(*) AS row_count FROM authors WHERE author_id >= 0;": [
+    "Count the authors.",
+    "How many authors match this request?",
+    "Return the number of authors.",
+    "Please calculate the authors count.",
+    "Give me the total authors."
+  ],
+  "1.0.0:F0082:SELECT COUNT(*) AS row_count FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 2;": [
+    "Count the books.",
+    "How many books match this request?",
+    "Return the number of books.",
+    "Please calculate the books count.",
+    "Give me the total books."
+  ],
+  "1.0.0:F0083:SELECT COUNT(*) AS row_count FROM departments WHERE location IS NOT NULL AND LENGTH(location) >= 3;": [
+    "Count the departments.",
+    "How many departments match this request?",
+    "Return the number of departments.",
+    "Please calculate the departments count.",
+    "Give me the total departments."
+  ],
+  "1.0.0:F0084:SELECT COUNT(*) AS row_count FROM employee_projects WHERE hours_per_week >= 3;": [
+    "Count the employee projects.",
+    "How many employee projects match this request?",
+    "Return the number of employee projects.",
+    "Please calculate the employee projects count.",
+    "Give me the total employee projects."
+  ],
+  "1.0.0:F0085:SELECT COUNT(*) AS row_count FROM employees WHERE salary >= 4;": [
+    "Count the employees.",
+    "How many employees match this request?",
+    "Return the number of employees.",
+    "Please calculate the employees count.",
+    "Give me the total employees."
+  ],
+  "1.0.0:F0086:SELECT COUNT(*) AS row_count FROM products WHERE price >= 5;": [
+    "Count the products.",
+    "How many products match this request?",
+    "Return the number of products.",
+    "Please calculate the products count.",
+    "Give me the total products."
+  ],
+  "1.0.0:F0087:SELECT COUNT(*) AS row_count FROM projects WHERE project_id >= 6;": [
+    "Count the projects.",
+    "How many projects match this request?",
+    "Return the number of projects.",
+    "Please calculate the projects count.",
+    "Give me the total projects."
+  ],
+  "1.0.0:F0088:SELECT COUNT(*) AS row_count FROM query_history WHERE rows_returned >= 7;": [
+    "Count the query history.",
+    "How many query history match this request?",
+    "Return the number of query history.",
+    "Please calculate the query history count.",
+    "Give me the total query history."
+  ],
+  "1.0.0:F0089:SELECT COUNT(*) AS row_count FROM vendors WHERE id >= 8;": [
+    "Count the vendors.",
+    "How many vendors match this request?",
+    "Return the number of vendors.",
+    "Please calculate the vendors count.",
+    "Give me the total vendors."
+  ],
+  "1.0.0:F0090:SELECT COUNT(*) AS row_count FROM authors WHERE author_id >= 9;": [
+    "Can you count authors records where author id is at least 9.",
+    "Please count authors records where author id is at least 9.",
+    "I need to count authors records where author id is at least 9.",
+    "Could you count authors records where author id is at least 9.",
+    "Return the authors results for this request: count authors records where author id is at least 9."
+  ],
+  "1.0.0:F0091:SELECT COUNT(*) AS row_count FROM books WHERE author_id >= 10;": [
+    "Can you how many books have author id is at least 10?",
+    "Please how many books have author id is at least 10?",
+    "I need to how many books have author id is at least 10?",
+    "Could you how many books have author id is at least 10?",
+    "Return the books results for this request: how many books have author id is at least 10?"
+  ],
+  "1.0.0:F0092:SELECT COUNT(*) AS row_count FROM departments WHERE location IS NOT NULL AND LENGTH(location) >= 12;": [
+    "Can you return the number of departments after filtering for location has at least 12 characters.",
+    "Please return the number of departments after filtering for location has at least 12 characters.",
+    "I need to return the number of departments after filtering for location has at least 12 characters.",
+    "Could you return the number of departments after filtering for location has at least 12 characters.",
+    "Return the departments results for this request: return the number of departments after filtering for location has at least 12 characters."
+  ],
+  "1.0.0:F0093:SELECT COUNT(*) AS row_count FROM employee_projects WHERE employee_id >= 12;": [
+    "Can you count employee projects records where employee id is at least 12.",
+    "Please count employee projects records where employee id is at least 12.",
+    "I need to count employee projects records where employee id is at least 12.",
+    "Could you count employee projects records where employee id is at least 12.",
+    "Return the employee projects results for this request: count employee projects records where employee id is at least 12."
+  ],
+  "1.0.0:F0094:SELECT COUNT(*) AS row_count FROM employees WHERE name IS NOT NULL AND LENGTH(name) >= 14;": [
+    "Can you how many employees have name has at least 14 characters?",
+    "Please how many employees have name has at least 14 characters?",
+    "I need to how many employees have name has at least 14 characters?",
+    "Could you how many employees have name has at least 14 characters?",
+    "Return the employees results for this request: how many employees have name has at least 14 characters?"
+  ],
+  "1.0.0:F0095:SELECT COUNT(*) AS row_count FROM products WHERE price >= 14;": [
+    "Can you return the number of products after filtering for price is at least 14.",
+    "Please return the number of products after filtering for price is at least 14.",
+    "I need to return the number of products after filtering for price is at least 14.",
+    "Could you return the number of products after filtering for price is at least 14.",
+    "Return the products results for this request: return the number of products after filtering for price is at least 14."
+  ],
+  "1.0.0:F0096:SELECT COUNT(*) AS row_count FROM projects WHERE project_id >= 15;": [
+    "Can you count projects records where project id is at least 15.",
+    "Please count projects records where project id is at least 15.",
+    "I need to count projects records where project id is at least 15.",
+    "Could you count projects records where project id is at least 15.",
+    "Return the projects results for this request: count projects records where project id is at least 15."
+  ],
+  "1.0.0:F0097:SELECT COUNT(*) AS row_count FROM query_history WHERE rows_returned >= 16;": [
+    "Can you how many query history have rows returned is at least 16?",
+    "Please how many query history have rows returned is at least 16?",
+    "I need to how many query history have rows returned is at least 16?",
+    "Could you how many query history have rows returned is at least 16?",
+    "Return the query history results for this request: how many query history have rows returned is at least 16?"
+  ],
+  "1.0.0:F0098:SELECT COUNT(*) AS row_count FROM vendors WHERE vendor_name IS NOT NULL AND LENGTH(vendor_name) >= 18;": [
+    "Can you return the number of vendors after filtering for vendor name has at least 18 characters.",
+    "Please return the number of vendors after filtering for vendor name has at least 18 characters.",
+    "I need to return the number of vendors after filtering for vendor name has at least 18 characters.",
+    "Could you return the number of vendors after filtering for vendor name has at least 18 characters.",
+    "Return the vendors results for this request: return the number of vendors after filtering for vendor name has at least 18 characters."
+  ],
+  "1.0.0:F0099:SELECT COUNT(*) AS row_count FROM authors WHERE author_id >= 18;": [
+    "Can you count authors records where author id is at least 18.",
+    "Please count authors records where author id is at least 18.",
+    "I need to count authors records where author id is at least 18.",
+    "Could you count authors records where author id is at least 18.",
+    "Return the authors results for this request: count authors records where author id is at least 18."
+  ],
+  "1.0.0:F0100:SELECT COUNT(*) AS row_count FROM books WHERE price >= 19;": [
+    "Can you how many books have price is at least 19?",
+    "Please how many books have price is at least 19?",
+    "I need to how many books have price is at least 19?",
+    "Could you how many books have price is at least 19?",
+    "Return the books results for this request: how many books have price is at least 19?"
+  ],
+  "1.0.0:F0101:SELECT COUNT(*) AS row_count FROM departments WHERE location IS NOT NULL AND LENGTH(location) >= 21;": [
+    "Can you return the number of departments after filtering for location has at least 21 characters.",
+    "Please return the number of departments after filtering for location has at least 21 characters.",
+    "I need to return the number of departments after filtering for location has at least 21 characters.",
+    "Could you return the number of departments after filtering for location has at least 21 characters.",
+    "Return the departments results for this request: return the number of departments after filtering for location has at least 21 characters."
+  ],
+  "1.0.0:F0102:SELECT COUNT(*) AS row_count FROM employee_projects WHERE project_id >= 21;": [
+    "Can you count employee projects records where project id is at least 21.",
+    "Please count employee projects records where project id is at least 21.",
+    "I need to count employee projects records where project id is at least 21.",
+    "Could you count employee projects records where project id is at least 21.",
+    "Return the employee projects results for this request: count employee projects records where project id is at least 21."
+  ],
+  "1.0.0:F0103:SELECT COUNT(*) AS row_count FROM employees WHERE salary >= 22;": [
+    "Can you how many employees have salary is at least 22?",
+    "Please how many employees have salary is at least 22?",
+    "I need to how many employees have salary is at least 22?",
+    "Could you how many employees have salary is at least 22?",
+    "Return the employees results for this request: how many employees have salary is at least 22?"
+  ],
+  "1.0.0:F0104:SELECT COUNT(*) AS row_count FROM products WHERE price >= 23;": [
+    "Can you return the number of products after filtering for price is at least 23.",
+    "Please return the number of products after filtering for price is at least 23.",
+    "I need to return the number of products after filtering for price is at least 23.",
+    "Could you return the number of products after filtering for price is at least 23.",
+    "Return the products results for this request: return the number of products after filtering for price is at least 23."
+  ],
+  "1.0.0:F0105:SELECT COUNT(*) AS row_count FROM projects WHERE project_id >= 24;": [
+    "Can you count projects records where project id is at least 24.",
+    "Please count projects records where project id is at least 24.",
+    "I need to count projects records where project id is at least 24.",
+    "Could you count projects records where project id is at least 24.",
+    "Return the projects results for this request: count projects records where project id is at least 24."
+  ],
+  "1.0.0:F0106:SELECT AVG(author_id) AS avg_author_id FROM authors WHERE author_name IS NOT NULL AND LENGTH(author_name) >= 1;": [
+    "Calculate the average author id for authors.",
+    "What is the average value for author id for authors?",
+    "Show the average author id for authors.",
+    "Please return the average for author id for authors.",
+    "Give me the average measurement for author id for authors."
+  ],
+  "1.0.0:F0107:SELECT AVG(price) AS avg_price FROM books WHERE price >= 1;": [
+    "Calculate the average price for books.",
+    "What is the average value for price for books?",
+    "Show the average price for books.",
+    "Please return the average for price for books.",
+    "Give me the average measurement for price for books."
+  ],
+  "1.0.0:F0108:SELECT AVG(author_id) AS avg_author_id FROM authors;": [
+    "Can you show the average author id value for authors across all records.",
+    "Please show the average author id value for authors across all records.",
+    "I need to show the average author id value for authors across all records.",
+    "Could you show the average author id value for authors across all records.",
+    "Return the authors results for this request: show the average author id value for authors across all records."
+  ],
+  "1.0.0:F0109:SELECT AVG(hours_per_week) AS avg_hours_per_week FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 4;": [
+    "Calculate the average hours per week for employee projects.",
+    "What is the average value for hours per week for employee projects?",
+    "Show the average hours per week for employee projects.",
+    "Please return the average for hours per week for employee projects.",
+    "Give me the average measurement for hours per week for employee projects."
+  ],
+  "1.0.0:F0110:SELECT AVG(salary) AS avg_salary FROM employees WHERE salary >= 4;": [
+    "Calculate the average salary for employees.",
+    "What is the average value for salary for employees?",
+    "Show the average salary for employees.",
+    "Please return the average for salary for employees.",
+    "Give me the average measurement for salary for employees."
+  ],
+  "1.0.0:F0111:SELECT AVG(price) AS avg_price FROM products;": [
+    "Calculate the average price for products.",
+    "What is the average value for price for products?",
+    "Show the average price for products.",
+    "Please return the average for price for products.",
+    "Give me the average measurement for price for products."
+  ],
+  "1.0.0:F0112:SELECT AVG(budget) AS avg_budget FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 7;": [
+    "Calculate the average budget for projects.",
+    "What is the average value for budget for projects?",
+    "Show the average budget for projects.",
+    "Please return the average for budget for projects.",
+    "Give me the average measurement for budget for projects."
+  ],
+  "1.0.0:F0113:SELECT AVG(rows_returned) AS avg_rows_returned FROM query_history WHERE rows_returned >= 7;": [
+    "Calculate the average rows returned for query history.",
+    "What is the average value for rows returned for query history?",
+    "Show the average rows returned for query history.",
+    "Please return the average for rows returned for query history.",
+    "Give me the average measurement for rows returned for query history."
+  ],
+  "1.0.0:F0114:SELECT AVG(rating) AS avg_rating FROM vendors;": [
+    "Calculate the average rating for vendors.",
+    "What is the average value for rating for vendors?",
+    "Show the average rating for vendors.",
+    "Please return the average for rating for vendors.",
+    "Give me the average measurement for rating for vendors."
+  ],
+  "1.0.0:F0115:SELECT AVG(price) AS avg_price FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 10;": [
+    "Can you calculate the average price for books where title has at least 10 characters.",
+    "Please calculate the average price for books where title has at least 10 characters.",
+    "I need to calculate the average price for books where title has at least 10 characters.",
+    "Could you calculate the average price for books where title has at least 10 characters.",
+    "Return the books results for this request: calculate the average price for books where title has at least 10 characters."
+  ],
+  "1.0.0:F0116:SELECT AVG(author_id) AS avg_author_id FROM books WHERE author_id >= 10;": [
+    "Calculate the average author id for books.",
+    "What is the average value for author id for books?",
+    "Show the average author id for books.",
+    "Please return the average for author id for books.",
+    "Give me the average measurement for author id for books."
+  ],
+  "1.0.0:F0117:SELECT AVG(price) AS avg_price FROM books;": [
+    "Can you show the average price value for books across all records.",
+    "Please show the average price value for books across all records.",
+    "I need to show the average price value for books across all records.",
+    "Could you show the average price value for books across all records.",
+    "Return the books results for this request: show the average price value for books across all records."
+  ],
+  "1.0.0:F0118:SELECT AVG(hours_per_week) AS avg_hours_per_week FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 13;": [
+    "Can you calculate the average hours per week for employee projects where role has at least 13 characters.",
+    "Please calculate the average hours per week for employee projects where role has at least 13 characters.",
+    "I need to calculate the average hours per week for employee projects where role has at least 13 characters.",
+    "Could you calculate the average hours per week for employee projects where role has at least 13 characters.",
+    "Return the employee projects results for this request: calculate the average hours per week for employee projects where role has at least 13 characters."
+  ],
+  "1.0.0:F0119:SELECT AVG(salary) AS avg_salary FROM employees WHERE salary >= 13;": [
+    "Can you what is the average salary in employees where salary is at least 13?",
+    "Please what is the average salary in employees where salary is at least 13?",
+    "I need to what is the average salary in employees where salary is at least 13?",
+    "Could you what is the average salary in employees where salary is at least 13?",
+    "Return the employees results for this request: what is the average salary in employees where salary is at least 13?"
+  ],
+  "1.0.0:F0120:SELECT AVG(budget) AS avg_budget FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 16;": [
+    "Can you calculate the average budget for projects where project name has at least 16 characters.",
+    "Please calculate the average budget for projects where project name has at least 16 characters.",
+    "I need to calculate the average budget for projects where project name has at least 16 characters.",
+    "Could you calculate the average budget for projects where project name has at least 16 characters.",
+    "Return the projects results for this request: calculate the average budget for projects where project name has at least 16 characters."
+  ],
+  "1.0.0:F0121:SELECT AVG(execution_time) AS avg_execution_time FROM query_history WHERE execution_time >= 16;": [
+    "Calculate the average execution time for query history.",
+    "What is the average value for execution time for query history?",
+    "Show the average execution time for query history.",
+    "Please return the average for execution time for query history.",
+    "Give me the average measurement for execution time for query history."
+  ],
+  "1.0.0:F0122:SELECT AVG(author_id) AS avg_author_id FROM authors WHERE author_name IS NOT NULL AND LENGTH(author_name) >= 19;": [
+    "Can you calculate the average author id for authors where author name has at least 19 characters.",
+    "Please calculate the average author id for authors where author name has at least 19 characters.",
+    "I need to calculate the average author id for authors where author name has at least 19 characters.",
+    "Could you calculate the average author id for authors where author name has at least 19 characters.",
+    "Return the authors results for this request: calculate the average author id for authors where author name has at least 19 characters."
+  ],
+  "1.0.0:F0123:SELECT AVG(price) AS avg_price FROM books WHERE price >= 19;": [
+    "Can you what is the average price in books where price is at least 19?",
+    "Please what is the average price in books where price is at least 19?",
+    "I need to what is the average price in books where price is at least 19?",
+    "Could you what is the average price in books where price is at least 19?",
+    "Return the books results for this request: what is the average price in books where price is at least 19?"
+  ],
+  "1.0.0:F0124:SELECT AVG(hours_per_week) AS avg_hours_per_week FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 22;": [
+    "Can you calculate the average hours per week for employee projects where role has at least 22 characters.",
+    "Please calculate the average hours per week for employee projects where role has at least 22 characters.",
+    "I need to calculate the average hours per week for employee projects where role has at least 22 characters.",
+    "Could you calculate the average hours per week for employee projects where role has at least 22 characters.",
+    "Return the employee projects results for this request: calculate the average hours per week for employee projects where role has at least 22 characters."
+  ],
+  "1.0.0:F0125:SELECT AVG(salary) AS avg_salary FROM employees WHERE salary >= 22;": [
+    "Can you what is the average salary in employees where salary is at least 22?",
+    "Please what is the average salary in employees where salary is at least 22?",
+    "I need to what is the average salary in employees where salary is at least 22?",
+    "Could you what is the average salary in employees where salary is at least 22?",
+    "Return the employees results for this request: what is the average salary in employees where salary is at least 22?"
+  ],
+  "1.0.0:F0126:SELECT MIN(author_id) AS min_author_id FROM authors WHERE author_name IS NOT NULL AND LENGTH(author_name) >= 1;": [
+    "Calculate the lowest author id for authors.",
+    "What is the lowest value for author id for authors?",
+    "Show the lowest author id for authors.",
+    "Please return the lowest for author id for authors.",
+    "Give me the lowest measurement for author id for authors."
+  ],
+  "1.0.0:F0127:SELECT MIN(price) AS min_price FROM books WHERE price >= 1;": [
+    "Calculate the lowest price for books.",
+    "What is the lowest value for price for books?",
+    "Show the lowest price for books.",
+    "Please return the lowest for price for books.",
+    "Give me the lowest measurement for price for books."
+  ],
+  "1.0.0:F0128:SELECT MIN(author_id) AS min_author_id FROM authors;": [
+    "Can you show the lowest author id value for authors across all records.",
+    "Please show the lowest author id value for authors across all records.",
+    "I need to show the lowest author id value for authors across all records.",
+    "Could you show the lowest author id value for authors across all records.",
+    "Return the authors results for this request: show the lowest author id value for authors across all records."
+  ],
+  "1.0.0:F0129:SELECT MIN(hours_per_week) AS min_hours_per_week FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 4;": [
+    "Calculate the lowest hours per week for employee projects.",
+    "What is the lowest value for hours per week for employee projects?",
+    "Show the lowest hours per week for employee projects.",
+    "Please return the lowest for hours per week for employee projects.",
+    "Give me the lowest measurement for hours per week for employee projects."
+  ],
+  "1.0.0:F0130:SELECT MIN(salary) AS min_salary FROM employees WHERE salary >= 4;": [
+    "Calculate the lowest salary for employees.",
+    "What is the lowest value for salary for employees?",
+    "Show the lowest salary for employees.",
+    "Please return the lowest for salary for employees.",
+    "Give me the lowest measurement for salary for employees."
+  ],
+  "1.0.0:F0131:SELECT MIN(price) AS min_price FROM products;": [
+    "Calculate the lowest price for products.",
+    "What is the lowest value for price for products?",
+    "Show the lowest price for products.",
+    "Please return the lowest for price for products.",
+    "Give me the lowest measurement for price for products."
+  ],
+  "1.0.0:F0132:SELECT MIN(budget) AS min_budget FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 7;": [
+    "Calculate the lowest budget for projects.",
+    "What is the lowest value for budget for projects?",
+    "Show the lowest budget for projects.",
+    "Please return the lowest for budget for projects.",
+    "Give me the lowest measurement for budget for projects."
+  ],
+  "1.0.0:F0133:SELECT MIN(rows_returned) AS min_rows_returned FROM query_history WHERE rows_returned >= 7;": [
+    "Calculate the lowest rows returned for query history.",
+    "What is the lowest value for rows returned for query history?",
+    "Show the lowest rows returned for query history.",
+    "Please return the lowest for rows returned for query history.",
+    "Give me the lowest measurement for rows returned for query history."
+  ],
+  "1.0.0:F0134:SELECT MIN(rating) AS min_rating FROM vendors;": [
+    "Calculate the lowest rating for vendors.",
+    "What is the lowest value for rating for vendors?",
+    "Show the lowest rating for vendors.",
+    "Please return the lowest for rating for vendors.",
+    "Give me the lowest measurement for rating for vendors."
+  ],
+  "1.0.0:F0135:SELECT MIN(price) AS min_price FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 10;": [
+    "Can you calculate the lowest price for books where title has at least 10 characters.",
+    "Please calculate the lowest price for books where title has at least 10 characters.",
+    "I need to calculate the lowest price for books where title has at least 10 characters.",
+    "Could you calculate the lowest price for books where title has at least 10 characters.",
+    "Return the books results for this request: calculate the lowest price for books where title has at least 10 characters."
+  ],
+  "1.0.0:F0136:SELECT MIN(author_id) AS min_author_id FROM books WHERE author_id >= 10;": [
+    "Calculate the lowest author id for books.",
+    "What is the lowest value for author id for books?",
+    "Show the lowest author id for books.",
+    "Please return the lowest for author id for books.",
+    "Give me the lowest measurement for author id for books."
+  ],
+  "1.0.0:F0137:SELECT MIN(price) AS min_price FROM books;": [
+    "Can you show the lowest price value for books across all records.",
+    "Please show the lowest price value for books across all records.",
+    "I need to show the lowest price value for books across all records.",
+    "Could you show the lowest price value for books across all records.",
+    "Return the books results for this request: show the lowest price value for books across all records."
+  ],
+  "1.0.0:F0138:SELECT MIN(hours_per_week) AS min_hours_per_week FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 13;": [
+    "Can you calculate the lowest hours per week for employee projects where role has at least 13 characters.",
+    "Please calculate the lowest hours per week for employee projects where role has at least 13 characters.",
+    "I need to calculate the lowest hours per week for employee projects where role has at least 13 characters.",
+    "Could you calculate the lowest hours per week for employee projects where role has at least 13 characters.",
+    "Return the employee projects results for this request: calculate the lowest hours per week for employee projects where role has at least 13 characters."
+  ],
+  "1.0.0:F0139:SELECT MIN(salary) AS min_salary FROM employees WHERE salary >= 13;": [
+    "Can you what is the lowest salary in employees where salary is at least 13?",
+    "Please what is the lowest salary in employees where salary is at least 13?",
+    "I need to what is the lowest salary in employees where salary is at least 13?",
+    "Could you what is the lowest salary in employees where salary is at least 13?",
+    "Return the employees results for this request: what is the lowest salary in employees where salary is at least 13?"
+  ],
+  "1.0.0:F0140:SELECT MIN(budget) AS min_budget FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 16;": [
+    "Can you calculate the lowest budget for projects where project name has at least 16 characters.",
+    "Please calculate the lowest budget for projects where project name has at least 16 characters.",
+    "I need to calculate the lowest budget for projects where project name has at least 16 characters.",
+    "Could you calculate the lowest budget for projects where project name has at least 16 characters.",
+    "Return the projects results for this request: calculate the lowest budget for projects where project name has at least 16 characters."
+  ],
+  "1.0.0:F0141:SELECT MAX(author_id) AS max_author_id FROM authors WHERE author_name IS NOT NULL AND LENGTH(author_name) >= 1;": [
+    "Calculate the highest author id for authors.",
+    "What is the highest value for author id for authors?",
+    "Show the highest author id for authors.",
+    "Please return the highest for author id for authors.",
+    "Give me the highest measurement for author id for authors."
+  ],
+  "1.0.0:F0142:SELECT MAX(price) AS max_price FROM books WHERE price >= 1;": [
+    "Calculate the highest price for books.",
+    "What is the highest value for price for books?",
+    "Show the highest price for books.",
+    "Please return the highest for price for books.",
+    "Give me the highest measurement for price for books."
+  ],
+  "1.0.0:F0143:SELECT MAX(author_id) AS max_author_id FROM authors;": [
+    "Can you show the highest author id value for authors across all records.",
+    "Please show the highest author id value for authors across all records.",
+    "I need to show the highest author id value for authors across all records.",
+    "Could you show the highest author id value for authors across all records.",
+    "Return the authors results for this request: show the highest author id value for authors across all records."
+  ],
+  "1.0.0:F0144:SELECT MAX(hours_per_week) AS max_hours_per_week FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 4;": [
+    "Calculate the highest hours per week for employee projects.",
+    "What is the highest value for hours per week for employee projects?",
+    "Show the highest hours per week for employee projects.",
+    "Please return the highest for hours per week for employee projects.",
+    "Give me the highest measurement for hours per week for employee projects."
+  ],
+  "1.0.0:F0145:SELECT MAX(salary) AS max_salary FROM employees WHERE salary >= 4;": [
+    "Calculate the highest salary for employees.",
+    "What is the highest value for salary for employees?",
+    "Show the highest salary for employees.",
+    "Please return the highest for salary for employees.",
+    "Give me the highest measurement for salary for employees."
+  ],
+  "1.0.0:F0146:SELECT MAX(price) AS max_price FROM products;": [
+    "Calculate the highest price for products.",
+    "What is the highest value for price for products?",
+    "Show the highest price for products.",
+    "Please return the highest for price for products.",
+    "Give me the highest measurement for price for products."
+  ],
+  "1.0.0:F0147:SELECT MAX(budget) AS max_budget FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 7;": [
+    "Calculate the highest budget for projects.",
+    "What is the highest value for budget for projects?",
+    "Show the highest budget for projects.",
+    "Please return the highest for budget for projects.",
+    "Give me the highest measurement for budget for projects."
+  ],
+  "1.0.0:F0148:SELECT MAX(rows_returned) AS max_rows_returned FROM query_history WHERE rows_returned >= 7;": [
+    "Calculate the highest rows returned for query history.",
+    "What is the highest value for rows returned for query history?",
+    "Show the highest rows returned for query history.",
+    "Please return the highest for rows returned for query history.",
+    "Give me the highest measurement for rows returned for query history."
+  ],
+  "1.0.0:F0149:SELECT MAX(rating) AS max_rating FROM vendors;": [
+    "Calculate the highest rating for vendors.",
+    "What is the highest value for rating for vendors?",
+    "Show the highest rating for vendors.",
+    "Please return the highest for rating for vendors.",
+    "Give me the highest measurement for rating for vendors."
+  ],
+  "1.0.0:F0150:SELECT MAX(price) AS max_price FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 10;": [
+    "Can you calculate the highest price for books where title has at least 10 characters.",
+    "Please calculate the highest price for books where title has at least 10 characters.",
+    "I need to calculate the highest price for books where title has at least 10 characters.",
+    "Could you calculate the highest price for books where title has at least 10 characters.",
+    "Return the books results for this request: calculate the highest price for books where title has at least 10 characters."
+  ],
+  "1.0.0:F0151:SELECT MAX(author_id) AS max_author_id FROM books WHERE author_id >= 10;": [
+    "Calculate the highest author id for books.",
+    "What is the highest value for author id for books?",
+    "Show the highest author id for books.",
+    "Please return the highest for author id for books.",
+    "Give me the highest measurement for author id for books."
+  ],
+  "1.0.0:F0152:SELECT MAX(price) AS max_price FROM books;": [
+    "Can you show the highest price value for books across all records.",
+    "Please show the highest price value for books across all records.",
+    "I need to show the highest price value for books across all records.",
+    "Could you show the highest price value for books across all records.",
+    "Return the books results for this request: show the highest price value for books across all records."
+  ],
+  "1.0.0:F0153:SELECT MAX(hours_per_week) AS max_hours_per_week FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 13;": [
+    "Can you calculate the highest hours per week for employee projects where role has at least 13 characters.",
+    "Please calculate the highest hours per week for employee projects where role has at least 13 characters.",
+    "I need to calculate the highest hours per week for employee projects where role has at least 13 characters.",
+    "Could you calculate the highest hours per week for employee projects where role has at least 13 characters.",
+    "Return the employee projects results for this request: calculate the highest hours per week for employee projects where role has at least 13 characters."
+  ],
+  "1.0.0:F0154:SELECT MAX(salary) AS max_salary FROM employees WHERE salary >= 13;": [
+    "Can you what is the highest salary in employees where salary is at least 13?",
+    "Please what is the highest salary in employees where salary is at least 13?",
+    "I need to what is the highest salary in employees where salary is at least 13?",
+    "Could you what is the highest salary in employees where salary is at least 13?",
+    "Return the employees results for this request: what is the highest salary in employees where salary is at least 13?"
+  ],
+  "1.0.0:F0155:SELECT MAX(budget) AS max_budget FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 16;": [
+    "Can you calculate the highest budget for projects where project name has at least 16 characters.",
+    "Please calculate the highest budget for projects where project name has at least 16 characters.",
+    "I need to calculate the highest budget for projects where project name has at least 16 characters.",
+    "Could you calculate the highest budget for projects where project name has at least 16 characters.",
+    "Return the projects results for this request: calculate the highest budget for projects where project name has at least 16 characters."
+  ],
+  "1.0.0:F0156:SELECT SUM(author_id) AS sum_author_id FROM authors WHERE author_name IS NOT NULL AND LENGTH(author_name) >= 1;": [
+    "Calculate the total author id for authors.",
+    "What is the total value for author id for authors?",
+    "Show the total author id for authors.",
+    "Please return the total for author id for authors.",
+    "Give me the total measurement for author id for authors."
+  ],
+  "1.0.0:F0157:SELECT SUM(price) AS sum_price FROM books WHERE price >= 1;": [
+    "Calculate the total price for books.",
+    "What is the total value for price for books?",
+    "Show the total price for books.",
+    "Please return the total for price for books.",
+    "Give me the total measurement for price for books."
+  ],
+  "1.0.0:F0158:SELECT SUM(author_id) AS sum_author_id FROM authors;": [
+    "Can you show the total author id value for authors across all records.",
+    "Please show the total author id value for authors across all records.",
+    "I need to show the total author id value for authors across all records.",
+    "Could you show the total author id value for authors across all records.",
+    "Return the authors results for this request: show the total author id value for authors across all records."
+  ],
+  "1.0.0:F0159:SELECT SUM(hours_per_week) AS sum_hours_per_week FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 4;": [
+    "Calculate the total hours per week for employee projects.",
+    "What is the total value for hours per week for employee projects?",
+    "Show the total hours per week for employee projects.",
+    "Please return the total for hours per week for employee projects.",
+    "Give me the total measurement for hours per week for employee projects."
+  ],
+  "1.0.0:F0160:SELECT SUM(salary) AS sum_salary FROM employees WHERE salary >= 4;": [
+    "Calculate the total salary for employees.",
+    "What is the total value for salary for employees?",
+    "Show the total salary for employees.",
+    "Please return the total for salary for employees.",
+    "Give me the total measurement for salary for employees."
+  ],
+  "1.0.0:F0161:SELECT SUM(price) AS sum_price FROM products;": [
+    "Calculate the total price for products.",
+    "What is the total value for price for products?",
+    "Show the total price for products.",
+    "Please return the total for price for products.",
+    "Give me the total measurement for price for products."
+  ],
+  "1.0.0:F0162:SELECT SUM(budget) AS sum_budget FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 7;": [
+    "Calculate the total budget for projects.",
+    "What is the total value for budget for projects?",
+    "Show the total budget for projects.",
+    "Please return the total for budget for projects.",
+    "Give me the total measurement for budget for projects."
+  ],
+  "1.0.0:F0163:SELECT SUM(rows_returned) AS sum_rows_returned FROM query_history WHERE rows_returned >= 7;": [
+    "Calculate the total rows returned for query history.",
+    "What is the total value for rows returned for query history?",
+    "Show the total rows returned for query history.",
+    "Please return the total for rows returned for query history.",
+    "Give me the total measurement for rows returned for query history."
+  ],
+  "1.0.0:F0164:SELECT SUM(rating) AS sum_rating FROM vendors;": [
+    "Calculate the total rating for vendors.",
+    "What is the total value for rating for vendors?",
+    "Show the total rating for vendors.",
+    "Please return the total for rating for vendors.",
+    "Give me the total measurement for rating for vendors."
+  ],
+  "1.0.0:F0165:SELECT SUM(price) AS sum_price FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 10;": [
+    "Can you calculate the total price for books where title has at least 10 characters.",
+    "Please calculate the total price for books where title has at least 10 characters.",
+    "I need to calculate the total price for books where title has at least 10 characters.",
+    "Could you calculate the total price for books where title has at least 10 characters.",
+    "Return the books results for this request: calculate the total price for books where title has at least 10 characters."
+  ],
+  "1.0.0:F0166:SELECT SUM(author_id) AS sum_author_id FROM books WHERE author_id >= 10;": [
+    "Calculate the total author id for books.",
+    "What is the total value for author id for books?",
+    "Show the total author id for books.",
+    "Please return the total for author id for books.",
+    "Give me the total measurement for author id for books."
+  ],
+  "1.0.0:F0167:SELECT SUM(price) AS sum_price FROM books;": [
+    "Can you show the total price value for books across all records.",
+    "Please show the total price value for books across all records.",
+    "I need to show the total price value for books across all records.",
+    "Could you show the total price value for books across all records.",
+    "Return the books results for this request: show the total price value for books across all records."
+  ],
+  "1.0.0:F0168:SELECT SUM(hours_per_week) AS sum_hours_per_week FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 13;": [
+    "Can you calculate the total hours per week for employee projects where role has at least 13 characters.",
+    "Please calculate the total hours per week for employee projects where role has at least 13 characters.",
+    "I need to calculate the total hours per week for employee projects where role has at least 13 characters.",
+    "Could you calculate the total hours per week for employee projects where role has at least 13 characters.",
+    "Return the employee projects results for this request: calculate the total hours per week for employee projects where role has at least 13 characters."
+  ],
+  "1.0.0:F0169:SELECT SUM(salary) AS sum_salary FROM employees WHERE salary >= 13;": [
+    "Can you what is the total salary in employees where salary is at least 13?",
+    "Please what is the total salary in employees where salary is at least 13?",
+    "I need to what is the total salary in employees where salary is at least 13?",
+    "Could you what is the total salary in employees where salary is at least 13?",
+    "Return the employees results for this request: what is the total salary in employees where salary is at least 13?"
+  ],
+  "1.0.0:F0170:SELECT SUM(budget) AS sum_budget FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 16;": [
+    "Can you calculate the total budget for projects where project name has at least 16 characters.",
+    "Please calculate the total budget for projects where project name has at least 16 characters.",
+    "I need to calculate the total budget for projects where project name has at least 16 characters.",
+    "Could you calculate the total budget for projects where project name has at least 16 characters.",
+    "Return the projects results for this request: calculate the total budget for projects where project name has at least 16 characters."
+  ],
+  "1.0.0:F0171:SELECT author_name, COUNT(*) AS row_count FROM authors WHERE author_name IS NOT NULL AND LENGTH(author_name) >= 1 GROUP BY author_name ORDER BY COUNT(*) DESC;": [
+    "Break down authors by author name for authors.",
+    "Group authors using author name for authors.",
+    "Show counts of authors for each author name for authors.",
+    "Please summarize authors by author name for authors.",
+    "Return the grouped authors totals."
+  ],
+  "1.0.0:F0171:SELECT author_name, COUNT(*) AS row_count FROM authors WHERE author_name IS NOT NULL AND LENGTH(author_name) >= 1 GROUP BY author_name ORDER BY row_count DESC;": [
+    "Break down authors by author name for authors.",
+    "Group authors using author name for authors.",
+    "Show counts of authors for each author name for authors.",
+    "Please summarize authors by author name for authors.",
+    "Return the grouped authors totals."
+  ],
+  "1.0.0:F0172:SELECT title, COUNT(*) AS row_count FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 2 GROUP BY title ORDER BY COUNT(*) DESC;": [
+    "Break down books by title for books.",
+    "Group books using title for books.",
+    "Show counts of books for each title for books.",
+    "Please summarize books by title for books.",
+    "Return the grouped books totals."
+  ],
+  "1.0.0:F0172:SELECT title, COUNT(*) AS row_count FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 2 GROUP BY title ORDER BY row_count DESC;": [
+    "Break down books by title for books.",
+    "Group books using title for books.",
+    "Show counts of books for each title for books.",
+    "Please summarize books by title for books.",
+    "Return the grouped books totals."
+  ],
+  "1.0.0:F0173:SELECT department_name, COUNT(*) AS row_count FROM departments WHERE department_name IS NOT NULL AND LENGTH(department_name) >= 3 GROUP BY department_name ORDER BY COUNT(*) DESC;": [
+    "Break down departments by department name for departments.",
+    "Group departments using department name for departments.",
+    "Show counts of departments for each department name for departments.",
+    "Please summarize departments by department name for departments.",
+    "Return the grouped departments totals."
+  ],
+  "1.0.0:F0173:SELECT department_name, COUNT(*) AS row_count FROM departments WHERE department_name IS NOT NULL AND LENGTH(department_name) >= 3 GROUP BY department_name ORDER BY row_count DESC;": [
+    "Break down departments by department name for departments.",
+    "Group departments using department name for departments.",
+    "Show counts of departments for each department name for departments.",
+    "Please summarize departments by department name for departments.",
+    "Return the grouped departments totals."
+  ],
+  "1.0.0:F0174:SELECT role, COUNT(*) AS row_count FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 4 GROUP BY role ORDER BY COUNT(*) DESC;": [
+    "Break down employee projects by role for employee projects.",
+    "Group employee projects using role for employee projects.",
+    "Show counts of employee projects for each role for employee projects.",
+    "Please summarize employee projects by role for employee projects.",
+    "Return the grouped employee projects totals."
+  ],
+  "1.0.0:F0174:SELECT role, COUNT(*) AS row_count FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 4 GROUP BY role ORDER BY row_count DESC;": [
+    "Break down employee projects by role for employee projects.",
+    "Group employee projects using role for employee projects.",
+    "Show counts of employee projects for each role for employee projects.",
+    "Please summarize employee projects by role for employee projects.",
+    "Return the grouped employee projects totals."
+  ],
+  "1.0.0:F0175:SELECT email, COUNT(*) AS row_count FROM employees WHERE email IS NOT NULL AND LENGTH(email) >= 5 GROUP BY email ORDER BY COUNT(*) DESC;": [
+    "Break down employees by email for employees.",
+    "Group employees using email for employees.",
+    "Show counts of employees for each email for employees.",
+    "Please summarize employees by email for employees.",
+    "Return the grouped employees totals."
+  ],
+  "1.0.0:F0175:SELECT email, COUNT(*) AS row_count FROM employees WHERE email IS NOT NULL AND LENGTH(email) >= 5 GROUP BY email ORDER BY row_count DESC;": [
+    "Break down employees by email for employees.",
+    "Group employees using email for employees.",
+    "Show counts of employees for each email for employees.",
+    "Please summarize employees by email for employees.",
+    "Return the grouped employees totals."
+  ],
+  "1.0.0:F0176:SELECT product_name, COUNT(*) AS row_count FROM products WHERE product_name IS NOT NULL AND LENGTH(product_name) >= 6 GROUP BY product_name ORDER BY COUNT(*) DESC;": [
+    "Break down products by product name for products.",
+    "Group products using product name for products.",
+    "Show counts of products for each product name for products.",
+    "Please summarize products by product name for products.",
+    "Return the grouped products totals."
+  ],
+  "1.0.0:F0176:SELECT product_name, COUNT(*) AS row_count FROM products WHERE product_name IS NOT NULL AND LENGTH(product_name) >= 6 GROUP BY product_name ORDER BY row_count DESC;": [
+    "Break down products by product name for products.",
+    "Group products using product name for products.",
+    "Show counts of products for each product name for products.",
+    "Please summarize products by product name for products.",
+    "Return the grouped products totals."
+  ],
+  "1.0.0:F0177:SELECT project_name, COUNT(*) AS row_count FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 7 GROUP BY project_name ORDER BY COUNT(*) DESC;": [
+    "Break down projects by project name for projects.",
+    "Group projects using project name for projects.",
+    "Show counts of projects for each project name for projects.",
+    "Please summarize projects by project name for projects.",
+    "Return the grouped projects totals."
+  ],
+  "1.0.0:F0177:SELECT project_name, COUNT(*) AS row_count FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 7 GROUP BY project_name ORDER BY row_count DESC;": [
+    "Break down projects by project name for projects.",
+    "Group projects using project name for projects.",
+    "Show counts of projects for each project name for projects.",
+    "Please summarize projects by project name for projects.",
+    "Return the grouped projects totals."
+  ],
+  "1.0.0:F0178:SELECT generation_mode, COUNT(*) AS row_count FROM query_history WHERE generation_mode IS NOT NULL AND LENGTH(generation_mode) >= 8 GROUP BY generation_mode ORDER BY COUNT(*) DESC;": [
+    "Break down query history by generation mode for query history.",
+    "Group query history using generation mode for query history.",
+    "Show counts of query history for each generation mode for query history.",
+    "Please summarize query history by generation mode for query history.",
+    "Return the grouped query history totals."
+  ],
+  "1.0.0:F0178:SELECT generation_mode, COUNT(*) AS row_count FROM query_history WHERE generation_mode IS NOT NULL AND LENGTH(generation_mode) >= 8 GROUP BY generation_mode ORDER BY row_count DESC;": [
+    "Break down query history by generation mode for query history.",
+    "Group query history using generation mode for query history.",
+    "Show counts of query history for each generation mode for query history.",
+    "Please summarize query history by generation mode for query history.",
+    "Return the grouped query history totals."
+  ],
+  "1.0.0:F0179:SELECT vendor_name, COUNT(*) AS row_count FROM vendors WHERE vendor_name IS NOT NULL AND LENGTH(vendor_name) >= 9 GROUP BY vendor_name ORDER BY COUNT(*) DESC;": [
+    "Break down vendors by vendor name for vendors.",
+    "Group vendors using vendor name for vendors.",
+    "Show counts of vendors for each vendor name for vendors.",
+    "Please summarize vendors by vendor name for vendors.",
+    "Return the grouped vendors totals."
+  ],
+  "1.0.0:F0179:SELECT vendor_name, COUNT(*) AS row_count FROM vendors WHERE vendor_name IS NOT NULL AND LENGTH(vendor_name) >= 9 GROUP BY vendor_name ORDER BY row_count DESC;": [
+    "Break down vendors by vendor name for vendors.",
+    "Group vendors using vendor name for vendors.",
+    "Show counts of vendors for each vendor name for vendors.",
+    "Please summarize vendors by vendor name for vendors.",
+    "Return the grouped vendors totals."
+  ],
+  "1.0.0:F0180:SELECT country, COUNT(*) AS row_count FROM authors WHERE country IS NOT NULL AND LENGTH(country) >= 10 GROUP BY country ORDER BY COUNT(*) DESC;": [
+    "Break down authors by country for authors.",
+    "Group authors using country for authors.",
+    "Show counts of authors for each country for authors.",
+    "Please summarize authors by country for authors.",
+    "Can you break down authors by country where country has at least 10 characters."
+  ],
+  "1.0.0:F0180:SELECT country, COUNT(*) AS row_count FROM authors WHERE country IS NOT NULL AND LENGTH(country) >= 10 GROUP BY country ORDER BY row_count DESC;": [
+    "Break down authors by country for authors.",
+    "Group authors using country for authors.",
+    "Show counts of authors for each country for authors.",
+    "Please summarize authors by country for authors.",
+    "Can you break down authors by country where country has at least 10 characters."
+  ],
+  "1.0.0:F0181:SELECT title, COUNT(*) AS row_count FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 11 GROUP BY title ORDER BY COUNT(*) DESC;": [
+    "Can you count books for each title after filtering for title has at least 11 characters.",
+    "Please count books for each title after filtering for title has at least 11 characters.",
+    "I need to count books for each title after filtering for title has at least 11 characters.",
+    "Could you count books for each title after filtering for title has at least 11 characters.",
+    "Return the books results for this request: count books for each title after filtering for title has at least 11 characters."
+  ],
+  "1.0.0:F0181:SELECT title, COUNT(*) AS row_count FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 11 GROUP BY title ORDER BY row_count DESC;": [
+    "Can you count books for each title after filtering for title has at least 11 characters.",
+    "Please count books for each title after filtering for title has at least 11 characters.",
+    "I need to count books for each title after filtering for title has at least 11 characters.",
+    "Could you count books for each title after filtering for title has at least 11 characters.",
+    "Return the books results for this request: count books for each title after filtering for title has at least 11 characters."
+  ],
+  "1.0.0:F0182:SELECT location, COUNT(*) AS row_count FROM departments WHERE location IS NOT NULL AND LENGTH(location) >= 12 GROUP BY location ORDER BY COUNT(*) DESC;": [
+    "Break down departments by location for departments.",
+    "Group departments using location for departments.",
+    "Show counts of departments for each location for departments.",
+    "Please summarize departments by location for departments.",
+    "Can you summarize departments grouped by location with location has at least 12 characters."
+  ],
+  "1.0.0:F0182:SELECT location, COUNT(*) AS row_count FROM departments WHERE location IS NOT NULL AND LENGTH(location) >= 12 GROUP BY location ORDER BY row_count DESC;": [
+    "Break down departments by location for departments.",
+    "Group departments using location for departments.",
+    "Show counts of departments for each location for departments.",
+    "Please summarize departments by location for departments.",
+    "Can you summarize departments grouped by location with location has at least 12 characters."
+  ],
+  "1.0.0:F0183:SELECT role, COUNT(*) AS row_count FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 13 GROUP BY role ORDER BY COUNT(*) DESC;": [
+    "Can you break down employee projects by role where role has at least 13 characters.",
+    "Please break down employee projects by role where role has at least 13 characters.",
+    "I need to break down employee projects by role where role has at least 13 characters.",
+    "Could you break down employee projects by role where role has at least 13 characters.",
+    "Return the employee projects results for this request: break down employee projects by role where role has at least 13 characters."
+  ],
+  "1.0.0:F0183:SELECT role, COUNT(*) AS row_count FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 13 GROUP BY role ORDER BY row_count DESC;": [
+    "Can you break down employee projects by role where role has at least 13 characters.",
+    "Please break down employee projects by role where role has at least 13 characters.",
+    "I need to break down employee projects by role where role has at least 13 characters.",
+    "Could you break down employee projects by role where role has at least 13 characters.",
+    "Return the employee projects results for this request: break down employee projects by role where role has at least 13 characters."
+  ],
+  "1.0.0:F0184:SELECT email, COUNT(*) AS row_count FROM employees WHERE email IS NOT NULL AND LENGTH(email) >= 14 GROUP BY email ORDER BY COUNT(*) DESC;": [
+    "Can you count employees for each email after filtering for email has at least 14 characters.",
+    "Please count employees for each email after filtering for email has at least 14 characters.",
+    "I need to count employees for each email after filtering for email has at least 14 characters.",
+    "Could you count employees for each email after filtering for email has at least 14 characters.",
+    "Return the employees results for this request: count employees for each email after filtering for email has at least 14 characters."
+  ],
+  "1.0.0:F0184:SELECT email, COUNT(*) AS row_count FROM employees WHERE email IS NOT NULL AND LENGTH(email) >= 14 GROUP BY email ORDER BY row_count DESC;": [
+    "Can you count employees for each email after filtering for email has at least 14 characters.",
+    "Please count employees for each email after filtering for email has at least 14 characters.",
+    "I need to count employees for each email after filtering for email has at least 14 characters.",
+    "Could you count employees for each email after filtering for email has at least 14 characters.",
+    "Return the employees results for this request: count employees for each email after filtering for email has at least 14 characters."
+  ],
+  "1.0.0:F0185:SELECT product_name, COUNT(*) AS row_count FROM products WHERE product_name IS NOT NULL AND LENGTH(product_name) >= 15 GROUP BY product_name ORDER BY COUNT(*) DESC;": [
+    "Can you summarize products grouped by product name with product name has at least 15 characters.",
+    "Please summarize products grouped by product name with product name has at least 15 characters.",
+    "I need to summarize products grouped by product name with product name has at least 15 characters.",
+    "Could you summarize products grouped by product name with product name has at least 15 characters.",
+    "Return the products results for this request: summarize products grouped by product name with product name has at least 15 characters."
+  ],
+  "1.0.0:F0185:SELECT product_name, COUNT(*) AS row_count FROM products WHERE product_name IS NOT NULL AND LENGTH(product_name) >= 15 GROUP BY product_name ORDER BY row_count DESC;": [
+    "Can you summarize products grouped by product name with product name has at least 15 characters.",
+    "Please summarize products grouped by product name with product name has at least 15 characters.",
+    "I need to summarize products grouped by product name with product name has at least 15 characters.",
+    "Could you summarize products grouped by product name with product name has at least 15 characters.",
+    "Return the products results for this request: summarize products grouped by product name with product name has at least 15 characters."
+  ],
+  "1.0.0:F0186:SELECT project_name, COUNT(*) AS row_count FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 16 GROUP BY project_name ORDER BY COUNT(*) DESC;": [
+    "Can you break down projects by project name where project name has at least 16 characters.",
+    "Please break down projects by project name where project name has at least 16 characters.",
+    "I need to break down projects by project name where project name has at least 16 characters.",
+    "Could you break down projects by project name where project name has at least 16 characters.",
+    "Return the projects results for this request: break down projects by project name where project name has at least 16 characters."
+  ],
+  "1.0.0:F0186:SELECT project_name, COUNT(*) AS row_count FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 16 GROUP BY project_name ORDER BY row_count DESC;": [
+    "Can you break down projects by project name where project name has at least 16 characters.",
+    "Please break down projects by project name where project name has at least 16 characters.",
+    "I need to break down projects by project name where project name has at least 16 characters.",
+    "Could you break down projects by project name where project name has at least 16 characters.",
+    "Return the projects results for this request: break down projects by project name where project name has at least 16 characters."
+  ],
+  "1.0.0:F0187:SELECT generated_sql, COUNT(*) AS row_count FROM query_history WHERE generated_sql IS NOT NULL AND LENGTH(generated_sql) >= 17 GROUP BY generated_sql ORDER BY COUNT(*) DESC;": [
+    "Break down query history by generated sql for query history.",
+    "Group query history using generated sql for query history.",
+    "Show counts of query history for each generated sql for query history.",
+    "Please summarize query history by generated sql for query history.",
+    "Can you count query history for each generated sql after filtering for generated sql has at least 17 characters."
+  ],
+  "1.0.0:F0187:SELECT generated_sql, COUNT(*) AS row_count FROM query_history WHERE generated_sql IS NOT NULL AND LENGTH(generated_sql) >= 17 GROUP BY generated_sql ORDER BY row_count DESC;": [
+    "Break down query history by generated sql for query history.",
+    "Group query history using generated sql for query history.",
+    "Show counts of query history for each generated sql for query history.",
+    "Please summarize query history by generated sql for query history.",
+    "Can you count query history for each generated sql after filtering for generated sql has at least 17 characters."
+  ],
+  "1.0.0:F0188:SELECT city, COUNT(*) AS row_count FROM vendors WHERE city IS NOT NULL AND LENGTH(city) >= 18 GROUP BY city ORDER BY COUNT(*) DESC;": [
+    "Break down vendors by city for vendors.",
+    "Group vendors using city for vendors.",
+    "Show counts of vendors for each city for vendors.",
+    "Please summarize vendors by city for vendors.",
+    "Can you summarize vendors grouped by city with city has at least 18 characters."
+  ],
+  "1.0.0:F0188:SELECT city, COUNT(*) AS row_count FROM vendors WHERE city IS NOT NULL AND LENGTH(city) >= 18 GROUP BY city ORDER BY row_count DESC;": [
+    "Break down vendors by city for vendors.",
+    "Group vendors using city for vendors.",
+    "Show counts of vendors for each city for vendors.",
+    "Please summarize vendors by city for vendors.",
+    "Can you summarize vendors grouped by city with city has at least 18 characters."
+  ],
+  "1.0.0:F0189:SELECT author_name, COUNT(*) AS row_count FROM authors WHERE author_name IS NOT NULL AND LENGTH(author_name) >= 19 GROUP BY author_name ORDER BY COUNT(*) DESC;": [
+    "Can you break down authors by author name where author name has at least 19 characters.",
+    "Please break down authors by author name where author name has at least 19 characters.",
+    "I need to break down authors by author name where author name has at least 19 characters.",
+    "Could you break down authors by author name where author name has at least 19 characters.",
+    "Return the authors results for this request: break down authors by author name where author name has at least 19 characters."
+  ],
+  "1.0.0:F0189:SELECT author_name, COUNT(*) AS row_count FROM authors WHERE author_name IS NOT NULL AND LENGTH(author_name) >= 19 GROUP BY author_name ORDER BY row_count DESC;": [
+    "Can you break down authors by author name where author name has at least 19 characters.",
+    "Please break down authors by author name where author name has at least 19 characters.",
+    "I need to break down authors by author name where author name has at least 19 characters.",
+    "Could you break down authors by author name where author name has at least 19 characters.",
+    "Return the authors results for this request: break down authors by author name where author name has at least 19 characters."
+  ],
+  "1.0.0:F0190:SELECT title, COUNT(*) AS row_count FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 20 GROUP BY title ORDER BY COUNT(*) DESC;": [
+    "Can you count books for each title after filtering for title has at least 20 characters.",
+    "Please count books for each title after filtering for title has at least 20 characters.",
+    "I need to count books for each title after filtering for title has at least 20 characters.",
+    "Could you count books for each title after filtering for title has at least 20 characters.",
+    "Return the books results for this request: count books for each title after filtering for title has at least 20 characters."
+  ],
+  "1.0.0:F0190:SELECT title, COUNT(*) AS row_count FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 20 GROUP BY title ORDER BY row_count DESC;": [
+    "Can you count books for each title after filtering for title has at least 20 characters.",
+    "Please count books for each title after filtering for title has at least 20 characters.",
+    "I need to count books for each title after filtering for title has at least 20 characters.",
+    "Could you count books for each title after filtering for title has at least 20 characters.",
+    "Return the books results for this request: count books for each title after filtering for title has at least 20 characters."
+  ],
+  "1.0.0:F0191:SELECT department_name, COUNT(*) AS row_count FROM departments WHERE department_name IS NOT NULL AND LENGTH(department_name) >= 21 GROUP BY department_name ORDER BY COUNT(*) DESC;": [
+    "Can you summarize departments grouped by department name with department name has at least 21 characters.",
+    "Please summarize departments grouped by department name with department name has at least 21 characters.",
+    "I need to summarize departments grouped by department name with department name has at least 21 characters.",
+    "Could you summarize departments grouped by department name with department name has at least 21 characters.",
+    "Return the departments results for this request: summarize departments grouped by department name with department name has at least 21 characters."
+  ],
+  "1.0.0:F0191:SELECT department_name, COUNT(*) AS row_count FROM departments WHERE department_name IS NOT NULL AND LENGTH(department_name) >= 21 GROUP BY department_name ORDER BY row_count DESC;": [
+    "Can you summarize departments grouped by department name with department name has at least 21 characters.",
+    "Please summarize departments grouped by department name with department name has at least 21 characters.",
+    "I need to summarize departments grouped by department name with department name has at least 21 characters.",
+    "Could you summarize departments grouped by department name with department name has at least 21 characters.",
+    "Return the departments results for this request: summarize departments grouped by department name with department name has at least 21 characters."
+  ],
+  "1.0.0:F0192:SELECT role, COUNT(*) AS row_count FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 22 GROUP BY role ORDER BY COUNT(*) DESC;": [
+    "Can you break down employee projects by role where role has at least 22 characters.",
+    "Please break down employee projects by role where role has at least 22 characters.",
+    "I need to break down employee projects by role where role has at least 22 characters.",
+    "Could you break down employee projects by role where role has at least 22 characters.",
+    "Return the employee projects results for this request: break down employee projects by role where role has at least 22 characters."
+  ],
+  "1.0.0:F0192:SELECT role, COUNT(*) AS row_count FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 22 GROUP BY role ORDER BY row_count DESC;": [
+    "Can you break down employee projects by role where role has at least 22 characters.",
+    "Please break down employee projects by role where role has at least 22 characters.",
+    "I need to break down employee projects by role where role has at least 22 characters.",
+    "Could you break down employee projects by role where role has at least 22 characters.",
+    "Return the employee projects results for this request: break down employee projects by role where role has at least 22 characters."
+  ],
+  "1.0.0:F0193:SELECT email, COUNT(*) AS row_count FROM employees WHERE email IS NOT NULL AND LENGTH(email) >= 23 GROUP BY email ORDER BY COUNT(*) DESC;": [
+    "Can you count employees for each email after filtering for email has at least 23 characters.",
+    "Please count employees for each email after filtering for email has at least 23 characters.",
+    "I need to count employees for each email after filtering for email has at least 23 characters.",
+    "Could you count employees for each email after filtering for email has at least 23 characters.",
+    "Return the employees results for this request: count employees for each email after filtering for email has at least 23 characters."
+  ],
+  "1.0.0:F0193:SELECT email, COUNT(*) AS row_count FROM employees WHERE email IS NOT NULL AND LENGTH(email) >= 23 GROUP BY email ORDER BY row_count DESC;": [
+    "Can you count employees for each email after filtering for email has at least 23 characters.",
+    "Please count employees for each email after filtering for email has at least 23 characters.",
+    "I need to count employees for each email after filtering for email has at least 23 characters.",
+    "Could you count employees for each email after filtering for email has at least 23 characters.",
+    "Return the employees results for this request: count employees for each email after filtering for email has at least 23 characters."
+  ],
+  "1.0.0:F0194:SELECT product_name, COUNT(*) AS row_count FROM products WHERE product_name IS NOT NULL AND LENGTH(product_name) >= 24 GROUP BY product_name ORDER BY COUNT(*) DESC;": [
+    "Can you summarize products grouped by product name with product name has at least 24 characters.",
+    "Please summarize products grouped by product name with product name has at least 24 characters.",
+    "I need to summarize products grouped by product name with product name has at least 24 characters.",
+    "Could you summarize products grouped by product name with product name has at least 24 characters.",
+    "Return the products results for this request: summarize products grouped by product name with product name has at least 24 characters."
+  ],
+  "1.0.0:F0194:SELECT product_name, COUNT(*) AS row_count FROM products WHERE product_name IS NOT NULL AND LENGTH(product_name) >= 24 GROUP BY product_name ORDER BY row_count DESC;": [
+    "Can you summarize products grouped by product name with product name has at least 24 characters.",
+    "Please summarize products grouped by product name with product name has at least 24 characters.",
+    "I need to summarize products grouped by product name with product name has at least 24 characters.",
+    "Could you summarize products grouped by product name with product name has at least 24 characters.",
+    "Return the products results for this request: summarize products grouped by product name with product name has at least 24 characters."
+  ],
+  "1.0.0:F0195:SELECT project_name, COUNT(*) AS row_count FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 25 GROUP BY project_name ORDER BY COUNT(*) DESC;": [
+    "Can you break down projects by project name where project name has at least 25 characters.",
+    "Please break down projects by project name where project name has at least 25 characters.",
+    "I need to break down projects by project name where project name has at least 25 characters.",
+    "Could you break down projects by project name where project name has at least 25 characters.",
+    "Return the projects results for this request: break down projects by project name where project name has at least 25 characters."
+  ],
+  "1.0.0:F0195:SELECT project_name, COUNT(*) AS row_count FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 25 GROUP BY project_name ORDER BY row_count DESC;": [
+    "Can you break down projects by project name where project name has at least 25 characters.",
+    "Please break down projects by project name where project name has at least 25 characters.",
+    "I need to break down projects by project name where project name has at least 25 characters.",
+    "Could you break down projects by project name where project name has at least 25 characters.",
+    "Return the projects results for this request: break down projects by project name where project name has at least 25 characters."
+  ],
+  "1.0.0:F0196:SELECT * FROM authors WHERE author_id IN (SELECT author_id FROM authors WHERE author_id >= 0);": [
+    "Find authors using the nested condition.",
+    "Show authors selected by the subquery.",
+    "Which authors appear in the nested result?",
+    "Please return authors from the inner-query match.",
+    "List authors whose keys are returned by the subquery."
+  ],
+  "1.0.0:F0197:SELECT * FROM books WHERE book_id IN (SELECT book_id FROM books WHERE price >= 1);": [
+    "Find books using the nested condition.",
+    "Show books selected by the subquery.",
+    "Which books appear in the nested result?",
+    "Please return books from the inner-query match.",
+    "List books whose keys are returned by the subquery."
+  ],
+  "1.0.0:F0198:SELECT * FROM departments WHERE department_id IN (SELECT department_id FROM departments WHERE location IS NOT NULL AND LENGTH(location) >= 3);": [
+    "Find departments using the nested condition.",
+    "Show departments selected by the subquery.",
+    "Which departments appear in the nested result?",
+    "Please return departments from the inner-query match.",
+    "List departments whose keys are returned by the subquery."
+  ],
+  "1.0.0:F0199:SELECT * FROM employee_projects WHERE project_id IN (SELECT project_id FROM employee_projects WHERE hours_per_week >= 3);": [
+    "Find employee projects using the nested condition.",
+    "Show employee projects selected by the subquery.",
+    "Which employee projects appear in the nested result?",
+    "Please return employee projects from the inner-query match.",
+    "List employee projects whose keys are returned by the subquery."
+  ],
+  "1.0.0:F0200:SELECT * FROM employees WHERE employee_id IN (SELECT employee_id FROM employees WHERE salary >= 4);": [
+    "Find employees using the nested condition.",
+    "Show employees selected by the subquery.",
+    "Which employees appear in the nested result?",
+    "Please return employees from the inner-query match.",
+    "List employees whose keys are returned by the subquery."
+  ],
+  "1.0.0:F0201:SELECT * FROM products WHERE product_id IN (SELECT product_id FROM products WHERE price >= 5);": [
+    "Find products using the nested condition.",
+    "Show products selected by the subquery.",
+    "Which products appear in the nested result?",
+    "Please return products from the inner-query match.",
+    "List products whose keys are returned by the subquery."
+  ],
+  "1.0.0:F0202:SELECT * FROM projects WHERE project_id IN (SELECT project_id FROM projects WHERE budget >= 6);": [
+    "Find projects using the nested condition.",
+    "Show projects selected by the subquery.",
+    "Which projects appear in the nested result?",
+    "Please return projects from the inner-query match.",
+    "List projects whose keys are returned by the subquery."
+  ],
+  "1.0.0:F0203:SELECT * FROM query_history WHERE id IN (SELECT id FROM query_history WHERE rows_returned >= 7);": [
+    "Find query history using the nested condition.",
+    "Show query history selected by the subquery.",
+    "Which query history appear in the nested result?",
+    "Please return query history from the inner-query match.",
+    "List query history whose keys are returned by the subquery."
+  ],
+  "1.0.0:F0204:SELECT * FROM vendors WHERE id IN (SELECT id FROM vendors WHERE rating >= 8);": [
+    "Find vendors using the nested condition.",
+    "Show vendors selected by the subquery.",
+    "Which vendors appear in the nested result?",
+    "Please return vendors from the inner-query match.",
+    "List vendors whose keys are returned by the subquery."
+  ],
+  "1.0.0:F0205:SELECT * FROM authors WHERE author_id IN (SELECT author_id FROM authors WHERE author_id >= 9);": [
+    "Can you show authors whose keys appear in a subquery where author id is at least 9.",
+    "Please show authors whose keys appear in a subquery where author id is at least 9.",
+    "I need to show authors whose keys appear in a subquery where author id is at least 9.",
+    "Could you show authors whose keys appear in a subquery where author id is at least 9.",
+    "Return the authors results for this request: show authors whose keys appear in a subquery where author id is at least 9."
+  ],
+  "1.0.0:F0206:SELECT * FROM books WHERE book_id IN (SELECT book_id FROM books WHERE author_id >= 10);": [
+    "Can you find books selected by a nested condition with author id is at least 10.",
+    "Please find books selected by a nested condition with author id is at least 10.",
+    "I need to find books selected by a nested condition with author id is at least 10.",
+    "Could you find books selected by a nested condition with author id is at least 10.",
+    "Return the books results for this request: find books selected by a nested condition with author id is at least 10."
+  ],
+  "1.0.0:F0207:SELECT * FROM departments WHERE department_id IN (SELECT department_id FROM departments WHERE location IS NOT NULL AND LENGTH(location) >= 12);": [
+    "Can you return departments using a subquery filtered for location has at least 12 characters.",
+    "Please return departments using a subquery filtered for location has at least 12 characters.",
+    "I need to return departments using a subquery filtered for location has at least 12 characters.",
+    "Could you return departments using a subquery filtered for location has at least 12 characters.",
+    "Return the departments results for this request: return departments using a subquery filtered for location has at least 12 characters."
+  ],
+  "1.0.0:F0208:SELECT * FROM employee_projects WHERE employee_id IN (SELECT employee_id FROM employee_projects WHERE hours_per_week >= 12);": [
+    "Can you show employee projects whose keys appear in a subquery where hours per week is at least 12.",
+    "Please show employee projects whose keys appear in a subquery where hours per week is at least 12.",
+    "I need to show employee projects whose keys appear in a subquery where hours per week is at least 12.",
+    "Could you show employee projects whose keys appear in a subquery where hours per week is at least 12.",
+    "Return the employee projects results for this request: show employee projects whose keys appear in a subquery where hours per week is at least 12."
+  ],
+  "1.0.0:F0209:SELECT * FROM employees WHERE employee_id IN (SELECT employee_id FROM employees WHERE salary >= 13);": [
+    "Can you find employees selected by a nested condition with salary is at least 13.",
+    "Please find employees selected by a nested condition with salary is at least 13.",
+    "I need to find employees selected by a nested condition with salary is at least 13.",
+    "Could you find employees selected by a nested condition with salary is at least 13.",
+    "Return the employees results for this request: find employees selected by a nested condition with salary is at least 13."
+  ],
+  "1.0.0:F0210:SELECT * FROM products WHERE product_id IN (SELECT product_id FROM products WHERE price >= 14);": [
+    "Can you return products using a subquery filtered for price is at least 14.",
+    "Please return products using a subquery filtered for price is at least 14.",
+    "I need to return products using a subquery filtered for price is at least 14.",
+    "Could you return products using a subquery filtered for price is at least 14.",
+    "Return the products results for this request: return products using a subquery filtered for price is at least 14."
+  ],
+  "1.0.0:F0211:SELECT * FROM projects WHERE project_id IN (SELECT project_id FROM projects WHERE budget >= 15);": [
+    "Can you show projects whose keys appear in a subquery where budget is at least 15.",
+    "Please show projects whose keys appear in a subquery where budget is at least 15.",
+    "I need to show projects whose keys appear in a subquery where budget is at least 15.",
+    "Could you show projects whose keys appear in a subquery where budget is at least 15.",
+    "Return the projects results for this request: show projects whose keys appear in a subquery where budget is at least 15."
+  ],
+  "1.0.0:F0212:SELECT * FROM query_history WHERE id IN (SELECT id FROM query_history WHERE execution_time >= 16);": [
+    "Can you find query history selected by a nested condition with execution time is at least 16.",
+    "Please find query history selected by a nested condition with execution time is at least 16.",
+    "I need to find query history selected by a nested condition with execution time is at least 16.",
+    "Could you find query history selected by a nested condition with execution time is at least 16.",
+    "Return the query history results for this request: find query history selected by a nested condition with execution time is at least 16."
+  ],
+  "1.0.0:F0213:SELECT * FROM vendors WHERE id IN (SELECT id FROM vendors WHERE rating >= 17);": [
+    "Can you return vendors using a subquery filtered for rating is at least 17.",
+    "Please return vendors using a subquery filtered for rating is at least 17.",
+    "I need to return vendors using a subquery filtered for rating is at least 17.",
+    "Could you return vendors using a subquery filtered for rating is at least 17.",
+    "Return the vendors results for this request: return vendors using a subquery filtered for rating is at least 17."
+  ],
+  "1.0.0:F0214:SELECT * FROM authors WHERE author_id IN (SELECT author_id FROM authors WHERE author_id >= 18);": [
+    "Can you show authors whose keys appear in a subquery where author id is at least 18.",
+    "Please show authors whose keys appear in a subquery where author id is at least 18.",
+    "I need to show authors whose keys appear in a subquery where author id is at least 18.",
+    "Could you show authors whose keys appear in a subquery where author id is at least 18.",
+    "Return the authors results for this request: show authors whose keys appear in a subquery where author id is at least 18."
+  ],
+  "1.0.0:F0215:SELECT * FROM books WHERE book_id IN (SELECT book_id FROM books WHERE price >= 19);": [
+    "Can you find books selected by a nested condition with price is at least 19.",
+    "Please find books selected by a nested condition with price is at least 19.",
+    "I need to find books selected by a nested condition with price is at least 19.",
+    "Could you find books selected by a nested condition with price is at least 19.",
+    "Return the books results for this request: find books selected by a nested condition with price is at least 19."
+  ],
+  "1.0.0:F0216:SELECT * FROM departments WHERE department_id IN (SELECT department_id FROM departments WHERE location IS NOT NULL AND LENGTH(location) >= 21);": [
+    "Can you return departments using a subquery filtered for location has at least 21 characters.",
+    "Please return departments using a subquery filtered for location has at least 21 characters.",
+    "I need to return departments using a subquery filtered for location has at least 21 characters.",
+    "Could you return departments using a subquery filtered for location has at least 21 characters.",
+    "Return the departments results for this request: return departments using a subquery filtered for location has at least 21 characters."
+  ],
+  "1.0.0:F0217:SELECT * FROM employee_projects WHERE project_id IN (SELECT project_id FROM employee_projects WHERE hours_per_week >= 21);": [
+    "Can you show employee projects whose keys appear in a subquery where hours per week is at least 21.",
+    "Please show employee projects whose keys appear in a subquery where hours per week is at least 21.",
+    "I need to show employee projects whose keys appear in a subquery where hours per week is at least 21.",
+    "Could you show employee projects whose keys appear in a subquery where hours per week is at least 21.",
+    "Return the employee projects results for this request: show employee projects whose keys appear in a subquery where hours per week is at least 21."
+  ],
+  "1.0.0:F0218:SELECT * FROM employees WHERE employee_id IN (SELECT employee_id FROM employees WHERE salary >= 22);": [
+    "Can you find employees selected by a nested condition with salary is at least 22.",
+    "Please find employees selected by a nested condition with salary is at least 22.",
+    "I need to find employees selected by a nested condition with salary is at least 22.",
+    "Could you find employees selected by a nested condition with salary is at least 22.",
+    "Return the employees results for this request: find employees selected by a nested condition with salary is at least 22."
+  ],
+  "1.0.0:F0219:SELECT * FROM products WHERE product_id IN (SELECT product_id FROM products WHERE price >= 23);": [
+    "Can you return products using a subquery filtered for price is at least 23.",
+    "Please return products using a subquery filtered for price is at least 23.",
+    "I need to return products using a subquery filtered for price is at least 23.",
+    "Could you return products using a subquery filtered for price is at least 23.",
+    "Return the products results for this request: return products using a subquery filtered for price is at least 23."
+  ],
+  "1.0.0:F0220:SELECT * FROM projects WHERE project_id IN (SELECT project_id FROM projects WHERE budget >= 24);": [
+    "Can you show projects whose keys appear in a subquery where budget is at least 24.",
+    "Please show projects whose keys appear in a subquery where budget is at least 24.",
+    "I need to show projects whose keys appear in a subquery where budget is at least 24.",
+    "Could you show projects whose keys appear in a subquery where budget is at least 24.",
+    "Return the projects results for this request: show projects whose keys appear in a subquery where budget is at least 24."
+  ],
+  "1.0.0:F0221:SELECT books.*, authors.author_id FROM books JOIN authors ON books.author_id = authors.author_id WHERE authors.author_id IS NOT NULL ORDER BY books.author_id ASC LIMIT 10;": [
+    "Show related records from authors and books.",
+    "List authors and books together.",
+    "Display matching rows across authors and books.",
+    "Please return the joined authors and books data.",
+    "Fetch records that connect authors and books."
+  ],
+  "1.0.0:F0222:SELECT employee_projects.*, employees.employee_id FROM employee_projects JOIN employees ON employee_projects.employee_id = employees.employee_id WHERE employees.employee_id IS NOT NULL ORDER BY employee_projects.employee_id ASC LIMIT 11;": [
+    "Show related records from employee projects and employees.",
+    "List employee projects and employees together.",
+    "Display matching rows across employee projects and employees.",
+    "Please return the joined employee projects and employees data.",
+    "Fetch records that connect employee projects and employees."
+  ],
+  "1.0.0:F0223:SELECT employee_projects.*, projects.project_id FROM employee_projects JOIN projects ON employee_projects.project_id = projects.project_id WHERE projects.project_id IS NOT NULL ORDER BY employee_projects.project_id ASC LIMIT 12;": [
+    "Show related records from employee projects and projects.",
+    "List employee projects and projects together.",
+    "Display matching rows across employee projects and projects.",
+    "Please return the joined employee projects and projects data.",
+    "Fetch records that connect employee projects and projects."
+  ],
+  "1.0.0:F0224:SELECT books.*, authors.author_id FROM books JOIN authors ON books.author_id = authors.author_id WHERE authors.author_id IS NOT NULL ORDER BY books.author_id ASC LIMIT 13;": [
+    "Can you show up to 13 books with their related authors.",
+    "Please show up to 13 books with their related authors.",
+    "I need to show up to 13 books with their related authors.",
+    "Could you show up to 13 books with their related authors.",
+    "Return the authors results for this request: show up to 13 books with their related authors."
+  ],
+  "1.0.0:F0225:SELECT employee_projects.*, employees.employee_id FROM employee_projects JOIN employees ON employee_projects.employee_id = employees.employee_id WHERE employees.employee_id IS NOT NULL ORDER BY employee_projects.employee_id ASC LIMIT 14;": [
+    "Can you list 14 matching employee projects and employees records.",
+    "Please list 14 matching employee projects and employees records.",
+    "I need to list 14 matching employee projects and employees records.",
+    "Could you list 14 matching employee projects and employees records.",
+    "Return the employee projects results for this request: list 14 matching employee projects and employees records."
+  ],
+  "1.0.0:F0226:SELECT employee_projects.*, projects.project_id FROM employee_projects JOIN projects ON employee_projects.project_id = projects.project_id WHERE EXISTS (SELECT 1 FROM projects WHERE employee_projects.project_id = projects.project_id AND projects.project_id IS NOT NULL) ORDER BY employee_projects.project_id ASC LIMIT 15;": [
+    "Can you return 15 joined employee projects and projects data.",
+    "Please return 15 joined employee projects and projects data.",
+    "I need to return 15 joined employee projects and projects data.",
+    "Could you return 15 joined employee projects and projects data.",
+    "Return the employee projects results for this request: return 15 joined employee projects and projects data."
+  ],
+  "1.0.0:F0227:SELECT books.*, authors.author_id FROM books JOIN authors ON books.author_id = authors.author_id WHERE EXISTS (SELECT 1 FROM authors WHERE books.author_id = authors.author_id AND authors.author_id IS NOT NULL) ORDER BY books.author_id ASC LIMIT 16;": [
+    "Can you show up to 16 books with their related authors.",
+    "Please show up to 16 books with their related authors.",
+    "I need to show up to 16 books with their related authors.",
+    "Could you show up to 16 books with their related authors.",
+    "Return the authors results for this request: show up to 16 books with their related authors."
+  ],
+  "1.0.0:F0228:SELECT employee_projects.*, employees.employee_id FROM employee_projects JOIN employees ON employee_projects.employee_id = employees.employee_id WHERE EXISTS (SELECT 1 FROM employees WHERE employee_projects.employee_id = employees.employee_id AND employees.employee_id IS NOT NULL) ORDER BY employee_projects.employee_id ASC LIMIT 17;": [
+    "Can you list 17 matching employee projects and employees records.",
+    "Please list 17 matching employee projects and employees records.",
+    "I need to list 17 matching employee projects and employees records.",
+    "Could you list 17 matching employee projects and employees records.",
+    "Return the employee projects results for this request: list 17 matching employee projects and employees records."
+  ],
+  "1.0.0:F0229:SELECT employee_projects.*, projects.project_id FROM employee_projects JOIN projects ON employee_projects.project_id = projects.project_id WHERE EXISTS (SELECT 1 FROM projects WHERE employee_projects.project_id = projects.project_id AND projects.project_id IS NOT NULL) ORDER BY employee_projects.project_id ASC LIMIT 18;": [
+    "Can you return 18 joined employee projects and projects data.",
+    "Please return 18 joined employee projects and projects data.",
+    "I need to return 18 joined employee projects and projects data.",
+    "Could you return 18 joined employee projects and projects data.",
+    "Return the employee projects results for this request: return 18 joined employee projects and projects data."
+  ],
+  "1.0.0:F0230:SELECT books.*, authors.author_id FROM books JOIN authors ON books.author_id = authors.author_id WHERE EXISTS (SELECT 1 FROM authors WHERE books.author_id = authors.author_id AND authors.author_id IS NOT NULL) ORDER BY books.author_id ASC LIMIT 19;": [
+    "Can you show up to 19 books with their related authors.",
+    "Please show up to 19 books with their related authors.",
+    "I need to show up to 19 books with their related authors.",
+    "Could you show up to 19 books with their related authors.",
+    "Return the authors results for this request: show up to 19 books with their related authors."
+  ],
+  "1.0.0:F0231:SELECT employee_projects.*, employees.employee_id FROM employee_projects JOIN employees ON employee_projects.employee_id = employees.employee_id WHERE EXISTS (SELECT 1 FROM employees WHERE employee_projects.employee_id = employees.employee_id AND employees.employee_id IS NOT NULL) ORDER BY employee_projects.employee_id ASC LIMIT 20;": [
+    "Can you list 20 matching employee projects and employees records.",
+    "Please list 20 matching employee projects and employees records.",
+    "I need to list 20 matching employee projects and employees records.",
+    "Could you list 20 matching employee projects and employees records.",
+    "Return the employee projects results for this request: list 20 matching employee projects and employees records."
+  ],
+  "1.0.0:F0232:SELECT employee_projects.*, projects.project_id FROM employee_projects JOIN projects ON employee_projects.project_id = projects.project_id WHERE EXISTS (SELECT 1 FROM projects WHERE employee_projects.project_id = projects.project_id AND projects.project_id IS NOT NULL) ORDER BY employee_projects.project_id ASC LIMIT 21;": [
+    "Can you return 21 joined employee projects and projects data.",
+    "Please return 21 joined employee projects and projects data.",
+    "I need to return 21 joined employee projects and projects data.",
+    "Could you return 21 joined employee projects and projects data.",
+    "Return the employee projects results for this request: return 21 joined employee projects and projects data."
+  ],
+  "1.0.0:F0233:SELECT books.*, authors.author_id FROM books JOIN authors ON books.author_id = authors.author_id WHERE EXISTS (SELECT 1 FROM authors WHERE books.author_id = authors.author_id AND authors.author_id IS NOT NULL) ORDER BY books.author_id ASC LIMIT 22;": [
+    "Can you show up to 22 books with their related authors.",
+    "Please show up to 22 books with their related authors.",
+    "I need to show up to 22 books with their related authors.",
+    "Could you show up to 22 books with their related authors.",
+    "Return the authors results for this request: show up to 22 books with their related authors."
+  ],
+  "1.0.0:F0234:SELECT employee_projects.*, employees.employee_id FROM employee_projects JOIN employees ON employee_projects.employee_id = employees.employee_id WHERE EXISTS (SELECT 1 FROM employees WHERE employee_projects.employee_id = employees.employee_id AND employees.employee_id IS NOT NULL) ORDER BY employee_projects.employee_id ASC LIMIT 23;": [
+    "Can you list 23 matching employee projects and employees records.",
+    "Please list 23 matching employee projects and employees records.",
+    "I need to list 23 matching employee projects and employees records.",
+    "Could you list 23 matching employee projects and employees records.",
+    "Return the employee projects results for this request: list 23 matching employee projects and employees records."
+  ],
+  "1.0.0:F0235:SELECT employee_projects.*, projects.project_id FROM employee_projects JOIN projects ON employee_projects.project_id = projects.project_id WHERE EXISTS (SELECT 1 FROM projects WHERE employee_projects.project_id = projects.project_id AND projects.project_id IS NOT NULL) ORDER BY employee_projects.project_id ASC LIMIT 24;": [
+    "Can you return 24 joined employee projects and projects data.",
+    "Please return 24 joined employee projects and projects data.",
+    "I need to return 24 joined employee projects and projects data.",
+    "Could you return 24 joined employee projects and projects data.",
+    "Return the employee projects results for this request: return 24 joined employee projects and projects data."
+  ],
+  "1.0.0:F0236:SELECT books.*, authors.author_id FROM books JOIN authors ON books.author_id = authors.author_id WHERE EXISTS (SELECT 1 FROM authors WHERE books.author_id = authors.author_id AND authors.author_id IS NOT NULL) ORDER BY books.author_id ASC LIMIT 25;": [
+    "Can you show up to 25 books with their related authors.",
+    "Please show up to 25 books with their related authors.",
+    "I need to show up to 25 books with their related authors.",
+    "Could you show up to 25 books with their related authors.",
+    "Return the authors results for this request: show up to 25 books with their related authors."
+  ],
+  "1.0.0:F0237:SELECT employee_projects.*, employees.employee_id FROM employee_projects JOIN employees ON employee_projects.employee_id = employees.employee_id WHERE EXISTS (SELECT 1 FROM employees WHERE employee_projects.employee_id = employees.employee_id AND employees.employee_id IS NOT NULL) ORDER BY employee_projects.employee_id ASC LIMIT 26;": [
+    "Can you list 26 matching employee projects and employees records.",
+    "Please list 26 matching employee projects and employees records.",
+    "I need to list 26 matching employee projects and employees records.",
+    "Could you list 26 matching employee projects and employees records.",
+    "Return the employee projects results for this request: list 26 matching employee projects and employees records."
+  ],
+  "1.0.0:F0238:SELECT employee_projects.*, projects.project_id FROM employee_projects JOIN projects ON employee_projects.project_id = projects.project_id WHERE EXISTS (SELECT 1 FROM projects WHERE employee_projects.project_id = projects.project_id AND projects.project_id IS NOT NULL) ORDER BY employee_projects.project_id ASC LIMIT 27;": [
+    "Can you return 27 joined employee projects and projects data.",
+    "Please return 27 joined employee projects and projects data.",
+    "I need to return 27 joined employee projects and projects data.",
+    "Could you return 27 joined employee projects and projects data.",
+    "Return the employee projects results for this request: return 27 joined employee projects and projects data."
+  ],
+  "1.0.0:F0239:SELECT books.*, authors.author_id FROM books JOIN authors ON books.author_id = authors.author_id WHERE EXISTS (SELECT 1 FROM authors WHERE books.author_id = authors.author_id AND authors.author_id IS NOT NULL) ORDER BY books.author_id ASC LIMIT 28;": [
+    "Can you show up to 28 books with their related authors.",
+    "Please show up to 28 books with their related authors.",
+    "I need to show up to 28 books with their related authors.",
+    "Could you show up to 28 books with their related authors.",
+    "Return the authors results for this request: show up to 28 books with their related authors."
+  ],
+  "1.0.0:F0240:SELECT employee_projects.*, employees.employee_id FROM employee_projects JOIN employees ON employee_projects.employee_id = employees.employee_id WHERE EXISTS (SELECT 1 FROM employees WHERE employee_projects.employee_id = employees.employee_id AND employees.employee_id IS NOT NULL) ORDER BY employee_projects.employee_id ASC LIMIT 29;": [
+    "Can you list 29 matching employee projects and employees records.",
+    "Please list 29 matching employee projects and employees records.",
+    "I need to list 29 matching employee projects and employees records.",
+    "Could you list 29 matching employee projects and employees records.",
+    "Return the employee projects results for this request: list 29 matching employee projects and employees records."
+  ],
+  "1.0.0:F0241:SELECT employee_projects.*, projects.project_id FROM employee_projects JOIN projects ON employee_projects.project_id = projects.project_id WHERE EXISTS (SELECT 1 FROM projects WHERE employee_projects.project_id = projects.project_id AND projects.project_id IS NOT NULL) ORDER BY employee_projects.project_id ASC LIMIT 30;": [
+    "Can you return 30 joined employee projects and projects data.",
+    "Please return 30 joined employee projects and projects data.",
+    "I need to return 30 joined employee projects and projects data.",
+    "Could you return 30 joined employee projects and projects data.",
+    "Return the employee projects results for this request: return 30 joined employee projects and projects data."
+  ],
+  "1.0.0:F0242:SELECT books.*, authors.author_id FROM books JOIN authors ON books.author_id = authors.author_id WHERE EXISTS (SELECT 1 FROM authors WHERE books.author_id = authors.author_id AND authors.author_id IS NOT NULL) ORDER BY books.author_id ASC LIMIT 31;": [
+    "Can you show up to 31 books with their related authors.",
+    "Please show up to 31 books with their related authors.",
+    "I need to show up to 31 books with their related authors.",
+    "Could you show up to 31 books with their related authors.",
+    "Return the authors results for this request: show up to 31 books with their related authors."
+  ],
+  "1.0.0:F0243:SELECT employee_projects.*, employees.employee_id FROM employee_projects JOIN employees ON employee_projects.employee_id = employees.employee_id WHERE EXISTS (SELECT 1 FROM employees WHERE employee_projects.employee_id = employees.employee_id AND employees.employee_id IS NOT NULL) ORDER BY employee_projects.employee_id ASC LIMIT 32;": [
+    "Can you list 32 matching employee projects and employees records.",
+    "Please list 32 matching employee projects and employees records.",
+    "I need to list 32 matching employee projects and employees records.",
+    "Could you list 32 matching employee projects and employees records.",
+    "Return the employee projects results for this request: list 32 matching employee projects and employees records."
+  ],
+  "1.0.0:F0244:SELECT employee_projects.*, projects.project_id FROM employee_projects JOIN projects ON employee_projects.project_id = projects.project_id WHERE EXISTS (SELECT 1 FROM projects WHERE employee_projects.project_id = projects.project_id AND projects.project_id IS NOT NULL) ORDER BY employee_projects.project_id ASC LIMIT 33;": [
+    "Can you return 33 joined employee projects and projects data.",
+    "Please return 33 joined employee projects and projects data.",
+    "I need to return 33 joined employee projects and projects data.",
+    "Could you return 33 joined employee projects and projects data.",
+    "Return the employee projects results for this request: return 33 joined employee projects and projects data."
+  ],
+  "1.0.0:F0245:SELECT books.*, authors.author_id FROM books JOIN authors ON books.author_id = authors.author_id WHERE EXISTS (SELECT 1 FROM authors WHERE books.author_id = authors.author_id AND authors.author_id IS NOT NULL) ORDER BY books.author_id ASC LIMIT 34;": [
+    "Can you show up to 34 books with their related authors.",
+    "Please show up to 34 books with their related authors.",
+    "I need to show up to 34 books with their related authors.",
+    "Could you show up to 34 books with their related authors.",
+    "Return the authors results for this request: show up to 34 books with their related authors."
+  ],
+  "1.0.0:F0246:SELECT employee_projects.*, employees.employee_id FROM employee_projects JOIN employees ON employee_projects.employee_id = employees.employee_id WHERE EXISTS (SELECT 1 FROM employees WHERE employee_projects.employee_id = employees.employee_id AND employees.employee_id IS NOT NULL) ORDER BY employee_projects.employee_id ASC LIMIT 35;": [
+    "Can you list 35 matching employee projects and employees records.",
+    "Please list 35 matching employee projects and employees records.",
+    "I need to list 35 matching employee projects and employees records.",
+    "Could you list 35 matching employee projects and employees records.",
+    "Return the employee projects results for this request: list 35 matching employee projects and employees records."
+  ],
+  "1.0.0:F0247:SELECT employee_projects.*, projects.project_id FROM employee_projects JOIN projects ON employee_projects.project_id = projects.project_id WHERE EXISTS (SELECT 1 FROM projects WHERE employee_projects.project_id = projects.project_id AND projects.project_id IS NOT NULL) ORDER BY employee_projects.project_id ASC LIMIT 36;": [
+    "Can you return 36 joined employee projects and projects data.",
+    "Please return 36 joined employee projects and projects data.",
+    "I need to return 36 joined employee projects and projects data.",
+    "Could you return 36 joined employee projects and projects data.",
+    "Return the employee projects results for this request: return 36 joined employee projects and projects data."
+  ],
+  "1.0.0:F0248:SELECT books.*, authors.author_id FROM books JOIN authors ON books.author_id = authors.author_id WHERE EXISTS (SELECT 1 FROM authors WHERE books.author_id = authors.author_id AND authors.author_id IS NOT NULL) ORDER BY books.author_id ASC LIMIT 37;": [
+    "Can you show up to 37 books with their related authors.",
+    "Please show up to 37 books with their related authors.",
+    "I need to show up to 37 books with their related authors.",
+    "Could you show up to 37 books with their related authors.",
+    "Return the authors results for this request: show up to 37 books with their related authors."
+  ],
+  "1.0.0:F0249:SELECT employee_projects.*, employees.employee_id FROM employee_projects JOIN employees ON employee_projects.employee_id = employees.employee_id WHERE EXISTS (SELECT 1 FROM employees WHERE employee_projects.employee_id = employees.employee_id AND employees.employee_id IS NOT NULL) ORDER BY employee_projects.employee_id ASC LIMIT 38;": [
+    "Can you list 38 matching employee projects and employees records.",
+    "Please list 38 matching employee projects and employees records.",
+    "I need to list 38 matching employee projects and employees records.",
+    "Could you list 38 matching employee projects and employees records.",
+    "Return the employee projects results for this request: list 38 matching employee projects and employees records."
+  ],
+  "1.0.0:F0250:SELECT employee_projects.*, projects.project_id FROM employee_projects JOIN projects ON employee_projects.project_id = projects.project_id WHERE EXISTS (SELECT 1 FROM projects WHERE employee_projects.project_id = projects.project_id AND projects.project_id IS NOT NULL) ORDER BY employee_projects.project_id ASC LIMIT 39;": [
+    "Can you return 39 joined employee projects and projects data.",
+    "Please return 39 joined employee projects and projects data.",
+    "I need to return 39 joined employee projects and projects data.",
+    "Could you return 39 joined employee projects and projects data.",
+    "Return the employee projects results for this request: return 39 joined employee projects and projects data."
+  ],
+  "1.0.0:F0251:SELECT author_name, COUNT(*) AS row_count FROM authors WHERE author_name IS NOT NULL AND LENGTH(author_name) >= 1 GROUP BY author_name HAVING COUNT(*) > 0 ORDER BY COUNT(*) DESC;": [
+    "Find grouped authors where the group count is high enough.",
+    "Show authors groups that pass the aggregate filter.",
+    "Which authors groups satisfy the HAVING condition?",
+    "Please return qualifying grouped authors.",
+    "List grouped authors after applying the aggregate threshold."
+  ],
+  "1.0.0:F0251:SELECT author_name, COUNT(*) AS row_count FROM authors WHERE author_name IS NOT NULL AND LENGTH(author_name) >= 1 GROUP BY author_name HAVING COUNT(*) > 0 ORDER BY row_count DESC;": [
+    "Find grouped authors where the group count is high enough.",
+    "Show authors groups that pass the aggregate filter.",
+    "Which authors groups satisfy the HAVING condition?",
+    "Please return qualifying grouped authors.",
+    "List grouped authors after applying the aggregate threshold."
+  ],
+  "1.0.0:F0252:SELECT title, COUNT(*) AS row_count FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 2 GROUP BY title HAVING COUNT(*) > 1 ORDER BY COUNT(*) DESC;": [
+    "Find grouped books where the group count is high enough.",
+    "Show books groups that pass the aggregate filter.",
+    "Which books groups satisfy the HAVING condition?",
+    "Please return qualifying grouped books.",
+    "List grouped books after applying the aggregate threshold."
+  ],
+  "1.0.0:F0252:SELECT title, COUNT(*) AS row_count FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 2 GROUP BY title HAVING COUNT(*) > 1 ORDER BY row_count DESC;": [
+    "Find grouped books where the group count is high enough.",
+    "Show books groups that pass the aggregate filter.",
+    "Which books groups satisfy the HAVING condition?",
+    "Please return qualifying grouped books.",
+    "List grouped books after applying the aggregate threshold."
+  ],
+  "1.0.0:F0253:SELECT department_name, COUNT(*) AS row_count FROM departments WHERE department_name IS NOT NULL AND LENGTH(department_name) >= 3 GROUP BY department_name HAVING COUNT(*) > 2 ORDER BY COUNT(*) DESC;": [
+    "Find grouped departments where the group count is high enough.",
+    "Show departments groups that pass the aggregate filter.",
+    "Which departments groups satisfy the HAVING condition?",
+    "Please return qualifying grouped departments.",
+    "List grouped departments after applying the aggregate threshold."
+  ],
+  "1.0.0:F0253:SELECT department_name, COUNT(*) AS row_count FROM departments WHERE department_name IS NOT NULL AND LENGTH(department_name) >= 3 GROUP BY department_name HAVING COUNT(*) > 2 ORDER BY row_count DESC;": [
+    "Find grouped departments where the group count is high enough.",
+    "Show departments groups that pass the aggregate filter.",
+    "Which departments groups satisfy the HAVING condition?",
+    "Please return qualifying grouped departments.",
+    "List grouped departments after applying the aggregate threshold."
+  ],
+  "1.0.0:F0254:SELECT role, COUNT(*) AS row_count FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 4 GROUP BY role HAVING COUNT(*) > 3 ORDER BY COUNT(*) DESC;": [
+    "Find grouped employee projects where the group count is high enough.",
+    "Show employee projects groups that pass the aggregate filter.",
+    "Which employee projects groups satisfy the HAVING condition?",
+    "Please return qualifying grouped employee projects.",
+    "List grouped employee projects after applying the aggregate threshold."
+  ],
+  "1.0.0:F0254:SELECT role, COUNT(*) AS row_count FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 4 GROUP BY role HAVING COUNT(*) > 3 ORDER BY row_count DESC;": [
+    "Find grouped employee projects where the group count is high enough.",
+    "Show employee projects groups that pass the aggregate filter.",
+    "Which employee projects groups satisfy the HAVING condition?",
+    "Please return qualifying grouped employee projects.",
+    "List grouped employee projects after applying the aggregate threshold."
+  ],
+  "1.0.0:F0255:SELECT email, COUNT(*) AS row_count FROM employees WHERE email IS NOT NULL AND LENGTH(email) >= 5 GROUP BY email HAVING COUNT(*) > 4 ORDER BY COUNT(*) DESC;": [
+    "Find grouped employees where the group count is high enough.",
+    "Show employees groups that pass the aggregate filter.",
+    "Which employees groups satisfy the HAVING condition?",
+    "Please return qualifying grouped employees.",
+    "List grouped employees after applying the aggregate threshold."
+  ],
+  "1.0.0:F0255:SELECT email, COUNT(*) AS row_count FROM employees WHERE email IS NOT NULL AND LENGTH(email) >= 5 GROUP BY email HAVING COUNT(*) > 4 ORDER BY row_count DESC;": [
+    "Find grouped employees where the group count is high enough.",
+    "Show employees groups that pass the aggregate filter.",
+    "Which employees groups satisfy the HAVING condition?",
+    "Please return qualifying grouped employees.",
+    "List grouped employees after applying the aggregate threshold."
+  ],
+  "1.0.0:F0256:SELECT product_name, COUNT(*) AS row_count FROM products WHERE product_name IS NOT NULL AND LENGTH(product_name) >= 6 GROUP BY product_name HAVING COUNT(*) > 5 ORDER BY COUNT(*) DESC;": [
+    "Find grouped products where the group count is high enough.",
+    "Show products groups that pass the aggregate filter.",
+    "Which products groups satisfy the HAVING condition?",
+    "Please return qualifying grouped products.",
+    "List grouped products after applying the aggregate threshold."
+  ],
+  "1.0.0:F0256:SELECT product_name, COUNT(*) AS row_count FROM products WHERE product_name IS NOT NULL AND LENGTH(product_name) >= 6 GROUP BY product_name HAVING COUNT(*) > 5 ORDER BY row_count DESC;": [
+    "Find grouped products where the group count is high enough.",
+    "Show products groups that pass the aggregate filter.",
+    "Which products groups satisfy the HAVING condition?",
+    "Please return qualifying grouped products.",
+    "List grouped products after applying the aggregate threshold."
+  ],
+  "1.0.0:F0257:SELECT project_name, COUNT(*) AS row_count FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 7 GROUP BY project_name HAVING COUNT(*) > 6 ORDER BY COUNT(*) DESC;": [
+    "Find grouped projects where the group count is high enough.",
+    "Show projects groups that pass the aggregate filter.",
+    "Which projects groups satisfy the HAVING condition?",
+    "Please return qualifying grouped projects.",
+    "List grouped projects after applying the aggregate threshold."
+  ],
+  "1.0.0:F0257:SELECT project_name, COUNT(*) AS row_count FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 7 GROUP BY project_name HAVING COUNT(*) > 6 ORDER BY row_count DESC;": [
+    "Find grouped projects where the group count is high enough.",
+    "Show projects groups that pass the aggregate filter.",
+    "Which projects groups satisfy the HAVING condition?",
+    "Please return qualifying grouped projects.",
+    "List grouped projects after applying the aggregate threshold."
+  ],
+  "1.0.0:F0258:SELECT generation_mode, COUNT(*) AS row_count FROM query_history WHERE generation_mode IS NOT NULL AND LENGTH(generation_mode) >= 8 GROUP BY generation_mode HAVING COUNT(*) > 7 ORDER BY COUNT(*) DESC;": [
+    "Find grouped query history where the group count is high enough.",
+    "Show query history groups that pass the aggregate filter.",
+    "Which query history groups satisfy the HAVING condition?",
+    "Please return qualifying grouped query history.",
+    "List grouped query history after applying the aggregate threshold."
+  ],
+  "1.0.0:F0258:SELECT generation_mode, COUNT(*) AS row_count FROM query_history WHERE generation_mode IS NOT NULL AND LENGTH(generation_mode) >= 8 GROUP BY generation_mode HAVING COUNT(*) > 7 ORDER BY row_count DESC;": [
+    "Find grouped query history where the group count is high enough.",
+    "Show query history groups that pass the aggregate filter.",
+    "Which query history groups satisfy the HAVING condition?",
+    "Please return qualifying grouped query history.",
+    "List grouped query history after applying the aggregate threshold."
+  ],
+  "1.0.0:F0259:SELECT vendor_name, COUNT(*) AS row_count FROM vendors WHERE vendor_name IS NOT NULL AND LENGTH(vendor_name) >= 9 GROUP BY vendor_name HAVING COUNT(*) > 8 ORDER BY COUNT(*) DESC;": [
+    "Find grouped vendors where the group count is high enough.",
+    "Show vendors groups that pass the aggregate filter.",
+    "Which vendors groups satisfy the HAVING condition?",
+    "Please return qualifying grouped vendors.",
+    "List grouped vendors after applying the aggregate threshold."
+  ],
+  "1.0.0:F0259:SELECT vendor_name, COUNT(*) AS row_count FROM vendors WHERE vendor_name IS NOT NULL AND LENGTH(vendor_name) >= 9 GROUP BY vendor_name HAVING COUNT(*) > 8 ORDER BY row_count DESC;": [
+    "Find grouped vendors where the group count is high enough.",
+    "Show vendors groups that pass the aggregate filter.",
+    "Which vendors groups satisfy the HAVING condition?",
+    "Please return qualifying grouped vendors.",
+    "List grouped vendors after applying the aggregate threshold."
+  ],
+  "1.0.0:F0260:SELECT country, COUNT(*) AS row_count FROM authors WHERE country IS NOT NULL AND LENGTH(country) >= 10 GROUP BY country HAVING COUNT(*) > 9 ORDER BY COUNT(*) DESC;": [
+    "Can you show authors groups by country with more than 9 records.",
+    "Please show authors groups by country with more than 9 records.",
+    "I need to show authors groups by country with more than 9 records.",
+    "Could you show authors groups by country with more than 9 records.",
+    "Return the authors results for this request: show authors groups by country with more than 9 records."
+  ],
+  "1.0.0:F0260:SELECT country, COUNT(*) AS row_count FROM authors WHERE country IS NOT NULL AND LENGTH(country) >= 10 GROUP BY country HAVING COUNT(*) > 9 ORDER BY row_count DESC;": [
+    "Can you show authors groups by country with more than 9 records.",
+    "Please show authors groups by country with more than 9 records.",
+    "I need to show authors groups by country with more than 9 records.",
+    "Could you show authors groups by country with more than 9 records.",
+    "Return the authors results for this request: show authors groups by country with more than 9 records."
+  ],
+  "1.0.0:F0261:SELECT title, COUNT(*) AS row_count FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 11 GROUP BY title HAVING COUNT(*) > 10 ORDER BY COUNT(*) DESC;": [
+    "Can you list title groups in books whose counts exceed 10.",
+    "Please list title groups in books whose counts exceed 10.",
+    "I need to list title groups in books whose counts exceed 10.",
+    "Could you list title groups in books whose counts exceed 10.",
+    "Return the books results for this request: list title groups in books whose counts exceed 10."
+  ],
+  "1.0.0:F0261:SELECT title, COUNT(*) AS row_count FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 11 GROUP BY title HAVING COUNT(*) > 10 ORDER BY row_count DESC;": [
+    "Can you list title groups in books whose counts exceed 10.",
+    "Please list title groups in books whose counts exceed 10.",
+    "I need to list title groups in books whose counts exceed 10.",
+    "Could you list title groups in books whose counts exceed 10.",
+    "Return the books results for this request: list title groups in books whose counts exceed 10."
+  ],
+  "1.0.0:F0262:SELECT location, COUNT(*) AS row_count FROM departments WHERE location IS NOT NULL AND LENGTH(location) >= 12 GROUP BY location HAVING COUNT(*) > 11 ORDER BY COUNT(*) DESC;": [
+    "Can you find departments grouped by location after applying count threshold 11.",
+    "Please find departments grouped by location after applying count threshold 11.",
+    "I need to find departments grouped by location after applying count threshold 11.",
+    "Could you find departments grouped by location after applying count threshold 11.",
+    "Return the departments results for this request: find departments grouped by location after applying count threshold 11."
+  ],
+  "1.0.0:F0262:SELECT location, COUNT(*) AS row_count FROM departments WHERE location IS NOT NULL AND LENGTH(location) >= 12 GROUP BY location HAVING COUNT(*) > 11 ORDER BY row_count DESC;": [
+    "Can you find departments grouped by location after applying count threshold 11.",
+    "Please find departments grouped by location after applying count threshold 11.",
+    "I need to find departments grouped by location after applying count threshold 11.",
+    "Could you find departments grouped by location after applying count threshold 11.",
+    "Return the departments results for this request: find departments grouped by location after applying count threshold 11."
+  ],
+  "1.0.0:F0263:SELECT role, COUNT(*) AS row_count FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 13 GROUP BY role HAVING COUNT(*) > 12 ORDER BY COUNT(*) DESC;": [
+    "Can you show employee projects groups by role with more than 12 records.",
+    "Please show employee projects groups by role with more than 12 records.",
+    "I need to show employee projects groups by role with more than 12 records.",
+    "Could you show employee projects groups by role with more than 12 records.",
+    "Return the employee projects results for this request: show employee projects groups by role with more than 12 records."
+  ],
+  "1.0.0:F0263:SELECT role, COUNT(*) AS row_count FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 13 GROUP BY role HAVING COUNT(*) > 12 ORDER BY row_count DESC;": [
+    "Can you show employee projects groups by role with more than 12 records.",
+    "Please show employee projects groups by role with more than 12 records.",
+    "I need to show employee projects groups by role with more than 12 records.",
+    "Could you show employee projects groups by role with more than 12 records.",
+    "Return the employee projects results for this request: show employee projects groups by role with more than 12 records."
+  ],
+  "1.0.0:F0264:SELECT email, COUNT(*) AS row_count FROM employees WHERE email IS NOT NULL AND LENGTH(email) >= 14 GROUP BY email HAVING COUNT(*) > 13 ORDER BY COUNT(*) DESC;": [
+    "Can you list email groups in employees whose counts exceed 13.",
+    "Please list email groups in employees whose counts exceed 13.",
+    "I need to list email groups in employees whose counts exceed 13.",
+    "Could you list email groups in employees whose counts exceed 13.",
+    "Return the employees results for this request: list email groups in employees whose counts exceed 13."
+  ],
+  "1.0.0:F0264:SELECT email, COUNT(*) AS row_count FROM employees WHERE email IS NOT NULL AND LENGTH(email) >= 14 GROUP BY email HAVING COUNT(*) > 13 ORDER BY row_count DESC;": [
+    "Can you list email groups in employees whose counts exceed 13.",
+    "Please list email groups in employees whose counts exceed 13.",
+    "I need to list email groups in employees whose counts exceed 13.",
+    "Could you list email groups in employees whose counts exceed 13.",
+    "Return the employees results for this request: list email groups in employees whose counts exceed 13."
+  ],
+  "1.0.0:F0265:SELECT product_name, COUNT(*) AS row_count FROM products WHERE product_name IS NOT NULL AND LENGTH(product_name) >= 15 GROUP BY product_name HAVING COUNT(*) > 14 ORDER BY COUNT(*) DESC;": [
+    "Can you find products grouped by product name after applying count threshold 14.",
+    "Please find products grouped by product name after applying count threshold 14.",
+    "I need to find products grouped by product name after applying count threshold 14.",
+    "Could you find products grouped by product name after applying count threshold 14.",
+    "Return the products results for this request: find products grouped by product name after applying count threshold 14."
+  ],
+  "1.0.0:F0265:SELECT product_name, COUNT(*) AS row_count FROM products WHERE product_name IS NOT NULL AND LENGTH(product_name) >= 15 GROUP BY product_name HAVING COUNT(*) > 14 ORDER BY row_count DESC;": [
+    "Can you find products grouped by product name after applying count threshold 14.",
+    "Please find products grouped by product name after applying count threshold 14.",
+    "I need to find products grouped by product name after applying count threshold 14.",
+    "Could you find products grouped by product name after applying count threshold 14.",
+    "Return the products results for this request: find products grouped by product name after applying count threshold 14."
+  ],
+  "1.0.0:F0266:SELECT project_name, COUNT(*) AS row_count FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 16 GROUP BY project_name HAVING COUNT(*) > 15 ORDER BY COUNT(*) DESC;": [
+    "Can you show projects groups by project name with more than 15 records.",
+    "Please show projects groups by project name with more than 15 records.",
+    "I need to show projects groups by project name with more than 15 records.",
+    "Could you show projects groups by project name with more than 15 records.",
+    "Return the projects results for this request: show projects groups by project name with more than 15 records."
+  ],
+  "1.0.0:F0266:SELECT project_name, COUNT(*) AS row_count FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 16 GROUP BY project_name HAVING COUNT(*) > 15 ORDER BY row_count DESC;": [
+    "Can you show projects groups by project name with more than 15 records.",
+    "Please show projects groups by project name with more than 15 records.",
+    "I need to show projects groups by project name with more than 15 records.",
+    "Could you show projects groups by project name with more than 15 records.",
+    "Return the projects results for this request: show projects groups by project name with more than 15 records."
+  ],
+  "1.0.0:F0267:SELECT generated_sql, COUNT(*) AS row_count FROM query_history WHERE generated_sql IS NOT NULL AND LENGTH(generated_sql) >= 17 GROUP BY generated_sql HAVING COUNT(*) > 16 ORDER BY COUNT(*) DESC;": [
+    "Can you list generated sql groups in query history whose counts exceed 16.",
+    "Please list generated sql groups in query history whose counts exceed 16.",
+    "I need to list generated sql groups in query history whose counts exceed 16.",
+    "Could you list generated sql groups in query history whose counts exceed 16.",
+    "Return the query history results for this request: list generated sql groups in query history whose counts exceed 16."
+  ],
+  "1.0.0:F0267:SELECT generated_sql, COUNT(*) AS row_count FROM query_history WHERE generated_sql IS NOT NULL AND LENGTH(generated_sql) >= 17 GROUP BY generated_sql HAVING COUNT(*) > 16 ORDER BY row_count DESC;": [
+    "Can you list generated sql groups in query history whose counts exceed 16.",
+    "Please list generated sql groups in query history whose counts exceed 16.",
+    "I need to list generated sql groups in query history whose counts exceed 16.",
+    "Could you list generated sql groups in query history whose counts exceed 16.",
+    "Return the query history results for this request: list generated sql groups in query history whose counts exceed 16."
+  ],
+  "1.0.0:F0268:SELECT city, COUNT(*) AS row_count FROM vendors WHERE city IS NOT NULL AND LENGTH(city) >= 18 GROUP BY city HAVING COUNT(*) > 17 ORDER BY COUNT(*) DESC;": [
+    "Can you find vendors grouped by city after applying count threshold 17.",
+    "Please find vendors grouped by city after applying count threshold 17.",
+    "I need to find vendors grouped by city after applying count threshold 17.",
+    "Could you find vendors grouped by city after applying count threshold 17.",
+    "Return the vendors results for this request: find vendors grouped by city after applying count threshold 17."
+  ],
+  "1.0.0:F0268:SELECT city, COUNT(*) AS row_count FROM vendors WHERE city IS NOT NULL AND LENGTH(city) >= 18 GROUP BY city HAVING COUNT(*) > 17 ORDER BY row_count DESC;": [
+    "Can you find vendors grouped by city after applying count threshold 17.",
+    "Please find vendors grouped by city after applying count threshold 17.",
+    "I need to find vendors grouped by city after applying count threshold 17.",
+    "Could you find vendors grouped by city after applying count threshold 17.",
+    "Return the vendors results for this request: find vendors grouped by city after applying count threshold 17."
+  ],
+  "1.0.0:F0269:SELECT author_name, COUNT(*) AS row_count FROM authors WHERE author_name IS NOT NULL AND LENGTH(author_name) >= 19 GROUP BY author_name HAVING COUNT(*) > 18 ORDER BY COUNT(*) DESC;": [
+    "Can you show authors groups by author name with more than 18 records.",
+    "Please show authors groups by author name with more than 18 records.",
+    "I need to show authors groups by author name with more than 18 records.",
+    "Could you show authors groups by author name with more than 18 records.",
+    "Return the authors results for this request: show authors groups by author name with more than 18 records."
+  ],
+  "1.0.0:F0269:SELECT author_name, COUNT(*) AS row_count FROM authors WHERE author_name IS NOT NULL AND LENGTH(author_name) >= 19 GROUP BY author_name HAVING COUNT(*) > 18 ORDER BY row_count DESC;": [
+    "Can you show authors groups by author name with more than 18 records.",
+    "Please show authors groups by author name with more than 18 records.",
+    "I need to show authors groups by author name with more than 18 records.",
+    "Could you show authors groups by author name with more than 18 records.",
+    "Return the authors results for this request: show authors groups by author name with more than 18 records."
+  ],
+  "1.0.0:F0270:SELECT title, COUNT(*) AS row_count FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 20 GROUP BY title HAVING COUNT(*) > 19 ORDER BY COUNT(*) DESC;": [
+    "Can you list title groups in books whose counts exceed 19.",
+    "Please list title groups in books whose counts exceed 19.",
+    "I need to list title groups in books whose counts exceed 19.",
+    "Could you list title groups in books whose counts exceed 19.",
+    "Return the books results for this request: list title groups in books whose counts exceed 19."
+  ],
+  "1.0.0:F0270:SELECT title, COUNT(*) AS row_count FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 20 GROUP BY title HAVING COUNT(*) > 19 ORDER BY row_count DESC;": [
+    "Can you list title groups in books whose counts exceed 19.",
+    "Please list title groups in books whose counts exceed 19.",
+    "I need to list title groups in books whose counts exceed 19.",
+    "Could you list title groups in books whose counts exceed 19.",
+    "Return the books results for this request: list title groups in books whose counts exceed 19."
+  ],
+  "1.0.0:F0271:SELECT * FROM authors WHERE author_id IN (SELECT author_id FROM authors WHERE author_id >= 0 GROUP BY author_id HAVING COUNT(*) >= 1);": [
+    "Can you show authors whose author id is in a subquery where author id is at least 0.",
+    "Please show authors whose author id is in a subquery where author id is at least 0.",
+    "I need to show authors whose author id is in a subquery where author id is at least 0.",
+    "Could you show authors whose author id is in a subquery where author id is at least 0.",
+    "Return the authors results for this request: show authors whose author id is in a subquery where author id is at least 0."
+  ],
+  "1.0.0:F0272:SELECT * FROM books WHERE book_id IN (SELECT book_id FROM books WHERE price >= 1 GROUP BY book_id HAVING COUNT(*) >= 1);": [
+    "Can you find books selected by an IN query with price is at least 1.",
+    "Please find books selected by an IN query with price is at least 1.",
+    "I need to find books selected by an IN query with price is at least 1.",
+    "Could you find books selected by an IN query with price is at least 1.",
+    "Return the books results for this request: find books selected by an IN query with price is at least 1."
+  ],
+  "1.0.0:F0273:SELECT * FROM departments WHERE department_id IN (SELECT department_id FROM departments WHERE location IS NOT NULL AND LENGTH(location) >= 3 GROUP BY department_id HAVING COUNT(*) >= 1);": [
+    "Can you return departments where department id appears in the grouped inner result for location has at least 3 characters.",
+    "Please return departments where department id appears in the grouped inner result for location has at least 3 characters.",
+    "I need to return departments where department id appears in the grouped inner result for location has at least 3 characters.",
+    "Could you return departments where department id appears in the grouped inner result for location has at least 3 characters.",
+    "Return the departments results for this request: return departments where department id appears in the grouped inner result for location has at least 3 characters."
+  ],
+  "1.0.0:F0274:SELECT * FROM employee_projects WHERE project_id IN (SELECT project_id FROM employee_projects WHERE hours_per_week >= 3 GROUP BY project_id HAVING COUNT(*) >= 1);": [
+    "Can you show employee projects whose project id is in a subquery where hours per week is at least 3.",
+    "Please show employee projects whose project id is in a subquery where hours per week is at least 3.",
+    "I need to show employee projects whose project id is in a subquery where hours per week is at least 3.",
+    "Could you show employee projects whose project id is in a subquery where hours per week is at least 3.",
+    "Return the employee projects results for this request: show employee projects whose project id is in a subquery where hours per week is at least 3."
+  ],
+  "1.0.0:F0275:SELECT * FROM employees WHERE employee_id IN (SELECT employee_id FROM employees WHERE salary >= 4 GROUP BY employee_id HAVING COUNT(*) >= 1);": [
+    "Can you find employees selected by an IN query with salary is at least 4.",
+    "Please find employees selected by an IN query with salary is at least 4.",
+    "I need to find employees selected by an IN query with salary is at least 4.",
+    "Could you find employees selected by an IN query with salary is at least 4.",
+    "Return the employees results for this request: find employees selected by an IN query with salary is at least 4."
+  ],
+  "1.0.0:F0276:SELECT * FROM products WHERE product_id IN (SELECT product_id FROM products WHERE price >= 5 GROUP BY product_id HAVING COUNT(*) >= 1);": [
+    "Can you return products where product id appears in the grouped inner result for price is at least 5.",
+    "Please return products where product id appears in the grouped inner result for price is at least 5.",
+    "I need to return products where product id appears in the grouped inner result for price is at least 5.",
+    "Could you return products where product id appears in the grouped inner result for price is at least 5.",
+    "Return the products results for this request: return products where product id appears in the grouped inner result for price is at least 5."
+  ],
+  "1.0.0:F0277:SELECT * FROM projects WHERE project_id IN (SELECT project_id FROM projects WHERE budget >= 6 GROUP BY project_id HAVING COUNT(*) >= 1);": [
+    "Can you show projects whose project id is in a subquery where budget is at least 6.",
+    "Please show projects whose project id is in a subquery where budget is at least 6.",
+    "I need to show projects whose project id is in a subquery where budget is at least 6.",
+    "Could you show projects whose project id is in a subquery where budget is at least 6.",
+    "Return the projects results for this request: show projects whose project id is in a subquery where budget is at least 6."
+  ],
+  "1.0.0:F0278:SELECT * FROM query_history WHERE id IN (SELECT id FROM query_history WHERE rows_returned >= 7 GROUP BY id HAVING COUNT(*) >= 1);": [
+    "Can you find query history selected by an IN query with rows returned is at least 7.",
+    "Please find query history selected by an IN query with rows returned is at least 7.",
+    "I need to find query history selected by an IN query with rows returned is at least 7.",
+    "Could you find query history selected by an IN query with rows returned is at least 7.",
+    "Return the query history results for this request: find query history selected by an IN query with rows returned is at least 7."
+  ],
+  "1.0.0:F0279:SELECT * FROM vendors WHERE id IN (SELECT id FROM vendors WHERE rating >= 8 GROUP BY id HAVING COUNT(*) >= 1);": [
+    "Can you return vendors where id appears in the grouped inner result for rating is at least 8.",
+    "Please return vendors where id appears in the grouped inner result for rating is at least 8.",
+    "I need to return vendors where id appears in the grouped inner result for rating is at least 8.",
+    "Could you return vendors where id appears in the grouped inner result for rating is at least 8.",
+    "Return the vendors results for this request: return vendors where id appears in the grouped inner result for rating is at least 8."
+  ],
+  "1.0.0:F0280:SELECT * FROM authors WHERE author_id IN (SELECT author_id FROM authors WHERE author_id >= 9 GROUP BY author_id HAVING COUNT(*) >= 1);": [
+    "Can you show authors whose author id is in a subquery where author id is at least 9.",
+    "Please show authors whose author id is in a subquery where author id is at least 9.",
+    "I need to show authors whose author id is in a subquery where author id is at least 9.",
+    "Could you show authors whose author id is in a subquery where author id is at least 9.",
+    "Return the authors results for this request: show authors whose author id is in a subquery where author id is at least 9."
+  ],
+  "1.0.0:F0281:SELECT * FROM books WHERE book_id IN (SELECT book_id FROM books WHERE author_id >= 10 GROUP BY book_id HAVING COUNT(*) >= 1);": [
+    "Can you find books selected by an IN query with author id is at least 10.",
+    "Please find books selected by an IN query with author id is at least 10.",
+    "I need to find books selected by an IN query with author id is at least 10.",
+    "Could you find books selected by an IN query with author id is at least 10.",
+    "Return the books results for this request: find books selected by an IN query with author id is at least 10."
+  ],
+  "1.0.0:F0282:SELECT * FROM departments WHERE department_id IN (SELECT department_id FROM departments WHERE location IS NOT NULL AND LENGTH(location) >= 12 GROUP BY department_id HAVING COUNT(*) >= 1);": [
+    "Can you return departments where department id appears in the grouped inner result for location has at least 12 characters.",
+    "Please return departments where department id appears in the grouped inner result for location has at least 12 characters.",
+    "I need to return departments where department id appears in the grouped inner result for location has at least 12 characters.",
+    "Could you return departments where department id appears in the grouped inner result for location has at least 12 characters.",
+    "Return the departments results for this request: return departments where department id appears in the grouped inner result for location has at least 12 characters."
+  ],
+  "1.0.0:F0283:SELECT * FROM employee_projects WHERE employee_id IN (SELECT employee_id FROM employee_projects WHERE hours_per_week >= 12 GROUP BY employee_id HAVING COUNT(*) >= 1);": [
+    "Can you show employee projects whose employee id is in a subquery where hours per week is at least 12.",
+    "Please show employee projects whose employee id is in a subquery where hours per week is at least 12.",
+    "I need to show employee projects whose employee id is in a subquery where hours per week is at least 12.",
+    "Could you show employee projects whose employee id is in a subquery where hours per week is at least 12.",
+    "Return the employee projects results for this request: show employee projects whose employee id is in a subquery where hours per week is at least 12."
+  ],
+  "1.0.0:F0284:SELECT * FROM employees WHERE employee_id IN (SELECT employee_id FROM employees WHERE salary >= 13 GROUP BY employee_id HAVING COUNT(*) >= 1);": [
+    "Can you find employees selected by an IN query with salary is at least 13.",
+    "Please find employees selected by an IN query with salary is at least 13.",
+    "I need to find employees selected by an IN query with salary is at least 13.",
+    "Could you find employees selected by an IN query with salary is at least 13.",
+    "Return the employees results for this request: find employees selected by an IN query with salary is at least 13."
+  ],
+  "1.0.0:F0285:SELECT * FROM products WHERE product_id IN (SELECT product_id FROM products WHERE price >= 14 GROUP BY product_id HAVING COUNT(*) >= 1);": [
+    "Can you return products where product id appears in the grouped inner result for price is at least 14.",
+    "Please return products where product id appears in the grouped inner result for price is at least 14.",
+    "I need to return products where product id appears in the grouped inner result for price is at least 14.",
+    "Could you return products where product id appears in the grouped inner result for price is at least 14.",
+    "Return the products results for this request: return products where product id appears in the grouped inner result for price is at least 14."
+  ],
+  "1.0.0:F0286:SELECT * FROM books WHERE EXISTS (SELECT 1 FROM authors WHERE books.author_id = authors.author_id AND authors.author_id IS NOT NULL AND books.author_id IS NOT NULL LIMIT 1);": [
+    "Find authors that have matching related rows.",
+    "Show authors where related records exist.",
+    "Which authors have associated data?",
+    "Please return authors with existing relationships.",
+    "List authors confirmed by the EXISTS condition."
+  ],
+  "1.0.0:F0287:SELECT * FROM employee_projects WHERE EXISTS (SELECT 1 FROM employees WHERE employee_projects.employee_id = employees.employee_id AND employees.employee_id IS NOT NULL AND employee_projects.employee_id IS NOT NULL LIMIT 2);": [
+    "Find employee projects that have matching related rows.",
+    "Show employee projects where related records exist.",
+    "Which employee projects have associated data?",
+    "Please return employee projects with existing relationships.",
+    "List employee projects confirmed by the EXISTS condition."
+  ],
+  "1.0.0:F0288:SELECT * FROM employee_projects WHERE EXISTS (SELECT 1 FROM projects WHERE employee_projects.project_id = projects.project_id AND projects.project_id IS NOT NULL AND employee_projects.project_id IS NOT NULL LIMIT 3);": [
+    "Can you return employee projects with confirmed projects relationships for check 3.",
+    "Please return employee projects with confirmed projects relationships for check 3.",
+    "I need to return employee projects with confirmed projects relationships for check 3.",
+    "Could you return employee projects with confirmed projects relationships for check 3.",
+    "Return the employee projects results for this request: return employee projects with confirmed projects relationships for check 3."
+  ],
+  "1.0.0:F0289:SELECT * FROM books WHERE EXISTS (SELECT 1 FROM authors WHERE books.author_id = authors.author_id AND authors.author_id IS NOT NULL AND books.author_id IS NOT NULL LIMIT 4);": [
+    "Can you show books that have matching authors for existence check 4.",
+    "Please show books that have matching authors for existence check 4.",
+    "I need to show books that have matching authors for existence check 4.",
+    "Could you show books that have matching authors for existence check 4.",
+    "Return the authors results for this request: show books that have matching authors for existence check 4."
+  ],
+  "1.0.0:F0290:SELECT * FROM employee_projects WHERE EXISTS (SELECT 1 FROM employees WHERE employee_projects.employee_id = employees.employee_id AND employees.employee_id IS NOT NULL AND employee_projects.employee_id IS NOT NULL LIMIT 5);": [
+    "Can you find employee projects where related employees records exist in pass 5.",
+    "Please find employee projects where related employees records exist in pass 5.",
+    "I need to find employee projects where related employees records exist in pass 5.",
+    "Could you find employee projects where related employees records exist in pass 5.",
+    "Return the employee projects results for this request: find employee projects where related employees records exist in pass 5."
+  ],
+  "1.0.0:F0291:SELECT * FROM employee_projects WHERE EXISTS (SELECT 1 FROM projects WHERE employee_projects.project_id = projects.project_id AND projects.project_id IS NOT NULL AND employee_projects.project_id IS NOT NULL LIMIT 6);": [
+    "Can you return employee projects with confirmed projects relationships for check 6.",
+    "Please return employee projects with confirmed projects relationships for check 6.",
+    "I need to return employee projects with confirmed projects relationships for check 6.",
+    "Could you return employee projects with confirmed projects relationships for check 6.",
+    "Return the employee projects results for this request: return employee projects with confirmed projects relationships for check 6."
+  ],
+  "1.0.0:F0292:SELECT * FROM books WHERE EXISTS (SELECT 1 FROM authors WHERE books.author_id = authors.author_id AND authors.author_id IS NOT NULL AND books.author_id IS NOT NULL LIMIT 7);": [
+    "Can you show books that have matching authors for existence check 7.",
+    "Please show books that have matching authors for existence check 7.",
+    "I need to show books that have matching authors for existence check 7.",
+    "Could you show books that have matching authors for existence check 7.",
+    "Return the authors results for this request: show books that have matching authors for existence check 7."
+  ],
+  "1.0.0:F0293:SELECT * FROM employee_projects WHERE EXISTS (SELECT 1 FROM employees WHERE employee_projects.employee_id = employees.employee_id AND employees.employee_id IS NOT NULL AND employee_projects.employee_id IS NOT NULL LIMIT 8);": [
+    "Can you find employee projects where related employees records exist in pass 8.",
+    "Please find employee projects where related employees records exist in pass 8.",
+    "I need to find employee projects where related employees records exist in pass 8.",
+    "Could you find employee projects where related employees records exist in pass 8.",
+    "Return the employee projects results for this request: find employee projects where related employees records exist in pass 8."
+  ],
+  "1.0.0:F0294:SELECT * FROM employee_projects WHERE EXISTS (SELECT 1 FROM projects WHERE employee_projects.project_id = projects.project_id AND projects.project_id IS NOT NULL AND employee_projects.project_id IS NOT NULL LIMIT 9);": [
+    "Can you return employee projects with confirmed projects relationships for check 9.",
+    "Please return employee projects with confirmed projects relationships for check 9.",
+    "I need to return employee projects with confirmed projects relationships for check 9.",
+    "Could you return employee projects with confirmed projects relationships for check 9.",
+    "Return the employee projects results for this request: return employee projects with confirmed projects relationships for check 9."
+  ],
+  "1.0.0:F0295:SELECT * FROM books WHERE EXISTS (SELECT 1 FROM authors WHERE books.author_id = authors.author_id AND authors.author_id IS NOT NULL AND books.author_id IS NOT NULL LIMIT 10);": [
+    "Can you show books that have matching authors for existence check 10.",
+    "Please show books that have matching authors for existence check 10.",
+    "I need to show books that have matching authors for existence check 10.",
+    "Could you show books that have matching authors for existence check 10.",
+    "Return the authors results for this request: show books that have matching authors for existence check 10."
+  ],
+  "1.0.0:F0296:SELECT * FROM employee_projects WHERE EXISTS (SELECT 1 FROM employees WHERE employee_projects.employee_id = employees.employee_id AND employees.employee_id IS NOT NULL AND employee_projects.employee_id IS NOT NULL LIMIT 11);": [
+    "Can you find employee projects where related employees records exist in pass 11.",
+    "Please find employee projects where related employees records exist in pass 11.",
+    "I need to find employee projects where related employees records exist in pass 11.",
+    "Could you find employee projects where related employees records exist in pass 11.",
+    "Return the employee projects results for this request: find employee projects where related employees records exist in pass 11."
+  ],
+  "1.0.0:F0297:SELECT * FROM employee_projects WHERE EXISTS (SELECT 1 FROM projects WHERE employee_projects.project_id = projects.project_id AND projects.project_id IS NOT NULL AND employee_projects.project_id IS NOT NULL LIMIT 12);": [
+    "Can you return employee projects with confirmed projects relationships for check 12.",
+    "Please return employee projects with confirmed projects relationships for check 12.",
+    "I need to return employee projects with confirmed projects relationships for check 12.",
+    "Could you return employee projects with confirmed projects relationships for check 12.",
+    "Return the employee projects results for this request: return employee projects with confirmed projects relationships for check 12."
+  ],
+  "1.0.0:F0298:SELECT * FROM books WHERE EXISTS (SELECT 1 FROM authors WHERE books.author_id = authors.author_id AND authors.author_id IS NOT NULL AND books.author_id IS NOT NULL LIMIT 13);": [
+    "Can you show books that have matching authors for existence check 13.",
+    "Please show books that have matching authors for existence check 13.",
+    "I need to show books that have matching authors for existence check 13.",
+    "Could you show books that have matching authors for existence check 13.",
+    "Return the authors results for this request: show books that have matching authors for existence check 13."
+  ],
+  "1.0.0:F0299:SELECT * FROM employee_projects WHERE EXISTS (SELECT 1 FROM employees WHERE employee_projects.employee_id = employees.employee_id AND employees.employee_id IS NOT NULL AND employee_projects.employee_id IS NOT NULL LIMIT 14);": [
+    "Can you find employee projects where related employees records exist in pass 14.",
+    "Please find employee projects where related employees records exist in pass 14.",
+    "I need to find employee projects where related employees records exist in pass 14.",
+    "Could you find employee projects where related employees records exist in pass 14.",
+    "Return the employee projects results for this request: find employee projects where related employees records exist in pass 14."
+  ],
+  "1.0.0:F0300:SELECT * FROM employee_projects WHERE EXISTS (SELECT 1 FROM projects WHERE employee_projects.project_id = projects.project_id AND projects.project_id IS NOT NULL AND employee_projects.project_id IS NOT NULL LIMIT 15);": [
+    "Can you return employee projects with confirmed projects relationships for check 15.",
+    "Please return employee projects with confirmed projects relationships for check 15.",
+    "I need to return employee projects with confirmed projects relationships for check 15.",
+    "Could you return employee projects with confirmed projects relationships for check 15.",
+    "Return the employee projects results for this request: return employee projects with confirmed projects relationships for check 15."
+  ]
+}

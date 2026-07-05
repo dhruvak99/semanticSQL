@@ -1,0 +1,12 @@
+{
+  "benchmark_version": "1.0.0",
+  "duplicate_penalty": 0,
+  "overall_score": 99.0,
+  "publication_readiness": "PASS",
+  "query_diversity_score": 100.0,
+  "reproducibility_score": 100.0,
+  "schema_coverage_score": 100.0,
+  "semantic_diversity_score": 100.0,
+  "sql_complexity_score": 93.33,
+  "validation_score": 100.0
+}

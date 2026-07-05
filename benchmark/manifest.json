@@ -1,0 +1,117 @@
+{
+  "benchmark_name": "SemanticSQL Benchmark",
+  "benchmark_version": "1.0.0",
+  "category_requirements": {
+    "AVG": 20,
+    "COUNT": 25,
+    "DISTINCT": 15,
+    "EXISTS": 15,
+    "GROUP_BY": 25,
+    "HAVING": 20,
+    "IN": 15,
+    "JOIN": 30,
+    "LIMIT": 15,
+    "MAX": 15,
+    "MIN": 15,
+    "NESTED": 25,
+    "ORDER_BY": 15,
+    "SELECT": 15,
+    "SUM": 15,
+    "WHERE": 20
+  },
+  "consistency": {
+    "category_counts": {
+      "AVG": 20,
+      "COUNT": 25,
+      "DISTINCT": 15,
+      "EXISTS": 15,
+      "GROUP_BY": 25,
+      "HAVING": 20,
+      "IN": 15,
+      "JOIN": 30,
+      "LIMIT": 15,
+      "MAX": 15,
+      "MIN": 15,
+      "NESTED": 25,
+      "ORDER_BY": 15,
+      "SELECT": 15,
+      "SUM": 15,
+      "WHERE": 20
+    },
+    "difficulty_counts": {
+      "easy": 105,
+      "hard": 85,
+      "medium": 110
+    },
+    "duplicate_functional_sql": 0,
+    "errors": [],
+    "invalid_reason_mismatches": 0,
+    "valid": true
+  },
+  "database_adapter": "benchmark/adapters/sqlite.py",
+  "database_engine": "SQLite",
+  "database_name": "semanticsql.db",
+  "database_path": "/Users/dhruva/Documents/SemanticSQL/backend/semanticsql.db",
+  "dataset_files": {
+    "functional": "benchmark/datasets/functional.json",
+    "invalid": "benchmark/datasets/invalid.json",
+    "semantic": "benchmark/datasets/semantic.json"
+  },
+  "datasets": {
+    "functional": 300,
+    "invalid": 100,
+    "semantic": 1500,
+    "total": 1900
+  },
+  "difficulty_targets": {
+    "easy": 105,
+    "hard": 85,
+    "medium": 110
+  },
+  "future_compatibility": [
+    "rule_engines",
+    "semantic_rule_repositories",
+    "llm_sql_generators",
+    "fine_tuned_models",
+    "hybrid_retrieval_architectures",
+    "postgresql",
+    "mysql",
+    "mariadb",
+    "sql_server"
+  ],
+  "generation_timestamp": "2026-07-05T15:02:43.696532+00:00",
+  "generator": "benchmark/generator.py",
+  "quality_file": "benchmark/benchmark_quality.json",
+  "query_categories": {
+    "AVG": 120,
+    "COUNT": 150,
+    "DISTINCT": 90,
+    "EXISTS": 90,
+    "GROUP_BY": 150,
+    "HAVING": 120,
+    "IN": 90,
+    "INVALID": 100,
+    "JOIN": 180,
+    "LIMIT": 90,
+    "MAX": 90,
+    "MIN": 90,
+    "NESTED": 150,
+    "ORDER_BY": 90,
+    "SELECT": 90,
+    "SUM": 90,
+    "WHERE": 120
+  },
+  "reproducibility": {
+    "deterministic": true,
+    "ordering": "schema objects, categories, templates, and variants are sorted or cycled deterministically",
+    "random_seed": null
+  },
+  "schema": {
+    "columns": 39,
+    "foreign_keys": 3,
+    "primary_keys": 10,
+    "tables": 9
+  },
+  "schema_coverage_file": "benchmark/schema_coverage.json",
+  "statistics_file": "benchmark/statistics.json"
+}

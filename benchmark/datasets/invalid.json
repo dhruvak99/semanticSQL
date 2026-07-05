@@ -1,0 +1,1137 @@
+{
+  "benchmark_name": "SemanticSQL Benchmark",
+  "benchmark_version": "1.0.0",
+  "dataset": "invalid",
+  "queries": [
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM missing_authors_0;",
+      "expected_validation_errors": [
+        "Unknown table 'missing_authors_0'"
+      ],
+      "id": "I0001",
+      "invalid_reason": "unknown_table",
+      "natural_language_query": "Show records from the missing authors archive 0"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT missing_column_1 FROM books;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_column_1' in table 'books'"
+      ],
+      "id": "I0002",
+      "invalid_reason": "unknown_column",
+      "natural_language_query": "Show the missing column 1 for books"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM departments WHERE ;",
+      "expected_validation_errors": [
+        "SQL syntax error: Required keyword: 'this' missing for <class 'sqlglot.expressions.Where'>. Line 1, Col: 31.\n  SELECT * FROM departments \u001b[4mWHERE\u001b[0m ;"
+      ],
+      "id": "I0003",
+      "invalid_reason": "invalid_syntax",
+      "natural_language_query": "Run malformed select request 2 for departments"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM employee_projects JOIN employees ON employee_projects.missing_id_3 = employees.missing_id_3;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_id_3' in table 'employee_projects'",
+        "Unknown column 'missing_id_3' in table 'employees'"
+      ],
+      "id": "I0004",
+      "invalid_reason": "invalid_join_condition",
+      "natural_language_query": "Join employee_projects with employees using unavailable key pair 3"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM missing_employees_4;",
+      "expected_validation_errors": [
+        "Unknown table 'missing_employees_4'"
+      ],
+      "id": "I0005",
+      "invalid_reason": "unknown_table",
+      "natural_language_query": "Show records from the missing employees archive 4"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT missing_column_5 FROM products;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_column_5' in table 'products'"
+      ],
+      "id": "I0006",
+      "invalid_reason": "unknown_column",
+      "natural_language_query": "Show the missing column 5 for products"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM projects WHERE ;",
+      "expected_validation_errors": [
+        "SQL syntax error: Required keyword: 'this' missing for <class 'sqlglot.expressions.Where'>. Line 1, Col: 28.\n  SELECT * FROM projects \u001b[4mWHERE\u001b[0m ;"
+      ],
+      "id": "I0007",
+      "invalid_reason": "invalid_syntax",
+      "natural_language_query": "Run malformed select request 6 for projects"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM query_history JOIN vendors ON query_history.missing_id_7 = vendors.missing_id_7;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_id_7' in table 'query_history'",
+        "Unknown column 'missing_id_7' in table 'vendors'"
+      ],
+      "id": "I0008",
+      "invalid_reason": "invalid_join_condition",
+      "natural_language_query": "Join query_history with vendors using unavailable key pair 7"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM missing_vendors_8;",
+      "expected_validation_errors": [
+        "Unknown table 'missing_vendors_8'"
+      ],
+      "id": "I0009",
+      "invalid_reason": "unknown_table",
+      "natural_language_query": "Show records from the missing vendors archive 8"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT missing_column_9 FROM authors;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_column_9' in table 'authors'"
+      ],
+      "id": "I0010",
+      "invalid_reason": "unknown_column",
+      "natural_language_query": "Show the missing column 9 for authors"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM books WHERE ;",
+      "expected_validation_errors": [
+        "SQL syntax error: Required keyword: 'this' missing for <class 'sqlglot.expressions.Where'>. Line 1, Col: 25.\n  SELECT * FROM books \u001b[4mWHERE\u001b[0m ;"
+      ],
+      "id": "I0011",
+      "invalid_reason": "invalid_syntax",
+      "natural_language_query": "Run malformed select request 10 for books"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM departments JOIN employee_projects ON departments.missing_id_11 = employee_projects.missing_id_11;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_id_11' in table 'departments'",
+        "Unknown column 'missing_id_11' in table 'employee_projects'"
+      ],
+      "id": "I0012",
+      "invalid_reason": "invalid_join_condition",
+      "natural_language_query": "Join departments with employee_projects using unavailable key pair 11"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM missing_employee_projects_12;",
+      "expected_validation_errors": [
+        "Unknown table 'missing_employee_projects_12'"
+      ],
+      "id": "I0013",
+      "invalid_reason": "unknown_table",
+      "natural_language_query": "Show records from the missing employee_projects archive 12"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT missing_column_13 FROM employees;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_column_13' in table 'employees'"
+      ],
+      "id": "I0014",
+      "invalid_reason": "unknown_column",
+      "natural_language_query": "Show the missing column 13 for employees"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM products WHERE ;",
+      "expected_validation_errors": [
+        "SQL syntax error: Required keyword: 'this' missing for <class 'sqlglot.expressions.Where'>. Line 1, Col: 28.\n  SELECT * FROM products \u001b[4mWHERE\u001b[0m ;"
+      ],
+      "id": "I0015",
+      "invalid_reason": "invalid_syntax",
+      "natural_language_query": "Run malformed select request 14 for products"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM projects JOIN query_history ON projects.missing_id_15 = query_history.missing_id_15;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_id_15' in table 'projects'",
+        "Unknown column 'missing_id_15' in table 'query_history'"
+      ],
+      "id": "I0016",
+      "invalid_reason": "invalid_join_condition",
+      "natural_language_query": "Join projects with query_history using unavailable key pair 15"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM missing_query_history_16;",
+      "expected_validation_errors": [
+        "Unknown table 'missing_query_history_16'"
+      ],
+      "id": "I0017",
+      "invalid_reason": "unknown_table",
+      "natural_language_query": "Show records from the missing query_history archive 16"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT missing_column_17 FROM vendors;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_column_17' in table 'vendors'"
+      ],
+      "id": "I0018",
+      "invalid_reason": "unknown_column",
+      "natural_language_query": "Show the missing column 17 for vendors"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM authors WHERE ;",
+      "expected_validation_errors": [
+        "SQL syntax error: Required keyword: 'this' missing for <class 'sqlglot.expressions.Where'>. Line 1, Col: 27.\n  SELECT * FROM authors \u001b[4mWHERE\u001b[0m ;"
+      ],
+      "id": "I0019",
+      "invalid_reason": "invalid_syntax",
+      "natural_language_query": "Run malformed select request 18 for authors"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM books JOIN departments ON books.missing_id_19 = departments.missing_id_19;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_id_19' in table 'books'",
+        "Unknown column 'missing_id_19' in table 'departments'"
+      ],
+      "id": "I0020",
+      "invalid_reason": "invalid_join_condition",
+      "natural_language_query": "Join books with departments using unavailable key pair 19"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM missing_departments_20;",
+      "expected_validation_errors": [
+        "Unknown table 'missing_departments_20'"
+      ],
+      "id": "I0021",
+      "invalid_reason": "unknown_table",
+      "natural_language_query": "Show records from the missing departments archive 20"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT missing_column_21 FROM employee_projects;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_column_21' in table 'employee_projects'"
+      ],
+      "id": "I0022",
+      "invalid_reason": "unknown_column",
+      "natural_language_query": "Show the missing column 21 for employee_projects"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM employees WHERE ;",
+      "expected_validation_errors": [
+        "SQL syntax error: Required keyword: 'this' missing for <class 'sqlglot.expressions.Where'>. Line 1, Col: 29.\n  SELECT * FROM employees \u001b[4mWHERE\u001b[0m ;"
+      ],
+      "id": "I0023",
+      "invalid_reason": "invalid_syntax",
+      "natural_language_query": "Run malformed select request 22 for employees"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM products JOIN projects ON products.missing_id_23 = projects.missing_id_23;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_id_23' in table 'products'",
+        "Unknown column 'missing_id_23' in table 'projects'"
+      ],
+      "id": "I0024",
+      "invalid_reason": "invalid_join_condition",
+      "natural_language_query": "Join products with projects using unavailable key pair 23"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM missing_projects_24;",
+      "expected_validation_errors": [
+        "Unknown table 'missing_projects_24'"
+      ],
+      "id": "I0025",
+      "invalid_reason": "unknown_table",
+      "natural_language_query": "Show records from the missing projects archive 24"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT missing_column_25 FROM query_history;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_column_25' in table 'query_history'"
+      ],
+      "id": "I0026",
+      "invalid_reason": "unknown_column",
+      "natural_language_query": "Show the missing column 25 for query_history"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM vendors WHERE ;",
+      "expected_validation_errors": [
+        "SQL syntax error: Required keyword: 'this' missing for <class 'sqlglot.expressions.Where'>. Line 1, Col: 27.\n  SELECT * FROM vendors \u001b[4mWHERE\u001b[0m ;"
+      ],
+      "id": "I0027",
+      "invalid_reason": "invalid_syntax",
+      "natural_language_query": "Run malformed select request 26 for vendors"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM authors JOIN books ON authors.missing_id_27 = books.missing_id_27;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_id_27' in table 'authors'",
+        "Unknown column 'missing_id_27' in table 'books'"
+      ],
+      "id": "I0028",
+      "invalid_reason": "invalid_join_condition",
+      "natural_language_query": "Join authors with books using unavailable key pair 27"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM missing_books_28;",
+      "expected_validation_errors": [
+        "Unknown table 'missing_books_28'"
+      ],
+      "id": "I0029",
+      "invalid_reason": "unknown_table",
+      "natural_language_query": "Show records from the missing books archive 28"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT missing_column_29 FROM departments;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_column_29' in table 'departments'"
+      ],
+      "id": "I0030",
+      "invalid_reason": "unknown_column",
+      "natural_language_query": "Show the missing column 29 for departments"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM employee_projects WHERE ;",
+      "expected_validation_errors": [
+        "SQL syntax error: Required keyword: 'this' missing for <class 'sqlglot.expressions.Where'>. Line 1, Col: 37.\n  SELECT * FROM employee_projects \u001b[4mWHERE\u001b[0m ;"
+      ],
+      "id": "I0031",
+      "invalid_reason": "invalid_syntax",
+      "natural_language_query": "Run malformed select request 30 for employee_projects"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM employees JOIN products ON employees.missing_id_31 = products.missing_id_31;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_id_31' in table 'employees'",
+        "Unknown column 'missing_id_31' in table 'products'"
+      ],
+      "id": "I0032",
+      "invalid_reason": "invalid_join_condition",
+      "natural_language_query": "Join employees with products using unavailable key pair 31"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM missing_products_32;",
+      "expected_validation_errors": [
+        "Unknown table 'missing_products_32'"
+      ],
+      "id": "I0033",
+      "invalid_reason": "unknown_table",
+      "natural_language_query": "Show records from the missing products archive 32"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT missing_column_33 FROM projects;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_column_33' in table 'projects'"
+      ],
+      "id": "I0034",
+      "invalid_reason": "unknown_column",
+      "natural_language_query": "Show the missing column 33 for projects"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM query_history WHERE ;",
+      "expected_validation_errors": [
+        "SQL syntax error: Required keyword: 'this' missing for <class 'sqlglot.expressions.Where'>. Line 1, Col: 33.\n  SELECT * FROM query_history \u001b[4mWHERE\u001b[0m ;"
+      ],
+      "id": "I0035",
+      "invalid_reason": "invalid_syntax",
+      "natural_language_query": "Run malformed select request 34 for query_history"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM vendors JOIN authors ON vendors.missing_id_35 = authors.missing_id_35;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_id_35' in table 'authors'",
+        "Unknown column 'missing_id_35' in table 'vendors'"
+      ],
+      "id": "I0036",
+      "invalid_reason": "invalid_join_condition",
+      "natural_language_query": "Join vendors with authors using unavailable key pair 35"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM missing_authors_36;",
+      "expected_validation_errors": [
+        "Unknown table 'missing_authors_36'"
+      ],
+      "id": "I0037",
+      "invalid_reason": "unknown_table",
+      "natural_language_query": "Show records from the missing authors archive 36"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT missing_column_37 FROM books;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_column_37' in table 'books'"
+      ],
+      "id": "I0038",
+      "invalid_reason": "unknown_column",
+      "natural_language_query": "Show the missing column 37 for books"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM employee_projects JOIN employees ON employee_projects.missing_id_39 = employees.missing_id_39;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_id_39' in table 'employee_projects'",
+        "Unknown column 'missing_id_39' in table 'employees'"
+      ],
+      "id": "I0039",
+      "invalid_reason": "invalid_join_condition",
+      "natural_language_query": "Join employee_projects with employees using unavailable key pair 39"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM missing_employees_40;",
+      "expected_validation_errors": [
+        "Unknown table 'missing_employees_40'"
+      ],
+      "id": "I0040",
+      "invalid_reason": "unknown_table",
+      "natural_language_query": "Show records from the missing employees archive 40"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT missing_column_41 FROM products;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_column_41' in table 'products'"
+      ],
+      "id": "I0041",
+      "invalid_reason": "unknown_column",
+      "natural_language_query": "Show the missing column 41 for products"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM query_history JOIN vendors ON query_history.missing_id_43 = vendors.missing_id_43;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_id_43' in table 'query_history'",
+        "Unknown column 'missing_id_43' in table 'vendors'"
+      ],
+      "id": "I0042",
+      "invalid_reason": "invalid_join_condition",
+      "natural_language_query": "Join query_history with vendors using unavailable key pair 43"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM missing_vendors_44;",
+      "expected_validation_errors": [
+        "Unknown table 'missing_vendors_44'"
+      ],
+      "id": "I0043",
+      "invalid_reason": "unknown_table",
+      "natural_language_query": "Show records from the missing vendors archive 44"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT missing_column_45 FROM authors;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_column_45' in table 'authors'"
+      ],
+      "id": "I0044",
+      "invalid_reason": "unknown_column",
+      "natural_language_query": "Show the missing column 45 for authors"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM departments JOIN employee_projects ON departments.missing_id_47 = employee_projects.missing_id_47;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_id_47' in table 'departments'",
+        "Unknown column 'missing_id_47' in table 'employee_projects'"
+      ],
+      "id": "I0045",
+      "invalid_reason": "invalid_join_condition",
+      "natural_language_query": "Join departments with employee_projects using unavailable key pair 47"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM missing_employee_projects_48;",
+      "expected_validation_errors": [
+        "Unknown table 'missing_employee_projects_48'"
+      ],
+      "id": "I0046",
+      "invalid_reason": "unknown_table",
+      "natural_language_query": "Show records from the missing employee_projects archive 48"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT missing_column_49 FROM employees;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_column_49' in table 'employees'"
+      ],
+      "id": "I0047",
+      "invalid_reason": "unknown_column",
+      "natural_language_query": "Show the missing column 49 for employees"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM projects JOIN query_history ON projects.missing_id_51 = query_history.missing_id_51;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_id_51' in table 'projects'",
+        "Unknown column 'missing_id_51' in table 'query_history'"
+      ],
+      "id": "I0048",
+      "invalid_reason": "invalid_join_condition",
+      "natural_language_query": "Join projects with query_history using unavailable key pair 51"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM missing_query_history_52;",
+      "expected_validation_errors": [
+        "Unknown table 'missing_query_history_52'"
+      ],
+      "id": "I0049",
+      "invalid_reason": "unknown_table",
+      "natural_language_query": "Show records from the missing query_history archive 52"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT missing_column_53 FROM vendors;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_column_53' in table 'vendors'"
+      ],
+      "id": "I0050",
+      "invalid_reason": "unknown_column",
+      "natural_language_query": "Show the missing column 53 for vendors"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM books JOIN departments ON books.missing_id_55 = departments.missing_id_55;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_id_55' in table 'books'",
+        "Unknown column 'missing_id_55' in table 'departments'"
+      ],
+      "id": "I0051",
+      "invalid_reason": "invalid_join_condition",
+      "natural_language_query": "Join books with departments using unavailable key pair 55"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM missing_departments_56;",
+      "expected_validation_errors": [
+        "Unknown table 'missing_departments_56'"
+      ],
+      "id": "I0052",
+      "invalid_reason": "unknown_table",
+      "natural_language_query": "Show records from the missing departments archive 56"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT missing_column_57 FROM employee_projects;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_column_57' in table 'employee_projects'"
+      ],
+      "id": "I0053",
+      "invalid_reason": "unknown_column",
+      "natural_language_query": "Show the missing column 57 for employee_projects"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM products JOIN projects ON products.missing_id_59 = projects.missing_id_59;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_id_59' in table 'products'",
+        "Unknown column 'missing_id_59' in table 'projects'"
+      ],
+      "id": "I0054",
+      "invalid_reason": "invalid_join_condition",
+      "natural_language_query": "Join products with projects using unavailable key pair 59"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM missing_projects_60;",
+      "expected_validation_errors": [
+        "Unknown table 'missing_projects_60'"
+      ],
+      "id": "I0055",
+      "invalid_reason": "unknown_table",
+      "natural_language_query": "Show records from the missing projects archive 60"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT missing_column_61 FROM query_history;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_column_61' in table 'query_history'"
+      ],
+      "id": "I0056",
+      "invalid_reason": "unknown_column",
+      "natural_language_query": "Show the missing column 61 for query_history"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM authors JOIN books ON authors.missing_id_63 = books.missing_id_63;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_id_63' in table 'authors'",
+        "Unknown column 'missing_id_63' in table 'books'"
+      ],
+      "id": "I0057",
+      "invalid_reason": "invalid_join_condition",
+      "natural_language_query": "Join authors with books using unavailable key pair 63"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM missing_books_64;",
+      "expected_validation_errors": [
+        "Unknown table 'missing_books_64'"
+      ],
+      "id": "I0058",
+      "invalid_reason": "unknown_table",
+      "natural_language_query": "Show records from the missing books archive 64"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT missing_column_65 FROM departments;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_column_65' in table 'departments'"
+      ],
+      "id": "I0059",
+      "invalid_reason": "unknown_column",
+      "natural_language_query": "Show the missing column 65 for departments"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM employees JOIN products ON employees.missing_id_67 = products.missing_id_67;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_id_67' in table 'employees'",
+        "Unknown column 'missing_id_67' in table 'products'"
+      ],
+      "id": "I0060",
+      "invalid_reason": "invalid_join_condition",
+      "natural_language_query": "Join employees with products using unavailable key pair 67"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM missing_products_68;",
+      "expected_validation_errors": [
+        "Unknown table 'missing_products_68'"
+      ],
+      "id": "I0061",
+      "invalid_reason": "unknown_table",
+      "natural_language_query": "Show records from the missing products archive 68"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT missing_column_69 FROM projects;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_column_69' in table 'projects'"
+      ],
+      "id": "I0062",
+      "invalid_reason": "unknown_column",
+      "natural_language_query": "Show the missing column 69 for projects"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM vendors JOIN authors ON vendors.missing_id_71 = authors.missing_id_71;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_id_71' in table 'authors'",
+        "Unknown column 'missing_id_71' in table 'vendors'"
+      ],
+      "id": "I0063",
+      "invalid_reason": "invalid_join_condition",
+      "natural_language_query": "Join vendors with authors using unavailable key pair 71"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM missing_authors_72;",
+      "expected_validation_errors": [
+        "Unknown table 'missing_authors_72'"
+      ],
+      "id": "I0064",
+      "invalid_reason": "unknown_table",
+      "natural_language_query": "Show records from the missing authors archive 72"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT missing_column_73 FROM books;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_column_73' in table 'books'"
+      ],
+      "id": "I0065",
+      "invalid_reason": "unknown_column",
+      "natural_language_query": "Show the missing column 73 for books"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM employee_projects JOIN employees ON employee_projects.missing_id_75 = employees.missing_id_75;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_id_75' in table 'employee_projects'",
+        "Unknown column 'missing_id_75' in table 'employees'"
+      ],
+      "id": "I0066",
+      "invalid_reason": "invalid_join_condition",
+      "natural_language_query": "Join employee_projects with employees using unavailable key pair 75"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM missing_employees_76;",
+      "expected_validation_errors": [
+        "Unknown table 'missing_employees_76'"
+      ],
+      "id": "I0067",
+      "invalid_reason": "unknown_table",
+      "natural_language_query": "Show records from the missing employees archive 76"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT missing_column_77 FROM products;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_column_77' in table 'products'"
+      ],
+      "id": "I0068",
+      "invalid_reason": "unknown_column",
+      "natural_language_query": "Show the missing column 77 for products"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM query_history JOIN vendors ON query_history.missing_id_79 = vendors.missing_id_79;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_id_79' in table 'query_history'",
+        "Unknown column 'missing_id_79' in table 'vendors'"
+      ],
+      "id": "I0069",
+      "invalid_reason": "invalid_join_condition",
+      "natural_language_query": "Join query_history with vendors using unavailable key pair 79"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM missing_vendors_80;",
+      "expected_validation_errors": [
+        "Unknown table 'missing_vendors_80'"
+      ],
+      "id": "I0070",
+      "invalid_reason": "unknown_table",
+      "natural_language_query": "Show records from the missing vendors archive 80"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT missing_column_81 FROM authors;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_column_81' in table 'authors'"
+      ],
+      "id": "I0071",
+      "invalid_reason": "unknown_column",
+      "natural_language_query": "Show the missing column 81 for authors"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM departments JOIN employee_projects ON departments.missing_id_83 = employee_projects.missing_id_83;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_id_83' in table 'departments'",
+        "Unknown column 'missing_id_83' in table 'employee_projects'"
+      ],
+      "id": "I0072",
+      "invalid_reason": "invalid_join_condition",
+      "natural_language_query": "Join departments with employee_projects using unavailable key pair 83"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM missing_employee_projects_84;",
+      "expected_validation_errors": [
+        "Unknown table 'missing_employee_projects_84'"
+      ],
+      "id": "I0073",
+      "invalid_reason": "unknown_table",
+      "natural_language_query": "Show records from the missing employee_projects archive 84"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT missing_column_85 FROM employees;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_column_85' in table 'employees'"
+      ],
+      "id": "I0074",
+      "invalid_reason": "unknown_column",
+      "natural_language_query": "Show the missing column 85 for employees"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM projects JOIN query_history ON projects.missing_id_87 = query_history.missing_id_87;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_id_87' in table 'projects'",
+        "Unknown column 'missing_id_87' in table 'query_history'"
+      ],
+      "id": "I0075",
+      "invalid_reason": "invalid_join_condition",
+      "natural_language_query": "Join projects with query_history using unavailable key pair 87"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM missing_query_history_88;",
+      "expected_validation_errors": [
+        "Unknown table 'missing_query_history_88'"
+      ],
+      "id": "I0076",
+      "invalid_reason": "unknown_table",
+      "natural_language_query": "Show records from the missing query_history archive 88"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT missing_column_89 FROM vendors;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_column_89' in table 'vendors'"
+      ],
+      "id": "I0077",
+      "invalid_reason": "unknown_column",
+      "natural_language_query": "Show the missing column 89 for vendors"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM books JOIN departments ON books.missing_id_91 = departments.missing_id_91;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_id_91' in table 'books'",
+        "Unknown column 'missing_id_91' in table 'departments'"
+      ],
+      "id": "I0078",
+      "invalid_reason": "invalid_join_condition",
+      "natural_language_query": "Join books with departments using unavailable key pair 91"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM missing_departments_92;",
+      "expected_validation_errors": [
+        "Unknown table 'missing_departments_92'"
+      ],
+      "id": "I0079",
+      "invalid_reason": "unknown_table",
+      "natural_language_query": "Show records from the missing departments archive 92"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT missing_column_93 FROM employee_projects;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_column_93' in table 'employee_projects'"
+      ],
+      "id": "I0080",
+      "invalid_reason": "unknown_column",
+      "natural_language_query": "Show the missing column 93 for employee_projects"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM products JOIN projects ON products.missing_id_95 = projects.missing_id_95;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_id_95' in table 'products'",
+        "Unknown column 'missing_id_95' in table 'projects'"
+      ],
+      "id": "I0081",
+      "invalid_reason": "invalid_join_condition",
+      "natural_language_query": "Join products with projects using unavailable key pair 95"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM missing_projects_96;",
+      "expected_validation_errors": [
+        "Unknown table 'missing_projects_96'"
+      ],
+      "id": "I0082",
+      "invalid_reason": "unknown_table",
+      "natural_language_query": "Show records from the missing projects archive 96"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT missing_column_97 FROM query_history;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_column_97' in table 'query_history'"
+      ],
+      "id": "I0083",
+      "invalid_reason": "unknown_column",
+      "natural_language_query": "Show the missing column 97 for query_history"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM authors JOIN books ON authors.missing_id_99 = books.missing_id_99;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_id_99' in table 'authors'",
+        "Unknown column 'missing_id_99' in table 'books'"
+      ],
+      "id": "I0084",
+      "invalid_reason": "invalid_join_condition",
+      "natural_language_query": "Join authors with books using unavailable key pair 99"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM missing_books_100;",
+      "expected_validation_errors": [
+        "Unknown table 'missing_books_100'"
+      ],
+      "id": "I0085",
+      "invalid_reason": "unknown_table",
+      "natural_language_query": "Show records from the missing books archive 100"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT missing_column_101 FROM departments;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_column_101' in table 'departments'"
+      ],
+      "id": "I0086",
+      "invalid_reason": "unknown_column",
+      "natural_language_query": "Show the missing column 101 for departments"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM employees JOIN products ON employees.missing_id_103 = products.missing_id_103;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_id_103' in table 'employees'",
+        "Unknown column 'missing_id_103' in table 'products'"
+      ],
+      "id": "I0087",
+      "invalid_reason": "invalid_join_condition",
+      "natural_language_query": "Join employees with products using unavailable key pair 103"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM missing_products_104;",
+      "expected_validation_errors": [
+        "Unknown table 'missing_products_104'"
+      ],
+      "id": "I0088",
+      "invalid_reason": "unknown_table",
+      "natural_language_query": "Show records from the missing products archive 104"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT missing_column_105 FROM projects;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_column_105' in table 'projects'"
+      ],
+      "id": "I0089",
+      "invalid_reason": "unknown_column",
+      "natural_language_query": "Show the missing column 105 for projects"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM vendors JOIN authors ON vendors.missing_id_107 = authors.missing_id_107;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_id_107' in table 'authors'",
+        "Unknown column 'missing_id_107' in table 'vendors'"
+      ],
+      "id": "I0090",
+      "invalid_reason": "invalid_join_condition",
+      "natural_language_query": "Join vendors with authors using unavailable key pair 107"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM missing_authors_108;",
+      "expected_validation_errors": [
+        "Unknown table 'missing_authors_108'"
+      ],
+      "id": "I0091",
+      "invalid_reason": "unknown_table",
+      "natural_language_query": "Show records from the missing authors archive 108"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT missing_column_109 FROM books;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_column_109' in table 'books'"
+      ],
+      "id": "I0092",
+      "invalid_reason": "unknown_column",
+      "natural_language_query": "Show the missing column 109 for books"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM employee_projects JOIN employees ON employee_projects.missing_id_111 = employees.missing_id_111;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_id_111' in table 'employee_projects'",
+        "Unknown column 'missing_id_111' in table 'employees'"
+      ],
+      "id": "I0093",
+      "invalid_reason": "invalid_join_condition",
+      "natural_language_query": "Join employee_projects with employees using unavailable key pair 111"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM missing_employees_112;",
+      "expected_validation_errors": [
+        "Unknown table 'missing_employees_112'"
+      ],
+      "id": "I0094",
+      "invalid_reason": "unknown_table",
+      "natural_language_query": "Show records from the missing employees archive 112"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT missing_column_113 FROM products;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_column_113' in table 'products'"
+      ],
+      "id": "I0095",
+      "invalid_reason": "unknown_column",
+      "natural_language_query": "Show the missing column 113 for products"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM query_history JOIN vendors ON query_history.missing_id_115 = vendors.missing_id_115;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_id_115' in table 'query_history'",
+        "Unknown column 'missing_id_115' in table 'vendors'"
+      ],
+      "id": "I0096",
+      "invalid_reason": "invalid_join_condition",
+      "natural_language_query": "Join query_history with vendors using unavailable key pair 115"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM missing_vendors_116;",
+      "expected_validation_errors": [
+        "Unknown table 'missing_vendors_116'"
+      ],
+      "id": "I0097",
+      "invalid_reason": "unknown_table",
+      "natural_language_query": "Show records from the missing vendors archive 116"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT missing_column_117 FROM authors;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_column_117' in table 'authors'"
+      ],
+      "id": "I0098",
+      "invalid_reason": "unknown_column",
+      "natural_language_query": "Show the missing column 117 for authors"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM departments JOIN employee_projects ON departments.missing_id_119 = employee_projects.missing_id_119;",
+      "expected_validation_errors": [
+        "Unknown column 'missing_id_119' in table 'departments'",
+        "Unknown column 'missing_id_119' in table 'employee_projects'"
+      ],
+      "id": "I0099",
+      "invalid_reason": "invalid_join_condition",
+      "natural_language_query": "Join departments with employee_projects using unavailable key pair 119"
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "dataset": "invalid",
+      "expected_sql": "SELECT * FROM missing_employee_projects_120;",
+      "expected_validation_errors": [
+        "Unknown table 'missing_employee_projects_120'"
+      ],
+      "id": "I0100",
+      "invalid_reason": "unknown_table",
+      "natural_language_query": "Show records from the missing employee_projects archive 120"
+    }
+  ]
+}

@@ -1,0 +1,484 @@
+{
+  "aggregate_compatible_numeric_columns": {
+    "authors.author_id": {
+      "aggregate_queries": 46,
+      "covered": true
+    },
+    "books.author_id": {
+      "aggregate_queries": 41,
+      "covered": true
+    },
+    "books.book_id": {
+      "aggregate_queries": 31,
+      "covered": true
+    },
+    "books.price": {
+      "aggregate_queries": 49,
+      "covered": true
+    },
+    "departments.department_id": {
+      "aggregate_queries": 20,
+      "covered": true
+    },
+    "employee_projects.employee_id": {
+      "aggregate_queries": 47,
+      "covered": true
+    },
+    "employee_projects.hours_per_week": {
+      "aggregate_queries": 57,
+      "covered": true
+    },
+    "employee_projects.project_id": {
+      "aggregate_queries": 44,
+      "covered": true
+    },
+    "employees.employee_id": {
+      "aggregate_queries": 28,
+      "covered": true
+    },
+    "employees.salary": {
+      "aggregate_queries": 42,
+      "covered": true
+    },
+    "products.price": {
+      "aggregate_queries": 24,
+      "covered": true
+    },
+    "products.product_id": {
+      "aggregate_queries": 20,
+      "covered": true
+    },
+    "projects.budget": {
+      "aggregate_queries": 37,
+      "covered": true
+    },
+    "projects.project_id": {
+      "aggregate_queries": 32,
+      "covered": true
+    },
+    "query_history.execution_time": {
+      "aggregate_queries": 11,
+      "covered": true
+    },
+    "query_history.id": {
+      "aggregate_queries": 9,
+      "covered": true
+    },
+    "query_history.rows_returned": {
+      "aggregate_queries": 18,
+      "covered": true
+    },
+    "vendors.id": {
+      "aggregate_queries": 13,
+      "covered": true
+    },
+    "vendors.rating": {
+      "aggregate_queries": 16,
+      "covered": true
+    }
+  },
+  "benchmark_version": "1.0.0",
+  "columns": {
+    "authors.author_id": {
+      "covered": true,
+      "functional_queries": 46,
+      "numeric": true,
+      "primary_key": true,
+      "text": false
+    },
+    "authors.author_name": {
+      "covered": true,
+      "functional_queries": 32,
+      "numeric": false,
+      "primary_key": false,
+      "text": true
+    },
+    "authors.country": {
+      "covered": true,
+      "functional_queries": 31,
+      "numeric": false,
+      "primary_key": false,
+      "text": true
+    },
+    "books.author_id": {
+      "covered": true,
+      "functional_queries": 41,
+      "numeric": true,
+      "primary_key": false,
+      "text": false
+    },
+    "books.book_id": {
+      "covered": true,
+      "functional_queries": 31,
+      "numeric": true,
+      "primary_key": true,
+      "text": false
+    },
+    "books.price": {
+      "covered": true,
+      "functional_queries": 49,
+      "numeric": true,
+      "primary_key": false,
+      "text": false
+    },
+    "books.title": {
+      "covered": true,
+      "functional_queries": 35,
+      "numeric": false,
+      "primary_key": false,
+      "text": true
+    },
+    "departments.department_id": {
+      "covered": true,
+      "functional_queries": 20,
+      "numeric": true,
+      "primary_key": true,
+      "text": false
+    },
+    "departments.department_name": {
+      "covered": true,
+      "functional_queries": 21,
+      "numeric": false,
+      "primary_key": false,
+      "text": true
+    },
+    "departments.location": {
+      "covered": true,
+      "functional_queries": 21,
+      "numeric": false,
+      "primary_key": false,
+      "text": true
+    },
+    "employee_projects.employee_id": {
+      "covered": true,
+      "functional_queries": 47,
+      "numeric": true,
+      "primary_key": true,
+      "text": false
+    },
+    "employee_projects.hours_per_week": {
+      "covered": true,
+      "functional_queries": 57,
+      "numeric": true,
+      "primary_key": false,
+      "text": false
+    },
+    "employee_projects.project_id": {
+      "covered": true,
+      "functional_queries": 44,
+      "numeric": true,
+      "primary_key": true,
+      "text": false
+    },
+    "employee_projects.role": {
+      "covered": true,
+      "functional_queries": 45,
+      "numeric": false,
+      "primary_key": false,
+      "text": true
+    },
+    "employees.department": {
+      "covered": true,
+      "functional_queries": 28,
+      "numeric": false,
+      "primary_key": false,
+      "text": true
+    },
+    "employees.email": {
+      "covered": true,
+      "functional_queries": 34,
+      "numeric": false,
+      "primary_key": false,
+      "text": true
+    },
+    "employees.employee_id": {
+      "covered": true,
+      "functional_queries": 28,
+      "numeric": true,
+      "primary_key": true,
+      "text": false
+    },
+    "employees.joining_date": {
+      "covered": true,
+      "functional_queries": 32,
+      "numeric": false,
+      "primary_key": false,
+      "text": false
+    },
+    "employees.name": {
+      "covered": true,
+      "functional_queries": 32,
+      "numeric": false,
+      "primary_key": false,
+      "text": true
+    },
+    "employees.salary": {
+      "covered": true,
+      "functional_queries": 42,
+      "numeric": true,
+      "primary_key": false,
+      "text": false
+    },
+    "products.price": {
+      "covered": true,
+      "functional_queries": 24,
+      "numeric": true,
+      "primary_key": false,
+      "text": false
+    },
+    "products.product_id": {
+      "covered": true,
+      "functional_queries": 20,
+      "numeric": true,
+      "primary_key": true,
+      "text": false
+    },
+    "products.product_name": {
+      "covered": true,
+      "functional_queries": 22,
+      "numeric": false,
+      "primary_key": false,
+      "text": true
+    },
+    "projects.budget": {
+      "covered": true,
+      "functional_queries": 37,
+      "numeric": true,
+      "primary_key": false,
+      "text": false
+    },
+    "projects.project_id": {
+      "covered": true,
+      "functional_queries": 32,
+      "numeric": true,
+      "primary_key": true,
+      "text": false
+    },
+    "projects.project_name": {
+      "covered": true,
+      "functional_queries": 28,
+      "numeric": false,
+      "primary_key": false,
+      "text": true
+    },
+    "query_history.cache_status": {
+      "covered": true,
+      "functional_queries": 9,
+      "numeric": false,
+      "primary_key": false,
+      "text": true
+    },
+    "query_history.created_at": {
+      "covered": true,
+      "functional_queries": 14,
+      "numeric": false,
+      "primary_key": false,
+      "text": false
+    },
+    "query_history.execution_time": {
+      "covered": true,
+      "functional_queries": 11,
+      "numeric": true,
+      "primary_key": false,
+      "text": false
+    },
+    "query_history.generated_sql": {
+      "covered": true,
+      "functional_queries": 9,
+      "numeric": false,
+      "primary_key": false,
+      "text": true
+    },
+    "query_history.generation_mode": {
+      "covered": true,
+      "functional_queries": 10,
+      "numeric": false,
+      "primary_key": false,
+      "text": true
+    },
+    "query_history.id": {
+      "covered": true,
+      "functional_queries": 9,
+      "numeric": true,
+      "primary_key": true,
+      "text": false
+    },
+    "query_history.natural_language_query": {
+      "covered": true,
+      "functional_queries": 9,
+      "numeric": false,
+      "primary_key": false,
+      "text": true
+    },
+    "query_history.rows_returned": {
+      "covered": true,
+      "functional_queries": 18,
+      "numeric": true,
+      "primary_key": false,
+      "text": false
+    },
+    "query_history.validation_status": {
+      "covered": true,
+      "functional_queries": 9,
+      "numeric": false,
+      "primary_key": false,
+      "text": true
+    },
+    "vendors.city": {
+      "covered": true,
+      "functional_queries": 15,
+      "numeric": false,
+      "primary_key": false,
+      "text": true
+    },
+    "vendors.id": {
+      "covered": true,
+      "functional_queries": 13,
+      "numeric": true,
+      "primary_key": true,
+      "text": false
+    },
+    "vendors.rating": {
+      "covered": true,
+      "functional_queries": 16,
+      "numeric": true,
+      "primary_key": false,
+      "text": false
+    },
+    "vendors.vendor_name": {
+      "covered": true,
+      "functional_queries": 16,
+      "numeric": false,
+      "primary_key": false,
+      "text": true
+    }
+  },
+  "foreign_keys": {
+    "books.author_id -> authors.author_id": {
+      "covered": true,
+      "join_queries": 10
+    },
+    "employee_projects.employee_id -> employees.employee_id": {
+      "covered": true,
+      "join_queries": 10
+    },
+    "employee_projects.project_id -> projects.project_id": {
+      "covered": true,
+      "join_queries": 10
+    }
+  },
+  "overall_schema_coverage": 100.0,
+  "relationship_chains": {},
+  "searchable_text_columns": {
+    "authors.author_name": {
+      "covered": true,
+      "search_queries": 32
+    },
+    "authors.country": {
+      "covered": true,
+      "search_queries": 31
+    },
+    "books.title": {
+      "covered": true,
+      "search_queries": 35
+    },
+    "departments.department_name": {
+      "covered": true,
+      "search_queries": 21
+    },
+    "departments.location": {
+      "covered": true,
+      "search_queries": 21
+    },
+    "employee_projects.role": {
+      "covered": true,
+      "search_queries": 45
+    },
+    "employees.department": {
+      "covered": true,
+      "search_queries": 28
+    },
+    "employees.email": {
+      "covered": true,
+      "search_queries": 34
+    },
+    "employees.name": {
+      "covered": true,
+      "search_queries": 32
+    },
+    "products.product_name": {
+      "covered": true,
+      "search_queries": 22
+    },
+    "projects.project_name": {
+      "covered": true,
+      "search_queries": 28
+    },
+    "query_history.cache_status": {
+      "covered": true,
+      "search_queries": 9
+    },
+    "query_history.generated_sql": {
+      "covered": true,
+      "search_queries": 9
+    },
+    "query_history.generation_mode": {
+      "covered": true,
+      "search_queries": 10
+    },
+    "query_history.natural_language_query": {
+      "covered": true,
+      "search_queries": 9
+    },
+    "query_history.validation_status": {
+      "covered": true,
+      "search_queries": 9
+    },
+    "vendors.city": {
+      "covered": true,
+      "search_queries": 15
+    },
+    "vendors.vendor_name": {
+      "covered": true,
+      "search_queries": 16
+    }
+  },
+  "tables": {
+    "authors": {
+      "covered": true,
+      "functional_queries": 48
+    },
+    "books": {
+      "covered": true,
+      "functional_queries": 58
+    },
+    "departments": {
+      "covered": true,
+      "functional_queries": 22
+    },
+    "employee_projects": {
+      "covered": true,
+      "functional_queries": 63
+    },
+    "employees": {
+      "covered": true,
+      "functional_queries": 47
+    },
+    "products": {
+      "covered": true,
+      "functional_queries": 26
+    },
+    "projects": {
+      "covered": true,
+      "functional_queries": 41
+    },
+    "query_history": {
+      "covered": true,
+      "functional_queries": 20
+    },
+    "vendors": {
+      "covered": true,
+      "functional_queries": 20
+    }
+  }
+}

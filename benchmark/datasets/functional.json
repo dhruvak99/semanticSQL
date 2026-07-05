@@ -1,0 +1,5620 @@
+{
+  "benchmark_name": "SemanticSQL Benchmark",
+  "benchmark_version": "1.0.0",
+  "dataset": "functional",
+  "queries": [
+    {
+      "benchmark_version": "1.0.0",
+      "category": "SELECT",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT author_id FROM authors;",
+      "foreign_keys": [],
+      "id": "F0001",
+      "natural_language_query": "List author id from authors.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "SELECT",
+      "columns": [
+        "author_id",
+        "title"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT title, author_id FROM books;",
+      "foreign_keys": [],
+      "id": "F0002",
+      "natural_language_query": "Show title, author id from books.",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "SELECT",
+      "columns": [
+        "department_id",
+        "department_name",
+        "location"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT location, department_id, department_name FROM departments;",
+      "foreign_keys": [],
+      "id": "F0003",
+      "natural_language_query": "Display departments.",
+      "relationship_chain": [],
+      "tables": [
+        "departments"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "SELECT",
+      "columns": [
+        "hours_per_week"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT hours_per_week FROM employee_projects;",
+      "foreign_keys": [],
+      "id": "F0004",
+      "natural_language_query": "Which hours per week from employee projects are stored?",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "SELECT",
+      "columns": [
+        "joining_date",
+        "salary"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT salary, joining_date FROM employees;",
+      "foreign_keys": [],
+      "id": "F0005",
+      "natural_language_query": "Return salary, joining date from employees.",
+      "relationship_chain": [],
+      "tables": [
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "SELECT",
+      "columns": [
+        "price",
+        "product_id",
+        "product_name"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT price, product_id, product_name FROM products;",
+      "foreign_keys": [],
+      "id": "F0006",
+      "natural_language_query": "List products.",
+      "relationship_chain": [],
+      "tables": [
+        "products"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "SELECT",
+      "columns": [
+        "project_id"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT project_id FROM projects;",
+      "foreign_keys": [],
+      "id": "F0007",
+      "natural_language_query": "Show project id from projects.",
+      "relationship_chain": [],
+      "tables": [
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "SELECT",
+      "columns": [
+        "created_at",
+        "rows_returned"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT rows_returned, created_at FROM query_history;",
+      "foreign_keys": [],
+      "id": "F0008",
+      "natural_language_query": "Display rows returned, created at from query history.",
+      "relationship_chain": [],
+      "tables": [
+        "query_history"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "SELECT",
+      "columns": [
+        "city",
+        "id",
+        "vendor_name"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT id, vendor_name, city FROM vendors;",
+      "foreign_keys": [],
+      "id": "F0009",
+      "natural_language_query": "Which id, vendor name, city from vendors are stored?",
+      "relationship_chain": [],
+      "tables": [
+        "vendors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "SELECT",
+      "columns": [
+        "author_id",
+        "price"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT author_id, price FROM books;",
+      "foreign_keys": [],
+      "id": "F0010",
+      "natural_language_query": "List author id, price from books.",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "SELECT",
+      "columns": [
+        "employee_id"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT employee_id FROM employee_projects;",
+      "foreign_keys": [],
+      "id": "F0011",
+      "natural_language_query": "Display employee id from employee projects.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "SELECT",
+      "columns": [
+        "email",
+        "name"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT name, email FROM employees;",
+      "foreign_keys": [],
+      "id": "F0012",
+      "natural_language_query": "Which name, email from employees are stored?",
+      "relationship_chain": [],
+      "tables": [
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "SELECT",
+      "columns": [
+        "city",
+        "rating",
+        "vendor_name"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT vendor_name, city, rating FROM vendors;",
+      "foreign_keys": [],
+      "id": "F0013",
+      "natural_language_query": "Display vendor name, city, rating from vendors.",
+      "relationship_chain": [],
+      "tables": [
+        "vendors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "SELECT",
+      "columns": [
+        "book_id",
+        "price"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT price, book_id FROM books;",
+      "foreign_keys": [],
+      "id": "F0014",
+      "natural_language_query": "Return price, book id from books.",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "SELECT",
+      "columns": [
+        "project_id"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT project_id FROM employee_projects;",
+      "foreign_keys": [],
+      "id": "F0015",
+      "natural_language_query": "Show project id from employee projects.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "WHERE",
+      "columns": [
+        "author_id",
+        "author_name"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT author_id FROM authors WHERE author_name IS NOT NULL AND LENGTH(author_name) >= 1;",
+      "foreign_keys": [],
+      "id": "F0016",
+      "natural_language_query": "Show authors where author name has at least 1 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "WHERE",
+      "columns": [
+        "author_id",
+        "price",
+        "title"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT title, author_id FROM books WHERE price >= 1;",
+      "foreign_keys": [],
+      "id": "F0017",
+      "natural_language_query": "Show books with price greater than 1.",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "WHERE",
+      "columns": [
+        "department_id",
+        "department_name",
+        "location"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT location, department_id, department_name FROM departments WHERE department_name IS NOT NULL AND LENGTH(department_name) >= 3;",
+      "foreign_keys": [],
+      "id": "F0018",
+      "natural_language_query": "Show departments where department name has at least 3 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "departments"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "WHERE",
+      "columns": [
+        "hours_per_week"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT hours_per_week FROM employee_projects WHERE hours_per_week >= 3;",
+      "foreign_keys": [],
+      "id": "F0019",
+      "natural_language_query": "Show employee projects with hours per week below 3.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "WHERE",
+      "columns": [
+        "joining_date",
+        "salary"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT salary, joining_date FROM employees WHERE salary >= 4;",
+      "foreign_keys": [],
+      "id": "F0020",
+      "natural_language_query": "Show employees with salary less than 4.",
+      "relationship_chain": [],
+      "tables": [
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "WHERE",
+      "columns": [
+        "price",
+        "product_id",
+        "product_name"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT price, product_id, product_name FROM products WHERE price >= 5;",
+      "foreign_keys": [],
+      "id": "F0021",
+      "natural_language_query": "Show products with price no lower than 5.",
+      "relationship_chain": [],
+      "tables": [
+        "products"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "WHERE",
+      "columns": [
+        "budget",
+        "project_id"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT project_id FROM projects WHERE budget >= 6;",
+      "foreign_keys": [],
+      "id": "F0022",
+      "natural_language_query": "Show projects with budget at least 6.",
+      "relationship_chain": [],
+      "tables": [
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "WHERE",
+      "columns": [
+        "created_at",
+        "rows_returned"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT rows_returned, created_at FROM query_history WHERE rows_returned >= 7;",
+      "foreign_keys": [],
+      "id": "F0023",
+      "natural_language_query": "Show query history with rows returned greater than 7.",
+      "relationship_chain": [],
+      "tables": [
+        "query_history"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "WHERE",
+      "columns": [
+        "city",
+        "id",
+        "rating",
+        "vendor_name"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT id, vendor_name, city FROM vendors WHERE rating >= 8;",
+      "foreign_keys": [],
+      "id": "F0024",
+      "natural_language_query": "Show vendors with rating above 8.",
+      "relationship_chain": [],
+      "tables": [
+        "vendors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "WHERE",
+      "columns": [
+        "author_id",
+        "country"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT author_id FROM authors WHERE country IS NOT NULL AND LENGTH(country) >= 10;",
+      "foreign_keys": [],
+      "id": "F0025",
+      "natural_language_query": "Show authors where country has at least 10 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "WHERE",
+      "columns": [
+        "author_id",
+        "price"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT author_id, price FROM books WHERE author_id >= 10;",
+      "foreign_keys": [],
+      "id": "F0026",
+      "natural_language_query": "Show books with author id less than 10.",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "WHERE",
+      "columns": [
+        "department_id",
+        "department_name",
+        "location"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT location, department_id, department_name FROM departments WHERE location IS NOT NULL AND LENGTH(location) >= 12;",
+      "foreign_keys": [],
+      "id": "F0027",
+      "natural_language_query": "Show departments where location has at least 12 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "departments"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "WHERE",
+      "columns": [
+        "employee_id",
+        "hours_per_week"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT employee_id FROM employee_projects WHERE hours_per_week >= 12;",
+      "foreign_keys": [],
+      "id": "F0028",
+      "natural_language_query": "Show employee projects with hours per week at least 12.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "WHERE",
+      "columns": [
+        "email",
+        "name",
+        "salary"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT name, email FROM employees WHERE salary >= 13;",
+      "foreign_keys": [],
+      "id": "F0029",
+      "natural_language_query": "Show employees with salary greater than 13.",
+      "relationship_chain": [],
+      "tables": [
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "WHERE",
+      "columns": [
+        "price",
+        "product_id",
+        "product_name"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT price, product_id, product_name FROM products WHERE price >= 14;",
+      "foreign_keys": [],
+      "id": "F0030",
+      "natural_language_query": "Show products with price above 14.",
+      "relationship_chain": [],
+      "tables": [
+        "products"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "WHERE",
+      "columns": [
+        "budget",
+        "project_id"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT project_id FROM projects WHERE budget >= 15;",
+      "foreign_keys": [],
+      "id": "F0031",
+      "natural_language_query": "Show projects with budget below 15.",
+      "relationship_chain": [],
+      "tables": [
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "WHERE",
+      "columns": [
+        "created_at",
+        "execution_time",
+        "rows_returned"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT rows_returned, created_at FROM query_history WHERE execution_time >= 16;",
+      "foreign_keys": [],
+      "id": "F0032",
+      "natural_language_query": "Show query history with execution time less than 16.",
+      "relationship_chain": [],
+      "tables": [
+        "query_history"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "WHERE",
+      "columns": [
+        "city",
+        "rating",
+        "vendor_name"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT vendor_name, city, rating FROM vendors WHERE rating >= 17;",
+      "foreign_keys": [],
+      "id": "F0033",
+      "natural_language_query": "Show vendors with rating no lower than 17.",
+      "relationship_chain": [],
+      "tables": [
+        "vendors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "WHERE",
+      "columns": [
+        "author_id",
+        "author_name"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT author_id FROM authors WHERE author_name IS NOT NULL AND LENGTH(author_name) >= 19;",
+      "foreign_keys": [],
+      "id": "F0034",
+      "natural_language_query": "Show authors where author name has at least 19 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "WHERE",
+      "columns": [
+        "book_id",
+        "price"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT price, book_id FROM books WHERE price >= 19;",
+      "foreign_keys": [],
+      "id": "F0035",
+      "natural_language_query": "Show books with price greater than 19.",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "ORDER_BY",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT author_id FROM authors ORDER BY author_id ASC LIMIT 5;",
+      "foreign_keys": [],
+      "id": "F0036",
+      "natural_language_query": "List the first 5 authors ordered by author id ascending.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "ORDER_BY",
+      "columns": [
+        "author_id",
+        "title"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT title, author_id FROM books ORDER BY title DESC LIMIT 6;",
+      "foreign_keys": [],
+      "id": "F0037",
+      "natural_language_query": "Show 6 books sorted by title in descending order.",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "ORDER_BY",
+      "columns": [
+        "department_id",
+        "department_name",
+        "location"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT location, department_id, department_name FROM departments ORDER BY location ASC LIMIT 7;",
+      "foreign_keys": [],
+      "id": "F0038",
+      "natural_language_query": "Return 7 departments ranked by location ascending.",
+      "relationship_chain": [],
+      "tables": [
+        "departments"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "ORDER_BY",
+      "columns": [
+        "hours_per_week"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT hours_per_week FROM employee_projects ORDER BY hours_per_week DESC LIMIT 8;",
+      "foreign_keys": [],
+      "id": "F0039",
+      "natural_language_query": "List the first 8 employee projects ordered by hours per week descending.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "ORDER_BY",
+      "columns": [
+        "joining_date",
+        "salary"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT salary, joining_date FROM employees ORDER BY salary ASC LIMIT 9;",
+      "foreign_keys": [],
+      "id": "F0040",
+      "natural_language_query": "Show 9 employees sorted by salary in ascending order.",
+      "relationship_chain": [],
+      "tables": [
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "ORDER_BY",
+      "columns": [
+        "price",
+        "product_id",
+        "product_name"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT price, product_id, product_name FROM products ORDER BY price DESC LIMIT 10;",
+      "foreign_keys": [],
+      "id": "F0041",
+      "natural_language_query": "Return 10 products ranked by price descending.",
+      "relationship_chain": [],
+      "tables": [
+        "products"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "ORDER_BY",
+      "columns": [
+        "project_id"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT project_id FROM projects ORDER BY project_id ASC LIMIT 11;",
+      "foreign_keys": [],
+      "id": "F0042",
+      "natural_language_query": "List the first 11 projects ordered by project id ascending.",
+      "relationship_chain": [],
+      "tables": [
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "ORDER_BY",
+      "columns": [
+        "created_at",
+        "rows_returned"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT rows_returned, created_at FROM query_history ORDER BY rows_returned DESC LIMIT 12;",
+      "foreign_keys": [],
+      "id": "F0043",
+      "natural_language_query": "Show 12 query history sorted by rows returned in descending order.",
+      "relationship_chain": [],
+      "tables": [
+        "query_history"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "ORDER_BY",
+      "columns": [
+        "city",
+        "id",
+        "vendor_name"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT id, vendor_name, city FROM vendors ORDER BY id ASC LIMIT 13;",
+      "foreign_keys": [],
+      "id": "F0044",
+      "natural_language_query": "Return 13 vendors ranked by id ascending.",
+      "relationship_chain": [],
+      "tables": [
+        "vendors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "ORDER_BY",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT author_id FROM authors ORDER BY author_id DESC LIMIT 14;",
+      "foreign_keys": [],
+      "id": "F0045",
+      "natural_language_query": "List the first 14 authors ordered by author id descending.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "ORDER_BY",
+      "columns": [
+        "author_id",
+        "price"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT author_id, price FROM books ORDER BY author_id ASC LIMIT 15;",
+      "foreign_keys": [],
+      "id": "F0046",
+      "natural_language_query": "Show 15 books sorted by author id in ascending order.",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "ORDER_BY",
+      "columns": [
+        "department_id",
+        "department_name",
+        "location"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT location, department_id, department_name FROM departments ORDER BY location DESC LIMIT 16;",
+      "foreign_keys": [],
+      "id": "F0047",
+      "natural_language_query": "Return 16 departments ranked by location descending.",
+      "relationship_chain": [],
+      "tables": [
+        "departments"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "ORDER_BY",
+      "columns": [
+        "employee_id"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT employee_id FROM employee_projects ORDER BY employee_id ASC LIMIT 17;",
+      "foreign_keys": [],
+      "id": "F0048",
+      "natural_language_query": "List the first 17 employee projects ordered by employee id ascending.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "ORDER_BY",
+      "columns": [
+        "email",
+        "name"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT name, email FROM employees ORDER BY name DESC LIMIT 18;",
+      "foreign_keys": [],
+      "id": "F0049",
+      "natural_language_query": "Show 18 employees sorted by name in descending order.",
+      "relationship_chain": [],
+      "tables": [
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "ORDER_BY",
+      "columns": [
+        "price",
+        "product_id",
+        "product_name"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT price, product_id, product_name FROM products ORDER BY price ASC LIMIT 19;",
+      "foreign_keys": [],
+      "id": "F0050",
+      "natural_language_query": "Return 19 products ranked by price ascending.",
+      "relationship_chain": [],
+      "tables": [
+        "products"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "LIMIT",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT author_id FROM authors LIMIT 3 OFFSET 0;",
+      "foreign_keys": [],
+      "id": "F0051",
+      "natural_language_query": "Show 3 authors records from this page.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "LIMIT",
+      "columns": [
+        "author_id",
+        "title"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT title, author_id FROM books LIMIT 4 OFFSET 1;",
+      "foreign_keys": [],
+      "id": "F0052",
+      "natural_language_query": "Return a page of 4 books.",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "LIMIT",
+      "columns": [
+        "department_id",
+        "department_name",
+        "location"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT location, department_id, department_name FROM departments LIMIT 5 OFFSET 2;",
+      "foreign_keys": [],
+      "id": "F0053",
+      "natural_language_query": "List the next 5 departments records.",
+      "relationship_chain": [],
+      "tables": [
+        "departments"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "LIMIT",
+      "columns": [
+        "hours_per_week"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT hours_per_week FROM employee_projects LIMIT 6 OFFSET 3;",
+      "foreign_keys": [],
+      "id": "F0054",
+      "natural_language_query": "Show 6 employee projects records from this page.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "LIMIT",
+      "columns": [
+        "joining_date",
+        "salary"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT salary, joining_date FROM employees LIMIT 7 OFFSET 0;",
+      "foreign_keys": [],
+      "id": "F0055",
+      "natural_language_query": "Return a page of 7 employees.",
+      "relationship_chain": [],
+      "tables": [
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "LIMIT",
+      "columns": [
+        "price",
+        "product_id",
+        "product_name"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT price, product_id, product_name FROM products LIMIT 3 OFFSET 1;",
+      "foreign_keys": [],
+      "id": "F0056",
+      "natural_language_query": "List the next 3 products records.",
+      "relationship_chain": [],
+      "tables": [
+        "products"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "LIMIT",
+      "columns": [
+        "project_id"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT project_id FROM projects LIMIT 4 OFFSET 2;",
+      "foreign_keys": [],
+      "id": "F0057",
+      "natural_language_query": "Show 4 projects records from this page.",
+      "relationship_chain": [],
+      "tables": [
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "LIMIT",
+      "columns": [
+        "created_at",
+        "rows_returned"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT rows_returned, created_at FROM query_history LIMIT 5 OFFSET 3;",
+      "foreign_keys": [],
+      "id": "F0058",
+      "natural_language_query": "Return a page of 5 query history.",
+      "relationship_chain": [],
+      "tables": [
+        "query_history"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "LIMIT",
+      "columns": [
+        "city",
+        "id",
+        "vendor_name"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT id, vendor_name, city FROM vendors LIMIT 6 OFFSET 0;",
+      "foreign_keys": [],
+      "id": "F0059",
+      "natural_language_query": "List the next 6 vendors records.",
+      "relationship_chain": [],
+      "tables": [
+        "vendors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "LIMIT",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT author_id FROM authors LIMIT 7 OFFSET 1;",
+      "foreign_keys": [],
+      "id": "F0060",
+      "natural_language_query": "Show 7 authors records from this page.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "LIMIT",
+      "columns": [
+        "author_id",
+        "price"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT author_id, price FROM books LIMIT 3 OFFSET 2;",
+      "foreign_keys": [],
+      "id": "F0061",
+      "natural_language_query": "Return a page of 3 books.",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "LIMIT",
+      "columns": [
+        "department_id",
+        "department_name",
+        "location"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT location, department_id, department_name FROM departments LIMIT 4 OFFSET 3;",
+      "foreign_keys": [],
+      "id": "F0062",
+      "natural_language_query": "List the next 4 departments records.",
+      "relationship_chain": [],
+      "tables": [
+        "departments"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "LIMIT",
+      "columns": [
+        "employee_id"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT employee_id FROM employee_projects LIMIT 5 OFFSET 0;",
+      "foreign_keys": [],
+      "id": "F0063",
+      "natural_language_query": "Show 5 employee projects records from this page.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "LIMIT",
+      "columns": [
+        "email",
+        "name"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT name, email FROM employees LIMIT 6 OFFSET 1;",
+      "foreign_keys": [],
+      "id": "F0064",
+      "natural_language_query": "Return a page of 6 employees.",
+      "relationship_chain": [],
+      "tables": [
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "LIMIT",
+      "columns": [
+        "price",
+        "product_id",
+        "product_name"
+      ],
+      "complexity_score": 1,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT price, product_id, product_name FROM products LIMIT 7 OFFSET 2;",
+      "foreign_keys": [],
+      "id": "F0065",
+      "natural_language_query": "List the next 7 products records.",
+      "relationship_chain": [],
+      "tables": [
+        "products"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "DISTINCT",
+      "columns": [
+        "author_name"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT DISTINCT author_name FROM authors WHERE author_name IS NOT NULL AND LENGTH(author_name) >= 1 ORDER BY author_name ASC;",
+      "foreign_keys": [],
+      "id": "F0066",
+      "natural_language_query": "List unique author name values from authors where author name has at least 1 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "DISTINCT",
+      "columns": [
+        "title"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT DISTINCT title FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 2 ORDER BY title ASC;",
+      "foreign_keys": [],
+      "id": "F0067",
+      "natural_language_query": "Show distinct title in books after filtering for title has at least 2 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "DISTINCT",
+      "columns": [
+        "department_name"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT DISTINCT department_name FROM departments WHERE department_name IS NOT NULL AND LENGTH(department_name) >= 3 ORDER BY department_name ASC;",
+      "foreign_keys": [],
+      "id": "F0068",
+      "natural_language_query": "Which different department name values exist for departments with department name has at least 3 characters?",
+      "relationship_chain": [],
+      "tables": [
+        "departments"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "DISTINCT",
+      "columns": [
+        "role"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT DISTINCT role FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 4 ORDER BY role ASC;",
+      "foreign_keys": [],
+      "id": "F0069",
+      "natural_language_query": "List unique role values from employee projects where role has at least 4 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "DISTINCT",
+      "columns": [
+        "email"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT DISTINCT email FROM employees WHERE email IS NOT NULL AND LENGTH(email) >= 5 ORDER BY email ASC;",
+      "foreign_keys": [],
+      "id": "F0070",
+      "natural_language_query": "Show distinct email in employees after filtering for email has at least 5 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "DISTINCT",
+      "columns": [
+        "product_name"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT DISTINCT product_name FROM products WHERE product_name IS NOT NULL AND LENGTH(product_name) >= 6 ORDER BY product_name ASC;",
+      "foreign_keys": [],
+      "id": "F0071",
+      "natural_language_query": "Which different product name values exist for products with product name has at least 6 characters?",
+      "relationship_chain": [],
+      "tables": [
+        "products"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "DISTINCT",
+      "columns": [
+        "project_name"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT DISTINCT project_name FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 7 ORDER BY project_name ASC;",
+      "foreign_keys": [],
+      "id": "F0072",
+      "natural_language_query": "List unique project name values from projects where project name has at least 7 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "DISTINCT",
+      "columns": [
+        "generation_mode"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT DISTINCT generation_mode FROM query_history WHERE generation_mode IS NOT NULL AND LENGTH(generation_mode) >= 8 ORDER BY generation_mode ASC;",
+      "foreign_keys": [],
+      "id": "F0073",
+      "natural_language_query": "Show distinct generation mode in query history after filtering for generation mode has at least 8 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "query_history"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "DISTINCT",
+      "columns": [
+        "vendor_name"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT DISTINCT vendor_name FROM vendors WHERE vendor_name IS NOT NULL AND LENGTH(vendor_name) >= 9 ORDER BY vendor_name ASC;",
+      "foreign_keys": [],
+      "id": "F0074",
+      "natural_language_query": "Which different vendor name values exist for vendors with vendor name has at least 9 characters?",
+      "relationship_chain": [],
+      "tables": [
+        "vendors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "DISTINCT",
+      "columns": [
+        "country"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT DISTINCT country FROM authors WHERE country IS NOT NULL AND LENGTH(country) >= 10 ORDER BY country ASC;",
+      "foreign_keys": [],
+      "id": "F0075",
+      "natural_language_query": "List unique country values from authors where country has at least 10 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "DISTINCT",
+      "columns": [
+        "title"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT DISTINCT title FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 11 ORDER BY title ASC;",
+      "foreign_keys": [],
+      "id": "F0076",
+      "natural_language_query": "Show distinct title in books after filtering for title has at least 11 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "DISTINCT",
+      "columns": [
+        "location"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT DISTINCT location FROM departments WHERE location IS NOT NULL AND LENGTH(location) >= 12 ORDER BY location ASC;",
+      "foreign_keys": [],
+      "id": "F0077",
+      "natural_language_query": "Which different location values exist for departments with location has at least 12 characters?",
+      "relationship_chain": [],
+      "tables": [
+        "departments"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "DISTINCT",
+      "columns": [
+        "role"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT DISTINCT role FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 13 ORDER BY role ASC;",
+      "foreign_keys": [],
+      "id": "F0078",
+      "natural_language_query": "List unique role values from employee projects where role has at least 13 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "DISTINCT",
+      "columns": [
+        "email"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT DISTINCT email FROM employees WHERE email IS NOT NULL AND LENGTH(email) >= 14 ORDER BY email ASC;",
+      "foreign_keys": [],
+      "id": "F0079",
+      "natural_language_query": "Show distinct email in employees after filtering for email has at least 14 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "DISTINCT",
+      "columns": [
+        "product_name"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT DISTINCT product_name FROM products WHERE product_name IS NOT NULL AND LENGTH(product_name) >= 15 ORDER BY product_name ASC;",
+      "foreign_keys": [],
+      "id": "F0080",
+      "natural_language_query": "Which different product name values exist for products with product name has at least 15 characters?",
+      "relationship_chain": [],
+      "tables": [
+        "products"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "COUNT",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT COUNT(*) AS row_count FROM authors WHERE author_id >= 0;",
+      "foreign_keys": [],
+      "id": "F0081",
+      "natural_language_query": "Count authors records where author id is at least 0.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "COUNT",
+      "columns": [
+        "title"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT COUNT(*) AS row_count FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 2;",
+      "foreign_keys": [],
+      "id": "F0082",
+      "natural_language_query": "How many books have title has at least 2 characters?",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "COUNT",
+      "columns": [
+        "location"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT COUNT(*) AS row_count FROM departments WHERE location IS NOT NULL AND LENGTH(location) >= 3;",
+      "foreign_keys": [],
+      "id": "F0083",
+      "natural_language_query": "Return the number of departments after filtering for location has at least 3 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "departments"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "COUNT",
+      "columns": [
+        "hours_per_week"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT COUNT(*) AS row_count FROM employee_projects WHERE hours_per_week >= 3;",
+      "foreign_keys": [],
+      "id": "F0084",
+      "natural_language_query": "Count employee projects records where hours per week is at least 3.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "COUNT",
+      "columns": [
+        "salary"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT COUNT(*) AS row_count FROM employees WHERE salary >= 4;",
+      "foreign_keys": [],
+      "id": "F0085",
+      "natural_language_query": "How many employees have salary is at least 4?",
+      "relationship_chain": [],
+      "tables": [
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "COUNT",
+      "columns": [
+        "price"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT COUNT(*) AS row_count FROM products WHERE price >= 5;",
+      "foreign_keys": [],
+      "id": "F0086",
+      "natural_language_query": "Return the number of products after filtering for price is at least 5.",
+      "relationship_chain": [],
+      "tables": [
+        "products"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "COUNT",
+      "columns": [
+        "project_id"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT COUNT(*) AS row_count FROM projects WHERE project_id >= 6;",
+      "foreign_keys": [],
+      "id": "F0087",
+      "natural_language_query": "Count projects records where project id is at least 6.",
+      "relationship_chain": [],
+      "tables": [
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "COUNT",
+      "columns": [
+        "rows_returned"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT COUNT(*) AS row_count FROM query_history WHERE rows_returned >= 7;",
+      "foreign_keys": [],
+      "id": "F0088",
+      "natural_language_query": "How many query history have rows returned is at least 7?",
+      "relationship_chain": [],
+      "tables": [
+        "query_history"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "COUNT",
+      "columns": [
+        "id"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT COUNT(*) AS row_count FROM vendors WHERE id >= 8;",
+      "foreign_keys": [],
+      "id": "F0089",
+      "natural_language_query": "Return the number of vendors after filtering for id is at least 8.",
+      "relationship_chain": [],
+      "tables": [
+        "vendors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "COUNT",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT COUNT(*) AS row_count FROM authors WHERE author_id >= 9;",
+      "foreign_keys": [],
+      "id": "F0090",
+      "natural_language_query": "Count authors records where author id is at least 9.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "COUNT",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT COUNT(*) AS row_count FROM books WHERE author_id >= 10;",
+      "foreign_keys": [],
+      "id": "F0091",
+      "natural_language_query": "How many books have author id is at least 10?",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "COUNT",
+      "columns": [
+        "location"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT COUNT(*) AS row_count FROM departments WHERE location IS NOT NULL AND LENGTH(location) >= 12;",
+      "foreign_keys": [],
+      "id": "F0092",
+      "natural_language_query": "Return the number of departments after filtering for location has at least 12 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "departments"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "COUNT",
+      "columns": [
+        "employee_id"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT COUNT(*) AS row_count FROM employee_projects WHERE employee_id >= 12;",
+      "foreign_keys": [],
+      "id": "F0093",
+      "natural_language_query": "Count employee projects records where employee id is at least 12.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "COUNT",
+      "columns": [
+        "name"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT COUNT(*) AS row_count FROM employees WHERE name IS NOT NULL AND LENGTH(name) >= 14;",
+      "foreign_keys": [],
+      "id": "F0094",
+      "natural_language_query": "How many employees have name has at least 14 characters?",
+      "relationship_chain": [],
+      "tables": [
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "COUNT",
+      "columns": [
+        "price"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT COUNT(*) AS row_count FROM products WHERE price >= 14;",
+      "foreign_keys": [],
+      "id": "F0095",
+      "natural_language_query": "Return the number of products after filtering for price is at least 14.",
+      "relationship_chain": [],
+      "tables": [
+        "products"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "COUNT",
+      "columns": [
+        "project_id"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT COUNT(*) AS row_count FROM projects WHERE project_id >= 15;",
+      "foreign_keys": [],
+      "id": "F0096",
+      "natural_language_query": "Count projects records where project id is at least 15.",
+      "relationship_chain": [],
+      "tables": [
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "COUNT",
+      "columns": [
+        "rows_returned"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT COUNT(*) AS row_count FROM query_history WHERE rows_returned >= 16;",
+      "foreign_keys": [],
+      "id": "F0097",
+      "natural_language_query": "How many query history have rows returned is at least 16?",
+      "relationship_chain": [],
+      "tables": [
+        "query_history"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "COUNT",
+      "columns": [
+        "vendor_name"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT COUNT(*) AS row_count FROM vendors WHERE vendor_name IS NOT NULL AND LENGTH(vendor_name) >= 18;",
+      "foreign_keys": [],
+      "id": "F0098",
+      "natural_language_query": "Return the number of vendors after filtering for vendor name has at least 18 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "vendors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "COUNT",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT COUNT(*) AS row_count FROM authors WHERE author_id >= 18;",
+      "foreign_keys": [],
+      "id": "F0099",
+      "natural_language_query": "Count authors records where author id is at least 18.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "COUNT",
+      "columns": [
+        "price"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT COUNT(*) AS row_count FROM books WHERE price >= 19;",
+      "foreign_keys": [],
+      "id": "F0100",
+      "natural_language_query": "How many books have price is at least 19?",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "COUNT",
+      "columns": [
+        "location"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT COUNT(*) AS row_count FROM departments WHERE location IS NOT NULL AND LENGTH(location) >= 21;",
+      "foreign_keys": [],
+      "id": "F0101",
+      "natural_language_query": "Return the number of departments after filtering for location has at least 21 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "departments"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "COUNT",
+      "columns": [
+        "project_id"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT COUNT(*) AS row_count FROM employee_projects WHERE project_id >= 21;",
+      "foreign_keys": [],
+      "id": "F0102",
+      "natural_language_query": "Count employee projects records where project id is at least 21.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "COUNT",
+      "columns": [
+        "salary"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT COUNT(*) AS row_count FROM employees WHERE salary >= 22;",
+      "foreign_keys": [],
+      "id": "F0103",
+      "natural_language_query": "How many employees have salary is at least 22?",
+      "relationship_chain": [],
+      "tables": [
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "COUNT",
+      "columns": [
+        "price"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT COUNT(*) AS row_count FROM products WHERE price >= 23;",
+      "foreign_keys": [],
+      "id": "F0104",
+      "natural_language_query": "Return the number of products after filtering for price is at least 23.",
+      "relationship_chain": [],
+      "tables": [
+        "products"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "COUNT",
+      "columns": [
+        "project_id"
+      ],
+      "complexity_score": 2,
+      "dataset": "functional",
+      "difficulty": "easy",
+      "expected_sql": "SELECT COUNT(*) AS row_count FROM projects WHERE project_id >= 24;",
+      "foreign_keys": [],
+      "id": "F0105",
+      "natural_language_query": "Count projects records where project id is at least 24.",
+      "relationship_chain": [],
+      "tables": [
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "AVG",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT AVG(author_id) AS avg_author_id FROM authors WHERE author_name IS NOT NULL AND LENGTH(author_name) >= 1;",
+      "foreign_keys": [],
+      "id": "F0106",
+      "natural_language_query": "Calculate the average author id for authors where author name has at least 1 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "AVG",
+      "columns": [
+        "price"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT AVG(price) AS avg_price FROM books WHERE price >= 1;",
+      "foreign_keys": [],
+      "id": "F0107",
+      "natural_language_query": "What is the average price in books where price is at least 1?",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "AVG",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT AVG(author_id) AS avg_author_id FROM authors;",
+      "foreign_keys": [],
+      "id": "F0108",
+      "natural_language_query": "Show the average author id value for authors across all records.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "AVG",
+      "columns": [
+        "hours_per_week"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT AVG(hours_per_week) AS avg_hours_per_week FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 4;",
+      "foreign_keys": [],
+      "id": "F0109",
+      "natural_language_query": "Calculate the average hours per week for employee projects where role has at least 4 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "AVG",
+      "columns": [
+        "salary"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT AVG(salary) AS avg_salary FROM employees WHERE salary >= 4;",
+      "foreign_keys": [],
+      "id": "F0110",
+      "natural_language_query": "What is the average salary in employees where salary is at least 4?",
+      "relationship_chain": [],
+      "tables": [
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "AVG",
+      "columns": [
+        "price"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT AVG(price) AS avg_price FROM products;",
+      "foreign_keys": [],
+      "id": "F0111",
+      "natural_language_query": "Show the average price value for products across all records.",
+      "relationship_chain": [],
+      "tables": [
+        "products"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "AVG",
+      "columns": [
+        "budget"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT AVG(budget) AS avg_budget FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 7;",
+      "foreign_keys": [],
+      "id": "F0112",
+      "natural_language_query": "Calculate the average budget for projects where project name has at least 7 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "AVG",
+      "columns": [
+        "rows_returned"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT AVG(rows_returned) AS avg_rows_returned FROM query_history WHERE rows_returned >= 7;",
+      "foreign_keys": [],
+      "id": "F0113",
+      "natural_language_query": "What is the average rows returned in query history where rows returned is at least 7?",
+      "relationship_chain": [],
+      "tables": [
+        "query_history"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "AVG",
+      "columns": [
+        "rating"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT AVG(rating) AS avg_rating FROM vendors;",
+      "foreign_keys": [],
+      "id": "F0114",
+      "natural_language_query": "Show the average rating value for vendors across all records.",
+      "relationship_chain": [],
+      "tables": [
+        "vendors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "AVG",
+      "columns": [
+        "price"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT AVG(price) AS avg_price FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 10;",
+      "foreign_keys": [],
+      "id": "F0115",
+      "natural_language_query": "Calculate the average price for books where title has at least 10 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "AVG",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT AVG(author_id) AS avg_author_id FROM books WHERE author_id >= 10;",
+      "foreign_keys": [],
+      "id": "F0116",
+      "natural_language_query": "What is the average author id in books where author id is at least 10?",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "AVG",
+      "columns": [
+        "price"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT AVG(price) AS avg_price FROM books;",
+      "foreign_keys": [],
+      "id": "F0117",
+      "natural_language_query": "Show the average price value for books across all records.",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "AVG",
+      "columns": [
+        "hours_per_week"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT AVG(hours_per_week) AS avg_hours_per_week FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 13;",
+      "foreign_keys": [],
+      "id": "F0118",
+      "natural_language_query": "Calculate the average hours per week for employee projects where role has at least 13 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "AVG",
+      "columns": [
+        "salary"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT AVG(salary) AS avg_salary FROM employees WHERE salary >= 13;",
+      "foreign_keys": [],
+      "id": "F0119",
+      "natural_language_query": "What is the average salary in employees where salary is at least 13?",
+      "relationship_chain": [],
+      "tables": [
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "AVG",
+      "columns": [
+        "budget"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT AVG(budget) AS avg_budget FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 16;",
+      "foreign_keys": [],
+      "id": "F0120",
+      "natural_language_query": "Calculate the average budget for projects where project name has at least 16 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "AVG",
+      "columns": [
+        "execution_time"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT AVG(execution_time) AS avg_execution_time FROM query_history WHERE execution_time >= 16;",
+      "foreign_keys": [],
+      "id": "F0121",
+      "natural_language_query": "What is the average execution time in query history where execution time is at least 16?",
+      "relationship_chain": [],
+      "tables": [
+        "query_history"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "AVG",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT AVG(author_id) AS avg_author_id FROM authors WHERE author_name IS NOT NULL AND LENGTH(author_name) >= 19;",
+      "foreign_keys": [],
+      "id": "F0122",
+      "natural_language_query": "Calculate the average author id for authors where author name has at least 19 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "AVG",
+      "columns": [
+        "price"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT AVG(price) AS avg_price FROM books WHERE price >= 19;",
+      "foreign_keys": [],
+      "id": "F0123",
+      "natural_language_query": "What is the average price in books where price is at least 19?",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "AVG",
+      "columns": [
+        "hours_per_week"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT AVG(hours_per_week) AS avg_hours_per_week FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 22;",
+      "foreign_keys": [],
+      "id": "F0124",
+      "natural_language_query": "Calculate the average hours per week for employee projects where role has at least 22 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "AVG",
+      "columns": [
+        "salary"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT AVG(salary) AS avg_salary FROM employees WHERE salary >= 22;",
+      "foreign_keys": [],
+      "id": "F0125",
+      "natural_language_query": "What is the average salary in employees where salary is at least 22?",
+      "relationship_chain": [],
+      "tables": [
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "MIN",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT MIN(author_id) AS min_author_id FROM authors WHERE author_name IS NOT NULL AND LENGTH(author_name) >= 1;",
+      "foreign_keys": [],
+      "id": "F0126",
+      "natural_language_query": "Calculate the lowest author id for authors where author name has at least 1 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "MIN",
+      "columns": [
+        "price"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT MIN(price) AS min_price FROM books WHERE price >= 1;",
+      "foreign_keys": [],
+      "id": "F0127",
+      "natural_language_query": "What is the lowest price in books where price is at least 1?",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "MIN",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT MIN(author_id) AS min_author_id FROM authors;",
+      "foreign_keys": [],
+      "id": "F0128",
+      "natural_language_query": "Show the lowest author id value for authors across all records.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "MIN",
+      "columns": [
+        "hours_per_week"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT MIN(hours_per_week) AS min_hours_per_week FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 4;",
+      "foreign_keys": [],
+      "id": "F0129",
+      "natural_language_query": "Calculate the lowest hours per week for employee projects where role has at least 4 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "MIN",
+      "columns": [
+        "salary"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT MIN(salary) AS min_salary FROM employees WHERE salary >= 4;",
+      "foreign_keys": [],
+      "id": "F0130",
+      "natural_language_query": "What is the lowest salary in employees where salary is at least 4?",
+      "relationship_chain": [],
+      "tables": [
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "MIN",
+      "columns": [
+        "price"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT MIN(price) AS min_price FROM products;",
+      "foreign_keys": [],
+      "id": "F0131",
+      "natural_language_query": "Show the lowest price value for products across all records.",
+      "relationship_chain": [],
+      "tables": [
+        "products"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "MIN",
+      "columns": [
+        "budget"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT MIN(budget) AS min_budget FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 7;",
+      "foreign_keys": [],
+      "id": "F0132",
+      "natural_language_query": "Calculate the lowest budget for projects where project name has at least 7 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "MIN",
+      "columns": [
+        "rows_returned"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT MIN(rows_returned) AS min_rows_returned FROM query_history WHERE rows_returned >= 7;",
+      "foreign_keys": [],
+      "id": "F0133",
+      "natural_language_query": "What is the lowest rows returned in query history where rows returned is at least 7?",
+      "relationship_chain": [],
+      "tables": [
+        "query_history"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "MIN",
+      "columns": [
+        "rating"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT MIN(rating) AS min_rating FROM vendors;",
+      "foreign_keys": [],
+      "id": "F0134",
+      "natural_language_query": "Show the lowest rating value for vendors across all records.",
+      "relationship_chain": [],
+      "tables": [
+        "vendors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "MIN",
+      "columns": [
+        "price"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT MIN(price) AS min_price FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 10;",
+      "foreign_keys": [],
+      "id": "F0135",
+      "natural_language_query": "Calculate the lowest price for books where title has at least 10 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "MIN",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT MIN(author_id) AS min_author_id FROM books WHERE author_id >= 10;",
+      "foreign_keys": [],
+      "id": "F0136",
+      "natural_language_query": "What is the lowest author id in books where author id is at least 10?",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "MIN",
+      "columns": [
+        "price"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT MIN(price) AS min_price FROM books;",
+      "foreign_keys": [],
+      "id": "F0137",
+      "natural_language_query": "Show the lowest price value for books across all records.",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "MIN",
+      "columns": [
+        "hours_per_week"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT MIN(hours_per_week) AS min_hours_per_week FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 13;",
+      "foreign_keys": [],
+      "id": "F0138",
+      "natural_language_query": "Calculate the lowest hours per week for employee projects where role has at least 13 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "MIN",
+      "columns": [
+        "salary"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT MIN(salary) AS min_salary FROM employees WHERE salary >= 13;",
+      "foreign_keys": [],
+      "id": "F0139",
+      "natural_language_query": "What is the lowest salary in employees where salary is at least 13?",
+      "relationship_chain": [],
+      "tables": [
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "MIN",
+      "columns": [
+        "budget"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT MIN(budget) AS min_budget FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 16;",
+      "foreign_keys": [],
+      "id": "F0140",
+      "natural_language_query": "Calculate the lowest budget for projects where project name has at least 16 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "MAX",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT MAX(author_id) AS max_author_id FROM authors WHERE author_name IS NOT NULL AND LENGTH(author_name) >= 1;",
+      "foreign_keys": [],
+      "id": "F0141",
+      "natural_language_query": "Calculate the highest author id for authors where author name has at least 1 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "MAX",
+      "columns": [
+        "price"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT MAX(price) AS max_price FROM books WHERE price >= 1;",
+      "foreign_keys": [],
+      "id": "F0142",
+      "natural_language_query": "What is the highest price in books where price is at least 1?",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "MAX",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT MAX(author_id) AS max_author_id FROM authors;",
+      "foreign_keys": [],
+      "id": "F0143",
+      "natural_language_query": "Show the highest author id value for authors across all records.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "MAX",
+      "columns": [
+        "hours_per_week"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT MAX(hours_per_week) AS max_hours_per_week FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 4;",
+      "foreign_keys": [],
+      "id": "F0144",
+      "natural_language_query": "Calculate the highest hours per week for employee projects where role has at least 4 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "MAX",
+      "columns": [
+        "salary"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT MAX(salary) AS max_salary FROM employees WHERE salary >= 4;",
+      "foreign_keys": [],
+      "id": "F0145",
+      "natural_language_query": "What is the highest salary in employees where salary is at least 4?",
+      "relationship_chain": [],
+      "tables": [
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "MAX",
+      "columns": [
+        "price"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT MAX(price) AS max_price FROM products;",
+      "foreign_keys": [],
+      "id": "F0146",
+      "natural_language_query": "Show the highest price value for products across all records.",
+      "relationship_chain": [],
+      "tables": [
+        "products"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "MAX",
+      "columns": [
+        "budget"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT MAX(budget) AS max_budget FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 7;",
+      "foreign_keys": [],
+      "id": "F0147",
+      "natural_language_query": "Calculate the highest budget for projects where project name has at least 7 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "MAX",
+      "columns": [
+        "rows_returned"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT MAX(rows_returned) AS max_rows_returned FROM query_history WHERE rows_returned >= 7;",
+      "foreign_keys": [],
+      "id": "F0148",
+      "natural_language_query": "What is the highest rows returned in query history where rows returned is at least 7?",
+      "relationship_chain": [],
+      "tables": [
+        "query_history"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "MAX",
+      "columns": [
+        "rating"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT MAX(rating) AS max_rating FROM vendors;",
+      "foreign_keys": [],
+      "id": "F0149",
+      "natural_language_query": "Show the highest rating value for vendors across all records.",
+      "relationship_chain": [],
+      "tables": [
+        "vendors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "MAX",
+      "columns": [
+        "price"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT MAX(price) AS max_price FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 10;",
+      "foreign_keys": [],
+      "id": "F0150",
+      "natural_language_query": "Calculate the highest price for books where title has at least 10 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "MAX",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT MAX(author_id) AS max_author_id FROM books WHERE author_id >= 10;",
+      "foreign_keys": [],
+      "id": "F0151",
+      "natural_language_query": "What is the highest author id in books where author id is at least 10?",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "MAX",
+      "columns": [
+        "price"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT MAX(price) AS max_price FROM books;",
+      "foreign_keys": [],
+      "id": "F0152",
+      "natural_language_query": "Show the highest price value for books across all records.",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "MAX",
+      "columns": [
+        "hours_per_week"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT MAX(hours_per_week) AS max_hours_per_week FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 13;",
+      "foreign_keys": [],
+      "id": "F0153",
+      "natural_language_query": "Calculate the highest hours per week for employee projects where role has at least 13 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "MAX",
+      "columns": [
+        "salary"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT MAX(salary) AS max_salary FROM employees WHERE salary >= 13;",
+      "foreign_keys": [],
+      "id": "F0154",
+      "natural_language_query": "What is the highest salary in employees where salary is at least 13?",
+      "relationship_chain": [],
+      "tables": [
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "MAX",
+      "columns": [
+        "budget"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT MAX(budget) AS max_budget FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 16;",
+      "foreign_keys": [],
+      "id": "F0155",
+      "natural_language_query": "Calculate the highest budget for projects where project name has at least 16 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "SUM",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT SUM(author_id) AS sum_author_id FROM authors WHERE author_name IS NOT NULL AND LENGTH(author_name) >= 1;",
+      "foreign_keys": [],
+      "id": "F0156",
+      "natural_language_query": "Calculate the total author id for authors where author name has at least 1 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "SUM",
+      "columns": [
+        "price"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT SUM(price) AS sum_price FROM books WHERE price >= 1;",
+      "foreign_keys": [],
+      "id": "F0157",
+      "natural_language_query": "What is the total price in books where price is at least 1?",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "SUM",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT SUM(author_id) AS sum_author_id FROM authors;",
+      "foreign_keys": [],
+      "id": "F0158",
+      "natural_language_query": "Show the total author id value for authors across all records.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "SUM",
+      "columns": [
+        "hours_per_week"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT SUM(hours_per_week) AS sum_hours_per_week FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 4;",
+      "foreign_keys": [],
+      "id": "F0159",
+      "natural_language_query": "Calculate the total hours per week for employee projects where role has at least 4 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "SUM",
+      "columns": [
+        "salary"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT SUM(salary) AS sum_salary FROM employees WHERE salary >= 4;",
+      "foreign_keys": [],
+      "id": "F0160",
+      "natural_language_query": "What is the total salary in employees where salary is at least 4?",
+      "relationship_chain": [],
+      "tables": [
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "SUM",
+      "columns": [
+        "price"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT SUM(price) AS sum_price FROM products;",
+      "foreign_keys": [],
+      "id": "F0161",
+      "natural_language_query": "Show the total price value for products across all records.",
+      "relationship_chain": [],
+      "tables": [
+        "products"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "SUM",
+      "columns": [
+        "budget"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT SUM(budget) AS sum_budget FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 7;",
+      "foreign_keys": [],
+      "id": "F0162",
+      "natural_language_query": "Calculate the total budget for projects where project name has at least 7 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "SUM",
+      "columns": [
+        "rows_returned"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT SUM(rows_returned) AS sum_rows_returned FROM query_history WHERE rows_returned >= 7;",
+      "foreign_keys": [],
+      "id": "F0163",
+      "natural_language_query": "What is the total rows returned in query history where rows returned is at least 7?",
+      "relationship_chain": [],
+      "tables": [
+        "query_history"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "SUM",
+      "columns": [
+        "rating"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT SUM(rating) AS sum_rating FROM vendors;",
+      "foreign_keys": [],
+      "id": "F0164",
+      "natural_language_query": "Show the total rating value for vendors across all records.",
+      "relationship_chain": [],
+      "tables": [
+        "vendors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "SUM",
+      "columns": [
+        "price"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT SUM(price) AS sum_price FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 10;",
+      "foreign_keys": [],
+      "id": "F0165",
+      "natural_language_query": "Calculate the total price for books where title has at least 10 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "SUM",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT SUM(author_id) AS sum_author_id FROM books WHERE author_id >= 10;",
+      "foreign_keys": [],
+      "id": "F0166",
+      "natural_language_query": "What is the total author id in books where author id is at least 10?",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "SUM",
+      "columns": [
+        "price"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT SUM(price) AS sum_price FROM books;",
+      "foreign_keys": [],
+      "id": "F0167",
+      "natural_language_query": "Show the total price value for books across all records.",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "SUM",
+      "columns": [
+        "hours_per_week"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT SUM(hours_per_week) AS sum_hours_per_week FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 13;",
+      "foreign_keys": [],
+      "id": "F0168",
+      "natural_language_query": "Calculate the total hours per week for employee projects where role has at least 13 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "SUM",
+      "columns": [
+        "salary"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT SUM(salary) AS sum_salary FROM employees WHERE salary >= 13;",
+      "foreign_keys": [],
+      "id": "F0169",
+      "natural_language_query": "What is the total salary in employees where salary is at least 13?",
+      "relationship_chain": [],
+      "tables": [
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "SUM",
+      "columns": [
+        "budget"
+      ],
+      "complexity_score": 3,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT SUM(budget) AS sum_budget FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 16;",
+      "foreign_keys": [],
+      "id": "F0170",
+      "natural_language_query": "Calculate the total budget for projects where project name has at least 16 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "GROUP_BY",
+      "columns": [
+        "author_name"
+      ],
+      "complexity_score": 6,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT author_name, COUNT(*) AS row_count FROM authors WHERE author_name IS NOT NULL AND LENGTH(author_name) >= 1 GROUP BY author_name ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0171",
+      "natural_language_query": "Break down authors by author name where author name has at least 1 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "GROUP_BY",
+      "columns": [
+        "title"
+      ],
+      "complexity_score": 6,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT title, COUNT(*) AS row_count FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 2 GROUP BY title ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0172",
+      "natural_language_query": "Count books for each title after filtering for title has at least 2 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "GROUP_BY",
+      "columns": [
+        "department_name"
+      ],
+      "complexity_score": 6,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT department_name, COUNT(*) AS row_count FROM departments WHERE department_name IS NOT NULL AND LENGTH(department_name) >= 3 GROUP BY department_name ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0173",
+      "natural_language_query": "Summarize departments grouped by department name with department name has at least 3 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "departments"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "GROUP_BY",
+      "columns": [
+        "role"
+      ],
+      "complexity_score": 6,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT role, COUNT(*) AS row_count FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 4 GROUP BY role ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0174",
+      "natural_language_query": "Break down employee projects by role where role has at least 4 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "GROUP_BY",
+      "columns": [
+        "email"
+      ],
+      "complexity_score": 6,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT email, COUNT(*) AS row_count FROM employees WHERE email IS NOT NULL AND LENGTH(email) >= 5 GROUP BY email ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0175",
+      "natural_language_query": "Count employees for each email after filtering for email has at least 5 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "GROUP_BY",
+      "columns": [
+        "product_name"
+      ],
+      "complexity_score": 6,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT product_name, COUNT(*) AS row_count FROM products WHERE product_name IS NOT NULL AND LENGTH(product_name) >= 6 GROUP BY product_name ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0176",
+      "natural_language_query": "Summarize products grouped by product name with product name has at least 6 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "products"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "GROUP_BY",
+      "columns": [
+        "project_name"
+      ],
+      "complexity_score": 6,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT project_name, COUNT(*) AS row_count FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 7 GROUP BY project_name ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0177",
+      "natural_language_query": "Break down projects by project name where project name has at least 7 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "GROUP_BY",
+      "columns": [
+        "generation_mode"
+      ],
+      "complexity_score": 6,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT generation_mode, COUNT(*) AS row_count FROM query_history WHERE generation_mode IS NOT NULL AND LENGTH(generation_mode) >= 8 GROUP BY generation_mode ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0178",
+      "natural_language_query": "Count query history for each generation mode after filtering for generation mode has at least 8 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "query_history"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "GROUP_BY",
+      "columns": [
+        "vendor_name"
+      ],
+      "complexity_score": 6,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT vendor_name, COUNT(*) AS row_count FROM vendors WHERE vendor_name IS NOT NULL AND LENGTH(vendor_name) >= 9 GROUP BY vendor_name ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0179",
+      "natural_language_query": "Summarize vendors grouped by vendor name with vendor name has at least 9 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "vendors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "GROUP_BY",
+      "columns": [
+        "country"
+      ],
+      "complexity_score": 6,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT country, COUNT(*) AS row_count FROM authors WHERE country IS NOT NULL AND LENGTH(country) >= 10 GROUP BY country ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0180",
+      "natural_language_query": "Break down authors by country where country has at least 10 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "GROUP_BY",
+      "columns": [
+        "title"
+      ],
+      "complexity_score": 6,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT title, COUNT(*) AS row_count FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 11 GROUP BY title ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0181",
+      "natural_language_query": "Count books for each title after filtering for title has at least 11 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "GROUP_BY",
+      "columns": [
+        "location"
+      ],
+      "complexity_score": 6,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT location, COUNT(*) AS row_count FROM departments WHERE location IS NOT NULL AND LENGTH(location) >= 12 GROUP BY location ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0182",
+      "natural_language_query": "Summarize departments grouped by location with location has at least 12 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "departments"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "GROUP_BY",
+      "columns": [
+        "role"
+      ],
+      "complexity_score": 6,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT role, COUNT(*) AS row_count FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 13 GROUP BY role ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0183",
+      "natural_language_query": "Break down employee projects by role where role has at least 13 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "GROUP_BY",
+      "columns": [
+        "email"
+      ],
+      "complexity_score": 6,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT email, COUNT(*) AS row_count FROM employees WHERE email IS NOT NULL AND LENGTH(email) >= 14 GROUP BY email ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0184",
+      "natural_language_query": "Count employees for each email after filtering for email has at least 14 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "GROUP_BY",
+      "columns": [
+        "product_name"
+      ],
+      "complexity_score": 6,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT product_name, COUNT(*) AS row_count FROM products WHERE product_name IS NOT NULL AND LENGTH(product_name) >= 15 GROUP BY product_name ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0185",
+      "natural_language_query": "Summarize products grouped by product name with product name has at least 15 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "products"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "GROUP_BY",
+      "columns": [
+        "project_name"
+      ],
+      "complexity_score": 6,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT project_name, COUNT(*) AS row_count FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 16 GROUP BY project_name ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0186",
+      "natural_language_query": "Break down projects by project name where project name has at least 16 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "GROUP_BY",
+      "columns": [
+        "generated_sql"
+      ],
+      "complexity_score": 6,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT generated_sql, COUNT(*) AS row_count FROM query_history WHERE generated_sql IS NOT NULL AND LENGTH(generated_sql) >= 17 GROUP BY generated_sql ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0187",
+      "natural_language_query": "Count query history for each generated sql after filtering for generated sql has at least 17 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "query_history"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "GROUP_BY",
+      "columns": [
+        "city"
+      ],
+      "complexity_score": 6,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT city, COUNT(*) AS row_count FROM vendors WHERE city IS NOT NULL AND LENGTH(city) >= 18 GROUP BY city ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0188",
+      "natural_language_query": "Summarize vendors grouped by city with city has at least 18 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "vendors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "GROUP_BY",
+      "columns": [
+        "author_name"
+      ],
+      "complexity_score": 6,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT author_name, COUNT(*) AS row_count FROM authors WHERE author_name IS NOT NULL AND LENGTH(author_name) >= 19 GROUP BY author_name ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0189",
+      "natural_language_query": "Break down authors by author name where author name has at least 19 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "GROUP_BY",
+      "columns": [
+        "title"
+      ],
+      "complexity_score": 6,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT title, COUNT(*) AS row_count FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 20 GROUP BY title ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0190",
+      "natural_language_query": "Count books for each title after filtering for title has at least 20 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "GROUP_BY",
+      "columns": [
+        "department_name"
+      ],
+      "complexity_score": 6,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT department_name, COUNT(*) AS row_count FROM departments WHERE department_name IS NOT NULL AND LENGTH(department_name) >= 21 GROUP BY department_name ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0191",
+      "natural_language_query": "Summarize departments grouped by department name with department name has at least 21 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "departments"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "GROUP_BY",
+      "columns": [
+        "role"
+      ],
+      "complexity_score": 6,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT role, COUNT(*) AS row_count FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 22 GROUP BY role ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0192",
+      "natural_language_query": "Break down employee projects by role where role has at least 22 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "GROUP_BY",
+      "columns": [
+        "email"
+      ],
+      "complexity_score": 6,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT email, COUNT(*) AS row_count FROM employees WHERE email IS NOT NULL AND LENGTH(email) >= 23 GROUP BY email ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0193",
+      "natural_language_query": "Count employees for each email after filtering for email has at least 23 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "GROUP_BY",
+      "columns": [
+        "product_name"
+      ],
+      "complexity_score": 6,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT product_name, COUNT(*) AS row_count FROM products WHERE product_name IS NOT NULL AND LENGTH(product_name) >= 24 GROUP BY product_name ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0194",
+      "natural_language_query": "Summarize products grouped by product name with product name has at least 24 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "products"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "GROUP_BY",
+      "columns": [
+        "project_name"
+      ],
+      "complexity_score": 6,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT project_name, COUNT(*) AS row_count FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 25 GROUP BY project_name ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0195",
+      "natural_language_query": "Break down projects by project name where project name has at least 25 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "NESTED",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 5,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM authors WHERE author_id IN (SELECT author_id FROM authors WHERE author_id >= 0);",
+      "foreign_keys": [],
+      "id": "F0196",
+      "natural_language_query": "Show authors whose keys appear in a subquery where author id is at least 0.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "NESTED",
+      "columns": [
+        "book_id",
+        "price"
+      ],
+      "complexity_score": 5,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM books WHERE book_id IN (SELECT book_id FROM books WHERE price >= 1);",
+      "foreign_keys": [],
+      "id": "F0197",
+      "natural_language_query": "Find books selected by a nested condition with price is at least 1.",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "NESTED",
+      "columns": [
+        "department_id",
+        "location"
+      ],
+      "complexity_score": 5,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM departments WHERE department_id IN (SELECT department_id FROM departments WHERE location IS NOT NULL AND LENGTH(location) >= 3);",
+      "foreign_keys": [],
+      "id": "F0198",
+      "natural_language_query": "Return departments using a subquery filtered for location has at least 3 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "departments"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "NESTED",
+      "columns": [
+        "hours_per_week",
+        "project_id"
+      ],
+      "complexity_score": 5,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM employee_projects WHERE project_id IN (SELECT project_id FROM employee_projects WHERE hours_per_week >= 3);",
+      "foreign_keys": [],
+      "id": "F0199",
+      "natural_language_query": "Show employee projects whose keys appear in a subquery where hours per week is at least 3.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "NESTED",
+      "columns": [
+        "employee_id",
+        "salary"
+      ],
+      "complexity_score": 5,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM employees WHERE employee_id IN (SELECT employee_id FROM employees WHERE salary >= 4);",
+      "foreign_keys": [],
+      "id": "F0200",
+      "natural_language_query": "Find employees selected by a nested condition with salary is at least 4.",
+      "relationship_chain": [],
+      "tables": [
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "NESTED",
+      "columns": [
+        "price",
+        "product_id"
+      ],
+      "complexity_score": 5,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM products WHERE product_id IN (SELECT product_id FROM products WHERE price >= 5);",
+      "foreign_keys": [],
+      "id": "F0201",
+      "natural_language_query": "Return products using a subquery filtered for price is at least 5.",
+      "relationship_chain": [],
+      "tables": [
+        "products"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "NESTED",
+      "columns": [
+        "budget",
+        "project_id"
+      ],
+      "complexity_score": 5,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM projects WHERE project_id IN (SELECT project_id FROM projects WHERE budget >= 6);",
+      "foreign_keys": [],
+      "id": "F0202",
+      "natural_language_query": "Show projects whose keys appear in a subquery where budget is at least 6.",
+      "relationship_chain": [],
+      "tables": [
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "NESTED",
+      "columns": [
+        "id",
+        "rows_returned"
+      ],
+      "complexity_score": 5,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM query_history WHERE id IN (SELECT id FROM query_history WHERE rows_returned >= 7);",
+      "foreign_keys": [],
+      "id": "F0203",
+      "natural_language_query": "Find query history selected by a nested condition with rows returned is at least 7.",
+      "relationship_chain": [],
+      "tables": [
+        "query_history"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "NESTED",
+      "columns": [
+        "id",
+        "rating"
+      ],
+      "complexity_score": 5,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM vendors WHERE id IN (SELECT id FROM vendors WHERE rating >= 8);",
+      "foreign_keys": [],
+      "id": "F0204",
+      "natural_language_query": "Return vendors using a subquery filtered for rating is at least 8.",
+      "relationship_chain": [],
+      "tables": [
+        "vendors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "NESTED",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 5,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM authors WHERE author_id IN (SELECT author_id FROM authors WHERE author_id >= 9);",
+      "foreign_keys": [],
+      "id": "F0205",
+      "natural_language_query": "Show authors whose keys appear in a subquery where author id is at least 9.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "NESTED",
+      "columns": [
+        "author_id",
+        "book_id"
+      ],
+      "complexity_score": 5,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM books WHERE book_id IN (SELECT book_id FROM books WHERE author_id >= 10);",
+      "foreign_keys": [],
+      "id": "F0206",
+      "natural_language_query": "Find books selected by a nested condition with author id is at least 10.",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "NESTED",
+      "columns": [
+        "department_id",
+        "location"
+      ],
+      "complexity_score": 5,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM departments WHERE department_id IN (SELECT department_id FROM departments WHERE location IS NOT NULL AND LENGTH(location) >= 12);",
+      "foreign_keys": [],
+      "id": "F0207",
+      "natural_language_query": "Return departments using a subquery filtered for location has at least 12 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "departments"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "NESTED",
+      "columns": [
+        "employee_id",
+        "hours_per_week"
+      ],
+      "complexity_score": 5,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM employee_projects WHERE employee_id IN (SELECT employee_id FROM employee_projects WHERE hours_per_week >= 12);",
+      "foreign_keys": [],
+      "id": "F0208",
+      "natural_language_query": "Show employee projects whose keys appear in a subquery where hours per week is at least 12.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "NESTED",
+      "columns": [
+        "employee_id",
+        "salary"
+      ],
+      "complexity_score": 5,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM employees WHERE employee_id IN (SELECT employee_id FROM employees WHERE salary >= 13);",
+      "foreign_keys": [],
+      "id": "F0209",
+      "natural_language_query": "Find employees selected by a nested condition with salary is at least 13.",
+      "relationship_chain": [],
+      "tables": [
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "NESTED",
+      "columns": [
+        "price",
+        "product_id"
+      ],
+      "complexity_score": 5,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM products WHERE product_id IN (SELECT product_id FROM products WHERE price >= 14);",
+      "foreign_keys": [],
+      "id": "F0210",
+      "natural_language_query": "Return products using a subquery filtered for price is at least 14.",
+      "relationship_chain": [],
+      "tables": [
+        "products"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "NESTED",
+      "columns": [
+        "budget",
+        "project_id"
+      ],
+      "complexity_score": 5,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM projects WHERE project_id IN (SELECT project_id FROM projects WHERE budget >= 15);",
+      "foreign_keys": [],
+      "id": "F0211",
+      "natural_language_query": "Show projects whose keys appear in a subquery where budget is at least 15.",
+      "relationship_chain": [],
+      "tables": [
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "NESTED",
+      "columns": [
+        "execution_time",
+        "id"
+      ],
+      "complexity_score": 5,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM query_history WHERE id IN (SELECT id FROM query_history WHERE execution_time >= 16);",
+      "foreign_keys": [],
+      "id": "F0212",
+      "natural_language_query": "Find query history selected by a nested condition with execution time is at least 16.",
+      "relationship_chain": [],
+      "tables": [
+        "query_history"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "NESTED",
+      "columns": [
+        "id",
+        "rating"
+      ],
+      "complexity_score": 5,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM vendors WHERE id IN (SELECT id FROM vendors WHERE rating >= 17);",
+      "foreign_keys": [],
+      "id": "F0213",
+      "natural_language_query": "Return vendors using a subquery filtered for rating is at least 17.",
+      "relationship_chain": [],
+      "tables": [
+        "vendors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "NESTED",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 5,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM authors WHERE author_id IN (SELECT author_id FROM authors WHERE author_id >= 18);",
+      "foreign_keys": [],
+      "id": "F0214",
+      "natural_language_query": "Show authors whose keys appear in a subquery where author id is at least 18.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "NESTED",
+      "columns": [
+        "book_id",
+        "price"
+      ],
+      "complexity_score": 5,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM books WHERE book_id IN (SELECT book_id FROM books WHERE price >= 19);",
+      "foreign_keys": [],
+      "id": "F0215",
+      "natural_language_query": "Find books selected by a nested condition with price is at least 19.",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "NESTED",
+      "columns": [
+        "department_id",
+        "location"
+      ],
+      "complexity_score": 5,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM departments WHERE department_id IN (SELECT department_id FROM departments WHERE location IS NOT NULL AND LENGTH(location) >= 21);",
+      "foreign_keys": [],
+      "id": "F0216",
+      "natural_language_query": "Return departments using a subquery filtered for location has at least 21 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "departments"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "NESTED",
+      "columns": [
+        "hours_per_week",
+        "project_id"
+      ],
+      "complexity_score": 5,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM employee_projects WHERE project_id IN (SELECT project_id FROM employee_projects WHERE hours_per_week >= 21);",
+      "foreign_keys": [],
+      "id": "F0217",
+      "natural_language_query": "Show employee projects whose keys appear in a subquery where hours per week is at least 21.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "NESTED",
+      "columns": [
+        "employee_id",
+        "salary"
+      ],
+      "complexity_score": 5,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM employees WHERE employee_id IN (SELECT employee_id FROM employees WHERE salary >= 22);",
+      "foreign_keys": [],
+      "id": "F0218",
+      "natural_language_query": "Find employees selected by a nested condition with salary is at least 22.",
+      "relationship_chain": [],
+      "tables": [
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "NESTED",
+      "columns": [
+        "price",
+        "product_id"
+      ],
+      "complexity_score": 5,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM products WHERE product_id IN (SELECT product_id FROM products WHERE price >= 23);",
+      "foreign_keys": [],
+      "id": "F0219",
+      "natural_language_query": "Return products using a subquery filtered for price is at least 23.",
+      "relationship_chain": [],
+      "tables": [
+        "products"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "NESTED",
+      "columns": [
+        "budget",
+        "project_id"
+      ],
+      "complexity_score": 5,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM projects WHERE project_id IN (SELECT project_id FROM projects WHERE budget >= 24);",
+      "foreign_keys": [],
+      "id": "F0220",
+      "natural_language_query": "Show projects whose keys appear in a subquery where budget is at least 24.",
+      "relationship_chain": [],
+      "tables": [
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "JOIN",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 4,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT books.*, authors.author_id FROM books JOIN authors ON books.author_id = authors.author_id WHERE authors.author_id IS NOT NULL ORDER BY books.author_id ASC LIMIT 10;",
+      "foreign_keys": [
+        "books.author_id -> authors.author_id"
+      ],
+      "id": "F0221",
+      "natural_language_query": "Show up to 10 books with their related authors.",
+      "relationship_chain": [],
+      "tables": [
+        "authors",
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "JOIN",
+      "columns": [
+        "employee_id"
+      ],
+      "complexity_score": 4,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT employee_projects.*, employees.employee_id FROM employee_projects JOIN employees ON employee_projects.employee_id = employees.employee_id WHERE employees.employee_id IS NOT NULL ORDER BY employee_projects.employee_id ASC LIMIT 11;",
+      "foreign_keys": [
+        "employee_projects.employee_id -> employees.employee_id"
+      ],
+      "id": "F0222",
+      "natural_language_query": "List 11 matching employee projects and employees records.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects",
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "JOIN",
+      "columns": [
+        "project_id"
+      ],
+      "complexity_score": 4,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT employee_projects.*, projects.project_id FROM employee_projects JOIN projects ON employee_projects.project_id = projects.project_id WHERE projects.project_id IS NOT NULL ORDER BY employee_projects.project_id ASC LIMIT 12;",
+      "foreign_keys": [
+        "employee_projects.project_id -> projects.project_id"
+      ],
+      "id": "F0223",
+      "natural_language_query": "Return 12 joined employee projects and projects data.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects",
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "JOIN",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 4,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT books.*, authors.author_id FROM books JOIN authors ON books.author_id = authors.author_id WHERE authors.author_id IS NOT NULL ORDER BY books.author_id ASC LIMIT 13;",
+      "foreign_keys": [
+        "books.author_id -> authors.author_id"
+      ],
+      "id": "F0224",
+      "natural_language_query": "Show up to 13 books with their related authors.",
+      "relationship_chain": [],
+      "tables": [
+        "authors",
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "JOIN",
+      "columns": [
+        "employee_id"
+      ],
+      "complexity_score": 4,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT employee_projects.*, employees.employee_id FROM employee_projects JOIN employees ON employee_projects.employee_id = employees.employee_id WHERE employees.employee_id IS NOT NULL ORDER BY employee_projects.employee_id ASC LIMIT 14;",
+      "foreign_keys": [
+        "employee_projects.employee_id -> employees.employee_id"
+      ],
+      "id": "F0225",
+      "natural_language_query": "List 14 matching employee projects and employees records.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects",
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "JOIN",
+      "columns": [
+        "project_id"
+      ],
+      "complexity_score": 7,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT employee_projects.*, projects.project_id FROM employee_projects JOIN projects ON employee_projects.project_id = projects.project_id WHERE EXISTS (SELECT 1 FROM projects WHERE employee_projects.project_id = projects.project_id AND projects.project_id IS NOT NULL) ORDER BY employee_projects.project_id ASC LIMIT 15;",
+      "foreign_keys": [
+        "employee_projects.project_id -> projects.project_id"
+      ],
+      "id": "F0226",
+      "natural_language_query": "Return 15 joined employee projects and projects data.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects",
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "JOIN",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 7,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT books.*, authors.author_id FROM books JOIN authors ON books.author_id = authors.author_id WHERE EXISTS (SELECT 1 FROM authors WHERE books.author_id = authors.author_id AND authors.author_id IS NOT NULL) ORDER BY books.author_id ASC LIMIT 16;",
+      "foreign_keys": [
+        "books.author_id -> authors.author_id"
+      ],
+      "id": "F0227",
+      "natural_language_query": "Show up to 16 books with their related authors.",
+      "relationship_chain": [],
+      "tables": [
+        "authors",
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "JOIN",
+      "columns": [
+        "employee_id"
+      ],
+      "complexity_score": 7,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT employee_projects.*, employees.employee_id FROM employee_projects JOIN employees ON employee_projects.employee_id = employees.employee_id WHERE EXISTS (SELECT 1 FROM employees WHERE employee_projects.employee_id = employees.employee_id AND employees.employee_id IS NOT NULL) ORDER BY employee_projects.employee_id ASC LIMIT 17;",
+      "foreign_keys": [
+        "employee_projects.employee_id -> employees.employee_id"
+      ],
+      "id": "F0228",
+      "natural_language_query": "List 17 matching employee projects and employees records.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects",
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "JOIN",
+      "columns": [
+        "project_id"
+      ],
+      "complexity_score": 7,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT employee_projects.*, projects.project_id FROM employee_projects JOIN projects ON employee_projects.project_id = projects.project_id WHERE EXISTS (SELECT 1 FROM projects WHERE employee_projects.project_id = projects.project_id AND projects.project_id IS NOT NULL) ORDER BY employee_projects.project_id ASC LIMIT 18;",
+      "foreign_keys": [
+        "employee_projects.project_id -> projects.project_id"
+      ],
+      "id": "F0229",
+      "natural_language_query": "Return 18 joined employee projects and projects data.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects",
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "JOIN",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 7,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT books.*, authors.author_id FROM books JOIN authors ON books.author_id = authors.author_id WHERE EXISTS (SELECT 1 FROM authors WHERE books.author_id = authors.author_id AND authors.author_id IS NOT NULL) ORDER BY books.author_id ASC LIMIT 19;",
+      "foreign_keys": [
+        "books.author_id -> authors.author_id"
+      ],
+      "id": "F0230",
+      "natural_language_query": "Show up to 19 books with their related authors.",
+      "relationship_chain": [],
+      "tables": [
+        "authors",
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "JOIN",
+      "columns": [
+        "employee_id"
+      ],
+      "complexity_score": 7,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT employee_projects.*, employees.employee_id FROM employee_projects JOIN employees ON employee_projects.employee_id = employees.employee_id WHERE EXISTS (SELECT 1 FROM employees WHERE employee_projects.employee_id = employees.employee_id AND employees.employee_id IS NOT NULL) ORDER BY employee_projects.employee_id ASC LIMIT 20;",
+      "foreign_keys": [
+        "employee_projects.employee_id -> employees.employee_id"
+      ],
+      "id": "F0231",
+      "natural_language_query": "List 20 matching employee projects and employees records.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects",
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "JOIN",
+      "columns": [
+        "project_id"
+      ],
+      "complexity_score": 7,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT employee_projects.*, projects.project_id FROM employee_projects JOIN projects ON employee_projects.project_id = projects.project_id WHERE EXISTS (SELECT 1 FROM projects WHERE employee_projects.project_id = projects.project_id AND projects.project_id IS NOT NULL) ORDER BY employee_projects.project_id ASC LIMIT 21;",
+      "foreign_keys": [
+        "employee_projects.project_id -> projects.project_id"
+      ],
+      "id": "F0232",
+      "natural_language_query": "Return 21 joined employee projects and projects data.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects",
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "JOIN",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 7,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT books.*, authors.author_id FROM books JOIN authors ON books.author_id = authors.author_id WHERE EXISTS (SELECT 1 FROM authors WHERE books.author_id = authors.author_id AND authors.author_id IS NOT NULL) ORDER BY books.author_id ASC LIMIT 22;",
+      "foreign_keys": [
+        "books.author_id -> authors.author_id"
+      ],
+      "id": "F0233",
+      "natural_language_query": "Show up to 22 books with their related authors.",
+      "relationship_chain": [],
+      "tables": [
+        "authors",
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "JOIN",
+      "columns": [
+        "employee_id"
+      ],
+      "complexity_score": 7,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT employee_projects.*, employees.employee_id FROM employee_projects JOIN employees ON employee_projects.employee_id = employees.employee_id WHERE EXISTS (SELECT 1 FROM employees WHERE employee_projects.employee_id = employees.employee_id AND employees.employee_id IS NOT NULL) ORDER BY employee_projects.employee_id ASC LIMIT 23;",
+      "foreign_keys": [
+        "employee_projects.employee_id -> employees.employee_id"
+      ],
+      "id": "F0234",
+      "natural_language_query": "List 23 matching employee projects and employees records.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects",
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "JOIN",
+      "columns": [
+        "project_id"
+      ],
+      "complexity_score": 7,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT employee_projects.*, projects.project_id FROM employee_projects JOIN projects ON employee_projects.project_id = projects.project_id WHERE EXISTS (SELECT 1 FROM projects WHERE employee_projects.project_id = projects.project_id AND projects.project_id IS NOT NULL) ORDER BY employee_projects.project_id ASC LIMIT 24;",
+      "foreign_keys": [
+        "employee_projects.project_id -> projects.project_id"
+      ],
+      "id": "F0235",
+      "natural_language_query": "Return 24 joined employee projects and projects data.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects",
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "JOIN",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 7,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT books.*, authors.author_id FROM books JOIN authors ON books.author_id = authors.author_id WHERE EXISTS (SELECT 1 FROM authors WHERE books.author_id = authors.author_id AND authors.author_id IS NOT NULL) ORDER BY books.author_id ASC LIMIT 25;",
+      "foreign_keys": [
+        "books.author_id -> authors.author_id"
+      ],
+      "id": "F0236",
+      "natural_language_query": "Show up to 25 books with their related authors.",
+      "relationship_chain": [],
+      "tables": [
+        "authors",
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "JOIN",
+      "columns": [
+        "employee_id"
+      ],
+      "complexity_score": 7,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT employee_projects.*, employees.employee_id FROM employee_projects JOIN employees ON employee_projects.employee_id = employees.employee_id WHERE EXISTS (SELECT 1 FROM employees WHERE employee_projects.employee_id = employees.employee_id AND employees.employee_id IS NOT NULL) ORDER BY employee_projects.employee_id ASC LIMIT 26;",
+      "foreign_keys": [
+        "employee_projects.employee_id -> employees.employee_id"
+      ],
+      "id": "F0237",
+      "natural_language_query": "List 26 matching employee projects and employees records.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects",
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "JOIN",
+      "columns": [
+        "project_id"
+      ],
+      "complexity_score": 7,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT employee_projects.*, projects.project_id FROM employee_projects JOIN projects ON employee_projects.project_id = projects.project_id WHERE EXISTS (SELECT 1 FROM projects WHERE employee_projects.project_id = projects.project_id AND projects.project_id IS NOT NULL) ORDER BY employee_projects.project_id ASC LIMIT 27;",
+      "foreign_keys": [
+        "employee_projects.project_id -> projects.project_id"
+      ],
+      "id": "F0238",
+      "natural_language_query": "Return 27 joined employee projects and projects data.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects",
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "JOIN",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 7,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT books.*, authors.author_id FROM books JOIN authors ON books.author_id = authors.author_id WHERE EXISTS (SELECT 1 FROM authors WHERE books.author_id = authors.author_id AND authors.author_id IS NOT NULL) ORDER BY books.author_id ASC LIMIT 28;",
+      "foreign_keys": [
+        "books.author_id -> authors.author_id"
+      ],
+      "id": "F0239",
+      "natural_language_query": "Show up to 28 books with their related authors.",
+      "relationship_chain": [],
+      "tables": [
+        "authors",
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "JOIN",
+      "columns": [
+        "employee_id"
+      ],
+      "complexity_score": 7,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT employee_projects.*, employees.employee_id FROM employee_projects JOIN employees ON employee_projects.employee_id = employees.employee_id WHERE EXISTS (SELECT 1 FROM employees WHERE employee_projects.employee_id = employees.employee_id AND employees.employee_id IS NOT NULL) ORDER BY employee_projects.employee_id ASC LIMIT 29;",
+      "foreign_keys": [
+        "employee_projects.employee_id -> employees.employee_id"
+      ],
+      "id": "F0240",
+      "natural_language_query": "List 29 matching employee projects and employees records.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects",
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "JOIN",
+      "columns": [
+        "project_id"
+      ],
+      "complexity_score": 7,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT employee_projects.*, projects.project_id FROM employee_projects JOIN projects ON employee_projects.project_id = projects.project_id WHERE EXISTS (SELECT 1 FROM projects WHERE employee_projects.project_id = projects.project_id AND projects.project_id IS NOT NULL) ORDER BY employee_projects.project_id ASC LIMIT 30;",
+      "foreign_keys": [
+        "employee_projects.project_id -> projects.project_id"
+      ],
+      "id": "F0241",
+      "natural_language_query": "Return 30 joined employee projects and projects data.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects",
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "JOIN",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 7,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT books.*, authors.author_id FROM books JOIN authors ON books.author_id = authors.author_id WHERE EXISTS (SELECT 1 FROM authors WHERE books.author_id = authors.author_id AND authors.author_id IS NOT NULL) ORDER BY books.author_id ASC LIMIT 31;",
+      "foreign_keys": [
+        "books.author_id -> authors.author_id"
+      ],
+      "id": "F0242",
+      "natural_language_query": "Show up to 31 books with their related authors.",
+      "relationship_chain": [],
+      "tables": [
+        "authors",
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "JOIN",
+      "columns": [
+        "employee_id"
+      ],
+      "complexity_score": 7,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT employee_projects.*, employees.employee_id FROM employee_projects JOIN employees ON employee_projects.employee_id = employees.employee_id WHERE EXISTS (SELECT 1 FROM employees WHERE employee_projects.employee_id = employees.employee_id AND employees.employee_id IS NOT NULL) ORDER BY employee_projects.employee_id ASC LIMIT 32;",
+      "foreign_keys": [
+        "employee_projects.employee_id -> employees.employee_id"
+      ],
+      "id": "F0243",
+      "natural_language_query": "List 32 matching employee projects and employees records.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects",
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "JOIN",
+      "columns": [
+        "project_id"
+      ],
+      "complexity_score": 7,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT employee_projects.*, projects.project_id FROM employee_projects JOIN projects ON employee_projects.project_id = projects.project_id WHERE EXISTS (SELECT 1 FROM projects WHERE employee_projects.project_id = projects.project_id AND projects.project_id IS NOT NULL) ORDER BY employee_projects.project_id ASC LIMIT 33;",
+      "foreign_keys": [
+        "employee_projects.project_id -> projects.project_id"
+      ],
+      "id": "F0244",
+      "natural_language_query": "Return 33 joined employee projects and projects data.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects",
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "JOIN",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 7,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT books.*, authors.author_id FROM books JOIN authors ON books.author_id = authors.author_id WHERE EXISTS (SELECT 1 FROM authors WHERE books.author_id = authors.author_id AND authors.author_id IS NOT NULL) ORDER BY books.author_id ASC LIMIT 34;",
+      "foreign_keys": [
+        "books.author_id -> authors.author_id"
+      ],
+      "id": "F0245",
+      "natural_language_query": "Show up to 34 books with their related authors.",
+      "relationship_chain": [],
+      "tables": [
+        "authors",
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "JOIN",
+      "columns": [
+        "employee_id"
+      ],
+      "complexity_score": 7,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT employee_projects.*, employees.employee_id FROM employee_projects JOIN employees ON employee_projects.employee_id = employees.employee_id WHERE EXISTS (SELECT 1 FROM employees WHERE employee_projects.employee_id = employees.employee_id AND employees.employee_id IS NOT NULL) ORDER BY employee_projects.employee_id ASC LIMIT 35;",
+      "foreign_keys": [
+        "employee_projects.employee_id -> employees.employee_id"
+      ],
+      "id": "F0246",
+      "natural_language_query": "List 35 matching employee projects and employees records.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects",
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "JOIN",
+      "columns": [
+        "project_id"
+      ],
+      "complexity_score": 7,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT employee_projects.*, projects.project_id FROM employee_projects JOIN projects ON employee_projects.project_id = projects.project_id WHERE EXISTS (SELECT 1 FROM projects WHERE employee_projects.project_id = projects.project_id AND projects.project_id IS NOT NULL) ORDER BY employee_projects.project_id ASC LIMIT 36;",
+      "foreign_keys": [
+        "employee_projects.project_id -> projects.project_id"
+      ],
+      "id": "F0247",
+      "natural_language_query": "Return 36 joined employee projects and projects data.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects",
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "JOIN",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 7,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT books.*, authors.author_id FROM books JOIN authors ON books.author_id = authors.author_id WHERE EXISTS (SELECT 1 FROM authors WHERE books.author_id = authors.author_id AND authors.author_id IS NOT NULL) ORDER BY books.author_id ASC LIMIT 37;",
+      "foreign_keys": [
+        "books.author_id -> authors.author_id"
+      ],
+      "id": "F0248",
+      "natural_language_query": "Show up to 37 books with their related authors.",
+      "relationship_chain": [],
+      "tables": [
+        "authors",
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "JOIN",
+      "columns": [
+        "employee_id"
+      ],
+      "complexity_score": 7,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT employee_projects.*, employees.employee_id FROM employee_projects JOIN employees ON employee_projects.employee_id = employees.employee_id WHERE EXISTS (SELECT 1 FROM employees WHERE employee_projects.employee_id = employees.employee_id AND employees.employee_id IS NOT NULL) ORDER BY employee_projects.employee_id ASC LIMIT 38;",
+      "foreign_keys": [
+        "employee_projects.employee_id -> employees.employee_id"
+      ],
+      "id": "F0249",
+      "natural_language_query": "List 38 matching employee projects and employees records.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects",
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "JOIN",
+      "columns": [
+        "project_id"
+      ],
+      "complexity_score": 7,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT employee_projects.*, projects.project_id FROM employee_projects JOIN projects ON employee_projects.project_id = projects.project_id WHERE EXISTS (SELECT 1 FROM projects WHERE employee_projects.project_id = projects.project_id AND projects.project_id IS NOT NULL) ORDER BY employee_projects.project_id ASC LIMIT 39;",
+      "foreign_keys": [
+        "employee_projects.project_id -> projects.project_id"
+      ],
+      "id": "F0250",
+      "natural_language_query": "Return 39 joined employee projects and projects data.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects",
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "HAVING",
+      "columns": [
+        "author_name"
+      ],
+      "complexity_score": 9,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT author_name, COUNT(*) AS row_count FROM authors WHERE author_name IS NOT NULL AND LENGTH(author_name) >= 1 GROUP BY author_name HAVING COUNT(*) > 0 ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0251",
+      "natural_language_query": "Show authors groups by author name with more than 0 records.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "HAVING",
+      "columns": [
+        "title"
+      ],
+      "complexity_score": 9,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT title, COUNT(*) AS row_count FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 2 GROUP BY title HAVING COUNT(*) > 1 ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0252",
+      "natural_language_query": "List title groups in books whose counts exceed 1.",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "HAVING",
+      "columns": [
+        "department_name"
+      ],
+      "complexity_score": 9,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT department_name, COUNT(*) AS row_count FROM departments WHERE department_name IS NOT NULL AND LENGTH(department_name) >= 3 GROUP BY department_name HAVING COUNT(*) > 2 ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0253",
+      "natural_language_query": "Find departments grouped by department name after applying count threshold 2.",
+      "relationship_chain": [],
+      "tables": [
+        "departments"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "HAVING",
+      "columns": [
+        "role"
+      ],
+      "complexity_score": 9,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT role, COUNT(*) AS row_count FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 4 GROUP BY role HAVING COUNT(*) > 3 ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0254",
+      "natural_language_query": "Show employee projects groups by role with more than 3 records.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "HAVING",
+      "columns": [
+        "email"
+      ],
+      "complexity_score": 9,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT email, COUNT(*) AS row_count FROM employees WHERE email IS NOT NULL AND LENGTH(email) >= 5 GROUP BY email HAVING COUNT(*) > 4 ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0255",
+      "natural_language_query": "List email groups in employees whose counts exceed 4.",
+      "relationship_chain": [],
+      "tables": [
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "HAVING",
+      "columns": [
+        "product_name"
+      ],
+      "complexity_score": 9,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT product_name, COUNT(*) AS row_count FROM products WHERE product_name IS NOT NULL AND LENGTH(product_name) >= 6 GROUP BY product_name HAVING COUNT(*) > 5 ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0256",
+      "natural_language_query": "Find products grouped by product name after applying count threshold 5.",
+      "relationship_chain": [],
+      "tables": [
+        "products"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "HAVING",
+      "columns": [
+        "project_name"
+      ],
+      "complexity_score": 9,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT project_name, COUNT(*) AS row_count FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 7 GROUP BY project_name HAVING COUNT(*) > 6 ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0257",
+      "natural_language_query": "Show projects groups by project name with more than 6 records.",
+      "relationship_chain": [],
+      "tables": [
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "HAVING",
+      "columns": [
+        "generation_mode"
+      ],
+      "complexity_score": 9,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT generation_mode, COUNT(*) AS row_count FROM query_history WHERE generation_mode IS NOT NULL AND LENGTH(generation_mode) >= 8 GROUP BY generation_mode HAVING COUNT(*) > 7 ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0258",
+      "natural_language_query": "List generation mode groups in query history whose counts exceed 7.",
+      "relationship_chain": [],
+      "tables": [
+        "query_history"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "HAVING",
+      "columns": [
+        "vendor_name"
+      ],
+      "complexity_score": 9,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT vendor_name, COUNT(*) AS row_count FROM vendors WHERE vendor_name IS NOT NULL AND LENGTH(vendor_name) >= 9 GROUP BY vendor_name HAVING COUNT(*) > 8 ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0259",
+      "natural_language_query": "Find vendors grouped by vendor name after applying count threshold 8.",
+      "relationship_chain": [],
+      "tables": [
+        "vendors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "HAVING",
+      "columns": [
+        "country"
+      ],
+      "complexity_score": 9,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT country, COUNT(*) AS row_count FROM authors WHERE country IS NOT NULL AND LENGTH(country) >= 10 GROUP BY country HAVING COUNT(*) > 9 ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0260",
+      "natural_language_query": "Show authors groups by country with more than 9 records.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "HAVING",
+      "columns": [
+        "title"
+      ],
+      "complexity_score": 9,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT title, COUNT(*) AS row_count FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 11 GROUP BY title HAVING COUNT(*) > 10 ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0261",
+      "natural_language_query": "List title groups in books whose counts exceed 10.",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "HAVING",
+      "columns": [
+        "location"
+      ],
+      "complexity_score": 9,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT location, COUNT(*) AS row_count FROM departments WHERE location IS NOT NULL AND LENGTH(location) >= 12 GROUP BY location HAVING COUNT(*) > 11 ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0262",
+      "natural_language_query": "Find departments grouped by location after applying count threshold 11.",
+      "relationship_chain": [],
+      "tables": [
+        "departments"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "HAVING",
+      "columns": [
+        "role"
+      ],
+      "complexity_score": 9,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT role, COUNT(*) AS row_count FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 13 GROUP BY role HAVING COUNT(*) > 12 ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0263",
+      "natural_language_query": "Show employee projects groups by role with more than 12 records.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "HAVING",
+      "columns": [
+        "email"
+      ],
+      "complexity_score": 9,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT email, COUNT(*) AS row_count FROM employees WHERE email IS NOT NULL AND LENGTH(email) >= 14 GROUP BY email HAVING COUNT(*) > 13 ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0264",
+      "natural_language_query": "List email groups in employees whose counts exceed 13.",
+      "relationship_chain": [],
+      "tables": [
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "HAVING",
+      "columns": [
+        "product_name"
+      ],
+      "complexity_score": 9,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT product_name, COUNT(*) AS row_count FROM products WHERE product_name IS NOT NULL AND LENGTH(product_name) >= 15 GROUP BY product_name HAVING COUNT(*) > 14 ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0265",
+      "natural_language_query": "Find products grouped by product name after applying count threshold 14.",
+      "relationship_chain": [],
+      "tables": [
+        "products"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "HAVING",
+      "columns": [
+        "project_name"
+      ],
+      "complexity_score": 9,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT project_name, COUNT(*) AS row_count FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 16 GROUP BY project_name HAVING COUNT(*) > 15 ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0266",
+      "natural_language_query": "Show projects groups by project name with more than 15 records.",
+      "relationship_chain": [],
+      "tables": [
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "HAVING",
+      "columns": [
+        "generated_sql"
+      ],
+      "complexity_score": 9,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT generated_sql, COUNT(*) AS row_count FROM query_history WHERE generated_sql IS NOT NULL AND LENGTH(generated_sql) >= 17 GROUP BY generated_sql HAVING COUNT(*) > 16 ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0267",
+      "natural_language_query": "List generated sql groups in query history whose counts exceed 16.",
+      "relationship_chain": [],
+      "tables": [
+        "query_history"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "HAVING",
+      "columns": [
+        "city"
+      ],
+      "complexity_score": 9,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT city, COUNT(*) AS row_count FROM vendors WHERE city IS NOT NULL AND LENGTH(city) >= 18 GROUP BY city HAVING COUNT(*) > 17 ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0268",
+      "natural_language_query": "Find vendors grouped by city after applying count threshold 17.",
+      "relationship_chain": [],
+      "tables": [
+        "vendors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "HAVING",
+      "columns": [
+        "author_name"
+      ],
+      "complexity_score": 9,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT author_name, COUNT(*) AS row_count FROM authors WHERE author_name IS NOT NULL AND LENGTH(author_name) >= 19 GROUP BY author_name HAVING COUNT(*) > 18 ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0269",
+      "natural_language_query": "Show authors groups by author name with more than 18 records.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "HAVING",
+      "columns": [
+        "title"
+      ],
+      "complexity_score": 9,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT title, COUNT(*) AS row_count FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 20 GROUP BY title HAVING COUNT(*) > 19 ORDER BY COUNT(*) DESC;",
+      "foreign_keys": [],
+      "id": "F0270",
+      "natural_language_query": "List title groups in books whose counts exceed 19.",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "IN",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 10,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT * FROM authors WHERE author_id IN (SELECT author_id FROM authors WHERE author_id >= 0 GROUP BY author_id HAVING COUNT(*) >= 1);",
+      "foreign_keys": [],
+      "id": "F0271",
+      "natural_language_query": "Show authors whose author id is in a subquery where author id is at least 0.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "IN",
+      "columns": [
+        "book_id",
+        "price"
+      ],
+      "complexity_score": 10,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT * FROM books WHERE book_id IN (SELECT book_id FROM books WHERE price >= 1 GROUP BY book_id HAVING COUNT(*) >= 1);",
+      "foreign_keys": [],
+      "id": "F0272",
+      "natural_language_query": "Find books selected by an IN query with price is at least 1.",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "IN",
+      "columns": [
+        "department_id",
+        "location"
+      ],
+      "complexity_score": 10,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT * FROM departments WHERE department_id IN (SELECT department_id FROM departments WHERE location IS NOT NULL AND LENGTH(location) >= 3 GROUP BY department_id HAVING COUNT(*) >= 1);",
+      "foreign_keys": [],
+      "id": "F0273",
+      "natural_language_query": "Return departments where department id appears in the grouped inner result for location has at least 3 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "departments"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "IN",
+      "columns": [
+        "hours_per_week",
+        "project_id"
+      ],
+      "complexity_score": 10,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT * FROM employee_projects WHERE project_id IN (SELECT project_id FROM employee_projects WHERE hours_per_week >= 3 GROUP BY project_id HAVING COUNT(*) >= 1);",
+      "foreign_keys": [],
+      "id": "F0274",
+      "natural_language_query": "Show employee projects whose project id is in a subquery where hours per week is at least 3.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "IN",
+      "columns": [
+        "employee_id",
+        "salary"
+      ],
+      "complexity_score": 10,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT * FROM employees WHERE employee_id IN (SELECT employee_id FROM employees WHERE salary >= 4 GROUP BY employee_id HAVING COUNT(*) >= 1);",
+      "foreign_keys": [],
+      "id": "F0275",
+      "natural_language_query": "Find employees selected by an IN query with salary is at least 4.",
+      "relationship_chain": [],
+      "tables": [
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "IN",
+      "columns": [
+        "price",
+        "product_id"
+      ],
+      "complexity_score": 10,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT * FROM products WHERE product_id IN (SELECT product_id FROM products WHERE price >= 5 GROUP BY product_id HAVING COUNT(*) >= 1);",
+      "foreign_keys": [],
+      "id": "F0276",
+      "natural_language_query": "Return products where product id appears in the grouped inner result for price is at least 5.",
+      "relationship_chain": [],
+      "tables": [
+        "products"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "IN",
+      "columns": [
+        "budget",
+        "project_id"
+      ],
+      "complexity_score": 10,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT * FROM projects WHERE project_id IN (SELECT project_id FROM projects WHERE budget >= 6 GROUP BY project_id HAVING COUNT(*) >= 1);",
+      "foreign_keys": [],
+      "id": "F0277",
+      "natural_language_query": "Show projects whose project id is in a subquery where budget is at least 6.",
+      "relationship_chain": [],
+      "tables": [
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "IN",
+      "columns": [
+        "id",
+        "rows_returned"
+      ],
+      "complexity_score": 10,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT * FROM query_history WHERE id IN (SELECT id FROM query_history WHERE rows_returned >= 7 GROUP BY id HAVING COUNT(*) >= 1);",
+      "foreign_keys": [],
+      "id": "F0278",
+      "natural_language_query": "Find query history selected by an IN query with rows returned is at least 7.",
+      "relationship_chain": [],
+      "tables": [
+        "query_history"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "IN",
+      "columns": [
+        "id",
+        "rating"
+      ],
+      "complexity_score": 10,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT * FROM vendors WHERE id IN (SELECT id FROM vendors WHERE rating >= 8 GROUP BY id HAVING COUNT(*) >= 1);",
+      "foreign_keys": [],
+      "id": "F0279",
+      "natural_language_query": "Return vendors where id appears in the grouped inner result for rating is at least 8.",
+      "relationship_chain": [],
+      "tables": [
+        "vendors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "IN",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 10,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT * FROM authors WHERE author_id IN (SELECT author_id FROM authors WHERE author_id >= 9 GROUP BY author_id HAVING COUNT(*) >= 1);",
+      "foreign_keys": [],
+      "id": "F0280",
+      "natural_language_query": "Show authors whose author id is in a subquery where author id is at least 9.",
+      "relationship_chain": [],
+      "tables": [
+        "authors"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "IN",
+      "columns": [
+        "author_id",
+        "book_id"
+      ],
+      "complexity_score": 10,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT * FROM books WHERE book_id IN (SELECT book_id FROM books WHERE author_id >= 10 GROUP BY book_id HAVING COUNT(*) >= 1);",
+      "foreign_keys": [],
+      "id": "F0281",
+      "natural_language_query": "Find books selected by an IN query with author id is at least 10.",
+      "relationship_chain": [],
+      "tables": [
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "IN",
+      "columns": [
+        "department_id",
+        "location"
+      ],
+      "complexity_score": 10,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT * FROM departments WHERE department_id IN (SELECT department_id FROM departments WHERE location IS NOT NULL AND LENGTH(location) >= 12 GROUP BY department_id HAVING COUNT(*) >= 1);",
+      "foreign_keys": [],
+      "id": "F0282",
+      "natural_language_query": "Return departments where department id appears in the grouped inner result for location has at least 12 characters.",
+      "relationship_chain": [],
+      "tables": [
+        "departments"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "IN",
+      "columns": [
+        "employee_id",
+        "hours_per_week"
+      ],
+      "complexity_score": 10,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT * FROM employee_projects WHERE employee_id IN (SELECT employee_id FROM employee_projects WHERE hours_per_week >= 12 GROUP BY employee_id HAVING COUNT(*) >= 1);",
+      "foreign_keys": [],
+      "id": "F0283",
+      "natural_language_query": "Show employee projects whose employee id is in a subquery where hours per week is at least 12.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "IN",
+      "columns": [
+        "employee_id",
+        "salary"
+      ],
+      "complexity_score": 10,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT * FROM employees WHERE employee_id IN (SELECT employee_id FROM employees WHERE salary >= 13 GROUP BY employee_id HAVING COUNT(*) >= 1);",
+      "foreign_keys": [],
+      "id": "F0284",
+      "natural_language_query": "Find employees selected by an IN query with salary is at least 13.",
+      "relationship_chain": [],
+      "tables": [
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "IN",
+      "columns": [
+        "price",
+        "product_id"
+      ],
+      "complexity_score": 10,
+      "dataset": "functional",
+      "difficulty": "hard",
+      "expected_sql": "SELECT * FROM products WHERE product_id IN (SELECT product_id FROM products WHERE price >= 14 GROUP BY product_id HAVING COUNT(*) >= 1);",
+      "foreign_keys": [],
+      "id": "F0285",
+      "natural_language_query": "Return products where product id appears in the grouped inner result for price is at least 14.",
+      "relationship_chain": [],
+      "tables": [
+        "products"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "EXISTS",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 4,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM books WHERE EXISTS (SELECT 1 FROM authors WHERE books.author_id = authors.author_id AND authors.author_id IS NOT NULL AND books.author_id IS NOT NULL LIMIT 1);",
+      "foreign_keys": [],
+      "id": "F0286",
+      "natural_language_query": "Show books that have matching authors for existence check 1.",
+      "relationship_chain": [],
+      "tables": [
+        "authors",
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "EXISTS",
+      "columns": [
+        "employee_id"
+      ],
+      "complexity_score": 4,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM employee_projects WHERE EXISTS (SELECT 1 FROM employees WHERE employee_projects.employee_id = employees.employee_id AND employees.employee_id IS NOT NULL AND employee_projects.employee_id IS NOT NULL LIMIT 2);",
+      "foreign_keys": [],
+      "id": "F0287",
+      "natural_language_query": "Find employee projects where related employees records exist in pass 2.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects",
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "EXISTS",
+      "columns": [
+        "project_id"
+      ],
+      "complexity_score": 4,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM employee_projects WHERE EXISTS (SELECT 1 FROM projects WHERE employee_projects.project_id = projects.project_id AND projects.project_id IS NOT NULL AND employee_projects.project_id IS NOT NULL LIMIT 3);",
+      "foreign_keys": [],
+      "id": "F0288",
+      "natural_language_query": "Return employee projects with confirmed projects relationships for check 3.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects",
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "EXISTS",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 4,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM books WHERE EXISTS (SELECT 1 FROM authors WHERE books.author_id = authors.author_id AND authors.author_id IS NOT NULL AND books.author_id IS NOT NULL LIMIT 4);",
+      "foreign_keys": [],
+      "id": "F0289",
+      "natural_language_query": "Show books that have matching authors for existence check 4.",
+      "relationship_chain": [],
+      "tables": [
+        "authors",
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "EXISTS",
+      "columns": [
+        "employee_id"
+      ],
+      "complexity_score": 4,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM employee_projects WHERE EXISTS (SELECT 1 FROM employees WHERE employee_projects.employee_id = employees.employee_id AND employees.employee_id IS NOT NULL AND employee_projects.employee_id IS NOT NULL LIMIT 5);",
+      "foreign_keys": [],
+      "id": "F0290",
+      "natural_language_query": "Find employee projects where related employees records exist in pass 5.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects",
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "EXISTS",
+      "columns": [
+        "project_id"
+      ],
+      "complexity_score": 4,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM employee_projects WHERE EXISTS (SELECT 1 FROM projects WHERE employee_projects.project_id = projects.project_id AND projects.project_id IS NOT NULL AND employee_projects.project_id IS NOT NULL LIMIT 6);",
+      "foreign_keys": [],
+      "id": "F0291",
+      "natural_language_query": "Return employee projects with confirmed projects relationships for check 6.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects",
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "EXISTS",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 4,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM books WHERE EXISTS (SELECT 1 FROM authors WHERE books.author_id = authors.author_id AND authors.author_id IS NOT NULL AND books.author_id IS NOT NULL LIMIT 7);",
+      "foreign_keys": [],
+      "id": "F0292",
+      "natural_language_query": "Show books that have matching authors for existence check 7.",
+      "relationship_chain": [],
+      "tables": [
+        "authors",
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "EXISTS",
+      "columns": [
+        "employee_id"
+      ],
+      "complexity_score": 4,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM employee_projects WHERE EXISTS (SELECT 1 FROM employees WHERE employee_projects.employee_id = employees.employee_id AND employees.employee_id IS NOT NULL AND employee_projects.employee_id IS NOT NULL LIMIT 8);",
+      "foreign_keys": [],
+      "id": "F0293",
+      "natural_language_query": "Find employee projects where related employees records exist in pass 8.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects",
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "EXISTS",
+      "columns": [
+        "project_id"
+      ],
+      "complexity_score": 4,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM employee_projects WHERE EXISTS (SELECT 1 FROM projects WHERE employee_projects.project_id = projects.project_id AND projects.project_id IS NOT NULL AND employee_projects.project_id IS NOT NULL LIMIT 9);",
+      "foreign_keys": [],
+      "id": "F0294",
+      "natural_language_query": "Return employee projects with confirmed projects relationships for check 9.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects",
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "EXISTS",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 4,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM books WHERE EXISTS (SELECT 1 FROM authors WHERE books.author_id = authors.author_id AND authors.author_id IS NOT NULL AND books.author_id IS NOT NULL LIMIT 10);",
+      "foreign_keys": [],
+      "id": "F0295",
+      "natural_language_query": "Show books that have matching authors for existence check 10.",
+      "relationship_chain": [],
+      "tables": [
+        "authors",
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "EXISTS",
+      "columns": [
+        "employee_id"
+      ],
+      "complexity_score": 4,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM employee_projects WHERE EXISTS (SELECT 1 FROM employees WHERE employee_projects.employee_id = employees.employee_id AND employees.employee_id IS NOT NULL AND employee_projects.employee_id IS NOT NULL LIMIT 11);",
+      "foreign_keys": [],
+      "id": "F0296",
+      "natural_language_query": "Find employee projects where related employees records exist in pass 11.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects",
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "EXISTS",
+      "columns": [
+        "project_id"
+      ],
+      "complexity_score": 4,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM employee_projects WHERE EXISTS (SELECT 1 FROM projects WHERE employee_projects.project_id = projects.project_id AND projects.project_id IS NOT NULL AND employee_projects.project_id IS NOT NULL LIMIT 12);",
+      "foreign_keys": [],
+      "id": "F0297",
+      "natural_language_query": "Return employee projects with confirmed projects relationships for check 12.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects",
+        "projects"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "EXISTS",
+      "columns": [
+        "author_id"
+      ],
+      "complexity_score": 4,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM books WHERE EXISTS (SELECT 1 FROM authors WHERE books.author_id = authors.author_id AND authors.author_id IS NOT NULL AND books.author_id IS NOT NULL LIMIT 13);",
+      "foreign_keys": [],
+      "id": "F0298",
+      "natural_language_query": "Show books that have matching authors for existence check 13.",
+      "relationship_chain": [],
+      "tables": [
+        "authors",
+        "books"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "EXISTS",
+      "columns": [
+        "employee_id"
+      ],
+      "complexity_score": 4,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM employee_projects WHERE EXISTS (SELECT 1 FROM employees WHERE employee_projects.employee_id = employees.employee_id AND employees.employee_id IS NOT NULL AND employee_projects.employee_id IS NOT NULL LIMIT 14);",
+      "foreign_keys": [],
+      "id": "F0299",
+      "natural_language_query": "Find employee projects where related employees records exist in pass 14.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects",
+        "employees"
+      ]
+    },
+    {
+      "benchmark_version": "1.0.0",
+      "category": "EXISTS",
+      "columns": [
+        "project_id"
+      ],
+      "complexity_score": 4,
+      "dataset": "functional",
+      "difficulty": "medium",
+      "expected_sql": "SELECT * FROM employee_projects WHERE EXISTS (SELECT 1 FROM projects WHERE employee_projects.project_id = projects.project_id AND projects.project_id IS NOT NULL AND employee_projects.project_id IS NOT NULL LIMIT 15);",
+      "foreign_keys": [],
+      "id": "F0300",
+      "natural_language_query": "Return employee projects with confirmed projects relationships for check 15.",
+      "relationship_chain": [],
+      "tables": [
+        "employee_projects",
+        "projects"
+      ]
+    }
+  ]
+}
