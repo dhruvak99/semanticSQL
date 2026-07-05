@@ -1,0 +1,17 @@
+{
+  "functional": {
+    "accuracy": 32.167,
+    "passed": 193,
+    "total": 600
+  },
+  "invalid": {
+    "accuracy": 50.0,
+    "passed": 100,
+    "total": 200
+  },
+  "semantic": {
+    "accuracy": 28.033,
+    "passed": 841,
+    "total": 3000
+  }
+}

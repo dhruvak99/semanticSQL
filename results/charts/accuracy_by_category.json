@@ -1,0 +1,82 @@
+{
+  "AVG": {
+    "accuracy": 0.0,
+    "passed": 0,
+    "total": 240
+  },
+  "COUNT": {
+    "accuracy": 0.0,
+    "passed": 0,
+    "total": 300
+  },
+  "DISTINCT": {
+    "accuracy": 42.778,
+    "passed": 77,
+    "total": 180
+  },
+  "EXISTS": {
+    "accuracy": 49.444,
+    "passed": 89,
+    "total": 180
+  },
+  "GROUP_BY": {
+    "accuracy": 27.667,
+    "passed": 83,
+    "total": 300
+  },
+  "HAVING": {
+    "accuracy": 58.333,
+    "passed": 140,
+    "total": 240
+  },
+  "IN": {
+    "accuracy": 61.667,
+    "passed": 111,
+    "total": 180
+  },
+  "JOIN": {
+    "accuracy": 42.778,
+    "passed": 154,
+    "total": 360
+  },
+  "LIMIT": {
+    "accuracy": 5.556,
+    "passed": 10,
+    "total": 180
+  },
+  "MAX": {
+    "accuracy": 0.0,
+    "passed": 0,
+    "total": 180
+  },
+  "MIN": {
+    "accuracy": 0.0,
+    "passed": 0,
+    "total": 180
+  },
+  "NESTED": {
+    "accuracy": 43.0,
+    "passed": 129,
+    "total": 300
+  },
+  "ORDER_BY": {
+    "accuracy": 28.333,
+    "passed": 51,
+    "total": 180
+  },
+  "SELECT": {
+    "accuracy": 63.333,
+    "passed": 114,
+    "total": 180
+  },
+  "SUM": {
+    "accuracy": 0.0,
+    "passed": 0,
+    "total": 180
+  },
+  "WHERE": {
+    "accuracy": 31.667,
+    "passed": 76,
+    "total": 240
+  }
+}

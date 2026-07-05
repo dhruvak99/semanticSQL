@@ -1,0 +1,16 @@
+{
+  "average_cache_hit_latency_ms": 98.381,
+  "average_cache_miss_latency_ms": 583.571,
+  "cache_hit_rate_improvement": 44.895,
+  "cache_miss_rate_reduction": 44.895,
+  "cold_cache_accuracy": 29.737,
+  "cold_cache_average_latency_ms": 308.967,
+  "cold_cache_hit_rate": 54.368,
+  "cold_cache_miss_rate": 45.632,
+  "latency_improvement_percent": 63.501,
+  "semantic_cache_effectiveness": 44.895,
+  "warm_cache_accuracy": 29.947,
+  "warm_cache_average_latency_ms": 112.77,
+  "warm_cache_hit_rate": 99.263,
+  "warm_cache_miss_rate": 0.737
+}

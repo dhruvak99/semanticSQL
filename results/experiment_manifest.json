@@ -1,0 +1,21 @@
+{
+  "backend_url": "http://127.0.0.1:8000",
+  "backend_version": "0.1.0",
+  "benchmark_version": "1.0.0",
+  "cache_enabled": true,
+  "database_engine": "SQLite",
+  "database_name": "semanticsql.db",
+  "database_path": "/Users/dhruva/Documents/SemanticSQL/backend/semanticsql.db",
+  "embedding_model": "all-MiniLM-L6-v2",
+  "execution_timestamp": "2026-07-05T15:44:01.253900+00:00",
+  "experiment_name": "SemanticSQL Benchmark Evaluation",
+  "failed_queries": 2666,
+  "git_commit_hash": "c3a569ad9a43d7ceb3f458f30a7085dad109cfe8",
+  "llm_model": "llama3.1:8b",
+  "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+  "processor": "arm",
+  "python_version": "3.14.4",
+  "semantic_threshold": 0.9,
+  "successful_queries": 1134,
+  "total_queries": 1900
+}

@@ -1,0 +1,142 @@
+{
+  "accuracy_by_category": {
+    "AVG": {
+      "accuracy": 0.0,
+      "passed": 0,
+      "total": 240
+    },
+    "COUNT": {
+      "accuracy": 0.0,
+      "passed": 0,
+      "total": 300
+    },
+    "DISTINCT": {
+      "accuracy": 42.778,
+      "passed": 77,
+      "total": 180
+    },
+    "EXISTS": {
+      "accuracy": 49.444,
+      "passed": 89,
+      "total": 180
+    },
+    "GROUP_BY": {
+      "accuracy": 27.667,
+      "passed": 83,
+      "total": 300
+    },
+    "HAVING": {
+      "accuracy": 58.333,
+      "passed": 140,
+      "total": 240
+    },
+    "IN": {
+      "accuracy": 61.667,
+      "passed": 111,
+      "total": 180
+    },
+    "JOIN": {
+      "accuracy": 42.778,
+      "passed": 154,
+      "total": 360
+    },
+    "LIMIT": {
+      "accuracy": 5.556,
+      "passed": 10,
+      "total": 180
+    },
+    "MAX": {
+      "accuracy": 0.0,
+      "passed": 0,
+      "total": 180
+    },
+    "MIN": {
+      "accuracy": 0.0,
+      "passed": 0,
+      "total": 180
+    },
+    "NESTED": {
+      "accuracy": 43.0,
+      "passed": 129,
+      "total": 300
+    },
+    "ORDER_BY": {
+      "accuracy": 28.333,
+      "passed": 51,
+      "total": 180
+    },
+    "SELECT": {
+      "accuracy": 63.333,
+      "passed": 114,
+      "total": 180
+    },
+    "SUM": {
+      "accuracy": 0.0,
+      "passed": 0,
+      "total": 180
+    },
+    "WHERE": {
+      "accuracy": 31.667,
+      "passed": 76,
+      "total": 240
+    }
+  },
+  "accuracy_by_difficulty": {
+    "easy": {
+      "accuracy": 26.032,
+      "passed": 328,
+      "total": 1260
+    },
+    "hard": {
+      "accuracy": 45.686,
+      "passed": 466,
+      "total": 1020
+    },
+    "medium": {
+      "accuracy": 18.182,
+      "passed": 240,
+      "total": 1320
+    }
+  },
+  "average_execution_time_ms": 210.868,
+  "average_similarity_score": 0.924,
+  "cache_hit_rate": 76.816,
+  "cache_miss_rate": 23.184,
+  "dataset_analysis": {
+    "functional": {
+      "accuracy": 32.167,
+      "passed": 193,
+      "total": 600
+    },
+    "invalid": {
+      "accuracy": 50.0,
+      "passed": 100,
+      "total": 200
+    },
+    "semantic": {
+      "accuracy": 28.033,
+      "passed": 841,
+      "total": 3000
+    }
+  },
+  "failed_queries": 2666,
+  "functional_accuracy": 32.167,
+  "generation_mode_distribution": {
+    "LLM": 3754,
+    "Rule": 8,
+    "unknown": 38
+  },
+  "invalid_detection_accuracy": 50.0,
+  "maximum_execution_time_ms": 4055.8,
+  "median_execution_time_ms": 107.3,
+  "minimum_execution_time_ms": 14.2,
+  "overall_accuracy": 29.842,
+  "p95_execution_time_ms": 676.4,
+  "result_equivalence_rate": 36.472,
+  "semantic_accuracy": 28.033,
+  "sql_equivalence_rate": 1.972,
+  "standard_deviation_execution_time_ms": 237.91,
+  "successful_queries": 1134,
+  "total_queries": 3800,
+  "validation_failure_rate": 18.421
+}

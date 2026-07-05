@@ -79,7 +79,7 @@
     "mariadb",
     "sql_server"
   ],
-  "generation_timestamp": "2026-07-05T15:02:43.696532+00:00",
+  "generation_timestamp": "2026-07-05T15:06:23.636860+00:00",
   "generator": "benchmark/generator.py",
   "quality_file": "benchmark/benchmark_quality.json",
   "query_categories": {
