@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from decimal import Decimal
 from typing import Any
 
 from benchmark import evaluate
@@ -72,6 +73,55 @@ def test_result_equivalence_respects_order_by() -> None:
     actual = [{"id": 2}, {"id": 1}]
 
     assert not evaluate._result_equivalent("SELECT id FROM employees ORDER BY id;", expected, actual)
+
+
+def test_count_scalar_alias_mismatch_compares_value_only() -> None:
+    expected = [{"row_count": 5}]
+    actual = [{"COUNT(*)": 5}]
+
+    assert evaluate._result_equivalent("SELECT COUNT(*) AS row_count FROM employees;", expected, actual)
+
+
+def test_avg_scalar_alias_mismatch_compares_value_only() -> None:
+    expected = [{"avg_price": Decimal("10.5000001")}]
+    actual = [{"AVG(price)": 10.5000002}]
+
+    assert evaluate._result_equivalent("SELECT AVG(price) AS avg_price FROM books;", expected, actual)
+
+
+def test_sum_scalar_alias_mismatch_compares_value_only() -> None:
+    expected = [{"total_budget": 3000}]
+    actual = [{"SUM(budget)": Decimal("3000.0")}]
+
+    assert evaluate._result_equivalent("SELECT SUM(budget) AS total_budget FROM projects;", expected, actual)
+
+
+def test_min_scalar_alias_mismatch_compares_value_only() -> None:
+    expected = [{"min_salary": 50000}]
+    actual = [{"MIN(salary)": 50000.0}]
+
+    assert evaluate._result_equivalent("SELECT MIN(salary) AS min_salary FROM employees;", expected, actual)
+
+
+def test_max_scalar_alias_mismatch_compares_value_only() -> None:
+    expected = [{"max_rating": Decimal("4.8")}]
+    actual = [{"MAX(rating)": 4.8}]
+
+    assert evaluate._result_equivalent("SELECT MAX(rating) AS max_rating FROM vendors;", expected, actual)
+
+
+def test_scalar_null_alias_mismatch_compares_value_only() -> None:
+    expected = [{"avg_hours": None}]
+    actual = [{"AVG(hours_per_week)": None}]
+
+    assert evaluate._result_equivalent("SELECT AVG(hours_per_week) AS avg_hours FROM employee_projects;", expected, actual)
+
+
+def test_non_scalar_column_order_must_match() -> None:
+    expected = [{"id": 1, "name": "A"}]
+    actual = [{"name": "A", "id": 1}]
+
+    assert not evaluate._result_equivalent("SELECT id, name FROM employees;", expected, actual)
 
 
 def test_summary_metrics_include_cache_and_generation_modes() -> None:

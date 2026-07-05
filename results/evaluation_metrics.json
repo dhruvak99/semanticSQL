@@ -1,447 +1,447 @@
 {
   "benchmark_version": "1.0.0",
   "cache_comparison": {
-    "average_cache_hit_latency_ms": 98.381,
-    "average_cache_miss_latency_ms": 583.571,
-    "cache_hit_rate_improvement": 44.895,
-    "cache_miss_rate_reduction": 44.895,
-    "cold_cache_accuracy": 29.737,
-    "cold_cache_average_latency_ms": 308.967,
-    "cold_cache_hit_rate": 54.368,
-    "cold_cache_miss_rate": 45.632,
-    "latency_improvement_percent": 63.501,
-    "semantic_cache_effectiveness": 44.895,
-    "warm_cache_accuracy": 29.947,
-    "warm_cache_average_latency_ms": 112.77,
-    "warm_cache_hit_rate": 99.263,
-    "warm_cache_miss_rate": 0.737
+    "average_cache_hit_latency_ms": 171.987,
+    "average_cache_miss_latency_ms": 698.613,
+    "cache_hit_rate_improvement": 43.632,
+    "cache_miss_rate_reduction": 43.632,
+    "cold_cache_accuracy": 45.474,
+    "cold_cache_average_latency_ms": 397.842,
+    "cold_cache_hit_rate": 54.684,
+    "cold_cache_miss_rate": 45.316,
+    "latency_improvement_percent": 51.326,
+    "semantic_cache_effectiveness": 43.632,
+    "warm_cache_accuracy": 47.474,
+    "warm_cache_average_latency_ms": 193.647,
+    "warm_cache_hit_rate": 98.316,
+    "warm_cache_miss_rate": 1.684
   },
   "cold_cache": {
     "accuracy_by_category": {
       "AVG": {
-        "accuracy": 0.0,
-        "passed": 0,
+        "accuracy": 75.0,
+        "passed": 90,
         "total": 120
       },
       "COUNT": {
-        "accuracy": 0.0,
-        "passed": 0,
+        "accuracy": 68.0,
+        "passed": 102,
         "total": 150
       },
       "DISTINCT": {
+        "accuracy": 37.778,
+        "passed": 34,
+        "total": 90
+      },
+      "EXISTS": {
         "accuracy": 42.222,
         "passed": 38,
         "total": 90
       },
-      "EXISTS": {
-        "accuracy": 52.222,
-        "passed": 47,
-        "total": 90
-      },
       "GROUP_BY": {
-        "accuracy": 25.333,
-        "passed": 38,
+        "accuracy": 19.333,
+        "passed": 29,
         "total": 150
       },
       "HAVING": {
-        "accuracy": 56.667,
-        "passed": 68,
-        "total": 120
-      },
-      "IN": {
-        "accuracy": 61.111,
-        "passed": 55,
-        "total": 90
-      },
-      "JOIN": {
-        "accuracy": 43.889,
-        "passed": 79,
-        "total": 180
-      },
-      "LIMIT": {
-        "accuracy": 5.556,
-        "passed": 5,
-        "total": 90
-      },
-      "MAX": {
-        "accuracy": 0.0,
-        "passed": 0,
-        "total": 90
-      },
-      "MIN": {
-        "accuracy": 0.0,
-        "passed": 0,
-        "total": 90
-      },
-      "NESTED": {
-        "accuracy": 42.667,
-        "passed": 64,
-        "total": 150
-      },
-      "ORDER_BY": {
-        "accuracy": 27.778,
-        "passed": 25,
-        "total": 90
-      },
-      "SELECT": {
-        "accuracy": 64.444,
-        "passed": 58,
-        "total": 90
-      },
-      "SUM": {
-        "accuracy": 0.0,
-        "passed": 0,
-        "total": 90
-      },
-      "WHERE": {
-        "accuracy": 31.667,
-        "passed": 38,
-        "total": 120
-      }
-    },
-    "accuracy_by_difficulty": {
-      "easy": {
-        "accuracy": 26.032,
-        "passed": 164,
-        "total": 630
-      },
-      "hard": {
-        "accuracy": 44.902,
-        "passed": 229,
-        "total": 510
-      },
-      "medium": {
-        "accuracy": 18.485,
-        "passed": 122,
-        "total": 660
-      }
-    },
-    "average_execution_time_ms": 308.967,
-    "average_similarity_score": 0.878,
-    "cache_hit_rate": 54.368,
-    "cache_miss_rate": 45.632,
-    "dataset_analysis": {
-      "functional": {
-        "accuracy": 30.667,
-        "passed": 92,
-        "total": 300
-      },
-      "invalid": {
-        "accuracy": 50.0,
-        "passed": 50,
-        "total": 100
-      },
-      "semantic": {
-        "accuracy": 28.2,
-        "passed": 423,
-        "total": 1500
-      }
-    },
-    "failed_queries": 1335,
-    "functional_accuracy": 30.667,
-    "generation_mode_distribution": {
-      "LLM": 1866,
-      "Rule": 4,
-      "unknown": 30
-    },
-    "invalid_detection_accuracy": 50.0,
-    "maximum_execution_time_ms": 4055.8,
-    "median_execution_time_ms": 110.0,
-    "minimum_execution_time_ms": 14.2,
-    "overall_accuracy": 29.737,
-    "p95_execution_time_ms": 838.9,
-    "result_equivalence_rate": 36.222,
-    "semantic_accuracy": 28.2,
-    "sql_equivalence_rate": 1.889,
-    "standard_deviation_execution_time_ms": 302.221,
-    "successful_queries": 565,
-    "total_queries": 1900,
-    "validation_failure_rate": 18.474
-  },
-  "execution_timestamp": "2026-07-05T15:44:01.253900+00:00",
-  "experiment_name": "SemanticSQL Benchmark Evaluation",
-  "overall": {
-    "accuracy_by_category": {
-      "AVG": {
-        "accuracy": 0.0,
-        "passed": 0,
-        "total": 240
-      },
-      "COUNT": {
-        "accuracy": 0.0,
-        "passed": 0,
-        "total": 300
-      },
-      "DISTINCT": {
-        "accuracy": 42.778,
-        "passed": 77,
-        "total": 180
-      },
-      "EXISTS": {
-        "accuracy": 49.444,
-        "passed": 89,
-        "total": 180
-      },
-      "GROUP_BY": {
-        "accuracy": 27.667,
-        "passed": 83,
-        "total": 300
-      },
-      "HAVING": {
-        "accuracy": 58.333,
-        "passed": 140,
-        "total": 240
-      },
-      "IN": {
         "accuracy": 61.667,
-        "passed": 111,
-        "total": 180
-      },
-      "JOIN": {
-        "accuracy": 42.778,
-        "passed": 154,
-        "total": 360
-      },
-      "LIMIT": {
-        "accuracy": 5.556,
-        "passed": 10,
-        "total": 180
-      },
-      "MAX": {
-        "accuracy": 0.0,
-        "passed": 0,
-        "total": 180
-      },
-      "MIN": {
-        "accuracy": 0.0,
-        "passed": 0,
-        "total": 180
-      },
-      "NESTED": {
-        "accuracy": 43.0,
-        "passed": 129,
-        "total": 300
-      },
-      "ORDER_BY": {
-        "accuracy": 28.333,
-        "passed": 51,
-        "total": 180
-      },
-      "SELECT": {
-        "accuracy": 63.333,
-        "passed": 114,
-        "total": 180
-      },
-      "SUM": {
-        "accuracy": 0.0,
-        "passed": 0,
-        "total": 180
-      },
-      "WHERE": {
-        "accuracy": 31.667,
-        "passed": 76,
-        "total": 240
-      }
-    },
-    "accuracy_by_difficulty": {
-      "easy": {
-        "accuracy": 26.032,
-        "passed": 328,
-        "total": 1260
-      },
-      "hard": {
-        "accuracy": 45.686,
-        "passed": 466,
-        "total": 1020
-      },
-      "medium": {
-        "accuracy": 18.182,
-        "passed": 240,
-        "total": 1320
-      }
-    },
-    "average_execution_time_ms": 210.868,
-    "average_similarity_score": 0.924,
-    "cache_hit_rate": 76.816,
-    "cache_miss_rate": 23.184,
-    "dataset_analysis": {
-      "functional": {
-        "accuracy": 32.167,
-        "passed": 193,
-        "total": 600
-      },
-      "invalid": {
-        "accuracy": 50.0,
-        "passed": 100,
-        "total": 200
-      },
-      "semantic": {
-        "accuracy": 28.033,
-        "passed": 841,
-        "total": 3000
-      }
-    },
-    "failed_queries": 2666,
-    "functional_accuracy": 32.167,
-    "generation_mode_distribution": {
-      "LLM": 3754,
-      "Rule": 8,
-      "unknown": 38
-    },
-    "invalid_detection_accuracy": 50.0,
-    "maximum_execution_time_ms": 4055.8,
-    "median_execution_time_ms": 107.3,
-    "minimum_execution_time_ms": 14.2,
-    "overall_accuracy": 29.842,
-    "p95_execution_time_ms": 676.4,
-    "result_equivalence_rate": 36.472,
-    "semantic_accuracy": 28.033,
-    "sql_equivalence_rate": 1.972,
-    "standard_deviation_execution_time_ms": 237.91,
-    "successful_queries": 1134,
-    "total_queries": 3800,
-    "validation_failure_rate": 18.421
-  },
-  "warm_cache": {
-    "accuracy_by_category": {
-      "AVG": {
-        "accuracy": 0.0,
-        "passed": 0,
+        "passed": 74,
         "total": 120
       },
-      "COUNT": {
-        "accuracy": 0.0,
-        "passed": 0,
+      "IN": {
+        "accuracy": 68.889,
+        "passed": 62,
+        "total": 90
+      },
+      "JOIN": {
+        "accuracy": 47.222,
+        "passed": 85,
+        "total": 180
+      },
+      "LIMIT": {
+        "accuracy": 4.444,
+        "passed": 4,
+        "total": 90
+      },
+      "MAX": {
+        "accuracy": 53.333,
+        "passed": 48,
+        "total": 90
+      },
+      "MIN": {
+        "accuracy": 70.0,
+        "passed": 63,
+        "total": 90
+      },
+      "NESTED": {
+        "accuracy": 55.333,
+        "passed": 83,
         "total": 150
       },
-      "DISTINCT": {
+      "ORDER_BY": {
+        "accuracy": 15.556,
+        "passed": 14,
+        "total": 90
+      },
+      "SELECT": {
         "accuracy": 43.333,
         "passed": 39,
         "total": 90
       },
-      "EXISTS": {
-        "accuracy": 46.667,
-        "passed": 42,
-        "total": 90
-      },
-      "GROUP_BY": {
-        "accuracy": 30.0,
-        "passed": 45,
-        "total": 150
-      },
-      "HAVING": {
-        "accuracy": 60.0,
-        "passed": 72,
-        "total": 120
-      },
-      "IN": {
-        "accuracy": 62.222,
-        "passed": 56,
-        "total": 90
-      },
-      "JOIN": {
-        "accuracy": 41.667,
-        "passed": 75,
-        "total": 180
-      },
-      "LIMIT": {
-        "accuracy": 5.556,
-        "passed": 5,
-        "total": 90
-      },
-      "MAX": {
-        "accuracy": 0.0,
-        "passed": 0,
-        "total": 90
-      },
-      "MIN": {
-        "accuracy": 0.0,
-        "passed": 0,
-        "total": 90
-      },
-      "NESTED": {
-        "accuracy": 43.333,
-        "passed": 65,
-        "total": 150
-      },
-      "ORDER_BY": {
-        "accuracy": 28.889,
-        "passed": 26,
-        "total": 90
-      },
-      "SELECT": {
-        "accuracy": 62.222,
-        "passed": 56,
-        "total": 90
-      },
       "SUM": {
-        "accuracy": 0.0,
-        "passed": 0,
+        "accuracy": 42.222,
+        "passed": 38,
         "total": 90
       },
       "WHERE": {
-        "accuracy": 31.667,
-        "passed": 38,
+        "accuracy": 23.333,
+        "passed": 28,
         "total": 120
       }
     },
     "accuracy_by_difficulty": {
       "easy": {
-        "accuracy": 26.032,
-        "passed": 164,
+        "accuracy": 35.079,
+        "passed": 221,
         "total": 630
       },
       "hard": {
-        "accuracy": 46.471,
-        "passed": 237,
+        "accuracy": 46.275,
+        "passed": 236,
         "total": 510
       },
       "medium": {
-        "accuracy": 17.879,
-        "passed": 118,
+        "accuracy": 56.667,
+        "passed": 374,
         "total": 660
       }
     },
-    "average_execution_time_ms": 112.77,
-    "average_similarity_score": 0.97,
-    "cache_hit_rate": 99.263,
-    "cache_miss_rate": 0.737,
+    "average_execution_time_ms": 397.842,
+    "average_similarity_score": 0.879,
+    "cache_hit_rate": 54.684,
+    "cache_miss_rate": 45.316,
     "dataset_analysis": {
       "functional": {
-        "accuracy": 33.667,
-        "passed": 101,
+        "accuracy": 45.333,
+        "passed": 136,
         "total": 300
       },
       "invalid": {
-        "accuracy": 50.0,
-        "passed": 50,
+        "accuracy": 33.0,
+        "passed": 33,
         "total": 100
       },
       "semantic": {
-        "accuracy": 27.867,
-        "passed": 418,
+        "accuracy": 46.333,
+        "passed": 695,
         "total": 1500
       }
     },
-    "failed_queries": 1331,
-    "functional_accuracy": 33.667,
+    "failed_queries": 1036,
+    "functional_accuracy": 45.333,
     "generation_mode_distribution": {
-      "LLM": 1888,
+      "LLM": 1853,
       "Rule": 4,
-      "unknown": 8
+      "unknown": 43
     },
-    "invalid_detection_accuracy": 50.0,
-    "maximum_execution_time_ms": 1162.3,
-    "median_execution_time_ms": 107.3,
-    "minimum_execution_time_ms": 104.2,
-    "overall_accuracy": 29.947,
-    "p95_execution_time_ms": 114.7,
-    "result_equivalence_rate": 36.722,
-    "semantic_accuracy": 27.867,
-    "sql_equivalence_rate": 2.056,
-    "standard_deviation_execution_time_ms": 51.166,
-    "successful_queries": 569,
+    "invalid_detection_accuracy": 33.0,
+    "maximum_execution_time_ms": 4304.5,
+    "median_execution_time_ms": 201.05,
+    "minimum_execution_time_ms": 18.5,
+    "overall_accuracy": 45.474,
+    "p95_execution_time_ms": 998.1,
+    "result_equivalence_rate": 53.722,
+    "semantic_accuracy": 46.333,
+    "sql_equivalence_rate": 1.722,
+    "standard_deviation_execution_time_ms": 334.449,
+    "successful_queries": 864,
     "total_queries": 1900,
-    "validation_failure_rate": 18.368
+    "validation_failure_rate": 16.789
+  },
+  "execution_timestamp": "2026-07-05T17:43:14.323836+00:00",
+  "experiment_name": "SemanticSQL Benchmark Evaluation",
+  "overall": {
+    "accuracy_by_category": {
+      "AVG": {
+        "accuracy": 77.083,
+        "passed": 185,
+        "total": 240
+      },
+      "COUNT": {
+        "accuracy": 69.667,
+        "passed": 209,
+        "total": 300
+      },
+      "DISTINCT": {
+        "accuracy": 37.778,
+        "passed": 68,
+        "total": 180
+      },
+      "EXISTS": {
+        "accuracy": 42.778,
+        "passed": 77,
+        "total": 180
+      },
+      "GROUP_BY": {
+        "accuracy": 21.0,
+        "passed": 63,
+        "total": 300
+      },
+      "HAVING": {
+        "accuracy": 62.917,
+        "passed": 151,
+        "total": 240
+      },
+      "IN": {
+        "accuracy": 69.444,
+        "passed": 125,
+        "total": 180
+      },
+      "JOIN": {
+        "accuracy": 52.5,
+        "passed": 189,
+        "total": 360
+      },
+      "LIMIT": {
+        "accuracy": 4.444,
+        "passed": 8,
+        "total": 180
+      },
+      "MAX": {
+        "accuracy": 55.556,
+        "passed": 100,
+        "total": 180
+      },
+      "MIN": {
+        "accuracy": 67.222,
+        "passed": 121,
+        "total": 180
+      },
+      "NESTED": {
+        "accuracy": 56.0,
+        "passed": 168,
+        "total": 300
+      },
+      "ORDER_BY": {
+        "accuracy": 15.556,
+        "passed": 28,
+        "total": 180
+      },
+      "SELECT": {
+        "accuracy": 41.667,
+        "passed": 75,
+        "total": 180
+      },
+      "SUM": {
+        "accuracy": 43.889,
+        "passed": 79,
+        "total": 180
+      },
+      "WHERE": {
+        "accuracy": 23.75,
+        "passed": 57,
+        "total": 240
+      }
+    },
+    "accuracy_by_difficulty": {
+      "easy": {
+        "accuracy": 35.317,
+        "passed": 445,
+        "total": 1260
+      },
+      "hard": {
+        "accuracy": 48.824,
+        "passed": 498,
+        "total": 1020
+      },
+      "medium": {
+        "accuracy": 57.576,
+        "passed": 760,
+        "total": 1320
+      }
+    },
+    "average_execution_time_ms": 295.744,
+    "average_similarity_score": 0.924,
+    "cache_hit_rate": 76.5,
+    "cache_miss_rate": 23.5,
+    "dataset_analysis": {
+      "functional": {
+        "accuracy": 48.167,
+        "passed": 289,
+        "total": 600
+      },
+      "invalid": {
+        "accuracy": 31.5,
+        "passed": 63,
+        "total": 200
+      },
+      "semantic": {
+        "accuracy": 47.133,
+        "passed": 1414,
+        "total": 3000
+      }
+    },
+    "failed_queries": 2034,
+    "functional_accuracy": 48.167,
+    "generation_mode_distribution": {
+      "LLM": 3740,
+      "Rule": 8,
+      "unknown": 52
+    },
+    "invalid_detection_accuracy": 31.5,
+    "maximum_execution_time_ms": 4304.5,
+    "median_execution_time_ms": 179.7,
+    "minimum_execution_time_ms": 18.5,
+    "overall_accuracy": 46.474,
+    "p95_execution_time_ms": 818.3,
+    "result_equivalence_rate": 54.056,
+    "semantic_accuracy": 47.133,
+    "sql_equivalence_rate": 1.722,
+    "standard_deviation_execution_time_ms": 262.967,
+    "successful_queries": 1766,
+    "total_queries": 3800,
+    "validation_failure_rate": 15.605
+  },
+  "warm_cache": {
+    "accuracy_by_category": {
+      "AVG": {
+        "accuracy": 79.167,
+        "passed": 95,
+        "total": 120
+      },
+      "COUNT": {
+        "accuracy": 71.333,
+        "passed": 107,
+        "total": 150
+      },
+      "DISTINCT": {
+        "accuracy": 37.778,
+        "passed": 34,
+        "total": 90
+      },
+      "EXISTS": {
+        "accuracy": 43.333,
+        "passed": 39,
+        "total": 90
+      },
+      "GROUP_BY": {
+        "accuracy": 22.667,
+        "passed": 34,
+        "total": 150
+      },
+      "HAVING": {
+        "accuracy": 64.167,
+        "passed": 77,
+        "total": 120
+      },
+      "IN": {
+        "accuracy": 70.0,
+        "passed": 63,
+        "total": 90
+      },
+      "JOIN": {
+        "accuracy": 57.778,
+        "passed": 104,
+        "total": 180
+      },
+      "LIMIT": {
+        "accuracy": 4.444,
+        "passed": 4,
+        "total": 90
+      },
+      "MAX": {
+        "accuracy": 57.778,
+        "passed": 52,
+        "total": 90
+      },
+      "MIN": {
+        "accuracy": 64.444,
+        "passed": 58,
+        "total": 90
+      },
+      "NESTED": {
+        "accuracy": 56.667,
+        "passed": 85,
+        "total": 150
+      },
+      "ORDER_BY": {
+        "accuracy": 15.556,
+        "passed": 14,
+        "total": 90
+      },
+      "SELECT": {
+        "accuracy": 40.0,
+        "passed": 36,
+        "total": 90
+      },
+      "SUM": {
+        "accuracy": 45.556,
+        "passed": 41,
+        "total": 90
+      },
+      "WHERE": {
+        "accuracy": 24.167,
+        "passed": 29,
+        "total": 120
+      }
+    },
+    "accuracy_by_difficulty": {
+      "easy": {
+        "accuracy": 35.556,
+        "passed": 224,
+        "total": 630
+      },
+      "hard": {
+        "accuracy": 51.373,
+        "passed": 262,
+        "total": 510
+      },
+      "medium": {
+        "accuracy": 58.485,
+        "passed": 386,
+        "total": 660
+      }
+    },
+    "average_execution_time_ms": 193.647,
+    "average_similarity_score": 0.968,
+    "cache_hit_rate": 98.316,
+    "cache_miss_rate": 1.684,
+    "dataset_analysis": {
+      "functional": {
+        "accuracy": 51.0,
+        "passed": 153,
+        "total": 300
+      },
+      "invalid": {
+        "accuracy": 30.0,
+        "passed": 30,
+        "total": 100
+      },
+      "semantic": {
+        "accuracy": 47.933,
+        "passed": 719,
+        "total": 1500
+      }
+    },
+    "failed_queries": 998,
+    "functional_accuracy": 51.0,
+    "generation_mode_distribution": {
+      "LLM": 1887,
+      "Rule": 4,
+      "unknown": 9
+    },
+    "invalid_detection_accuracy": 30.0,
+    "maximum_execution_time_ms": 1100.5,
+    "median_execution_time_ms": 178.4,
+    "minimum_execution_time_ms": 172.3,
+    "overall_accuracy": 47.474,
+    "p95_execution_time_ms": 216.5,
+    "result_equivalence_rate": 54.389,
+    "semantic_accuracy": 47.933,
+    "sql_equivalence_rate": 1.722,
+    "standard_deviation_execution_time_ms": 74.829,
+    "successful_queries": 902,
+    "total_queries": 1900,
+    "validation_failure_rate": 14.421
   }
 }

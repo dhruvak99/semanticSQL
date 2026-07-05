@@ -1,0 +1,19 @@
+{
+  "AVG": 240,
+  "COUNT": 300,
+  "DISTINCT": 103,
+  "EXISTS": 91,
+  "GROUP_BY": 217,
+  "HAVING": 100,
+  "IN": 69,
+  "JOIN": 206,
+  "LIMIT": 170,
+  "MAX": 180,
+  "MIN": 180,
+  "NESTED": 171,
+  "None": 100,
+  "ORDER_BY": 129,
+  "SELECT": 66,
+  "SUM": 180,
+  "WHERE": 164
+}

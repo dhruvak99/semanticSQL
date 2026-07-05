@@ -1,0 +1,122 @@
+{
+  "failed_queries": 2666,
+  "generated_at": "2026-07-05T16:09:54.757374+00:00",
+  "overall_accuracy": 29.842,
+  "root_cause_counts": {
+    "Aggregate result alias mismatch in evaluator comparison": 717,
+    "Aggregate result mismatch": 94,
+    "Backend exception / HTTP failure": 23,
+    "Backend rejected generated SQL request": 12,
+    "DISTINCT/projection mismatch": 88,
+    "EXISTS clause mismatch": 56,
+    "GROUP BY result mismatch": 204,
+    "HAVING clause mismatch": 31,
+    "IN clause mismatch": 45,
+    "Invalid query accepted via cached valid SQL": 74,
+    "Invalid query repaired into valid SQL": 26,
+    "Invented non-schema column: stored": 20,
+    "JOIN result mismatch": 82,
+    "LIMIT clause mismatch": 140,
+    "Missing aggregate function": 47,
+    "Nested query result mismatch": 55,
+    "ORDER BY mismatch": 103,
+    "Projection mismatch": 17,
+    "Result-set mismatch": 8,
+    "SQL syntax error": 67,
+    "Validation failure": 4,
+    "WHERE clause error": 134,
+    "Wrong aggregate function": 145,
+    "Wrong or invented column": 455,
+    "Wrong or invented table": 19
+  },
+  "source_files": [
+    "results/evaluation_results.json",
+    "results/evaluation_metrics.json",
+    "results/evaluation_summary.json",
+    "results/cache_comparison.json"
+  ],
+  "successful_queries": 1134,
+  "top_failure_patterns": [
+    {
+      "count": 455,
+      "pattern": "Generated SQL referenced unavailable column"
+    },
+    {
+      "count": 211,
+      "pattern": "COUNT: scalar aggregate value matches but output alias differs"
+    },
+    {
+      "count": 204,
+      "pattern": "GROUP BY result mismatch"
+    },
+    {
+      "count": 186,
+      "pattern": "AVG: scalar aggregate value matches but output alias differs"
+    },
+    {
+      "count": 140,
+      "pattern": "LIMIT clause mismatch"
+    },
+    {
+      "count": 134,
+      "pattern": "WHERE predicate semantics changed (operator/value/projection drift)"
+    },
+    {
+      "count": 132,
+      "pattern": "MIN: scalar aggregate value matches but output alias differs"
+    },
+    {
+      "count": 103,
+      "pattern": "ORDER BY mismatch"
+    },
+    {
+      "count": 101,
+      "pattern": "MAX: scalar aggregate value matches but output alias differs"
+    },
+    {
+      "count": 94,
+      "pattern": "Aggregate result mismatch"
+    },
+    {
+      "count": 88,
+      "pattern": "DISTINCT/projection mismatch"
+    },
+    {
+      "count": 87,
+      "pattern": "SUM: scalar aggregate value matches but output alias differs"
+    },
+    {
+      "count": 82,
+      "pattern": "JOIN result mismatch"
+    },
+    {
+      "count": 74,
+      "pattern": "Invalid request hit semantic cache entry containing valid SQL"
+    },
+    {
+      "count": 67,
+      "pattern": "SQL syntax error"
+    },
+    {
+      "count": 56,
+      "pattern": "EXISTS clause mismatch"
+    },
+    {
+      "count": 55,
+      "pattern": "Nested query result mismatch"
+    },
+    {
+      "count": 47,
+      "pattern": "Missing aggregate function"
+    },
+    {
+      "count": 45,
+      "pattern": "IN clause mismatch"
+    },
+    {
+      "count": 41,
+      "pattern": "MAX: expected ['MAX'] but generated ['MIN']"
+    }
+  ],
+  "total_queries": 3800
+}

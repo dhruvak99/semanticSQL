@@ -1,82 +1,82 @@
 {
   "AVG": {
-    "accuracy": 0.0,
-    "passed": 0,
+    "accuracy": 77.083,
+    "passed": 185,
     "total": 240
   },
   "COUNT": {
-    "accuracy": 0.0,
-    "passed": 0,
+    "accuracy": 69.667,
+    "passed": 209,
     "total": 300
   },
   "DISTINCT": {
+    "accuracy": 37.778,
+    "passed": 68,
+    "total": 180
+  },
+  "EXISTS": {
     "accuracy": 42.778,
     "passed": 77,
     "total": 180
   },
-  "EXISTS": {
-    "accuracy": 49.444,
-    "passed": 89,
-    "total": 180
-  },
   "GROUP_BY": {
-    "accuracy": 27.667,
-    "passed": 83,
+    "accuracy": 21.0,
+    "passed": 63,
     "total": 300
   },
   "HAVING": {
-    "accuracy": 58.333,
-    "passed": 140,
+    "accuracy": 62.917,
+    "passed": 151,
     "total": 240
   },
   "IN": {
-    "accuracy": 61.667,
-    "passed": 111,
+    "accuracy": 69.444,
+    "passed": 125,
     "total": 180
   },
   "JOIN": {
-    "accuracy": 42.778,
-    "passed": 154,
+    "accuracy": 52.5,
+    "passed": 189,
     "total": 360
   },
   "LIMIT": {
-    "accuracy": 5.556,
-    "passed": 10,
+    "accuracy": 4.444,
+    "passed": 8,
     "total": 180
   },
   "MAX": {
-    "accuracy": 0.0,
-    "passed": 0,
+    "accuracy": 55.556,
+    "passed": 100,
     "total": 180
   },
   "MIN": {
-    "accuracy": 0.0,
-    "passed": 0,
+    "accuracy": 67.222,
+    "passed": 121,
     "total": 180
   },
   "NESTED": {
-    "accuracy": 43.0,
-    "passed": 129,
+    "accuracy": 56.0,
+    "passed": 168,
     "total": 300
   },
   "ORDER_BY": {
-    "accuracy": 28.333,
-    "passed": 51,
+    "accuracy": 15.556,
+    "passed": 28,
     "total": 180
   },
   "SELECT": {
-    "accuracy": 63.333,
-    "passed": 114,
+    "accuracy": 41.667,
+    "passed": 75,
     "total": 180
   },
   "SUM": {
-    "accuracy": 0.0,
-    "passed": 0,
+    "accuracy": 43.889,
+    "passed": 79,
     "total": 180
   },
   "WHERE": {
-    "accuracy": 31.667,
-    "passed": 76,
+    "accuracy": 23.75,
+    "passed": 57,
     "total": 240
   }
 }

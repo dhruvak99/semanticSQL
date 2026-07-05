@@ -11,6 +11,7 @@ import sys
 import time
 from collections import Counter, defaultdict
 from datetime import UTC, datetime
+from decimal import Decimal, InvalidOperation
 from pathlib import Path
 from typing import Any
 
@@ -28,6 +29,7 @@ SETTINGS_ENDPOINT = f"{API_PREFIX}/settings/"
 CACHE_ENDPOINT = f"{API_PREFIX}/cache/"
 HTTP_TIMEOUT_SECONDS = 120
 FLOAT_PRECISION = 6
+FLOAT_TOLERANCE = 1e-6
 
 
 def main() -> None:
@@ -358,16 +360,49 @@ def _sql_equivalent(expected_sql: str, generated_sql: str) -> bool:
 
 
 def _result_equivalent(expected_sql: str, expected_rows: list[dict[str, Any]], actual_rows: list[Any]) -> bool:
+    actual_dict_rows = [row for row in actual_rows if isinstance(row, dict)]
+    if _is_scalar_result(expected_rows) and _is_scalar_result(actual_dict_rows):
+        return _scalar_values_equal(_first_scalar_value(expected_rows), _first_scalar_value(actual_dict_rows))
+
     normalized_expected = [_normalize_row(row) for row in expected_rows]
-    normalized_actual = [_normalize_row(row) for row in actual_rows if isinstance(row, dict)]
+    normalized_actual = [_normalize_row(row) for row in actual_dict_rows]
     if not _has_order_by(expected_sql):
         normalized_expected = sorted(normalized_expected, key=_stable_json)
         normalized_actual = sorted(normalized_actual, key=_stable_json)
     return normalized_expected == normalized_actual
 
 
-def _normalize_row(row: dict[str, Any]) -> dict[str, Any]:
-    return {str(key): _normalize_value(value) for key, value in sorted(row.items(), key=lambda item: str(item[0]))}
+def _is_scalar_result(rows: list[dict[str, Any]]) -> bool:
+    return len(rows) == 1 and len(rows[0]) == 1
+
+
+def _first_scalar_value(rows: list[dict[str, Any]]) -> Any:
+    return next(iter(rows[0].values()))
+
+
+def _scalar_values_equal(expected: Any, actual: Any) -> bool:
+    expected_value = _normalize_scalar_value(expected)
+    actual_value = _normalize_scalar_value(actual)
+    if expected_value is None or actual_value is None:
+        return expected_value is None and actual_value is None
+    if isinstance(expected_value, Decimal) and isinstance(actual_value, Decimal):
+        return abs(expected_value - actual_value) <= Decimal(str(FLOAT_TOLERANCE))
+    return expected_value == actual_value
+
+
+def _normalize_scalar_value(value: Any) -> Any:
+    if value is None:
+        return None
+    if isinstance(value, bool):
+        return value
+    try:
+        return Decimal(str(value))
+    except (InvalidOperation, ValueError):
+        return str(value)
+
+
+def _normalize_row(row: dict[str, Any]) -> tuple[tuple[str, Any], ...]:
+    return tuple((str(key), _normalize_value(value)) for key, value in row.items())
 
 
 def _normalize_value(value: Any) -> Any:

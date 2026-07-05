@@ -1,0 +1,1996 @@
+{
+  "AVG": {
+    "accuracy": 0.0,
+    "evidence": [
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "CAST(SUM(author_id) AS REAL) / COUNT(*)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "CAST(SUM(author_id) AS REAL) / COUNT(*)": 2.5
+            }
+          ]
+        },
+        "executed_sql": "SELECT CAST(SUM(author_id) AS REAL) / COUNT(*) FROM authors WHERE LENGTH(author_name) >= 1",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "avg_author_id"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "avg_author_id": 2.5
+            }
+          ]
+        },
+        "expected_sql": "SELECT AVG(author_id) AS avg_author_id FROM authors WHERE author_name IS NOT NULL AND LENGTH(author_name) >= 1;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT CAST(SUM(author_id) AS REAL) / COUNT(*) FROM authors WHERE LENGTH(author_name) >= 1",
+        "natural_language_query": "Calculate the average author id for authors where author name has at least 1 characters.",
+        "query_id": "F0106",
+        "root_cause": "Aggregate result alias mismatch in evaluator comparison",
+        "scalar_values_equal_ignoring_alias": true,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "AVG(price)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "AVG(price)": 834.0
+            }
+          ]
+        },
+        "executed_sql": "SELECT AVG(price) FROM books WHERE price >= 1",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "avg_price"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "avg_price": 834.0
+            }
+          ]
+        },
+        "expected_sql": "SELECT AVG(price) AS avg_price FROM books WHERE price >= 1;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT AVG(price) FROM books WHERE price >= 1",
+        "natural_language_query": "What is the average price in books where price is at least 1?",
+        "query_id": "F0107",
+        "root_cause": "Aggregate result alias mismatch in evaluator comparison",
+        "scalar_values_equal_ignoring_alias": true,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "AVG(author_id)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "AVG(author_id)": 2.5
+            }
+          ]
+        },
+        "executed_sql": "SELECT AVG(author_id) FROM authors",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "avg_author_id"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "avg_author_id": 2.5
+            }
+          ]
+        },
+        "expected_sql": "SELECT AVG(author_id) AS avg_author_id FROM authors;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT AVG(author_id) FROM authors",
+        "natural_language_query": "Show the average author id value for authors across all records.",
+        "query_id": "F0108",
+        "root_cause": "Aggregate result alias mismatch in evaluator comparison",
+        "scalar_values_equal_ignoring_alias": true,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "AVG(hours_per_week)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "AVG(hours_per_week)": null
+            }
+          ]
+        },
+        "executed_sql": "SELECT AVG(hours_per_week) FROM employee_projects WHERE LENGTH(role) >= 4",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "avg_hours_per_week"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "avg_hours_per_week": null
+            }
+          ]
+        },
+        "expected_sql": "SELECT AVG(hours_per_week) AS avg_hours_per_week FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 4;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT AVG(hours_per_week) FROM employee_projects WHERE LENGTH(role) >= 4",
+        "natural_language_query": "Calculate the average hours per week for employee projects where role has at least 4 characters.",
+        "query_id": "F0109",
+        "root_cause": "Aggregate result alias mismatch in evaluator comparison",
+        "scalar_values_equal_ignoring_alias": true,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": false,
+          "columns": [],
+          "error": "not_executed_or_invalid",
+          "row_count": null,
+          "sample_rows": []
+        },
+        "executed_sql": null,
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "avg_salary"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "avg_salary": 74875.0
+            }
+          ]
+        },
+        "expected_sql": "SELECT AVG(salary) AS avg_salary FROM employees WHERE salary >= 4;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend returned HTTP 400.",
+        "generated_sql": "",
+        "natural_language_query": "What is the average salary in employees where salary is at least 4?",
+        "query_id": "F0110",
+        "root_cause": "Backend rejected generated SQL request",
+        "scalar_values_equal_ignoring_alias": false,
+        "validation_status": "unknown"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "AVG(price)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "AVG(price)": 34.99
+            }
+          ]
+        },
+        "executed_sql": "SELECT AVG(price) FROM products",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "avg_price"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "avg_price": 34.99
+            }
+          ]
+        },
+        "expected_sql": "SELECT AVG(price) AS avg_price FROM products;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT AVG(price) FROM products",
+        "natural_language_query": "Show the average price value for products across all records.",
+        "query_id": "F0111",
+        "root_cause": "Aggregate result alias mismatch in evaluator comparison",
+        "scalar_values_equal_ignoring_alias": true,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "AVG(budget)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "AVG(budget)": 124300.0
+            }
+          ]
+        },
+        "executed_sql": "SELECT AVG(budget) FROM projects WHERE LENGTH(project_name) >= 7",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "avg_budget"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "avg_budget": 124300.0
+            }
+          ]
+        },
+        "expected_sql": "SELECT AVG(budget) AS avg_budget FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 7;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT AVG(budget) FROM projects WHERE LENGTH(project_name) >= 7",
+        "natural_language_query": "Calculate the average budget for projects where project name has at least 7 characters.",
+        "query_id": "F0112",
+        "root_cause": "Aggregate result alias mismatch in evaluator comparison",
+        "scalar_values_equal_ignoring_alias": true,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "AVG(rows_returned)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "AVG(rows_returned)": 96.191257
+            }
+          ]
+        },
+        "executed_sql": "SELECT AVG(rows_returned) \nFROM query_history \nWHERE rows_returned >= 7;",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "avg_rows_returned"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "avg_rows_returned": 96.191257
+            }
+          ]
+        },
+        "expected_sql": "SELECT AVG(rows_returned) AS avg_rows_returned FROM query_history WHERE rows_returned >= 7;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT AVG(rows_returned) \nFROM query_history \nWHERE rows_returned >= 7;",
+        "natural_language_query": "What is the average rows returned in query history where rows returned is at least 7?",
+        "query_id": "F0113",
+        "root_cause": "Aggregate result alias mismatch in evaluator comparison",
+        "scalar_values_equal_ignoring_alias": true,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "AVG(rating)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "AVG(rating)": 4.375
+            }
+          ]
+        },
+        "executed_sql": "SELECT AVG(rating) FROM vendors",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "avg_rating"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "avg_rating": 4.375
+            }
+          ]
+        },
+        "expected_sql": "SELECT AVG(rating) AS avg_rating FROM vendors;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT AVG(rating) FROM vendors",
+        "natural_language_query": "Show the average rating value for vendors across all records.",
+        "query_id": "F0114",
+        "root_cause": "Aggregate result alias mismatch in evaluator comparison",
+        "scalar_values_equal_ignoring_alias": true,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "AVG(price)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "AVG(price)": 834.0
+            }
+          ]
+        },
+        "executed_sql": "SELECT AVG(price) FROM books WHERE LENGTH(title) >= 10",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "avg_price"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "avg_price": 834.0
+            }
+          ]
+        },
+        "expected_sql": "SELECT AVG(price) AS avg_price FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 10;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT AVG(price) FROM books WHERE LENGTH(title) >= 10",
+        "natural_language_query": "Calculate the average price for books where title has at least 10 characters.",
+        "query_id": "F0115",
+        "root_cause": "Aggregate result alias mismatch in evaluator comparison",
+        "scalar_values_equal_ignoring_alias": true,
+        "validation_status": "valid"
+      }
+    ],
+    "failed": 240,
+    "generation_mode": {
+      "LLM": 239,
+      "None": 1
+    },
+    "passed": 0,
+    "root_causes": {
+      "Aggregate result alias mismatch in evaluator comparison": 186,
+      "Aggregate result mismatch": 33,
+      "Backend rejected generated SQL request": 1,
+      "Missing aggregate function": 2,
+      "Wrong aggregate function": 8,
+      "Wrong or invented column": 10
+    },
+    "total": 240,
+    "validation_status": {
+      "invalid": 10,
+      "unknown": 1,
+      "valid": 229
+    }
+  },
+  "COUNT": {
+    "accuracy": 0.0,
+    "evidence": [
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "COUNT(*)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "COUNT(*)": 4
+            }
+          ]
+        },
+        "executed_sql": "SELECT COUNT(*) FROM authors WHERE author_id >= 0",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "row_count"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "row_count": 4
+            }
+          ]
+        },
+        "expected_sql": "SELECT COUNT(*) AS row_count FROM authors WHERE author_id >= 0;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT COUNT(*) FROM authors WHERE author_id >= 0",
+        "natural_language_query": "Count authors records where author id is at least 0.",
+        "query_id": "F0081",
+        "root_cause": "Aggregate result alias mismatch in evaluator comparison",
+        "scalar_values_equal_ignoring_alias": true,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "COUNT(*)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "COUNT(*)": 5
+            }
+          ]
+        },
+        "executed_sql": "SELECT COUNT(*) FROM books WHERE LENGTH(title) >= 2",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "row_count"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "row_count": 5
+            }
+          ]
+        },
+        "expected_sql": "SELECT COUNT(*) AS row_count FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 2;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT COUNT(*) FROM books WHERE LENGTH(title) >= 2",
+        "natural_language_query": "How many books have title has at least 2 characters?",
+        "query_id": "F0082",
+        "root_cause": "Aggregate result alias mismatch in evaluator comparison",
+        "scalar_values_equal_ignoring_alias": true,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "COUNT(*)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "COUNT(*)": 5
+            }
+          ]
+        },
+        "executed_sql": "SELECT COUNT(*)\nFROM departments\nWHERE LENGTH(location) >= 3",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "row_count"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "row_count": 5
+            }
+          ]
+        },
+        "expected_sql": "SELECT COUNT(*) AS row_count FROM departments WHERE location IS NOT NULL AND LENGTH(location) >= 3;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT COUNT(*)\nFROM departments\nWHERE LENGTH(location) >= 3",
+        "natural_language_query": "Return the number of departments after filtering for location has at least 3 characters.",
+        "query_id": "F0083",
+        "root_cause": "Aggregate result alias mismatch in evaluator comparison",
+        "scalar_values_equal_ignoring_alias": true,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "COUNT(*)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "COUNT(*)": 0
+            }
+          ]
+        },
+        "executed_sql": "SELECT COUNT(*) FROM employee_projects WHERE hours_per_week >= 3",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "row_count"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "row_count": 0
+            }
+          ]
+        },
+        "expected_sql": "SELECT COUNT(*) AS row_count FROM employee_projects WHERE hours_per_week >= 3;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT COUNT(*) FROM employee_projects WHERE hours_per_week >= 3",
+        "natural_language_query": "Count employee projects records where hours per week is at least 3.",
+        "query_id": "F0084",
+        "root_cause": "Aggregate result alias mismatch in evaluator comparison",
+        "scalar_values_equal_ignoring_alias": true,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "COUNT(*)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "COUNT(*)": 8
+            }
+          ]
+        },
+        "executed_sql": "SELECT COUNT(*) FROM employees WHERE CAST(salary AS DECIMAL(12,2)) >= 4",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "row_count"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "row_count": 8
+            }
+          ]
+        },
+        "expected_sql": "SELECT COUNT(*) AS row_count FROM employees WHERE salary >= 4;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT COUNT(*) FROM employees WHERE CAST(salary AS DECIMAL(12,2)) >= 4",
+        "natural_language_query": "How many employees have salary is at least 4?",
+        "query_id": "F0085",
+        "root_cause": "Aggregate result alias mismatch in evaluator comparison",
+        "scalar_values_equal_ignoring_alias": true,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "COUNT(product_id)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "COUNT(product_id)": 2
+            }
+          ]
+        },
+        "executed_sql": "SELECT COUNT(product_id) FROM products WHERE price >= 5",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "row_count"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "row_count": 2
+            }
+          ]
+        },
+        "expected_sql": "SELECT COUNT(*) AS row_count FROM products WHERE price >= 5;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT COUNT(product_id) FROM products WHERE price >= 5",
+        "natural_language_query": "Return the number of products after filtering for price is at least 5.",
+        "query_id": "F0086",
+        "root_cause": "Aggregate result alias mismatch in evaluator comparison",
+        "scalar_values_equal_ignoring_alias": true,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "COUNT(*)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "COUNT(*)": 0
+            }
+          ]
+        },
+        "executed_sql": "SELECT COUNT(*) FROM projects WHERE project_id >= 6",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "row_count"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "row_count": 0
+            }
+          ]
+        },
+        "expected_sql": "SELECT COUNT(*) AS row_count FROM projects WHERE project_id >= 6;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT COUNT(*) FROM projects WHERE project_id >= 6",
+        "natural_language_query": "Count projects records where project id is at least 6.",
+        "query_id": "F0087",
+        "root_cause": "Aggregate result alias mismatch in evaluator comparison",
+        "scalar_values_equal_ignoring_alias": true,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "COUNT(*)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "COUNT(*)": 183
+            }
+          ]
+        },
+        "executed_sql": "SELECT COUNT(*) FROM query_history WHERE rows_returned >= 7",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "row_count"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "row_count": 183
+            }
+          ]
+        },
+        "expected_sql": "SELECT COUNT(*) AS row_count FROM query_history WHERE rows_returned >= 7;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT COUNT(*) FROM query_history WHERE rows_returned >= 7",
+        "natural_language_query": "How many query history have rows returned is at least 7?",
+        "query_id": "F0088",
+        "root_cause": "Aggregate result alias mismatch in evaluator comparison",
+        "scalar_values_equal_ignoring_alias": true,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "COUNT(*)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "COUNT(*)": 0
+            }
+          ]
+        },
+        "executed_sql": "SELECT COUNT(*) FROM vendors WHERE id >= 8",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "row_count"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "row_count": 0
+            }
+          ]
+        },
+        "expected_sql": "SELECT COUNT(*) AS row_count FROM vendors WHERE id >= 8;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT COUNT(*) FROM vendors WHERE id >= 8",
+        "natural_language_query": "Return the number of vendors after filtering for id is at least 8.",
+        "query_id": "F0089",
+        "root_cause": "Aggregate result alias mismatch in evaluator comparison",
+        "scalar_values_equal_ignoring_alias": true,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "author_id",
+            "author_name",
+            "country"
+          ],
+          "error": null,
+          "row_count": 0,
+          "sample_rows": []
+        },
+        "executed_sql": "SELECT * FROM authors WHERE author_id >= 9",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "row_count"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "row_count": 0
+            }
+          ]
+        },
+        "expected_sql": "SELECT COUNT(*) AS row_count FROM authors WHERE author_id >= 9;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT * FROM authors WHERE author_id >= 9",
+        "natural_language_query": "Count authors records where author id is at least 9.",
+        "query_id": "F0090",
+        "root_cause": "Missing aggregate function",
+        "scalar_values_equal_ignoring_alias": false,
+        "validation_status": "valid"
+      }
+    ],
+    "failed": 300,
+    "generation_mode": {
+      "LLM": 299,
+      "None": 1
+    },
+    "passed": 0,
+    "root_causes": {
+      "Aggregate result alias mismatch in evaluator comparison": 211,
+      "Aggregate result mismatch": 40,
+      "Backend rejected generated SQL request": 1,
+      "Missing aggregate function": 37,
+      "SQL syntax error": 4,
+      "Wrong aggregate function": 3,
+      "Wrong or invented column": 4
+    },
+    "total": 300,
+    "validation_status": {
+      "invalid": 8,
+      "unknown": 1,
+      "valid": 291
+    }
+  },
+  "MAX": {
+    "accuracy": 0.0,
+    "evidence": [
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "MAX(author_id)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "MAX(author_id)": 4
+            }
+          ]
+        },
+        "executed_sql": "SELECT MAX(author_id) FROM authors WHERE LENGTH(author_name) > 0",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "max_author_id"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "max_author_id": 4
+            }
+          ]
+        },
+        "expected_sql": "SELECT MAX(author_id) AS max_author_id FROM authors WHERE author_name IS NOT NULL AND LENGTH(author_name) >= 1;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT MAX(author_id) FROM authors WHERE LENGTH(author_name) > 0",
+        "natural_language_query": "Calculate the highest author id for authors where author name has at least 1 characters.",
+        "query_id": "F0141",
+        "root_cause": "Aggregate result alias mismatch in evaluator comparison",
+        "scalar_values_equal_ignoring_alias": true,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "AVG(price)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "AVG(price)": 834.0
+            }
+          ]
+        },
+        "executed_sql": "SELECT AVG(price) FROM books WHERE price >= 1",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "max_price"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "max_price": 1200.0
+            }
+          ]
+        },
+        "expected_sql": "SELECT MAX(price) AS max_price FROM books WHERE price >= 1;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT AVG(price) FROM books WHERE price >= 1",
+        "natural_language_query": "What is the highest price in books where price is at least 1?",
+        "query_id": "F0142",
+        "root_cause": "Wrong aggregate function",
+        "scalar_values_equal_ignoring_alias": false,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "MAX(author_id)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "MAX(author_id)": 4
+            }
+          ]
+        },
+        "executed_sql": "SELECT MAX(author_id) FROM authors",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "max_author_id"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "max_author_id": 4
+            }
+          ]
+        },
+        "expected_sql": "SELECT MAX(author_id) AS max_author_id FROM authors;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT MAX(author_id) FROM authors",
+        "natural_language_query": "Show the highest author id value for authors across all records.",
+        "query_id": "F0143",
+        "root_cause": "Aggregate result alias mismatch in evaluator comparison",
+        "scalar_values_equal_ignoring_alias": true,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "MIN(hours_per_week)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "MIN(hours_per_week)": null
+            }
+          ]
+        },
+        "executed_sql": "SELECT MIN(hours_per_week) \nFROM employee_projects \nWHERE LENGTH(role) >= 4;",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "max_hours_per_week"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "max_hours_per_week": null
+            }
+          ]
+        },
+        "expected_sql": "SELECT MAX(hours_per_week) AS max_hours_per_week FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 4;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT MIN(hours_per_week) \nFROM employee_projects \nWHERE LENGTH(role) >= 4;",
+        "natural_language_query": "Calculate the highest hours per week for employee projects where role has at least 4 characters.",
+        "query_id": "F0144",
+        "root_cause": "Aggregate result alias mismatch in evaluator comparison",
+        "scalar_values_equal_ignoring_alias": true,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "MIN(salary)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "MIN(salary)": 48000
+            }
+          ]
+        },
+        "executed_sql": "SELECT MIN(salary) FROM employees WHERE salary >= 4",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "max_salary"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "max_salary": 99000
+            }
+          ]
+        },
+        "expected_sql": "SELECT MAX(salary) AS max_salary FROM employees WHERE salary >= 4;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT MIN(salary) FROM employees WHERE salary >= 4",
+        "natural_language_query": "What is the highest salary in employees where salary is at least 4?",
+        "query_id": "F0145",
+        "root_cause": "Wrong aggregate function",
+        "scalar_values_equal_ignoring_alias": false,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "MAX(price)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "MAX(price)": 49.99
+            }
+          ]
+        },
+        "executed_sql": "SELECT MAX(price) FROM products;",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "max_price"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "max_price": 49.99
+            }
+          ]
+        },
+        "expected_sql": "SELECT MAX(price) AS max_price FROM products;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT MAX(price) FROM products;",
+        "natural_language_query": "Show the highest price value for products across all records.",
+        "query_id": "F0146",
+        "root_cause": "Aggregate result alias mismatch in evaluator comparison",
+        "scalar_values_equal_ignoring_alias": true,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "AVG(budget)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "AVG(budget)": 124300.0
+            }
+          ]
+        },
+        "executed_sql": "SELECT AVG(budget) FROM projects WHERE LENGTH(project_name) >= 7",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "max_budget"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "max_budget": 185000.0
+            }
+          ]
+        },
+        "expected_sql": "SELECT MAX(budget) AS max_budget FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 7;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT AVG(budget) FROM projects WHERE LENGTH(project_name) >= 7",
+        "natural_language_query": "Calculate the highest budget for projects where project name has at least 7 characters.",
+        "query_id": "F0147",
+        "root_cause": "Wrong aggregate function",
+        "scalar_values_equal_ignoring_alias": false,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "MIN(rows_returned)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "MIN(rows_returned)": 7
+            }
+          ]
+        },
+        "executed_sql": "SELECT MIN(rows_returned) FROM query_history WHERE rows_returned >= 7",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "max_rows_returned"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "max_rows_returned": 1218
+            }
+          ]
+        },
+        "expected_sql": "SELECT MAX(rows_returned) AS max_rows_returned FROM query_history WHERE rows_returned >= 7;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT MIN(rows_returned) FROM query_history WHERE rows_returned >= 7",
+        "natural_language_query": "What is the highest rows returned in query history where rows returned is at least 7?",
+        "query_id": "F0148",
+        "root_cause": "Wrong aggregate function",
+        "scalar_values_equal_ignoring_alias": false,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": false,
+          "columns": [],
+          "error": "not_executed_or_invalid",
+          "row_count": null,
+          "sample_rows": []
+        },
+        "executed_sql": null,
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "max_rating"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "max_rating": 4.8
+            }
+          ]
+        },
+        "expected_sql": "SELECT MAX(rating) AS max_rating FROM vendors;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend SQL validation failed.",
+        "generated_sql": "SELECT MIN(value) FROM vendors",
+        "natural_language_query": "Show the highest rating value for vendors across all records.",
+        "query_id": "F0149",
+        "root_cause": "Wrong or invented column",
+        "scalar_values_equal_ignoring_alias": false,
+        "validation_status": "invalid"
+      },
+      {
+        "actual_result": {
+          "available": false,
+          "columns": [],
+          "error": "not_executed_or_invalid",
+          "row_count": null,
+          "sample_rows": []
+        },
+        "executed_sql": null,
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "max_price"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "max_price": 1200.0
+            }
+          ]
+        },
+        "expected_sql": "SELECT MAX(price) AS max_price FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 10;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend returned HTTP 503.",
+        "generated_sql": "",
+        "natural_language_query": "Calculate the highest price for books where title has at least 10 characters.",
+        "query_id": "F0150",
+        "root_cause": "Backend exception / HTTP failure",
+        "scalar_values_equal_ignoring_alias": false,
+        "validation_status": "unknown"
+      }
+    ],
+    "failed": 180,
+    "generation_mode": {
+      "LLM": 179,
+      "None": 1
+    },
+    "passed": 0,
+    "root_causes": {
+      "Aggregate result alias mismatch in evaluator comparison": 101,
+      "Aggregate result mismatch": 3,
+      "Backend exception / HTTP failure": 1,
+      "Missing aggregate function": 5,
+      "Wrong aggregate function": 48,
+      "Wrong or invented column": 22
+    },
+    "total": 180,
+    "validation_status": {
+      "invalid": 22,
+      "unknown": 1,
+      "valid": 157
+    }
+  },
+  "MIN": {
+    "accuracy": 0.0,
+    "evidence": [
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "MIN(author_id)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "MIN(author_id)": 1
+            }
+          ]
+        },
+        "executed_sql": "SELECT MIN(author_id) FROM authors WHERE author_name LIKE '%%'",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "min_author_id"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "min_author_id": 1
+            }
+          ]
+        },
+        "expected_sql": "SELECT MIN(author_id) AS min_author_id FROM authors WHERE author_name IS NOT NULL AND LENGTH(author_name) >= 1;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT MIN(author_id) FROM authors WHERE author_name LIKE '%%'",
+        "natural_language_query": "Calculate the lowest author id for authors where author name has at least 1 characters.",
+        "query_id": "F0126",
+        "root_cause": "Aggregate result alias mismatch in evaluator comparison",
+        "scalar_values_equal_ignoring_alias": true,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "AVG(price)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "AVG(price)": 834.0
+            }
+          ]
+        },
+        "executed_sql": "SELECT AVG(price) FROM books WHERE price >= 1",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "min_price"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "min_price": 650.0
+            }
+          ]
+        },
+        "expected_sql": "SELECT MIN(price) AS min_price FROM books WHERE price >= 1;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT AVG(price) FROM books WHERE price >= 1",
+        "natural_language_query": "What is the lowest price in books where price is at least 1?",
+        "query_id": "F0127",
+        "root_cause": "Wrong aggregate function",
+        "scalar_values_equal_ignoring_alias": false,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "MIN(author_id)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "MIN(author_id)": 1
+            }
+          ]
+        },
+        "executed_sql": "SELECT MIN(author_id) FROM authors",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "min_author_id"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "min_author_id": 1
+            }
+          ]
+        },
+        "expected_sql": "SELECT MIN(author_id) AS min_author_id FROM authors;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT MIN(author_id) FROM authors",
+        "natural_language_query": "Show the lowest author id value for authors across all records.",
+        "query_id": "F0128",
+        "root_cause": "Aggregate result alias mismatch in evaluator comparison",
+        "scalar_values_equal_ignoring_alias": true,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "MIN(hours_per_week)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "MIN(hours_per_week)": null
+            }
+          ]
+        },
+        "executed_sql": "SELECT MIN(hours_per_week) \nFROM employee_projects \nWHERE LENGTH(role) >= 4;",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "min_hours_per_week"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "min_hours_per_week": null
+            }
+          ]
+        },
+        "expected_sql": "SELECT MIN(hours_per_week) AS min_hours_per_week FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 4;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT MIN(hours_per_week) \nFROM employee_projects \nWHERE LENGTH(role) >= 4;",
+        "natural_language_query": "Calculate the lowest hours per week for employee projects where role has at least 4 characters.",
+        "query_id": "F0129",
+        "root_cause": "Aggregate result alias mismatch in evaluator comparison",
+        "scalar_values_equal_ignoring_alias": true,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "MIN(salary)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "MIN(salary)": 48000
+            }
+          ]
+        },
+        "executed_sql": "SELECT MIN(salary) FROM employees WHERE salary >= 4",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "min_salary"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "min_salary": 48000
+            }
+          ]
+        },
+        "expected_sql": "SELECT MIN(salary) AS min_salary FROM employees WHERE salary >= 4;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT MIN(salary) FROM employees WHERE salary >= 4",
+        "natural_language_query": "What is the lowest salary in employees where salary is at least 4?",
+        "query_id": "F0130",
+        "root_cause": "Aggregate result alias mismatch in evaluator comparison",
+        "scalar_values_equal_ignoring_alias": true,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "MIN(price)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "MIN(price)": 19.99
+            }
+          ]
+        },
+        "executed_sql": "SELECT MIN(price) FROM products",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "min_price"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "min_price": 19.99
+            }
+          ]
+        },
+        "expected_sql": "SELECT MIN(price) AS min_price FROM products;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT MIN(price) FROM products",
+        "natural_language_query": "Show the lowest price value for products across all records.",
+        "query_id": "F0131",
+        "root_cause": "Aggregate result alias mismatch in evaluator comparison",
+        "scalar_values_equal_ignoring_alias": true,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "AVG(budget)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "AVG(budget)": 124300.0
+            }
+          ]
+        },
+        "executed_sql": "SELECT AVG(budget) FROM projects WHERE LENGTH(project_name) >= 7",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "min_budget"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "min_budget": 76000.0
+            }
+          ]
+        },
+        "expected_sql": "SELECT MIN(budget) AS min_budget FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 7;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT AVG(budget) FROM projects WHERE LENGTH(project_name) >= 7",
+        "natural_language_query": "Calculate the lowest budget for projects where project name has at least 7 characters.",
+        "query_id": "F0132",
+        "root_cause": "Wrong aggregate function",
+        "scalar_values_equal_ignoring_alias": false,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "MIN(rows_returned)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "MIN(rows_returned)": 7
+            }
+          ]
+        },
+        "executed_sql": "SELECT MIN(rows_returned) FROM query_history WHERE rows_returned >= 7",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "min_rows_returned"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "min_rows_returned": 7
+            }
+          ]
+        },
+        "expected_sql": "SELECT MIN(rows_returned) AS min_rows_returned FROM query_history WHERE rows_returned >= 7;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT MIN(rows_returned) FROM query_history WHERE rows_returned >= 7",
+        "natural_language_query": "What is the lowest rows returned in query history where rows returned is at least 7?",
+        "query_id": "F0133",
+        "root_cause": "Aggregate result alias mismatch in evaluator comparison",
+        "scalar_values_equal_ignoring_alias": true,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": false,
+          "columns": [],
+          "error": "not_executed_or_invalid",
+          "row_count": null,
+          "sample_rows": []
+        },
+        "executed_sql": null,
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "min_rating"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "min_rating": 4.0
+            }
+          ]
+        },
+        "expected_sql": "SELECT MIN(rating) AS min_rating FROM vendors;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend SQL validation failed.",
+        "generated_sql": "SELECT MIN(value) FROM vendors",
+        "natural_language_query": "Show the lowest rating value for vendors across all records.",
+        "query_id": "F0134",
+        "root_cause": "Wrong or invented column",
+        "scalar_values_equal_ignoring_alias": false,
+        "validation_status": "invalid"
+      },
+      {
+        "actual_result": {
+          "available": false,
+          "columns": [],
+          "error": "not_executed_or_invalid",
+          "row_count": null,
+          "sample_rows": []
+        },
+        "executed_sql": null,
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "min_price"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "min_price": 650.0
+            }
+          ]
+        },
+        "expected_sql": "SELECT MIN(price) AS min_price FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 10;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend returned HTTP 503.",
+        "generated_sql": "",
+        "natural_language_query": "Calculate the lowest price for books where title has at least 10 characters.",
+        "query_id": "F0135",
+        "root_cause": "Backend exception / HTTP failure",
+        "scalar_values_equal_ignoring_alias": false,
+        "validation_status": "unknown"
+      }
+    ],
+    "failed": 180,
+    "generation_mode": {
+      "LLM": 179,
+      "None": 1
+    },
+    "passed": 0,
+    "root_causes": {
+      "Aggregate result alias mismatch in evaluator comparison": 132,
+      "Aggregate result mismatch": 16,
+      "Backend exception / HTTP failure": 1,
+      "Missing aggregate function": 1,
+      "Wrong aggregate function": 13,
+      "Wrong or invented column": 17
+    },
+    "total": 180,
+    "validation_status": {
+      "invalid": 17,
+      "unknown": 1,
+      "valid": 162
+    }
+  },
+  "SUM": {
+    "accuracy": 0.0,
+    "evidence": [
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "SUM(author_id)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "SUM(author_id)": 10
+            }
+          ]
+        },
+        "executed_sql": "SELECT SUM(author_id) FROM authors WHERE author_name LIKE '%%'",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "sum_author_id"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "sum_author_id": 10
+            }
+          ]
+        },
+        "expected_sql": "SELECT SUM(author_id) AS sum_author_id FROM authors WHERE author_name IS NOT NULL AND LENGTH(author_name) >= 1;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT SUM(author_id) FROM authors WHERE author_name LIKE '%%'",
+        "natural_language_query": "Calculate the total author id for authors where author name has at least 1 characters.",
+        "query_id": "F0156",
+        "root_cause": "Aggregate result alias mismatch in evaluator comparison",
+        "scalar_values_equal_ignoring_alias": true,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "AVG(price)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "AVG(price)": 834.0
+            }
+          ]
+        },
+        "executed_sql": "SELECT AVG(price) FROM books WHERE price >= 1",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "sum_price"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "sum_price": 4170.0
+            }
+          ]
+        },
+        "expected_sql": "SELECT SUM(price) AS sum_price FROM books WHERE price >= 1;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT AVG(price) FROM books WHERE price >= 1",
+        "natural_language_query": "What is the total price in books where price is at least 1?",
+        "query_id": "F0157",
+        "root_cause": "Wrong aggregate function",
+        "scalar_values_equal_ignoring_alias": false,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "SUM(author_id)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "SUM(author_id)": 10
+            }
+          ]
+        },
+        "executed_sql": "SELECT SUM(author_id) FROM authors",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "sum_author_id"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "sum_author_id": 10
+            }
+          ]
+        },
+        "expected_sql": "SELECT SUM(author_id) AS sum_author_id FROM authors;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT SUM(author_id) FROM authors",
+        "natural_language_query": "Show the total author id value for authors across all records.",
+        "query_id": "F0158",
+        "root_cause": "Aggregate result alias mismatch in evaluator comparison",
+        "scalar_values_equal_ignoring_alias": true,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "AVG(hours_per_week)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "AVG(hours_per_week)": null
+            }
+          ]
+        },
+        "executed_sql": "SELECT AVG(hours_per_week) FROM employee_projects WHERE LENGTH(role) >= 4",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "sum_hours_per_week"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "sum_hours_per_week": null
+            }
+          ]
+        },
+        "expected_sql": "SELECT SUM(hours_per_week) AS sum_hours_per_week FROM employee_projects WHERE role IS NOT NULL AND LENGTH(role) >= 4;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT AVG(hours_per_week) FROM employee_projects WHERE LENGTH(role) >= 4",
+        "natural_language_query": "Calculate the total hours per week for employee projects where role has at least 4 characters.",
+        "query_id": "F0159",
+        "root_cause": "Aggregate result alias mismatch in evaluator comparison",
+        "scalar_values_equal_ignoring_alias": true,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "COUNT(*)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "COUNT(*)": 8
+            }
+          ]
+        },
+        "executed_sql": "SELECT COUNT(*) FROM employees WHERE CAST(salary AS DECIMAL(12,2)) >= 4",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "sum_salary"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "sum_salary": 599000
+            }
+          ]
+        },
+        "expected_sql": "SELECT SUM(salary) AS sum_salary FROM employees WHERE salary >= 4;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT COUNT(*) FROM employees WHERE CAST(salary AS DECIMAL(12,2)) >= 4",
+        "natural_language_query": "What is the total salary in employees where salary is at least 4?",
+        "query_id": "F0160",
+        "root_cause": "Wrong aggregate function",
+        "scalar_values_equal_ignoring_alias": false,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "SUM(price)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "SUM(price)": 69.98
+            }
+          ]
+        },
+        "executed_sql": "SELECT SUM(price) FROM products",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "sum_price"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "sum_price": 69.98
+            }
+          ]
+        },
+        "expected_sql": "SELECT SUM(price) AS sum_price FROM products;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT SUM(price) FROM products",
+        "natural_language_query": "Show the total price value for products across all records.",
+        "query_id": "F0161",
+        "root_cause": "Aggregate result alias mismatch in evaluator comparison",
+        "scalar_values_equal_ignoring_alias": true,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "AVG(budget)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "AVG(budget)": 124300.0
+            }
+          ]
+        },
+        "executed_sql": "SELECT AVG(budget) FROM projects WHERE LENGTH(project_name) >= 7",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "sum_budget"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "sum_budget": 621500.0
+            }
+          ]
+        },
+        "expected_sql": "SELECT SUM(budget) AS sum_budget FROM projects WHERE project_name IS NOT NULL AND LENGTH(project_name) >= 7;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT AVG(budget) FROM projects WHERE LENGTH(project_name) >= 7",
+        "natural_language_query": "Calculate the total budget for projects where project name has at least 7 characters.",
+        "query_id": "F0162",
+        "root_cause": "Wrong aggregate function",
+        "scalar_values_equal_ignoring_alias": false,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "COUNT(*)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "COUNT(*)": 183
+            }
+          ]
+        },
+        "executed_sql": "SELECT COUNT(*) FROM query_history WHERE rows_returned >= 7",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "sum_rows_returned"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "sum_rows_returned": 17603
+            }
+          ]
+        },
+        "expected_sql": "SELECT SUM(rows_returned) AS sum_rows_returned FROM query_history WHERE rows_returned >= 7;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT COUNT(*) FROM query_history WHERE rows_returned >= 7",
+        "natural_language_query": "What is the total rows returned in query history where rows returned is at least 7?",
+        "query_id": "F0163",
+        "root_cause": "Wrong aggregate function",
+        "scalar_values_equal_ignoring_alias": false,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "AVG(rating)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "AVG(rating)": 4.375
+            }
+          ]
+        },
+        "executed_sql": "SELECT AVG(rating) FROM vendors",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "sum_rating"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "sum_rating": 17.5
+            }
+          ]
+        },
+        "expected_sql": "SELECT SUM(rating) AS sum_rating FROM vendors;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT AVG(rating) FROM vendors",
+        "natural_language_query": "Show the total rating value for vendors across all records.",
+        "query_id": "F0164",
+        "root_cause": "Wrong aggregate function",
+        "scalar_values_equal_ignoring_alias": false,
+        "validation_status": "valid"
+      },
+      {
+        "actual_result": {
+          "available": true,
+          "columns": [
+            "AVG(price)"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "AVG(price)": 834.0
+            }
+          ]
+        },
+        "executed_sql": "SELECT AVG(price) FROM books WHERE LENGTH(title) >= 10",
+        "expected_result": {
+          "available": true,
+          "columns": [
+            "sum_price"
+          ],
+          "error": null,
+          "row_count": 1,
+          "sample_rows": [
+            {
+              "sum_price": 4170.0
+            }
+          ]
+        },
+        "expected_sql": "SELECT SUM(price) AS sum_price FROM books WHERE title IS NOT NULL AND LENGTH(title) >= 10;",
+        "experiment_mode": "cold_cache",
+        "failure_reason": "Backend result set differs from expected SQL result.",
+        "generated_sql": "SELECT AVG(price) FROM books WHERE LENGTH(title) >= 10",
+        "natural_language_query": "Calculate the total price for books where title has at least 10 characters.",
+        "query_id": "F0165",
+        "root_cause": "Wrong aggregate function",
+        "scalar_values_equal_ignoring_alias": false,
+        "validation_status": "valid"
+      }
+    ],
+    "failed": 180,
+    "generation_mode": {
+      "LLM": 176,
+      "None": 4
+    },
+    "passed": 0,
+    "root_causes": {
+      "Aggregate result alias mismatch in evaluator comparison": 87,
+      "Aggregate result mismatch": 2,
+      "Backend rejected generated SQL request": 4,
+      "Missing aggregate function": 2,
+      "Wrong aggregate function": 73,
+      "Wrong or invented column": 12
+    },
+    "total": 180,
+    "validation_status": {
+      "invalid": 12,
+      "unknown": 4,
+      "valid": 164
+    }
+  }
+}

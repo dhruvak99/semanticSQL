@@ -1,0 +1,122 @@
+{
+  "rankings": [
+    {
+      "estimated_accuracy_gain_if_fixed_percent_points": 18.87,
+      "failure_count": 717,
+      "failure_share_percent": 26.89,
+      "rank": 1,
+      "root_cause": "Aggregate/evaluator result comparison issue"
+    },
+    {
+      "estimated_accuracy_gain_if_fixed_percent_points": 12.58,
+      "failure_count": 478,
+      "failure_share_percent": 17.93,
+      "rank": 2,
+      "root_cause": "Clause-specific SQL generation drift"
+    },
+    {
+      "estimated_accuracy_gain_if_fixed_percent_points": 12.5,
+      "failure_count": 475,
+      "failure_share_percent": 17.82,
+      "rank": 3,
+      "root_cause": "Schema grounding / invented column issue"
+    },
+    {
+      "estimated_accuracy_gain_if_fixed_percent_points": 7.53,
+      "failure_count": 286,
+      "failure_share_percent": 10.73,
+      "rank": 4,
+      "root_cause": "Aggregate SQL generation/result issue"
+    },
+    {
+      "estimated_accuracy_gain_if_fixed_percent_points": 6.29,
+      "failure_count": 239,
+      "failure_share_percent": 8.96,
+      "rank": 5,
+      "root_cause": "Predicate/projection semantic drift"
+    },
+    {
+      "estimated_accuracy_gain_if_fixed_percent_points": 6.26,
+      "failure_count": 238,
+      "failure_share_percent": 8.93,
+      "rank": 6,
+      "root_cause": "Join/subquery SQL generation drift"
+    },
+    {
+      "estimated_accuracy_gain_if_fixed_percent_points": 2.63,
+      "failure_count": 100,
+      "failure_share_percent": 3.75,
+      "rank": 7,
+      "root_cause": "Invalid-query rejection weakness"
+    },
+    {
+      "estimated_accuracy_gain_if_fixed_percent_points": 1.76,
+      "failure_count": 67,
+      "failure_share_percent": 2.51,
+      "rank": 8,
+      "root_cause": "SQL syntax error"
+    },
+    {
+      "estimated_accuracy_gain_if_fixed_percent_points": 0.61,
+      "failure_count": 23,
+      "failure_share_percent": 0.86,
+      "rank": 9,
+      "root_cause": "Backend/runtime stability issue"
+    },
+    {
+      "estimated_accuracy_gain_if_fixed_percent_points": 0.5,
+      "failure_count": 19,
+      "failure_share_percent": 0.71,
+      "rank": 10,
+      "root_cause": "Schema grounding / invented table issue"
+    },
+    {
+      "estimated_accuracy_gain_if_fixed_percent_points": 0.32,
+      "failure_count": 12,
+      "failure_share_percent": 0.45,
+      "rank": 11,
+      "root_cause": "Backend/runtime validation rejection"
+    },
+    {
+      "estimated_accuracy_gain_if_fixed_percent_points": 0.21,
+      "failure_count": 8,
+      "failure_share_percent": 0.3,
+      "rank": 12,
+      "root_cause": "Result-set mismatch"
+    },
+    {
+      "estimated_accuracy_gain_if_fixed_percent_points": 0.11,
+      "failure_count": 4,
+      "failure_share_percent": 0.15,
+      "rank": 13,
+      "root_cause": "Validation failure"
+    }
+  ],
+  "recommendations": [
+    {
+      "rank": 1,
+      "rationale": "Highest immediate impact because AVG/COUNT/MIN/MAX/SUM are all 0%, and many examples have identical scalar values with different aliases.",
+      "recommendation": "Fix aggregate result comparison or align aggregate aliases"
+    },
+    {
+      "rank": 2,
+      "rationale": "Invalid benchmark queries are often transformed into valid SQL and 50% are not rejected.",
+      "recommendation": "Strengthen invalid-query rejection before SQL generation/cache lookup"
+    },
+    {
+      "rank": 3,
+      "rationale": "Many valid SQL outputs use SELECT * or change >= to >/<, causing result mismatch despite valid SQL.",
+      "recommendation": "Improve NL-to-SQL projection and predicate preservation"
+    },
+    {
+      "rank": 4,
+      "rationale": "Stored/available phrasing leads to non-schema column `stored` and validation failures.",
+      "recommendation": "Tighten schema grounding against invented stored/available columns"
+    },
+    {
+      "rank": 5,
+      "rationale": "These categories fail through clause omission or semantic drift rather than syntax alone.",
+      "recommendation": "Improve clause-specific prompting for LIMIT, ORDER BY, GROUP BY, JOIN, IN, EXISTS"
+    }
+  ]
+}

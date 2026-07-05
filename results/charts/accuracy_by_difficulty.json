@@ -1,17 +1,17 @@
 {
   "easy": {
-    "accuracy": 26.032,
-    "passed": 328,
+    "accuracy": 35.317,
+    "passed": 445,
     "total": 1260
   },
   "hard": {
-    "accuracy": 45.686,
-    "passed": 466,
+    "accuracy": 48.824,
+    "passed": 498,
     "total": 1020
   },
   "medium": {
-    "accuracy": 18.182,
-    "passed": 240,
+    "accuracy": 57.576,
+    "passed": 760,
     "total": 1320
   }
 }
