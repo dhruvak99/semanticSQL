@@ -74,6 +74,8 @@ cd semanticSQL
 
 ## Backend Setup
 
+> Recommended Python version: **Python 3.11 or newer**.
+
 ```bash
 cd backend
 
@@ -84,24 +86,93 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Run the backend:
-
-```bash
-uvicorn app.main:app --reload
-```
-
 ---
 
 ## Frontend Setup
 
 ```bash
-cd frontend
+cd ../frontend
 
 npm install
+```
+
+---
+
+## Install and Start Redis
+
+SemanticSQL uses Redis for semantic caching.
+
+Start the Redis server:
+
+```bash
+redis-server
+```
+
+Verify Redis is running:
+
+```bash
+redis-cli ping
+```
+
+Expected output:
+
+```text
+PONG
+```
+
+> **Note:** If Redis is unavailable, SemanticSQL automatically falls back to an in-memory semantic cache.
+
+---
+
+## Install Ollama
+
+Download and install Ollama from:
+
+https://ollama.com/download
+
+Pull the default language model used by SemanticSQL:
+
+```bash
+ollama pull llama3.1:8b
+```
+
+Verify the installed models:
+
+```bash
+ollama list
+```
+
+Start the Ollama server (if it is not already running):
+
+```bash
+ollama serve
+```
+
+> **Note:** On macOS and Windows, Ollama usually starts automatically after installation. Running `ollama serve` is only required if the service is not already running.
+
+---
+
+## Start the Backend
+
+```bash
+cd backend
+
+source .venv/bin/activate
+
+uvicorn app.main:app --reload
+```
+
+---
+
+## Start the Frontend
+
+Open a new terminal:
+
+```bash
+cd frontend
 
 npm run dev
 ```
-
 ---
 
 # Database Configuration
@@ -214,6 +285,16 @@ uvicorn app.main:app --reload
 ---
 
 ## Step 4 — Run Benchmark Evaluation
+
+
+> **Prerequisites**
+>
+> Before running the benchmark, ensure that:
+>
+> - Redis server is running (`redis-server`)
+> - Ollama is installed and running (`ollama serve`, if required)
+> - The default model has been downloaded (`ollama pull llama3.1:8b`)
+> - The FastAPI backend is running
 
 Open a new terminal
 
