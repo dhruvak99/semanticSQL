@@ -1,90 +1,382 @@
 # SemanticSQL
 
-AI-powered natural language interface for relational databases.
+> **A Hybrid Rule-Based and LLM-Assisted Framework for Natural Language-to-SQL Generation with Semantic Caching**
 
-## Apps
+SemanticSQL is an AI-powered Natural Language-to-SQL (NL2SQL) framework that enables users to query relational databases using natural language instead of writing SQL manually. The framework combines deterministic rule-based query generation, Large Language Model (LLM)-assisted SQL synthesis, semantic caching, and schema-aware validation to improve query accuracy, execution efficiency, and response latency.
 
-- `frontend`: React, TypeScript, Material UI, route-driven application shell.
-- `backend`: FastAPI, SQLAlchemy, Redis, versioned API package structure.
+Developed as part of the **M.Tech (Computer Science & Engineering)** program at **R. V. College of Engineering, Bengaluru**.
 
-## Development
+---
+
+## Features
+
+- Natural Language → SQL conversion
+- Hybrid rule-based and LLM-assisted SQL generation
+- Semantic caching using Redis and Sentence Transformers
+- Schema-aware SQL validation
+- Runtime model selection using Ollama
+- Configurable semantic similarity threshold
+- FastAPI backend
+- React + TypeScript + Material UI frontend
+- SQLite (default) and MySQL support
+- Automated benchmark generation
+- Comprehensive benchmark evaluation
+- Query analytics and cache monitoring
+- Modular and extensible architecture
+
+---
+
+# Technology Stack
+
+| Component | Technology |
+|-----------|------------|
+| Frontend | React, TypeScript, Material UI |
+| Backend | FastAPI |
+| ORM | SQLAlchemy |
+| Database | SQLite / MySQL |
+| LLM | Ollama (Llama 3.1) |
+| Embeddings | sentence-transformers (all-MiniLM-L6-v2) |
+| Cache | Redis |
+| SQL Validation | SQLGlot |
+
+---
+
+# Repository Structure
+
+```text
+SemanticSQL
+│
+├── backend/          FastAPI backend
+├── frontend/         React frontend
+├── benchmark/        Benchmark generation and evaluation
+├── docs/             Documentation
+├── design/           Design documents
+├── paper/            IEEE paper and figures
+├── results/          Benchmark outputs
+├── README.md
+├── LICENSE
+└── .gitignore
+```
+
+---
+
+# Installation
+
+## Clone Repository
 
 ```bash
-cd frontend
-npm install
-npm run dev
+git clone https://github.com/dhruvak99/semanticSQL.git
+
+cd semanticSQL
 ```
+
+---
+
+## Backend Setup
 
 ```bash
 cd backend
+
 python3 -m venv .venv
+
 source .venv/bin/activate
+
 pip install -r requirements.txt
+```
+
+Run the backend:
+
+```bash
 uvicorn app.main:app --reload
 ```
 
-Use Python 3.11 through 3.14. If an older virtualenv fails while importing SQLAlchemy, reinstall dependencies with `pip install -r requirements.txt`; the project pins SQLAlchemy to a Python 3.14-compatible release.
+---
 
-## Backend Database Configuration
-
-For local development, no database server is required. If `DATABASE_URL` is not set, the backend automatically creates and uses:
+## Frontend Setup
 
 ```bash
+cd frontend
+
+npm install
+
+npm run dev
+```
+
+---
+
+# Database Configuration
+
+No database server is required.
+
+If `DATABASE_URL` is not configured, SemanticSQL automatically creates and uses
+
+```text
 backend/semanticsql.db
 ```
 
-On startup, SemanticSQL creates the `employees` table if it does not exist and seeds sample employee data if the table is empty.
+during startup.
 
-To use MySQL later, create `backend/.env` and set `DATABASE_URL`:
+Sample employee data is automatically inserted if the database is empty.
 
-```bash
+To use MySQL instead, create
+
+```text
+backend/.env
+```
+
+and configure
+
+```text
 DATABASE_URL=mysql+pymysql://user:password@localhost:3306/semanticsql
 ```
 
-The query execution layer is read-only. It only executes `SELECT` statements, including `DISTINCT`, `COUNT`, and `GROUP BY` queries. Mutating or destructive statements such as `DROP`, `TRUNCATE`, `DELETE`, `UPDATE`, `ALTER`, `INSERT`, and `CREATE` are blocked by the API execution layer.
+---
 
-## Semantic Cache
+# Semantic Cache
 
-SemanticSQL uses `sentence-transformers` with `all-MiniLM-L6-v2` to embed incoming natural-language queries. Cache entries include the original query, embedding, generated SQL, response payload, timestamp, and hit count.
+SemanticSQL uses
 
-Redis is used when `REDIS_URL` is reachable. If Redis is unavailable, the backend automatically falls back to an in-memory semantic cache for local development.
+- sentence-transformers
+- all-MiniLM-L6-v2
 
-Optional settings:
+to generate embeddings for incoming natural language queries.
 
-```bash
+Each cache entry stores
+
+- Natural language query
+- Query embedding
+- Generated SQL
+- Query result
+- Timestamp
+- Hit count
+
+Redis is used whenever available.
+
+If Redis is unavailable, SemanticSQL automatically falls back to an in-memory cache.
+
+Optional configuration
+
+```text
 REDIS_URL=redis://localhost:6379/0
-SEMANTIC_CACHE_SIMILARITY_THRESHOLD=0.9
+
+SEMANTIC_CACHE_SIMILARITY_THRESHOLD=0.90
+
 SEMANTIC_CACHE_MODEL_NAME=all-MiniLM-L6-v2
 ```
 
-The first request may download the embedding model from Hugging Face.
+---
 
-## Optional MySQL Sample Schema
+# Running the Benchmark
 
-SQLite setup is automatic. If you switch to MySQL, run these SQL commands to create the required schema and sample employee data:
+SemanticSQL includes an automated benchmark framework capable of generating, validating, and evaluating Natural Language-to-SQL datasets.
 
-```sql
-CREATE DATABASE IF NOT EXISTS semanticsql;
-USE semanticsql;
+## Step 1 — Generate Benchmark Dataset
 
-CREATE TABLE IF NOT EXISTS employees (
-  employee_id INT PRIMARY KEY AUTO_INCREMENT,
-  name VARCHAR(100) NOT NULL,
-  email VARCHAR(150) NOT NULL UNIQUE,
-  department VARCHAR(100) NOT NULL,
-  salary DECIMAL(12, 2) NOT NULL,
-  joining_date DATE NOT NULL
-);
+```bash
+cd benchmark
 
-TRUNCATE TABLE employees;
+python generator.py
+```
 
-INSERT INTO employees (employee_id, name, email, department, salary, joining_date) VALUES
-  (101, 'David Wilson', 'david.wilson@company.com', 'Engineering', 75000.00, '2019-07-18'),
-  (104, 'Sarah Johnson', 'sarah.johnson@company.com', 'Finance', 88000.00, '2020-03-22'),
-  (107, 'Michael Brown', 'michael.brown@company.com', 'Finance', 95000.00, '2021-05-10'),
-  (109, 'Jessica Lee', 'jessica.lee@company.com', 'Finance', 72000.00, '2022-01-15'),
-  (115, 'Daniel Martinez', 'daniel.martinez@company.com', 'Operations', 68000.00, '2021-11-30'),
-  (121, 'Priya Raman', 'priya.raman@company.com', 'Human Resources', 54000.00, '2023-02-06'),
-  (126, 'Ava Thompson', 'ava.thompson@company.com', 'Engineering', 99000.00, '2020-09-14'),
-  (131, 'Noah Garcia', 'noah.garcia@company.com', 'Operations', 48000.00, '2022-04-03');
+This creates benchmark datasets covering
+
+- Functional queries
+- Semantic paraphrases
+- Invalid queries
+
+---
+
+## Step 2 — Validate the Benchmark
+
+```bash
+python validation.py
+```
+
+Validation verifies
+
+- SQL syntax
+- Schema consistency
+- Query correctness
+- Dataset quality
+
+---
+
+## Step 3 — Start Backend
+
+```bash
+cd ../backend
+
+source .venv/bin/activate
+
+uvicorn app.main:app --reload
+```
+
+---
+
+## Step 4 — Run Benchmark Evaluation
+
+Open a new terminal
+
+```bash
+cd benchmark
+
+python evaluate.py
+```
+
+The evaluation automatically measures
+
+- Overall Accuracy
+- Functional Accuracy
+- Semantic Accuracy
+- Invalid Query Detection
+- Result Equivalence
+- SQL Equivalence
+- Cache Hit Rate
+- Cache Miss Rate
+- Query Latency
+- Failure Analysis
+- Difficulty-wise Performance
+
+Benchmark reports are written to the repository's results and benchmark output files.
+
+---
+
+# Regenerating Paper Figures
+
+The figures presented in the IEEE paper can be regenerated using
+
+```bash
+cd paper/figures
+
+python generate_figure3.py
+
+python generate_figure4.py
+
+python generate_figure5.py
+
+python generate_figure6.py
+```
+
+These scripts generate
+
+- SQL Category Accuracy
+- Semantic Cache Performance
+- Failure Pareto Analysis
+- Query Difficulty Analysis
+
+---
+
+# Experimental Results
+
+| Metric | Value |
+|--------|-------:|
+| Overall Accuracy | **46.47%** |
+| Functional Accuracy | **48.17%** |
+| Semantic Accuracy | **47.13%** |
+| Invalid Query Detection | **31.50%** |
+| Result Equivalence | **54.06%** |
+| SQL Equivalence | **1.72%** |
+| Average Execution Time | **295.74 ms** |
+
+---
+
+# Architecture
+
+The SemanticSQL pipeline consists of
+
+```
+Natural Language Query
+        │
+        ▼
+ Preprocessing
+        │
+        ▼
+ Semantic Embedding
+        │
+        ▼
+ Semantic Cache
+    │          │
+ Cache Hit   Cache Miss
+    │          │
+    ▼          ▼
+ Cached SQL   LLM SQL Generation
+                  │
+                  ▼
+         Schema Validation
+                  │
+                  ▼
+            SQL Execution
+                  │
+                  ▼
+             Cache Update
+                  │
+                  ▼
+             Query Results
+```
+
+---
+
+# Future Work
+
+Future improvements include
+
+- Adaptive semantic cache thresholds
+- AI-driven rule generation
+- Improved clause-specific SQL generation
+- Value grounding and entity resolution
+- Multi-turn conversational querying
+- Multi-database support
+- Distributed semantic caching
+- Benchmarking on Spider, BIRD, and WikiSQL
+
+---
+
+# Paper
+
+**SemanticSQL: A Hybrid Rule-Based and LLM-Assisted Framework for Natural Language-to-SQL Generation with Semantic Caching**
+
+The accompanying IEEE conference paper and supporting figures are available in the `paper/` directory.
+
+---
+
+# License
+
+This project is released under the MIT License.
+
+See the `LICENSE` file for details.
+
+---
+
+# Authors
+
+**Dr. Shanta Rangaswamy**  
+Head of Department  
+Department of Computer Science and Engineering  
+R. V. College of Engineering
+
+**Dr. Hemavathy R.**  
+Department of Computer Science and Engineering  
+R. V. College of Engineering
+
+**Rohith Arsha**  
+M.Tech Computer Science and Engineering  
+R. V. College of Engineering
+
+**Dhruva K**  
+M.Tech Computer Science and Engineering  
+R. V. College of Engineering
+
+---
+
+# Citation
+
+If you use this project in your research, please cite:
+
+```bibtex
+@software{SemanticSQL2026,
+  title={SemanticSQL: A Hybrid Rule-Based and LLM-Assisted Framework for Natural Language-to-SQL Generation with Semantic Caching},
+  author={Dhruva K and Rohith Arsha and Hemavathy R.},
+  year={2026},
+  url={https://github.com/dhruvak99/semanticSQL}
+}
 ```
