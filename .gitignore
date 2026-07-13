@@ -13,5 +13,6 @@ __pycache__/
 .venv/
 .venv*/
 venv/
-backend/semanticsql.db
-backend/semanticsql.db-*
+
+
+DBMS PROJECT PAPERS/
